@@ -97,14 +97,50 @@ Fourier transform，小喵心想。于是他快速的在大脑中两边乘以 $e
 太棒，展开指数，可以直接写出答案，
 
 \begin{equation}
-P^k(t) = P^k(0) e^{-4F \sin^2\frac{k}{2} t}
+P^k(t) = P^k(0) e^{-4F \sin^2\frac{k}{2} t}.
 \end{equation}
 
+再做一次变换，小喵立刻得到了最终结果，
 
+\begin{align}
+P_m(t)  & = \frac{1}{N} \sum_ {k} P^k(t) e^{-i km} \\
+& = \frac{1}{N} \sum_ {k} P^k(0) e^{-4F \sin^2\frac{k}{2} t}  e^{-i km} .
+\end{align}
+
+当然因为周期性的边界条件，结果中的对 $k$ 求和实际上是对 $k = \frac{2\pi}{N} n$ 求和，其中 $n=0,1,2, \cdots, N-1$.
+
+这样只要给定了初始条件，小喵就可以计算自己的存活概率了。上述结果中的初始条件是由下面的式子给定了，
 
 \begin{equation}
-P_m(t)  = \frac{1}{N} \sum_ {k} P^k(t) e^{-i km} .
+P^k(0) = \sum_n P_n(0)e^{ikn}.
 \end{equation}
+
+这样把初始条件放进结果中，可以知道
+
+\begin{align}
+P_m(t)  & = \frac{1}{N} \sum_ {k}  \sum_n P_n(0)e^{ikn} e^{-4F \sin^2\frac{k}{2} t}  e^{-i km}  \\
+&= \sum_n \Pi_{m-n}(t) P_n(0) ,
+\end{align}
+
+其中的 $\Pi_{m-n}$ 是传播子（propagator），
+
+下面小喵只需要把捕捉
+
+
+
+最后要算的结果是
+
+\begin{equation}
+Q(t) = \sum_m P_m(t).
+\end{equation}
+
+小喵精心的数了一下，共有 10 个
+
+
+
+## 极限情况
+
+虽然跟
 
 
 
