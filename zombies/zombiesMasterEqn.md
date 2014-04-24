@@ -16,12 +16,12 @@ Table of Content
 
 小喵很自己的研究了这个魔环。这个其实是一圈可以站上去的转盘，魔环充分利用了小喵每一步都是固定距离的特点，而且当小喵站到某个转盘上的时候，转盘会立刻随机的把他转向相邻的两个转盘之一的方向，当然这样他只能随机的走到相邻的两个转盘之一上面，这样一直下去。
 
-![](https://raw.githubusercontent.com/emptymalei/pandemicControl/master/zombies/resources/zombieCapture1D.png)
+![](https://raw.githubusercontent.com/emptymalei/pandemicControl/master/zombies/resources/zombieCapture1D2.png)
 
 
 这些转盘中，有些转盘是红色的，上面写着捕捉能力 $C$，也就是说，他有 C 的概率会被捕捉，并不一定归一化了呢，真头疼。
 
-小喵现在已经明白，如果没用其他僵尸的救援，自己不会有生存的机会了。就算每个红色转盘的捕捉能力很弱，这样持续下去，自己早晚会被捕捉的，即使小喵可以在没用食物的情况下永远的活下去（怎么活下去就别管啦，利用太阳能行不）。
+小喵现在已经明白，如果没用其他僵尸的救援，自己不会有生存的机会了。就算每个红色转盘的捕捉能力很弱，这样持续下去，自己早晚会被捕捉的。
 
 但是，小喵明白，僵尸族的集体智慧才是种族活下去的希望，死了自己不要紧，他要给僵尸族留下遗产，解出陷入僵尸魔环之后的生存概率，为僵尸族将来的生存提供参考。
 
@@ -70,6 +70,8 @@ P_{\xi}(t) = \sum_{\mu} R_{\mu\xi}\tau P_{\xi} (t) .
 
 这里面的对 $r$ 求和仅仅是对那些红色转盘求和。
 
+
+
 好，只要求出所有的 $P_m(t)$，然后求和就可以得到自己的存活概率 $Q(t)= \sum_mP_m(t)$了。
 
 
@@ -79,10 +81,10 @@ P_{\xi}(t) = \sum_{\mu} R_{\mu\xi}\tau P_{\xi} (t) .
 这里只有一个红色转盘（位于 $s$），小喵很高兴，方程是
 
 \begin{equation}
-\frac{d}{dt}P_m = F(P_{n+1} + P_{n-1} - 2 P_m)  - C  \delta_{m,s}P_m .
+\frac{d}{dt}P_m = F(P_{n+1} + P_{n-1} - 2 P_m)  - C  \delta_{m,s}P_m  .
 \end{equation}
 
-小喵知道没有红色转盘的方程变得很简单，
+小喵知道没有红色转盘并且不考虑寿命的方程变得很简单，
 
 \begin{equation}
 \frac{d}{dt}P_m = F(P_{n+1} + P_{n-1} - 2 P_m).
@@ -124,9 +126,34 @@ P_m(t)  & = \frac{1}{N} \sum_ {k}  \sum_n P_n(0)e^{ikn} e^{-4F \sin^2\frac{k}{2}
 
 其中的 $\Pi_{m-n}$ 是传播子（propagator），
 
-下面小喵只需要把捕捉
+\begin{equation}
+\Pi_{m-n}(t)  = \frac{1}{N} \sum_ {k}   e^{-4F \sin^2\frac{k}{2} t}  e^{-i k(m-n)} .
+\end{equation}
 
 
+下面小喵只需要把捕捉转盘的影响加进来就可以了。可是，如果一直这样算下去，会变得很复杂，所以小喵开始使用 Laplace 变换，这样一来，无红色捕捉的解可以直接写成
+
+\begin{equation}
+\tilde \eta_m = \sum_{n} \tilde \Pi_{m-n} \tilde P_n,
+\end{equation}
+
+而完整的解可以直接背书出来
+
+\begin{equation}
+\tilde P_m = \tilde \eta - C \tilde \Pi_{m-r} \tilde P_r .
+\end{equation}
+
+这不是个解，小喵想，因为右边还有未知量 $\tilde P_r$. 这简单，让 $m=r$，可以解出来，
+
+\begin{equation}
+\tilde P_r = \frac{\tilde \eta}{1+C\tilde \Pi_0}.
+\end{equation}
+
+这样最终解其实就是
+
+\begin{equation}
+\tilde P_m = \tilde \eta_m - \frac{\tilde \Pi_{m-r} \tilde \eta_r}{1/C + \tilde \Pi_0}.
+\end{equation}
 
 最后要算的结果是
 
@@ -134,13 +161,30 @@ P_m(t)  & = \frac{1}{N} \sum_ {k}  \sum_n P_n(0)e^{ikn} e^{-4F \sin^2\frac{k}{2}
 Q(t) = \sum_m P_m(t).
 \end{equation}
 
-小喵精心的数了一下，共有 10 个
+同样的进行 Laplace 变换，小喵得到
 
+\begin{equation}
+\tilde Q = \frac{1}{\epsilon} \left( 1 - \frac{\tilde \eta_r}{1/C + \tilde \Pi_0} \right).
+\end{equation}
 
+这正好是
+
+\begin{equation}
+\frac{d}{dt}Q(t) = - \int_0^t \mathscr M(t-t')\eta(t') dt',
+\end{equation}
+
+其中 
+
+\begin{equation}
+\mathscr M(t-t') = \frac{1}{1/C + \tilde \Pi_0} .
+\end{equation}
+
+问题解决了，至少理论上解决了。
 
 ## 极限情况
 
-虽然跟
+
+小喵数了一下，共有 42 个转盘，其中一个是捕捉。
 
 
 
