@@ -1,5 +1,5 @@
 
-> Read on [StackEdit](https://stackedit.io/).
+> Read on [StackEdit](https://stackedit.io/viewer#!url=https://raw.githubusercontent.com/emptymalei/pandemicControl/master/zombies/zombiesMasterEqn.md).
 
 Table of Content
 
