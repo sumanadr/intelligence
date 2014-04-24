@@ -76,19 +76,37 @@ P_{\xi}(t) = \sum_{\mu} R_{\mu\xi}\tau P_{\xi} (t) .
 
 ## 小喵解方程
 
-如果只有一个红色转盘（位于 $s$）的话，方程是
+这里只有一个红色转盘（位于 $s$），小喵很高兴，方程是
 
 \begin{equation}
-\frac{d}{dt}P_m = F(P_{n+1} + P_{n-1}) - 2F P_m  - C  \delta_{m,s}P_m .
+\frac{d}{dt}P_m = F(P_{n+1} + P_{n-1} - 2 P_m)  - C  \delta_{m,s}P_m .
 \end{equation}
 
-小喵知道没有红色转盘的方程，即
+小喵知道没有红色转盘的方程变得很简单，
 
 \begin{equation}
-\frac{d}{dt}P_m = F(P_{n+1} + P_{n-1}) - 2F P_m.
+\frac{d}{dt}P_m = F(P_{n+1} + P_{n-1} - 2 P_m).
 \end{equation}
 
-的解很容易获得，是
+Fourier transform，小喵心想。于是他快速的在大脑中两边乘以 $e^{ikm}$ 并对 $m$ 求和。
+
+\begin{equation}
+\frac{d}{dt} P^k  = F(e^{ikm} P_{m+1} + e^{ikm} P_{m-1} -2 P^k).
+\end{equation}
+
+太棒，展开指数，可以直接写出答案，
+
+\begin{equation}
+P^k(t) = P^k(0) e^{-4F \sin^2\frac{k}{2} t}
+\end{equation}
+
+
+
+\begin{equation}
+P_m(t)  = \frac{1}{N} \sum_ {k} P^k(t) e^{-i km} .
+\end{equation}
+
+
 
 
 
