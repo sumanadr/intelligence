@@ -140,13 +140,13 @@ P_m(t)  & = \frac{1}{N} \sum_ {k}  \sum_n P_n(0)e^{ikn} e^{-4F \sin^2\frac{k}{2}
 而完整的解可以直接背书出来
 
 \begin{equation}
-\tilde P_m = \tilde \eta - C \tilde \Pi_{m-r} \tilde P_r .
+\tilde P_m = \tilde \eta_m - C \tilde \Pi_{m-r} \tilde P_r .
 \end{equation}
 
 这不是个解，小喵想，因为右边还有未知量 $\tilde P_r$. 这简单，让 $m=r$，可以解出来，
 
 \begin{equation}
-\tilde P_r = \frac{\tilde \eta}{1+C\tilde \Pi_0}.
+\tilde P_r = \frac{\tilde \eta_r}{1+C\tilde \Pi_0}.
 \end{equation}
 
 这样最终解其实就是
@@ -179,12 +179,15 @@ Q(t) = \sum_m P_m(t).
 \mathscr M(t-t') = \frac{1}{1/C + \tilde \Pi_0} .
 \end{equation}
 
-问题解决了，至少理论上解决了。
-
-## 极限情况
+问题解决了，呃，至少理论上解决了。
 
 
-小喵数了一下，共有 42 个转盘，其中一个是捕捉。
+## 僵尸云计算
+
+
+小喵数了一下，共有 42 个转盘，其中一个是捕捉。那么这个问题就可以利用僵尸大脑云计算来解决。
+
+
 
 
 
