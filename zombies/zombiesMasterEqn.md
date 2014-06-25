@@ -14,7 +14,7 @@ Table of Content
 
 ## 僵尸魔环
 
-小喵很自己的研究了这个魔环。这个其实是一圈可以站上去的转盘，魔环充分利用了小喵每一步都是固定距离的特点，而且当小喵站到某个转盘上的时候，转盘会立刻随机的把他转向相邻的两个转盘之一的方向，当然这样他只能随机的走到相邻的两个转盘之一上面，这样一直下去。
+小喵很仔细的研究了这个魔环。这个其实是一圈可以站上去的转盘，魔环充分利用了小喵每一步都是固定距离的特点，而且当小喵站到某个转盘上的时候，转盘会立刻随机的把他转向相邻的两个转盘之一的方向，当然这样他只能随机的走到相邻的两个转盘之一上面，这样一直下去。
 
 ![](https://raw.githubusercontent.com/emptymalei/pandemicControl/master/zombies/resources/zombieCapture1D2.png)
 
@@ -25,28 +25,6 @@ Table of Content
 
 但是，小喵明白，僵尸族的集体智慧才是种族活下去的希望，死了自己不要紧，他要给僵尸族留下遗产，解出陷入僵尸魔环之后的生存概率，为僵尸族将来的生存提供参考。
 
-## 僵尸云计算
-
-
-小喵数了一下，共有 42 个转盘，其中一个是捕捉。小喵把自己一开始踏上去的转盘定做第 0 个，而红色的捕捉转盘敲好是第 10 个。对于这种只有一个捕捉的情况，太简单了，可以利用僵尸大脑云计算来解决。说算就算，
-
-写出 master equation，
-
-\begin{equation}
-\frac{d}{dt}P_m = F(P_{n+1} + P_{n-1}) - 2F P_m  - C F \delta_{m,r}P_m .
-\end{equation}
-
-放到僵尸云计算平台，方程解出来是
-
-\begin{equation}
-Q(t) = \sum_{m} P_m(t) = 1- \frac{\eta_{10} \Pi_{0-10}}{1/C + \Pi_0}
-\end{equation}
-
-因为第一步踏在了第零个位置，所以
-
-\begin{equation}
-Q(t) = \sum_{m} P_m(t) = 1- \frac{\Pi_{10-0} \Pi_{0-10}}{1/C + \Pi_0}
-\end{equation}
 
 
 
@@ -162,13 +140,13 @@ P_m(t)  & = \frac{1}{N} \sum_ {k}  \sum_n P_n(0)e^{ikn} e^{-4F \sin^2\frac{k}{2}
 而完整的解可以直接背书出来
 
 \begin{equation}
-\tilde P_m = \tilde \eta_m - C \tilde \Pi_{m-r} \tilde P_r .
+\tilde P_m = \tilde \eta - C \tilde \Pi_{m-r} \tilde P_r .
 \end{equation}
 
 这不是个解，小喵想，因为右边还有未知量 $\tilde P_r$. 这简单，让 $m=r$，可以解出来，
 
 \begin{equation}
-\tilde P_r = \frac{\tilde \eta_r}{1+C\tilde \Pi_0}.
+\tilde P_r = \frac{\tilde \eta}{1+C\tilde \Pi_0}.
 \end{equation}
 
 这样最终解其实就是
@@ -201,14 +179,12 @@ Q(t) = \sum_m P_m(t).
 \mathscr M(t-t') = \frac{1}{1/C + \tilde \Pi_0} .
 \end{equation}
 
-问题解决了，呃，至少理论上解决了。
+问题解决了，至少理论上解决了。
+
+## 极限情况
 
 
-
-
-
-
-
+小喵数了一下，共有 42 个转盘，其中一个是捕捉。
 
 
 
