@@ -1,0 +1,7 @@
+# intelligence
+collective intelligence
+
+
+1. [MIT Center for Collective Intelligence](http://cci.mit.edu/)
+    "Our basic research question is: How can people and computers be connected so that—collectively—they act more intelligently than any person, group, or computer has ever done before?"
+2. [Collective intelligence@Wikipedia](https://en.wikipedia.org/wiki/Collective_intelligence)
