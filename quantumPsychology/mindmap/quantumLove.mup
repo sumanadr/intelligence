@@ -1,0 +1,416 @@
+{
+  "title": "Quantum Love",
+  "id": 1,
+  "formatVersion": 2,
+  "ideas": {
+    "3": {
+      "title": "Quantum Model",
+      "formatVersion": 2,
+      "attr": {
+        "progress-statuses": {
+          "": {
+            "description": "Not Started",
+            "priority": 1,
+            "style": {
+              "background": false
+            }
+          },
+          "passing": {
+            "description": "Done",
+            "style": {
+              "background": "#00CC00"
+            }
+          },
+          "under-review": {
+            "description": "Under review",
+            "style": {
+              "background": "#00CCFF"
+            }
+          },
+          "in-progress": {
+            "description": "In Progress",
+            "priority": 3,
+            "style": {
+              "background": "#FFCC00"
+            }
+          },
+          "blocked": {
+            "description": "Blocked",
+            "priority": 4,
+            "style": {
+              "background": "#990033"
+            }
+          },
+          "parked": {
+            "description": "Parked",
+            "priority": 2,
+            "style": {
+              "background": "#FF3300"
+            }
+          }
+        },
+        "style": {
+          "background": "#990033"
+        },
+        "progress": "blocked"
+      },
+      "links": [],
+      "ideas": {
+        "1": {
+          "title": "Description of States",
+          "id": 26,
+          "ideas": {
+            "1": {
+              "title": "1. A state symbol:The state of a system is described by a vector in Hilbert space",
+              "id": 27,
+              "attr": {
+                "attachment": {
+                  "contentType": "text/html",
+                  "content": "The state of a system is described by a vector in Hilbert space"
+                },
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "Superposition:A superposition of states in the same Hilbert space is also a state vector. This is part of the math of Hilbert space, not a postulation.",
+                  "id": 30,
+                  "attr": {
+                    "style": {
+                      "background": "#E0E0E0"
+                    }
+                  }
+                }
+              }
+            },
+            "5": {
+              "title": "4. A postulate about momentum and position: commutators",
+              "id": 34,
+              "attr": {
+                "style": {
+                  "background": "#ffcc99"
+                }
+              }
+            },
+            "7": {
+              "title": "6. Identical particles",
+              "id": 37
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          }
+        },
+        "2": {
+          "title": "Observables",
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          },
+          "id": 14,
+          "ideas": {
+            "1": {
+              "title": "5. Measurement",
+              "id": 35,
+              "ideas": {
+                "1": {
+                  "title": "One measurement",
+                  "id": 38
+                },
+                "2": {
+                  "title": "A lot of measurements",
+                  "id": 39
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
+            },
+            "0.5": {
+              "title": "2. Operators: Hermitian",
+              "id": 29,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "title": "Evolution",
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          },
+          "id": 15,
+          "ideas": {
+            "1": {
+              "title": "3. Dynamics: Shrödinger equation",
+              "id": 32,
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              }
+            }
+          }
+        },
+        "15": {
+          "title": "Results",
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          },
+          "id": 16
+        }
+      },
+      "id": 12
+    },
+    "-1": {
+      "title": "Quantum Model",
+      "formatVersion": 2,
+      "attr": {
+        "progress-statuses": {
+          "": {
+            "description": "Not Started",
+            "priority": 1,
+            "style": {
+              "background": false
+            }
+          },
+          "passing": {
+            "description": "Done",
+            "style": {
+              "background": "#00CC00"
+            }
+          },
+          "under-review": {
+            "description": "Under review",
+            "style": {
+              "background": "#00CCFF"
+            }
+          },
+          "in-progress": {
+            "description": "In Progress",
+            "priority": 3,
+            "style": {
+              "background": "#FFCC00"
+            }
+          },
+          "blocked": {
+            "description": "Blocked",
+            "priority": 4,
+            "style": {
+              "background": "#990033"
+            }
+          },
+          "parked": {
+            "description": "Parked",
+            "priority": 2,
+            "style": {
+              "background": "#FF3300"
+            }
+          }
+        },
+        "style": {
+          "background": "#990033"
+        },
+        "progress": "blocked"
+      },
+      "links": [],
+      "ideas": {
+        "1": {
+          "title": "Observables",
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          },
+          "ideas": {
+            "2": {
+              "title": "2. Operators: Hermitian",
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              },
+              "id": 47,
+              "ideas": {
+                "1": {
+                  "title": "eg. Gender operator: \\hat G. just like spin operator",
+                  "id": 59
+                }
+              }
+            },
+            "12": {
+              "title": "5. Measurement",
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "eg. One measurement: on to an eigen state",
+                  "id": 45
+                },
+                "2": {
+                  "title": "eg. A lot of measurements: ensemble average",
+                  "id": 46
+                }
+              },
+              "id": 44
+            }
+          },
+          "id": 43
+        },
+        "2": {
+          "title": "Evolution",
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          },
+          "ideas": {
+            "1": {
+              "title": "3. Dynamics: Shrödinger equation: I would rather use the density matrix operator description",
+              "attr": {
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              },
+              "id": 49
+            }
+          },
+          "id": 48
+        },
+        "14": {
+          "title": "Results",
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          },
+          "id": 50
+        },
+        "0.5": {
+          "title": "Description of States",
+          "attr": {
+            "style": {
+              "background": "#E0E0E0"
+            }
+          },
+          "ideas": {
+            "1": {
+              "title": "1. state symbol: denote the state of a person",
+              "attr": {
+                "attachment": {
+                  "contentType": "text/html",
+                  "content": "The state of a system is described by a vector in Hilbert space"
+                },
+                "style": {
+                  "background": "#E0E0E0"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "eg. No one is purely Boy or Girl. The description of a human is a superposition of Boy and Girl",
+                  "attr": {
+                    "style": {
+                      "background": "#E0E0E0"
+                    }
+                  },
+                  "id": 53
+                },
+                "2": {
+                  "title": "eg. One can be in a state of neither single nor inlove",
+                  "id": 56
+                }
+              },
+              "id": 52
+            },
+            "2": {
+              "title": "We don't need a postulate about momentum and position: commutators now. Maybe later",
+              "attr": {
+                "style": {
+                  "background": "#ffcc99"
+                }
+              },
+              "id": 54
+            },
+            "3": {
+              "title": "6. Identical person: this is not nessisarily true",
+              "id": 55,
+              "ideas": {
+                "1": {
+                  "title": "eg. Removing the attribute of gender, all human can be the same in a simple model.",
+                  "id": 57
+                }
+              }
+            }
+          },
+          "id": 51
+        }
+      },
+      "id": 42
+    }
+  },
+  "attr": {
+    "progress-statuses": {
+      "": {
+        "description": "Not Started",
+        "priority": 1,
+        "style": {
+          "background": false
+        }
+      },
+      "passing": {
+        "description": "Done",
+        "style": {
+          "background": "#00CC00"
+        }
+      },
+      "under-review": {
+        "description": "Under review",
+        "style": {
+          "background": "#00CCFF"
+        }
+      },
+      "in-progress": {
+        "description": "In Progress",
+        "priority": 3,
+        "style": {
+          "background": "#FFCC00"
+        }
+      },
+      "blocked": {
+        "description": "Blocked",
+        "priority": 4,
+        "style": {
+          "background": "#990033"
+        }
+      },
+      "parked": {
+        "description": "Parked",
+        "priority": 2,
+        "style": {
+          "background": "#FF3300"
+        }
+      }
+    },
+    "style": {
+      "background": "#990033"
+    },
+    "progress": "blocked"
+  },
+  "links": []
+}

@@ -1,0 +1,372 @@
+% ****** Start of file aipsamp.tex ******
+%
+%   This file is part of the AIP files in the AIP distribution for REVTeX 4.
+%   Version 4.1 of REVTeX, October 2009
+%
+%   Copyright (c) 2009 American Institute of Physics.
+%
+%   See the AIP README file for restrictions and more information.
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.1
+%
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex  aipsamp
+%  2)  bibtex aipsamp
+%  3)  latex  aipsamp
+%  4)  latex  aipsamp
+%
+% Use this file as a source of example code for your aip document.
+% Use the file aiptemplate.tex as a template for your document.
+\documentclass[%
+ aip,
+ jmp,%
+ amsmath,amssymb,
+%preprint,%
+ reprint,%
+%author-year,%
+%author-numerical,%
+]{revtex4-1}
+
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+
+\begin{document}
+
+\preprint{AIP/123-QED}
+
+\title{How to Fall in Love: A Quantum View}% Force line breaks with \\
+%\thanks{}
+
+
+\author{Lei Ma}%
+ \email{leima@unm.edu}
+\affiliation{ 
+Department of Physics and Astronomy, 1919 Lomas Blvd NE, Albuquerque, NM 87131 %\\This line break forced with \textbackslash\textbackslash
+}%
+
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+\begin{abstract}
+We proposed a mathematical representation to describe superposition of affections and emotions using state vectors in Hilbert spaces. Multiple examples are given to interpret the meaning of states. Measurement hypothesis and dynamics related hypothesis are also attempted. We apply this theoretical representation to the description and evolution of love. The results produced are interpreted as well.
+\end{abstract}
+
+%\pacs{Valid PACS appear here}% PACS, the Physics and Astronomy
+                              % Classification Scheme.
+\keywords{quantum, superposition of emotional state, emotion}%Use showkeys class option if keyword
+                              %display desired
+\maketitle
+
+%\begin{quotation}
+
+%\end{quotation}
+
+
+\newcommand{\ud}[1]{{#1^{\dagger}}}
+\newcommand{\bra}[1]{\left\langle #1\right|}
+\newcommand{\ket}[1]{\left| #1\right\rangle}
+\newcommand\Tr{\mathrm{Tr}}
+\newcommand{\braket}[2]{\langle #1 \mid #2 \rangle}
+\newcommand\I{\mathbb{I}}
+\newcommand{\avg}[1]{\left< #1 \right>}
+
+
+\newtheorem{guess}{Hypothesis}
+\newtheorem{define}{Definition}
+
+
+\section{Introduction}
+
+
+Quantum physics is very successful in describing physical world. The generalization of quantum theory to other natural science as biology and chemistry has also produced a lot of important results. What's more exciting in the generalization of quantum theory is that quantum theories of cognition has been proposed. \cite{quantumCognition}
+
+Meanwhile, works have shown that positive and negative affect are not necessarily polar opposites. Some feelings which was regarded as polar opposites can occur at the same time.\cite{jtc-jjb,happySad}
+
+This paper will concentrate on the description of dynamics of affect in Hilbert space. Ghose argued that quantum cognition is not quantum for the fact that our brain is not a quantum system. Instead of try to build a fundamental theory, this work is only a phenomenological theory, which produces results that can be accepted. This is called quantum because the method we use is borrowed from quantum mechanics.
+
+In quantum mechanics, the first postulate is usually written as
+
+\begin{quote}
+The state of the particle is represented by a vector $\ket{\psi(t)}$ in a Hilbert space.\cite{shankar}
+\end{quote}
+
+This postulate shows that physics happens in Hilbert space. Starting from this point, physical states remains the same when multiplied by a complex number. Superposition of states in a Hilbert space is still one of the states in the same Hilbert space. Direct product of states makes it possible to describe many-particle system.
+
+Human emotions can stack together and show new experiences. For example, one can be both happy and sad, both curious and fear. Similar to quantum mechanics, the first example means superposition of emotions is also a emotion that can be experienced while the second one indicates that we can use direct product of states to describe multiple emotional states.
+
+Given the similarity, this paper discusses the possibility of using Hilbert space as emotion sets and demonstrates this formulation in the example of love. Moreover, the emotional states in this discussion are quantized. Non-zero commutators which quantized quantum mechanics, will come in this discussion of emotions.
+
+In the realm of mechanics, description of states, time evolution of states and calculation of observables are the three key steps. For emotion, this procedure is followed exactly here.
+
+
+\section{Description of Emotional States}
+
+We now propose a series of hypothesis on human emotions to make it possible to have superposition of emotional states.
+
+The first postulate is about description of emotional states.
+
+\begin{guess}
+Each emotion of human beings is associated with a complex Hilbert space $\mathbf H$ with inner product.
+\end{guess}
+
+By this hypothesis, all human emotions of concern are embedded into the appropriate separable Hilbert space with a well defined length. Several features we need to formulate a theory of superposition emotions are achieved.
+
+\begin{itemize}
+\item
+Emotional states in a Hilbert space can linearly form states in the same Hilbert space.
+\end{itemize}
+
+An example of this hypothesis is the state of happy and sad. Suppose we have an normalized emotional state $\ket{\psi}$ which has $\ket{\mathrm {Happy}}$ and $\ket{\mathrm{Sad}}$ in it. Pick a complete orthonormal basis set $\{ \ket{\mathrm {Happy}}, \ket{\mathrm{Sad}} \}$, we can write down the state as
+\begin{align}
+\ket{\psi} & = \left(\ket{\mathrm{Happy}}\bra{\mathrm{Happy}} + \ket{\mathrm{Sad}}\bra{\mathrm{Sad}} \right)\ket{\psi} \\
+&= C_1\ket{\mathrm{Happy}} + C_2 \ket{\mathrm{Sad}}
+\end{align}
+
+where $C_1 = \braket{\mathrm{Happy}}{\psi}$ and $C_2 = \braket{\mathrm{Sad}}{\psi}$。
+
+Since it is an arbitrary emotional state in this space, this equation tells us that all kinds of states composed by $\ket{\mathrm{Happy}}$ and $\ket{\mathrm{Sad}}$ can be expressed in this way. Through adjusting the coefficients, states with more $\ket{\mathrm{Happy}}$ can be achieved. The coefficients stand for the weights of corresponding states. In this example, 
+
+\begin{align}
+\braket{\psi}{\psi}= |C_1|^2 + |C_2|^2 =1
+\end{align}
+
+which is the normalization condition. Another interpretation is the conserved probability. However hypothesis of measurement is needed for this interpretation.
+
+Quantum state, as mentioned in Partha Ghose's paper\cite{hilbertEmotions}, can be geometrically represented in Bloch sphere if the state is a two-level system.\cite{bloch,nielsen} Though there are problems generalizing this geometrical method to higher dimensions, it is not a problem for this paper since we would be dealing with pair opposites of emotions.
+
+
+Paul Ekman's emotion universal categories \cite{citNeeded} shows that emotions can be categoried into the following:
+
+anger, disgust, fear, happiness, sadness, and surprise + Amusement, Contempt, Contentment, Embarrassment, Excitement, Guilt, Pride in achievement, Relief, Satisfaction, Sensory pleasure, and Shame.
+
+
+
+
+
+
+%%% Measurement %%%%
+
+
+\section{Measurement of Emotional States}
+
+In quantum mechanics, the hypothesis about measurement is usually about the extraction of observables using probability of a eigenstate which is possible because of the so called state collapse in popular theories. \footnote{Theories like Qbism, Relative state are alternatives to the collapse of states choice.}
+
+\begin{quote}
+If the particle is in a state $\ket{\psi}$, measurement of the variable (corresponding to) $\Omega$ will yield one of the eigenvalues $\omega$ with probability $P(\omega)\propto |\braket{\omega}{\psi}|^2$. The state of the system will change from $\ket{\psi}$ to $\ket{\omega}$ as a result of the measurement.\cite{shankar}
+\end{quote}
+
+Observables in emotions have no specific meaning other than operators. For emotional states, we define one class of emotions to be a complete set of basis.
+
+\begin{define}
+All eigenvectors $\ket{i}$ of a operator $\hat E$ can form a class of emotions $\{\hat E; \ket{i},\ket{\alpha} \}$ if they are complete.
+\begin{equation}
+\sum_i \ket{i}\bra{i} = \hat I
+\end{equation}
+where $\hat I$ is identity operator.
+\end{define}
+
+The bases $\{\ket{\mathrm {Happy}}, \ket{\mathrm{Sad}} \}$ we used in the example of first hypothesis are orthonormal and complete. However, for completeness, not only discrete bases but also continuous bases can be discussed, that is the completeness condition becomes
+
+\begin{equation}
+\sum_i \ket{i}\bra{i} + \int_\alpha \, d\alpha \ket{\alpha}\bra{\alpha}  = \hat I .
+\end{equation}
+
+With the help of emotion class, interpretation of states is made possible.
+
+
+\begin{guess}
+For emotional state $\ket{\psi}$, measurement of a specific class of emotions $\{\hat E; \ket{1},\ket{2},\cdots\}$ will cause the state to one of the eigenstates of the class with probability of corresponding weight of this eigenstate in state $\ket{\psi}$.
+\end{guess}
+
+Meaning of eigenvalues is not clear. Therefore this hypothesis is only for interpretation of the states. In reality, this hypothesis is essentially the procedure of measuring a person's emotional state with infinite time without changing the environment and finally reaching an eigenstate of the measured class.
+
+Upon infinite times of measurements by establishing a ensemble of the system, we can find out the exact value of probability of $\ket{\mathrm{Happy}}$ and $\ket{\mathrm{Sad}}$, i.e., $|C_1|^2$ and $|C_2|^2$.
+
+States which are orthogonal and with equal weight of Happy and Sad can also be created.
+
+\begin{align}
+\ket{\psi_1} &= \ket{\mathrm{Happy}} + \ket{\mathrm{Sad}}\\
+\ket{\psi_2} &= \ket{\mathrm{Happy}} - \ket{\mathrm{Sad}} .
+\end{align}
+
+The two states are not the same even they have the same probability of finding out $\ket{\mathrm{Happy}}$ and $\ket{\mathrm{Sad}}$. The difference of the two states can be significant when average values of operators are investigated.
+
+Thus operators are the key to understanding the meaning of emotional states.
+
+
+
+\section{Identical Person}
+
+Identical particles is an concept that we can not distinguish two particle from each other when they are mixed together. In this paper, we are going to assume that human beings can not be distinguished from each other if their emotional states and appearances are removed.
+
+\begin{guess}
+All person are identical if they have the same emotional states and appearances.
+\end{guess}
+
+Carry out the same argument as in quantum mechanics about particle exchange, define person exchange operator
+
+\begin{equation}
+\hat P_{12} \ket{\psi(x_1,x_2)} = \ket{\psi(x_2,x_1)}
+\end{equation}
+
+Two free person with states $\ket{\psi_a(x_a)}$ and $\psi_b(x_b)$ put together will be written as direct product of the two states, i.e., $\ket{\psi_a(x_a)}\otimes\ket{\psi_b(x_b)}$.
+
+This raise a question about symmetries under exchange operator. Fermionic and Bosonic behavior are also possible. When discussing heterosexuality, the state of gender identity has two states and two person with the same gender can not be put together. It is similar to the behavior of two electrons with the same spin can not be put together.\footnote{Under exotic conditions, the two electrons can crunched. blablablablabalbalbalablablablablabbbbbbbbbbbbblalallllalaalalal}
+
+
+
+
+
+
+
+\section{Operators}
+
+In quantum mechanics, z-component of spin operator for a spin $1/2$ particle is $\hat S_z = \hbar/2\sigma_z$, in which
+\begin{equation}
+\sigma_z = \begin{pmatrix}1 & 0\\ 0 & -1\end{pmatrix}
+\end{equation}
+is the matrix form in bases $\{ \ket{1/2},\ket{-1/2} \}$
+
+Spin up and spin down are the eigenvectors of this operator. As stated in the definition of class of emotions, the bases $\{\ket{\mathrm {Happy}}, \ket{\mathrm{Sad}} \}$ are eigenvectors of an operator, now denoted as $\hat E$. It's true that in this basis, $\sigma_z$ serves well as $\hat E$.
+
+The general requirements for operators are complicated. The method needed highly dependent on the details of the problem to be discussed. So we recommend to start over on every new topic. The method is for a better description of the reality. Thus take in whatever is useful.
+
+
+
+(Somehow, we need to show what should operators look like here. Constraints on operators? Basically we would like to follow exactly quantum mechanics.)
+
+
+
+
+
+
+
+--------------
+
+Similarly, $\sigma_z$ matrix can be used as the operator whose eigenvectors are $\ket{\mathrm{Happy}}$ and $\ket{\mathrm{Sad}}$ in $\{\ket{\mathrm{Happy}}, \ket{\mathrm{Sad}}\}$ bases. Other Pauli matrices can also be used here . 
+
+To show the difference of the two orthogonal states $\ket{\psi_1}$ and $\ket{\psi_2}$, we can calculate the average value of this $\sigma_z$ operator in $\{\ket{\mathrm{Happy}}, \ket{\mathrm{Sad}}\}$ bases.
+
+For state $\psi_1$,
+
+\begin{align}
+\avg{\sigma} &= \begin{pmatrix} 1 & 1 \end{pmatrix}
+\begin{pmatrix}
+1 & 0 \\
+0 & -1
+\end{pmatrix}
+\begin{pmatrix}
+1 \\ 1
+\end{pmatrix} \\
+& = 0
+\end{align}
+
+
+
+
+
+
+
+
+
+-----------------------------
+
+
+
+
+
+\begin{quote}
+The independent variables $x$ and $p$ of classical mechanics are represented by Hermitian operators $\hat X$ and $\hat P$ with the following matrix elements in the eigenbasis of $\hat X$,
+\begin{align}
+\bra{x}\hat X\ket{x'} &= x\delta(x-x') \\
+\bra{x}\hat P\ket{x'} &= -\mathrm i \hbar \delta'(x-x')
+\end{align}
+The operators corresponding to dependent variables $\omega(x,p)$ are given Hermitian operators
+
+\begin{equation}
+\hat \Omega(\hat X, \hat P) = \omega(x\rightarrow \hat X, p \rightarrow \hat P)
+\end{equation}
+
+\end{quote}
+
+This of course is not applicable to human emotions.
+
+
+
+
+
+
+
+
+
+
+
+---------------
+ theory of personalities?
+---------------
+
+
+
+
+\begin{thebibliography}{9}
+
+\bibitem{shankar}
+  R. Shankar,
+  \emph{Principles of Quantum Mechanics}.
+  Plenum Press, 
+  2nd Edition,
+  1994.
+
+
+
+\bibitem{quantumCognition}
+Diederik Aerts,
+\emph{Quantum Structure in Cognition}.
+Journal of Mathematical Psychology, 53, 314-348, 2009.
+
+\bibitem{jtc-jjb}
+John Cacioppo, Gary Berntson, 
+\emph{Relationship between attitudes and evaluative space: A critical review, with emphasis on the separability of positive and negative substrates}.
+Psychological Bulletin, 115, 401-423, 1994.
+
+\bibitem{happySad}
+Jeff T. Larsen, A. Peter McGraw, John T. Cacioppo,
+\emph{Can People Feel Happy and Sad at the Same Time?}
+Journal of Personality and Social Psychology, Vol 81, No. 4, 684-696, 2001.
+
+
+\bibitem{nielsen}
+ Michael Nielsen, Isaac Chuang,
+ \emph{Quantum Computation and Quantum Information}.
+ Cambridge University Press,
+ 2004.
+
+\bibitem{bloch}
+Felix Bloch,
+\emph{Nuclear induction}.
+Phys. Rev. 70(7-8) (460).
+
+\bibitem{hilbertEmotions}
+Partha Ghose
+\emph{A Hilbert Space Theory of Emotions}.
+
+
+
+
+\bibitem{citNeeded}
+\emph{citation needed!}
+
+
+\end{thebibliography}
+
+
+
+
+\end{document}
+%
+% ****** End of file aipsamp.tex ******
