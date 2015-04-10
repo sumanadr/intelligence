@@ -1,5 +1,5 @@
-# intelligence
-collective intelligence
+Collective intelligence
+==============================
 
 
 1. [MIT Center for Collective Intelligence](http://cci.mit.edu/)
