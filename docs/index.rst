@@ -37,6 +37,8 @@ ToC
 
    vocabulary.rst
    questions.rst
+   biology.rst
+   neuroscience.rst
    collectiveint.rst
    ghostgaia.rst
    ref.rst
