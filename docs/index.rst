@@ -3,15 +3,7 @@ Intelligence
 
 
 
-This is a story about a deeply hidden secret, one that killed many, one that saved many.
-
-
-
-Books & Acknowledgement
-==================================
-
-
-
+This is a story about a deeply hidden secret, one that killed many, one that saved many. Intelligence, the holy grail of human society, is the ultimate science.
 
 
 
@@ -21,13 +13,19 @@ Books & Acknowledgement
 Introduction & Reference
 ================================================
 
+This is a set of notes and discussions. The questions I ask are
+
+1. Are the social network and neural network computing? And how?
+2. Information propagate through the socieal netowrk while a lot of interesting phenomona happens. How to effectively block the propagation of information? Or enhence it?
+3. Can a network understand itself? This is related to complexity. As the degrees of freedom increase, the complexity might just be able to approach the infinite network. This is why we say science is only approximation.
+4. Does the world work according to differential equations? Not likely. Netowrks?
+5. Is there free will? I don't believe there is.
 
 
 
 
 
-
-ToC
+Table of Contents
 ======================
 
 
@@ -37,24 +35,12 @@ ToC
 
    vocabulary.rst
    questions.rst
-   biology.rst
-   neuroscience.rst
-   collectiveint.rst
-   ghostgaia.rst
+   neuroscience/index.rst
+   collective/index.rst
    ref.rst
 
 
 
-
-
-
-
-------
-
-------
-
-.. figure:: _static/images/cc_byncsa.png
-   :target: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
 
 
 
@@ -65,7 +51,7 @@ ToC
 This open source project is hosted on GitHub: `intelligence <https://github.com/emptymalei/intelligence>`_ .
 
 
-Read online: `Electrodynamics Notes <http://emptymalei.github.io/intelligence>`_ .
+Read online: `Intelligence <http://emptymalei.github.io/intelligence>`_ .
 
 Download the `Latest PDF Version <https://github.com/emptymalei/intelligence/raw/master/_build/latex/intelligence.pdf>`_ .
 
