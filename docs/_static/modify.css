@@ -45,6 +45,10 @@ padding: 10px !important;
 
 /*  For messange box */
 
+div.admonition {
+   color: inherit;
+}
+
 div.note {
 padding: 10px 15px 10px 50px !important;
 border: solid 2px lightgrey !important;
@@ -83,6 +87,50 @@ div.math {
 text-align:center;
 }
 
+/* Toggle Environment Begin */
+
+.toggle {
+    background: none repeat scroll 0 0 #e7f2fa;
+    padding: 12px;
+    line-height: 24px;
+    margin-bottom: 24px;
+}
+
+.toggle .admonition-title {
+    display: block;
+    clear: both;
+    cursor: pointer;
+    font-size: 110% !important;
+}
+
+.toggle .admonition-title:after {
+    content: " ▼";
+}
+
+.toggle .admonition-title.open:after {
+    content: " ▲";
+}
+
+.toggle p:last-child {
+    margin-bottom: 0;
+}
+
+/* Toggle Environment End */
+
+
+
+/* Citation Table Styles BEGIN */
+
+.table.citation {
+   margin-top: 5em !important;
+   border-left: none !important;
+}
+.table>tbody>tr>td {
+   color: inherit;
+    border-top: none !important;
+}
+
+/* Citation Table Styles END */
 
 #sourcelink {
 margin-top: 19.5px;

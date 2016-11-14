@@ -12,6 +12,7 @@ There is a deeply hidden secret, one that killed many, one that saved many. Inte
    vocabulary.rst
    questions.rst
    neuroscience/index.rst
+   equation-solving-in-neuroscience/index.rst
    collective/index.rst
    ref.rst
    acknowledgement.rst
