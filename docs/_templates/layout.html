@@ -1,7 +1,7 @@
 {% extends "!layout.html" %} {% block extrahead %}
 <script type="text/javascript">
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_setAccount', {{ theme_analytics_id }}]);
     _gaq.push(['_trackPageview']);
 
     (function() {
@@ -13,7 +13,8 @@
         s.parentNode.insertBefore(ga, s);
     })();
 </script>
-{{ super() }} {% endblock %} {% set css_files = css_files + ["_static/modify.css"] %} {% set css_files = css_files + ["_static/css/rrssb.css"] %} {% set script_files = script_files + ["_static/js/rrssb.js"] %} {% block footer %}
+{{ super() }} {% endblock %} {% set css_files = css_files + ["_static/modify.css"] %}
+{% block footer %}
 
 <!-- <div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
 <div id="disqus_thread"></div>
@@ -38,21 +39,19 @@
 
 <div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
     <p class="pull-right">
-        <a href="#">Back to top</a>
+        <a href="#"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
 
     </p>
     <p>
-        <span>© Copyright 2016, Lei Ma.</span>|
-        <a href="https://github.com/emptymalei/StatisticalPhysics">On GitHub</a>|
+        <span>© {{ copyright }}</span>|
+        <a href={{ thme_project_link }}>On GitHub</a>|
         <span>Created with
-            <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
+            <a href="http://www.sphinx-doc.org">Sphinx</a></span>
     </p>
 
     <hr>
 
-    
+
     <script>
         window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
     </script>
