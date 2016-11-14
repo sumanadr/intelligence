@@ -14,5 +14,6 @@ There is a deeply hidden secret, one that killed many, one that saved many. Inte
    neuroscience/index.rst
    equation-solving-in-neuroscience/index.rst
    collective/index.rst
+   random-thoughts.rst
    ref.rst
    acknowledgement.rst
