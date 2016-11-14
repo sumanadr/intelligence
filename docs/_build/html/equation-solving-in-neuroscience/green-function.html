@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Green’s Function Method &mdash; Intelligence</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.6/readable/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Intelligence" href="../index.html" />
+    <link rel="up" title="Equation Solving in Neuroscience" href="index.html" />
+    <link rel="next" title="Collective Intelligence" href="../collective/index.html" />
+    <link rel="prev" title="Equation Solving in Neuroscience" href="index.html" />
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+ 
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/intelligence.png"></span>
+          Intelligence</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Chapters <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience/index.html">Neuroscience</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/biology.html">Biology</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Equation Solving in Neuroscience</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Green&#8217;s Function Method</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../collective/index.html">Collective Intelligence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../collective/refs.html">Collective intelligence References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Green&#8217;s Function Method</a><ul>
+<li><a class="reference internal" href="#cable-equation">Cable Equation</a></li>
+<li><a class="reference internal" href="#solutions-to-cable-equation">Solutions to Cable Equation</a><ul>
+<li><a class="reference internal" href="#stationary-solution">Stationary Solution</a></li>
+<li><a class="reference internal" href="#physical-meaning">Physical Meaning</a></li>
+<li><a class="reference internal" href="#non-stationary-solution">Non-stationary Solution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="index.html" title="Previous Chapter: Equation Solving in Neuroscience"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Equation Solv...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../collective/index.html" title="Next Chapter: Collective Intelligence"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Collective In... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/equation-solving-in-neuroscience/green-function.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="green-s-function-method">
+<h1>Green&#8217;s Function Method<a class="headerlink" href="#green-s-function-method" title="Permalink to this headline">¶</a></h1>
+<p>In this section, we demonstrate Green&#8217;s function method of solving differential equations.</p>
+<div class="section" id="cable-equation">
+<h2>Cable Equation<a class="headerlink" href="#cable-equation" title="Permalink to this headline">¶</a></h2>
+<p>The cable equation is written as <a class="reference internal" href="#gerstner2002" id="id1">[Gerstner2002]</a></p>
+<div class="math" id="equation-eqn-cable-equation-potential">
+<p><span class="eqno">(1)</span><img src="../_images/math/eaac57bab087b6ffe616c6ba689f15f8b1296799.png" alt="\frac{\partial}{\partial t} u(t,x) = \frac{\partial^2}{\partial x^2} u(t,x) - u(t,x) + i_{e}(t,x),"/></p>
+</div><p>or</p>
+<div class="math" id="equation-eqn-cable-equation-current">
+<p><span class="eqno">(2)</span><img src="../_images/math/272e300125e8c876f7668b698a8c2582cc81bf04.png" alt="\frac{\partial}{\partial t} i(t,x) = \frac{\partial^2}{\partial x^2} i(t,x) - i(t,x) + \frac{\partial}{\partial x} i_e (t,x),"/></p>
+</div><p>where <img class="math" src="../_images/math/48829677c118df6d2e21b4c83b52c0384a57fea5.png" alt="t" style="vertical-align: 0px"/>, <img class="math" src="../_images/math/26f0172a6b5795311d831199184f64ce155c1d58.png" alt="x" style="vertical-align: 0px"/>, <img class="math" src="../_images/math/003e46f26d1d4d4ab454275bc41f376ad0983507.png" alt="i" style="vertical-align: 0px"/>, <img class="math" src="../_images/math/6ec4f8bb7122c250e9224e764ce01fccc97853d1.png" alt="i_e" style="vertical-align: -3px"/> are all renormalized unit less quantities. For the meaning and definition of them, ref. page 55 of Gerster 2002 <a class="reference internal" href="#gerstner2002" id="id2">[Gerstner2002]</a>.</p>
+</div>
+<div class="section" id="solutions-to-cable-equation">
+<h2>Solutions to Cable Equation<a class="headerlink" href="#solutions-to-cable-equation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stationary-solution">
+<h3>Stationary Solution<a class="headerlink" href="#stationary-solution" title="Permalink to this headline">¶</a></h3>
+<p>Equation <a href="#equation-eqn-cable-equation-potential">(1)</a> can be solved for stationary case, which is</p>
+<div class="math" id="equation-eqn-cable-equation-stationary-equation-potential">
+<p><span class="eqno">(3)</span><img src="../_images/math/831b7279a5905f736f238b045f00ca548f590ad2.png" alt="\frac{\partial^2}{\partial x^2} u(t,x) - u(t,x) =- i_{e}(t,x) ."/></p>
+</div><p>While many methods can be used to solve second order nonhonogenerous differential equations, Green&#8217;s function is the most general and useful one.</p>
+<div class="note admonition">
+<p class="first admonition-title">Definition of Green&#8217;s Function</p>
+<p>The idea of Green&#8217;s function is very simple. TO solve a general solution of equation</p>
+<div class="math" id="equation-eqn-green-function-example">
+<p><span class="eqno">(4)</span><img src="../_images/math/972764e8d19f3c912dc9a0826a54b96f03d385e0.png" alt="\frac{d^2}{d x^2} y(x) + y(x) = f(x),"/></p>
+</div><p>where <img class="math" src="../_images/math/f6cfa0abc53a6bea4a204741ebe387ed2cd3e6fa.png" alt="f(x)" style="vertical-align: -4px"/> is the source and some given boundary conditions. To save ink we define</p>
+<div class="math">
+<p><img src="../_images/math/cec778748842fb1b63fc84e2e79112421660c50e.png" alt="\hat L_x = \frac{d^2}{dx^2} + 1,"/></p>
+</div><p>which takes a function <img class="math" src="../_images/math/4bdbe1ec2ab8e7102ead44d32ede769b11171f47.png" alt="y(x)" style="vertical-align: -4px"/> to <img class="math" src="../_images/math/f6cfa0abc53a6bea4a204741ebe387ed2cd3e6fa.png" alt="f(x)" style="vertical-align: -4px"/>, i.e.,</p>
+<div class="math" id="equation-eqn-green-function-example-1">
+<p><span class="eqno">(5)</span><img src="../_images/math/c72b97cf0d4593f6ed12f3fbd7906041f1dbd729.png" alt="\hat L_x y(x) = f(x)."/></p>
+</div><p>Now we define the Green&#8217;s function to be the solution of equation <a href="#equation-eqn-green-function-example-1">(5)</a> but replacing the source with delta function <img class="math" src="../_images/math/25ba513ca8671aaa5e194fcce7e69f1b0ec0bf26.png" alt="\delta(x-z)" style="vertical-align: -4px"/></p>
+<div class="math">
+<p><img src="../_images/math/de398f8faf75520e092635fd0c1a6deedf2b119c.png" alt="\hat L_x G(x,z) = \delta(z-x)."/></p>
+</div><p>Why do we define this function? The solution to equation <a href="#equation-eqn-green-function-example">(4)</a> is given by</p>
+<div class="math">
+<p><img src="../_images/math/4a5ebc868e2ac17d0d83ebf64eabdf19a7bfb108.png" alt="y(x) = \int G(x,z) f(z) dz."/></p>
+</div><p>To verify this conclusion we plug it into the LHS of equation <a href="#equation-eqn-green-function-example">(4)</a></p>
+<div class="math">
+<p><img src="../_images/math/22b18d7d97489f0801b9c9724d987e0bbdc6360d.png" alt="&amp; \left(\frac{d^2}{dx^2} +1 \right) \int G(x,z) f(z) dz \\
+=&amp; \int \left[ \left(\frac{d^2}{dx^2} +1 \right) G(x,z) \right] f(z) dz \\
+=&amp; \int \delta(z-x) f(z) dz \\
+=&amp; f(x),"/></p>
+</div><p>in which we used one of the properties of Dirac delta distribution</p>
+<div class="math">
+<p><img src="../_images/math/d73affaf9e52f17ba751766e39d59bc5998edc95.png" alt="\int f(z) \delta(z-x) dz = f(x)."/></p>
+</div><p>Also note that delta function is even, i.e., <img class="math" src="../_images/math/39ea362936107d859a3ddd9ec8e8c815e4ae0080.png" alt="\delta(-x) = \delta(x)" style="vertical-align: -4px"/>.</p>
+<p>So all we need to do to find the solution to a standard second differential equation</p>
+<div class="math">
+<p><img src="../_images/math/f7dbddf490f426d09fa78259ec7410403c6f77c4.png" alt="\left( \frac{d^2}{dx^2} + p(x) \frac{d}{dx} + q(x) \right)y(x) = f(x)"/></p>
+</div><p>is do the following.</p>
+<ol class="arabic simple">
+<li>Find the general form of Green&#8217;s function (GF) for operator for operator <img class="math" src="../_images/math/b1a9348249f2719b691ff9a6a47ebafcad98345b.png" alt="\hat L_x" style="vertical-align: -3px"/>.</li>
+<li>Apply boundary condition (BC) to GF. This might be the most tricky part of this method. Any ways, for a BC of the form <img class="math" src="../_images/math/09a30a7fb596927897efb74779d8884bf6b09cff.png" alt="y(a)=0=y(b)" style="vertical-align: -4px"/>, we can just choose it to vanish at <img class="math" src="../_images/math/404384af1bb507eefb5372ff789a4198a2c2ba99.png" alt="a" style="vertical-align: 0px"/> and <img class="math" src="../_images/math/6525f01d16725262ba29110ddddd5956129ccf20.png" alt="b" style="vertical-align: 0px"/>. Otherwise we can move this step to the end when no intuition is coming to our mind.</li>
+<li>Continuity at <img class="math" src="../_images/math/80ea213938f0b306643e6db6fe3c71e251fc069b.png" alt="n-2" style="vertical-align: 0px"/> order of derivatives at point <img class="math" src="../_images/math/8b26fafadaf2394ef1844f56edf3c8e02ad4bba2.png" alt="x=z" style="vertical-align: 0px"/>, that is</li>
+</ol>
+<div class="math">
+<p><img src="../_images/math/998dff1729b8d8cdeeed011448368a4189b5d68a.png" alt="G^{(n-2)}(x,z) \vert_{x&lt;z} = G^{(n-2)} \vert _{x&gt;z} ,\qquad \text{at } x= z."/></p>
+</div><ol class="last arabic" start="4">
+<li><p class="first">Discontinuity of the first order derivative at <img class="math" src="../_images/math/8b26fafadaf2394ef1844f56edf3c8e02ad4bba2.png" alt="x=z" style="vertical-align: 0px"/>, i.e.,</p>
+<div class="math">
+<p><img src="../_images/math/4abb6a531a665c662416d042775ccc150829f693.png" alt="G^{(n-1)}(x,z)\vert_{x&gt;z} - G^{(n-1)}(x,z)\vert_{x&lt;z} = 1, \qquad \text{at } x= z."/></p>
+</div><p>This condition comes from the fact that the integral of Dirac delta distribution is Heaviside step function.</p>
+</li>
+<li><p class="first">Solve the coefficients to get the GF.</p>
+</li>
+<li><p class="first">The solution to an inhomogeneous ODE  <img class="math" src="../_images/math/52b78091332ee5647ee8b525ceb74c3a291e507e.png" alt="y(x)=f(x)" style="vertical-align: -4px"/> is given immediately by</p>
+<div class="math">
+<p><img src="../_images/math/4a5ebc868e2ac17d0d83ebf64eabdf19a7bfb108.png" alt="y(x) = \int G(x,z) f(z) dz."/></p>
+</div><p>If we haven&#8217;t done step 2 we know would have some unkown coefficients which can be determined by the BC.</p>
+</li>
+</ol>
+</div>
+<div class="note admonition">
+<p class="first admonition-title">How to Find Green&#8217;s Function</p>
+<p>So we are bound to find Green&#8217;s function. Solving a nonhonogeneous equation with delta as source is as easy as solving homogeneous equations.</p>
+<p>We do this by demonstrating an example differential equation. The problem we are going to solve is</p>
+<div class="math">
+<p><img src="../_images/math/646f772a1276c0bf9fabd7dd1a3a395bbca34225.png" alt="\left(\frac{d^2}{dx^2} + \frac{1}{4}\right) y(x) = f(x),"/></p>
+</div><p>with boundary condition</p>
+<div class="math" id="equation-eqn-green-function-example2-bc">
+<p><span class="eqno">(6)</span><img src="../_images/math/9d4ce12accd1f7be8e636df7a5c1c2b090b6f455.png" alt="y(0) = y(\pi) = 0."/></p>
+</div><p>For simplicity we define</p>
+<div class="math">
+<p><img src="../_images/math/6d7960baec99b580815c008103655b9e44b6e5a6.png" alt="\hat L_x = \frac{d^2}{dx^2} + \frac{1}{4}."/></p>
+</div><p><strong>First of all we find the GF associated with</strong></p>
+<div class="math">
+<p><img src="../_images/math/de398f8faf75520e092635fd0c1a6deedf2b119c.png" alt="\hat L_x G(x,z) = \delta(z-x)."/></p>
+</div><p>We just follow the steps.</p>
+<ol class="last arabic">
+<li><p class="first">The general solution to</p>
+<div class="math">
+<p><img src="../_images/math/62bc791cdb4cdf97bc6d1a8ccfa12b497148ed94.png" alt="\hat L_x G(x,z) = 0"/></p>
+</div><p>is given by</p>
+<div class="math">
+<p><img src="../_images/math/a4d4589b6681fe278130d3d4c821ca21f4717fe0.png" alt="G(x,z) = \begin{cases}
+A_1\cos (x/2) + B_1 \sin(x/2), &amp; \qquad x \leq z, \\
+A_2\cos (x/2) + B_2 \sin(x/2), &amp; \qquad x \geq z.
+\end{cases}"/></p>
+</div></li>
+<li><p class="first">Continuity at <img class="math" src="../_images/math/8b26fafadaf2394ef1844f56edf3c8e02ad4bba2.png" alt="x=z" style="vertical-align: 0px"/> for the 0th order derivatives,</p>
+<div class="math">
+<p><img src="../_images/math/86d6b57edb60a001d34a90a9485c7dce87463487.png" alt="G(z_-,z) = G(z_+,z),"/></p>
+</div><p>which is exactly</p>
+<div class="math" id="equation-eqn-green-function-example2-continuity">
+<p><span class="eqno">(7)</span><img src="../_images/math/83d4249f1165f2a47e16ce1563bf8855e70f656c.png" alt="A_1\cos(z/2) + B_1 \sin(z/2) = A_2 \cos(z/2) + B_2\sin(z/2)."/></p>
+</div></li>
+<li><p class="first">Discontinuity condition at 1st order derivatives,</p>
+<div class="math">
+<p><img src="../_images/math/83d91f70c398d38ba59a68c7fd714390c348f35f.png" alt="\left.\frac{d}{dx} G(x,z)  \right\vert_{x=z_+} - \left.\frac{d}{dx} G(x,z)  \right\vert_{x=z_-} = 1,"/></p>
+</div><p>which is</p>
+<div class="math" id="equation-eqn-green-function-example2-discontinuity">
+<p><span class="eqno">(8)</span><img src="../_images/math/41b85b800d8a7608884df16f280fd0ee9ebe8672.png" alt="-\frac{A_2}{2}\sin\frac{z}{2} + \frac{B_2}{2} \cos\frac{z}{2} - \left( -\frac{A_1}{2}\sin\frac{z}{2} + \frac{B_1}{2}\cos\frac{z}{2} \right) = 1"/></p>
+</div><p>Now we combine <a href="#equation-eqn-green-function-example2-continuity">(7)</a> and <a href="#equation-eqn-green-function-example2-discontinuity">(8)</a> to eliminate two degrees of freedom. For example, we can solve out <img class="math" src="../_images/math/f9d6937c4b155d251ea6ac41fc063592a4522f04.png" alt="A_1" style="vertical-align: -4px"/> and <img class="math" src="../_images/math/94a8efbf3c9aa6cd5e0ce4a6b5f4ecf8be55700c.png" alt="B_1" style="vertical-align: -4px"/> as a function of all other coefficients. Here we have</p>
+<div class="math">
+<p><img src="../_images/math/5b4a712629e1beead2c49155e9f65764f4977566.png" alt="B_1 &amp;= \frac{ - 2/\sin(z/2) }{\tan(z/2) + \cot(z/2)} + B_2 , \\
+A_1 &amp;= A_2 + B_2(\tan(z/2)-1) + \frac{2}{\sin(z/2) + \cot(z/2)\cos(z/2)}."/></p>
+</div></li>
+<li><p class="first">Write down the form solution using <img class="math" src="../_images/math/18fdd24765c3ed7662f591c48deec0a147eda4a4.png" alt="y(x) = \int G(x,z) f(z) dz" style="vertical-align: -6px"/>. Then we still have two unknown free coefficients <img class="math" src="../_images/math/0346e8f699fd5649397dd113cfa9a9bcb8f09c99.png" alt="A_2" style="vertical-align: -3px"/> and <img class="math" src="../_images/math/5c9e73ead286085a36fb6fa1a9ed15761ed6f94d.png" alt="B_2" style="vertical-align: -3px"/>, which in fact is to be determined by the BC equation <a href="#equation-eqn-green-function-example2-bc">(6)</a>.</p>
+</li>
+</ol>
+</div>
+<p>The stationary equation <a href="#equation-eqn-cable-equation-stationary-equation-potential">(3)</a> can be written as</p>
+<div class="math">
+<p><img src="../_images/math/130c37397a95424ab1222b964fd959d7e8661702.png" alt="\hat L_x u(x) = - i_e(t,x),"/></p>
+</div><p>where <img class="math" src="../_images/math/876c8ec094ced2499d5def6a48d0f37d79e5cdde.png" alt="\hat L_x = \frac{d^2}{dx^2} -1" style="vertical-align: -6px"/>. The boundary condition is the vanishing wave at infinity <img class="math" src="../_images/math/50af6055fba7ca8b99270fce65f20e7b23ceadbe.png" alt="u(\pm\infty)=0" style="vertical-align: -4px"/>. As we are talking about stationary equation, the source should be time-independent, thus we take only a one dimension Dirac distribution <img class="math" src="../_images/math/217865ea7215670df0c3d1b17b07a2d9c7bc3233.png" alt="\delta(x)" style="vertical-align: -4px"/> to solve for GF.</p>
+<p>The general Green&#8217;s function is <a class="footnote-reference" href="#id5" id="id3">[1]</a></p>
+<div class="math">
+<p><img src="../_images/math/33f45b58ffbe4c32761ca190bb3352882a727d52.png" alt="G(x,x') = \begin{cases}
+C_1 e^{-x} + D_1 e^{x}, &amp; \qquad x\leq z,\\
+C_2 e^{-x} + D_2 e^{x}, &amp; \qquad x\geq z.
+\end{cases}"/></p>
+</div><div class="note admonition">
+<p class="first admonition-title">Solving Homogeneous Equation</p>
+<p>The corresponding homogeneous equation is</p>
+<div class="math">
+<p><img src="../_images/math/4c9795d9377792d27a404a93695d310b3dc821ed.png" alt="\frac{d^2}{dx^2} u(x) - u(x) = 0."/></p>
+</div><p>To find the general solution we assume it has the form</p>
+<div class="math">
+<p><img src="../_images/math/46d1d1452ec90cf8382e08f873f239fa4449c805.png" alt="u(x) = A e^{\omega x},"/></p>
+</div><p>which is then plugged back into the equation,</p>
+<div class="math">
+<p><img src="../_images/math/b2785fac07ab7b8c2c62108b4041e8f681faa38e.png" alt="(\omega^2 - 1) u(x) = 0."/></p>
+</div><p>We require <img class="math" src="../_images/math/afcf5c2dcc7482bc622683b084ad0083cf4e7539.png" alt="\omega^2-1=0" style="vertical-align: -1px"/> to make the solution most general, which leads to</p>
+<div class="math">
+<p><img src="../_images/math/9aa4797a80545c5a90549faa0a62d96a20a70a09.png" alt="\omega = \pm 1."/></p>
+</div><p>Finally we write down the general solution to this homogeneous equation,</p>
+<div class="last math">
+<p><img src="../_images/math/696c8117d8c61acf056dbd7c4f5d4b6f2232f88a.png" alt="u(x) = C e^{x} + D e^{-x}."/></p>
+</div></div>
+<p>In this simple case, BC can be applied to Green&#8217;s function first <a class="footnote-reference" href="#id6" id="id4">[2]</a>, which means</p>
+<div class="math">
+<p><img src="../_images/math/e76284083b3bf4aab9be485906fc02a3408d466a.png" alt="G(-\infty,x') &amp;= 0, \\
+G(\infty,x') &amp;= 0."/></p>
+</div><p>These conditions can significantly simplify the GF,</p>
+<div class="math">
+<p><img src="../_images/math/0c737084d6d8274f68fa239bdc62cba74ba4f0f2.png" alt="G(x,x') = \begin{cases}
+D_1 e^{x}, &amp; \qquad x&lt;x',\\
+C_2 e^{-x}, &amp; \qquad x&gt;x'.
+\end{cases}"/></p>
+</div><p>Then we use the continuity condition and discontinuity condition,</p>
+<div class="math">
+<p><img src="../_images/math/d1155feaa3602831365cc33bb5474b69e1bd85a3.png" alt="G(x'_-,x') - G(x'_+,x') &amp;= 0\\
+\left.\frac{d}{dx}G(x,x')\right\vert_{x=x'_+} - \left.\frac{d}{dx}G(x,x')\right\vert_{x=x'_-} &amp;= 1,"/></p>
+</div><p>which is basically</p>
+<div class="math">
+<p><img src="../_images/math/1f64302edb801ac900ab4d965562738aae9e769a.png" alt="D_1 e^{x'} - C_2 e^{-x'} &amp;= 0,\\
+- C_2 e^{-x'} - D_1 e^{x'} &amp; =1."/></p>
+</div><p>Solving out the coefficients, we get</p>
+<div class="math">
+<p><img src="../_images/math/fc25e8c68f15133651f9862ad4abb7f42c4f84ba.png" alt="D_1 &amp; = \frac{1}{2}e^{-x'},\\
+C_2 &amp;= \frac{1}{2}e^{x'}."/></p>
+</div><p>Then we reached the complete and final GF,</p>
+<div class="math">
+<p><img src="../_images/math/936a1ac78426e849110544252e62165476cfc5e2.png" alt="G(x,x') = \begin{cases}
+\frac{1}{2}e^{x-x'}, &amp; \qquad x&lt;x'\\
+\frac{1}{2}e^{x' - x}. &amp; \qquad x&gt;x'
+\end{cases}"/></p>
+</div><p>Given any general source <img class="math" src="../_images/math/8c9511f25754730b1b70f1fb261287f2277296a6.png" alt="-i_e(t,x)" style="vertical-align: -4px"/>, we can write down the solution</p>
+<div class="math">
+<p><img src="../_images/math/9bab8e33802e8074082c6a02ba5374785356ace9.png" alt="u(x) = \int G(x,x') (-i_e(t,x') ) dx'."/></p>
+</div><p>As a verification, we integrate out for <img class="math" src="../_images/math/f88c4a9c1529722328966234d282e94f44053001.png" alt="i_e(t,x) = 1" style="vertical-align: -4px"/>,</p>
+<div class="math">
+<p><img src="../_images/math/6b18c7642f37392301f39ee8cd7565bc78ac55a6.png" alt="u(x) = -\int_{-\infty}^{x}  \frac{1}{2}e^{x'-x} dx' - \int_{x}^{\infty} \frac{1}{2}e^{x - x'} dx' = 1,"/></p>
+</div><p>which is exactly the solution given by Mathematica and makes sense.</p>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td>In fact this is can be obtained by using the Fourier transform method.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[2]</a></td><td>Because the only possibility to make the integral <img class="math" src="../_images/math/7b9b782fb256ce2d85dcae64c1883c0c11b57e30.png" alt="u(\pm\infty)=\int G(\pm\infty,x') dx'=0" style="vertical-align: -6px"/> satisfy <img class="math" src="../_images/math/50af6055fba7ca8b99270fce65f20e7b23ceadbe.png" alt="u(\pm\infty)=0" style="vertical-align: -4px"/> is to make sure GF vanish on the boundaries.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="physical-meaning">
+<h3>Physical Meaning<a class="headerlink" href="#physical-meaning" title="Permalink to this headline">¶</a></h3>
+<p>So far we have been dealing with math. What is the actual meaning of GF? To dive into this question we need to review the equation for GF, in this case,</p>
+<div class="math">
+<p><img src="../_images/math/0a4a9fdc949d1b2036e7dfbab1f427ccd0387bb3.png" alt="\left(\frac{d^2}{dx^2} -1\right) u(x) = \delta(x'-x)."/></p>
+</div><p>On the RHS, source term is a delta function, which is just a stimulation to the system at point <img class="math" src="../_images/math/478026268856f5ac1cec50566d522d32bac3dba0.png" alt="x'" style="vertical-align: 0px"/>. The textbook shows a graph <a class="footnote-reference" href="#id9" id="id7">[3]</a> for the case <img class="math" src="../_images/math/b502528d9db0c9530a5c5259c2fc122f6a872c01.png" alt="x'=0" style="vertical-align: 0px"/>, where we see the stimulation is given for point <img class="math" src="../_images/math/b502528d9db0c9530a5c5259c2fc122f6a872c01.png" alt="x'=0" style="vertical-align: 0px"/> and the potential drops as we deviate from the stimulated point.</p>
+<p>In a stimulation-response system, one of the most important properties is the resonance width, or reaction width, which means the deviation required for the amplitude to drop to <img class="math" src="../_images/math/8d894d266b10ea1c2890798ed50c788989c423eb.png" alt="1/e" style="vertical-align: -5px"/> of the peak value. In this stationary solution, the distance is 1 in renormalized unit. To transform back to to SI unit, recall that the characteristic length is this problem is <img class="math" src="../_images/math/ff747f680fae3daeb2be2af6b27b70c0e72a7b19.png" alt="\lambda = \sqrt{\frac{r_T}{r_L}}" style="vertical-align: -14px"/>.</p>
+<p>Just to build a picture, this length is around <a class="footnote-reference" href="#id10" id="id8">[4]</a></p>
+<div class="math">
+<p><img src="../_images/math/1cf8e6302007a9ca16d2b78f312a2f5443994fbd.png" alt="\lambda = \sqrt{ \frac{r_T}{r_L}} = \sqrt{ \frac{30\mathrm{k\Omega\cdot cm^2}/(2\pi \rho)}{ 100 \mathrm{k\Omega\cdot cm}/(2\pi \rho) } } = \sqrt{ \frac{5\times 10^{11} \mathrm{\Omega \cdot \mu m} }{ 3\times 10^{5} \mathrm{\Omega \cdot \mu m^{-1}}  } } = 1.2\mathrm{mm}"/></p>
+</div><table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[3]</a></td><td>Wulfram Gerstner and Werner M. Kistler, Spiking Neuron Models, (2002), Fig. 2.17.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[4]</a></td><td>Since opening of ion channesl can significantly change the transverse conductivity, this estimation can change significantly in different situations.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="non-stationary-solution">
+<h3>Non-stationary Solution<a class="headerlink" href="#non-stationary-solution" title="Permalink to this headline">¶</a></h3>
+<p>To solve the most general non-homogeneous cable equation even for non-stationary case, we have to introduce a two-dimensional Dirac distribution <img class="math" src="../_images/math/439a36a75ccb7b332a88d2df4e11b5c583e8b031.png" alt="\delta^2(t,x) = \delta(t)\delta(x)" style="vertical-align: -4px"/>.</p>
+<p>Green&#8217;s function for the most general case should satisfy <a class="reference internal" href="#gerstner2002" id="id11">[Gerstner2002]</a></p>
+<div class="math">
+<p><img src="../_images/math/01224844e88ced2fb383475fc9e3bbbb36555a4e.png" alt="\frac{\partial}{\partial t} G(t,t';x,x') - \frac{\partial^2}{\partial x^2}  G(t,t';x,x') +  G(t,t';x,x') = \delta(t'-t)\delta(x'-x)."/></p>
+</div><p>Again to save ink we define</p>
+<div class="math">
+<p><img src="../_images/math/5a472078a8fab90f2623fa40d112981f6af05f57.png" alt="\hat L_{t,x} = \hat L_t - \hat L_x,"/></p>
+</div><p>where <img class="math" src="../_images/math/0d13b34e9f1ec4849c608fd6b3ffa639f194e67b.png" alt="\hat L_t = \frac{\partial}{\partial t}" style="vertical-align: -7px"/> and <img class="math" src="../_images/math/b0683c71c80eab73144a12f49a83dd5f2428fbc1.png" alt="\hat L_x = \frac{\partial^2}{\partial x^2} - 1" style="vertical-align: -7px"/>.</p>
+<p>The trick is to solve for time dependence first by Fourier transforming the equation to frequency space. To achieve that, we define</p>
+<div class="math" id="equation-eqn-green-function-fourier-transform">
+<p><span class="eqno">(9)</span><img src="../_images/math/ac3695656011fbc7c23569437c68e48cba6fb2b5.png" alt="G(t,t';x,x') = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty G(t,t';k,x')e^{ikx}dk."/></p>
+</div><p>On the other hand, Dirac delta is Fourier transformed to</p>
+<div class="math" id="equation-eqn-dirac-delta-fourier-transform">
+<p><span class="eqno">(10)</span><img src="../_images/math/816480335d3bee25a33bdfce16b1ddb1a83202a2.png" alt="\delta(k) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \delta(\bar x) e^{- ik \bar x} d\bar x = \frac{1}{\sqrt{2\pi}} ,"/></p>
+</div><p>which infact gives one of the representations of Dirac delta distribution</p>
+<div class="math">
+<p><img src="../_images/math/b616f5da0ae4dda2bb1c01593b349f32b1c04cc3.png" alt="\delta(\bar x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \frac{1}{\sqrt{2\pi}} e^{ik \bar x} dk ."/></p>
+</div><p>Applying the transforms of <a href="#equation-eqn-green-function-fourier-transform">(9)</a> and <a href="#equation-eqn-dirac-delta-fourier-transform">(10)</a> to the equation we have</p>
+<div class="math">
+<p><img src="../_images/math/fb4d511ead22844b315df7484c4b6fe21405d0c4.png" alt="\hat L_{t,x}\left( \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty G(t,t';k,x')  e^{i kx} dk \right) = \delta(t'-t) \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \frac{1}{\sqrt{2\pi}}  e^{i k(x'-x)} dk,"/></p>
+</div><p>which becomes</p>
+<div class="math">
+<p><img src="../_images/math/9ead46d8d38a0c3f081a990451aee901d89684a2.png" alt="&amp;\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \frac{\partial}{\partial t}  G(t,t';k,x') e^{ikx}dk - \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty  G(t,t';k,x') \frac{\partial^2}{\partial x^2} e^{ikx}dk  \\
+&amp;+  \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty G(t,t';k,x')e^{ikx}dk = \delta(t'-t) \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \frac{1}{\sqrt{2\pi}} e^{ik(x'-x)} dk,"/></p>
+</div><p>which is then simplified by removing the integral and common parts</p>
+<div class="math">
+<p><img src="../_images/math/56d5e41dc9dc3e528ec4e2c1f30315f33f6ae1ba.png" alt="\frac{\partial}{\partial t} G(t,t';k,x')  + k^2 G(t,t';k,x') + G(t,t';k,x') = \delta(t'-t) \frac{1}{\sqrt{2\pi}} ."/></p>
+</div><p>Then we solve this first order differential equation.</p>
+<table class="docutils citation" frame="void" id="gerstner2002" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Gerstner2002]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>, <a class="fn-backref" href="#id11">3</a>)</em> Wulfram Gerstner and Werner M. Kistler, Spiking Neuron Models, (2002).</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<!-- <div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'statmech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div> -->
+
+<hr>
+
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+    <p class="pull-right">
+        <a href="#"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
+
+    </p>
+    <p>
+        <span>© 2016, Lei Ma</span>|
+        <a href=>On GitHub</a>|
+        <span>Created with
+            <a href="http://www.sphinx-doc.org">Sphinx</a></span>
+    </p>
+
+    <hr>
+
+
+    <script>
+        window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+
+</div>
+
+
+  </body>
+</html>
