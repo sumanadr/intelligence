@@ -44,7 +44,11 @@
     </p>
     <p>
         <span>© {{ copyright }}</span>|
-        <a href={{ thme_project_link }}>On GitHub</a>|
+        <a href={{ thme_project_link }}>Source on GitHub</a>|
+        {%- if show_source and has_source and sourcename %}
+       <a href="{{ pathto('_sources/' + sourcename, true)|e }}"
+           rel="nofollow">{{ _('Page Source') }}</a></li>|
+       {%- endif %}
         <span>Created with
             <a href="http://www.sphinx-doc.org">Sphinx</a></span>
     </p>
