@@ -1,0 +1,97 @@
+Fourier Transform and Laplace Tranform
+****************************************************
+
+Fourier Transform
+===================
+
+
+
+Laplace Transform
+====================
+
+
+Laplace transform is useful in equation solving. By definition, Laplace transform transforms a function :math:`f(x)` defined on :math:`x\geq 0` into another function by calculating the convolution
+
+.. math::
+   F(s) = \int_0^\infty e^{-s x} f(x) dx,
+
+or symbolically,
+
+.. math::
+   F(s) = \mathcal L_s (f(x)).
+
+
+
+
+A table of important Laplace transforms can be found on `mathworld.wolfram.com <http://mathworld.wolfram.com/LaplaceTransform.html>`_. Here we steal some of the commonly used.
+
+.. math::
+   \mathcal L_s (1) =& \frac{1}{s}\\
+   \mathcal L_s (x^n) =& \frac{n!}{s^{n+1}}\\
+   \mathcal \sin(kx) =& \frac{k}{k^2+s^2} \\
+   \mathcal \cos(kx) =& \frac{s}{k^2+s^2}.
+
+It can also be applied to differentials.
+
+.. math::
+   \mathcal L_s \left(\frac{d f(x)}{dx}\right) =& s \mathcal L_s (f(x)) - f(0) \\
+   \mathcal L_s \left(\frac{d^2f(x)}{dx^2}\right) =& s^2 \mathcal L_s (f(x)) - s f(0) - \left.\frac{df(x)}{dx}\right\vert_{x=0}.
+
+.. admonition:: Laplace Transform of Differentials
+   :class: toggle
+
+   The general form is
+
+   .. math::
+      \mathcal L_s (f^{(n)}(x)) = s^n \mathcal L (f(x)) - \sum_{m=1}^n s^{n-m} f^{(m-1)}(0).
+
+
+
+
+Laplace transform is useful in solving differential equations because it transforms many equations into fractions and polynomials. A simple example is the harmonic osicllators. The equation of motion is
+
+.. math::
+   \ddot x(t) = - \omega^2 x(t),
+
+
+which is transformed into
+
+.. math::
+   s^2 X(s) - s x(0) - \dot x(0) = - \omega^2 X(s).
+
+The solution to it is
+
+.. math::
+   X(s) = \frac{ s x(0) + \dot x(0)}{s^2 + \omega^2} = x(0)\frac{ s }{s^2 + \omega^2} + \frac{\dot x(0)}{\omega} \frac{\omega}{s^2 + \omega^2}.
+
+We can spot sin and cos from the solution,
+
+.. math::
+   x(t) = x(0) \cos(\omega t) + \frac{\dot x(0)}{\omega} \sin(\omega t).
+
+
+This example is too simple sometimes naive. However, it shows the spirit.
+
+.. admonition:: Caveats
+   :class: warning
+
+   Laplace transform has a lot of counter intuitive expressions.
+
+   1. Laplace transform of product of two functions :math:`f(x)g(x)` is **NOT** the product of the Laplace transforms :math:`\mathcal L_s(f)\mathcal L_s(g)`. However, if one of the functions is a constant, say :math:`f(x)=5`, we can prove that the Laplace transform of :math:`5g(x)` is :math:`5\mathcal L_s(g)`.
+   2. The product of two Laplace transforms :math:`\mathcal L_s(f)\mathcal L_s(g)` is the Laplace transform of a convolution
+
+      .. math::
+         \int_0^x f(x') g(x-x') dx'.
+
+   3. Small s corresponds to large x, due to the nature of the exponential suppression in Laplace transform. For example, for small argument x, the function :math:`e^{k t}` becomes almost 1, meanwhile, the Laplace transform of the function :math:`1/(s - k)` becomes :math:`1/s` under large s. We can see that the two limits are consistant since the Laplace transform of 1 is :math:`1/s`.
+
+
+
+Z transform
+===================
+
+
+Laplace transform and Fourier transform are quite similar to each other. In fact, they are both Z transform. A Z transform is a generalization of Laplce transform and Fourier transform, which is defined as
+
+.. math::
+   F(x) = \int e^{a + i b} f(x) dx.

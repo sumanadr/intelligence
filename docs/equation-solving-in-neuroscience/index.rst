@@ -10,3 +10,4 @@ Equation Solving in Neuroscience
    :maxdepth: 2
 
    green-function.rst
+   laplace-transform.rst

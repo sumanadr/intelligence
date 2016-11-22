@@ -90,10 +90,11 @@ text-align:center;
 /* Toggle Environment Begin */
 
 .toggle {
-    background: none repeat scroll 0 0 #e7f2fa;
+    background: none repeat scroll 0 0 #ffffff !important;
     padding: 12px;
     line-height: 24px;
     margin-bottom: 24px;
+    border: 1px solid #86c6f5;
 }
 
 .toggle .admonition-title {
@@ -258,5 +259,5 @@ margin: 10px;
 
 /* navbar search box */
 .navbar-right>div>input {
-max-width: 120px;
+max-width: 98px;
 }
