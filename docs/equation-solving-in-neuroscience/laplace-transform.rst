@@ -98,3 +98,49 @@ This example is too simple sometimes naive. However, it shows the spirit.
 
    .. math::
       f(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(is^\dagger) e^{is^\dagger x} ds^\dagger .
+
+
+
+The more interesting application is to solve matrix differential equations. For any equations
+
+.. math::
+	\partial_x \mathbf f(x) = \mathbf A \mathbf f(x),
+
+Laplace transform takes it to the form
+
+.. math::
+	s \mathbf F(x) - f(0) = \mathbf A \mathbf F(s).
+
+The solution is
+
+.. math:: 
+	\mathbf F(x) = \frac{1}{s \mathbf I - \mathbf A} \mathbf f(0) .
+
+So the final solution for :math:`f(x)` is
+
+.. math::
+	\mathbf f(x) = \mathcal L^{-1} \left(\frac{1}{s \mathbf I - \mathbf A} \right)\mathbf f(0).
+
+
+We could work out the Taylor expansion of solution,
+
+.. math::
+	\frac{1}{s \mathbf I - \mathbf A} = \frac{\mathbf I}{s}+ \frac{\mathbf A}{s^2} + \frac{\mathbf A^2}{s^3} \cdots.
+
+The inverse Laplace transform can be done simply term by term,
+
+.. math::
+	\mathcal L^{-1} \left(\frac{1}{s \mathbf I - \mathbf A} \right) = \mathbf I + x \mathbf A + \frac{1}{2!} (x \mathbf A)^2 + \cdots = e^{x \mathbf A}.
+
+
+Finally we obtain the formal solution of the system, which is
+
+
+.. math::
+	\mathbf f(x) = \exp\left( x \mathbf A \right)\mathbf f(0).
+
+
+.. admonition:: Only Works for Constant Coefficients
+	:class: warning
+
+	This result only works for constant coefficients. In general, if the matrix :math:`A` depends on the argument :math:`x`, the solution can be systematically calculated using the so called `Magnus Expansion <https://en.wikipedia.org/wiki/Magnus_expansion>`_. However, it is as tedious as a numerical solution.

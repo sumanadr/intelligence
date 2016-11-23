@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Fourier Transform and Laplace Tranform &mdash; Intelligence</title>
+    <title>Laplace Tranform &mdash; Intelligence</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -106,7 +106,7 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Equation Solving in Neuroscience</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="green-function.html">Green&#8217;s Function Method</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Fourier Transform and Laplace Tranform</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Laplace Tranform</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../collective/index.html">Collective Intelligence</a><ul>
@@ -132,10 +132,8 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Fourier Transform and Laplace Tranform</a><ul>
-<li><a class="reference internal" href="#fourier-transform">Fourier Transform</a></li>
+<li><a class="reference internal" href="#">Laplace Tranform</a><ul>
 <li><a class="reference internal" href="#laplace-transform">Laplace Transform</a></li>
-<li><a class="reference internal" href="#z-transform">Z transform</a></li>
 </ul>
 </li>
 </ul>
@@ -179,11 +177,8 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="fourier-transform-and-laplace-tranform">
-<h1>Fourier Transform and Laplace Tranform<a class="headerlink" href="#fourier-transform-and-laplace-tranform" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="fourier-transform">
-<h2>Fourier Transform<a class="headerlink" href="#fourier-transform" title="Permalink to this headline">¶</a></h2>
-</div>
+  <div class="section" id="laplace-tranform">
+<h1>Laplace Tranform<a class="headerlink" href="#laplace-tranform" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="laplace-transform">
 <h2>Laplace Transform<a class="headerlink" href="#laplace-transform" title="Permalink to this headline">¶</a></h2>
 <p>Laplace transform is useful in equation solving. By definition, Laplace transform transforms a function <img class="math" src="../_images/math/f6cfa0abc53a6bea4a204741ebe387ed2cd3e6fa.png" alt="f(x)" style="vertical-align: -4px"/> defined on <img class="math" src="../_images/math/4f7aea66c7e11a8f7b5ccf040d1f3bf38350d500.png" alt="x\geq 0" style="vertical-align: -3px"/> into another function by calculating the convolution</p>
@@ -208,7 +203,10 @@
 <div class="last math">
 <p><img src="../_images/math/1a312e60015bbe07306bc613585cb44cc57145f7.png" alt="\mathcal L_s (f^{(n)}(x)) = s^n \mathcal L (f(x)) - \sum_{m=1}^n s^{n-m} f^{(m-1)}(0)."/></p>
 </div></div>
-<p>Laplace transform is useful in solving differential equations because it transforms many equations into fractions and polynomials. A simple example is the harmonic osicllators. The equation of motion is</p>
+<p>Integrals with upper limit as argument also transform nicely.</p>
+<div class="math">
+<p><img src="../_images/math/bdd6f7e2ac1f905a02495a639dc45bacd1e43956.png" alt="\mathcal L_s \left( \int_0^x f(x') dx'  \right) = \frac{\mathcal L_s(f)}{s}."/></p>
+</div><p>Laplace transform is useful in solving differential equations because it transforms many equations into fractions and polynomials. A simple example is the harmonic osicllators. The equation of motion is</p>
 <div class="math">
 <p><img src="../_images/math/549805b5cd46d2179a6b30d885ab45d195f17cdc.png" alt="\ddot x(t) = - \omega^2 x(t),"/></p>
 </div><p>which is transformed into</p>
@@ -217,7 +215,7 @@
 </div><p>The solution to it is</p>
 <div class="math">
 <p><img src="../_images/math/e313043c80b4069be369dc2b88aa66464173ee6e.png" alt="X(s) = \frac{ s x(0) + \dot x(0)}{s^2 + \omega^2} = x(0)\frac{ s }{s^2 + \omega^2} + \frac{\dot x(0)}{\omega} \frac{\omega}{s^2 + \omega^2}."/></p>
-</div><p>We can spot sin and cos from the solution,</p>
+</div><p>We can spot sin and cos from the solution, or more generally perform an inverse Laplace transform,</p>
 <div class="math">
 <p><img src="../_images/math/dde130bd0f2e5d1e7e081efa671c1a17c6944f7d.png" alt="x(t) = x(0) \cos(\omega t) + \frac{\dot x(0)}{\omega} \sin(\omega t)."/></p>
 </div><p>This example is too simple sometimes naive. However, it shows the spirit.</p>
@@ -233,15 +231,45 @@
 </div></li>
 <li><p class="first">Small s corresponds to large x, due to the nature of the exponential suppression in Laplace transform. For example, for small argument x, the function <img class="math" src="../_images/math/a10fb864b21bde806a741a96bf924d26cef5546f.png" alt="e^{k t}" style="vertical-align: 0px"/> becomes almost 1, meanwhile, the Laplace transform of the function <img class="math" src="../_images/math/6aea736dc0c36369e1d8a7d1f2c0b0411c9a4f91.png" alt="1/(s - k)" style="vertical-align: -5px"/> becomes <img class="math" src="../_images/math/b1af748c8f5348798c212c113c52080286be0707.png" alt="1/s" style="vertical-align: -5px"/> under large s. We can see that the two limits are consistant since the Laplace transform of 1 is <img class="math" src="../_images/math/b1af748c8f5348798c212c113c52080286be0707.png" alt="1/s" style="vertical-align: -5px"/>.</p>
 </li>
+<li><p class="first">In so many circumstance the Laplace transform doesn&#8217;t exist simple because the integral doesn&#8217;t converge. Please beware of this and use the transform only when it exists.</p>
+</li>
 </ol>
 </div>
-</div>
-<div class="section" id="z-transform">
-<h2>Z transform<a class="headerlink" href="#z-transform" title="Permalink to this headline">¶</a></h2>
-<p>Laplace transform and Fourier transform are quite similar to each other. In fact, they are both Z transform. A Z transform is a generalization of Laplce transform and Fourier transform, which is defined as</p>
+<div class="toggle admonition">
+<p class="first admonition-title">Inverse Laplace Transform</p>
+<p>We do not usually use the general form of inverse Laplace transform since we can find it in the table. Nevertheless we write it down here.</p>
 <div class="math">
-<p><img src="../_images/math/f47025b44cae4f92a90db64de57a0ff19b7fbc7e.png" alt="F(x) = \int e^{a + i b} f(x) dx."/></p>
+<p><img src="../_images/math/7a2cffe29d339370ea36d75199fda8b27e8e3af4.png" alt="f(x) = \frac{1}{2\pi i} \int_{-i\infty}^{i \infty} F(s) e^{sx}ds."/></p>
+</div><p>By defining <img class="math" src="../_images/math/ccde59b05b15e2f50b5c268ddd73c2c31731b678.png" alt="s=i s^\dagger" style="vertical-align: 0px"/>, we can rewrite the formula</p>
+<div class="last math">
+<p><img src="../_images/math/1beb571d598b611cab705aff3fad99b653bb7b49.png" alt="f(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(is^\dagger) e^{is^\dagger x} ds^\dagger ."/></p>
 </div></div>
+<p>The more interesting application is to solve matrix differential equations. For any equations</p>
+<div class="math">
+<p><img src="../_images/math/3dbe38148842ab1f8cbb464f2219407ff0a458d4.png" alt="\partial_x \mathbf f(x) = \mathbf A \mathbf f(x),"/></p>
+</div><p>Laplace transform takes it to the form</p>
+<div class="math">
+<p><img src="../_images/math/6f5bbc71e2b05f92d4860b8dd70516d1006dec16.png" alt="s \mathbf F(x) - f(0) = \mathbf A \mathbf F(s)."/></p>
+</div><p>The solution is</p>
+<div class="math">
+<p><img src="../_images/math/532602cc59732db50d80c2433efb89270407851a.png" alt="\mathbf F(x) = \frac{1}{s \mathbf I - \mathbf A} \mathbf f(0) ."/></p>
+</div><p>So the final solution for <img class="math" src="../_images/math/f6cfa0abc53a6bea4a204741ebe387ed2cd3e6fa.png" alt="f(x)" style="vertical-align: -4px"/> is</p>
+<div class="math">
+<p><img src="../_images/math/a617747464a0e857805f48e32ea8e6a81fd5f20b.png" alt="\mathbf f(x) = \mathcal L^{-1} \left(\frac{1}{s \mathbf I - \mathbf A} \right)\mathbf f(0)."/></p>
+</div><p>We could work out the Taylor expansion of solution,</p>
+<div class="math">
+<p><img src="../_images/math/4e582a833124cbd11816762a964ba43a8e18b315.png" alt="\frac{1}{s \mathbf I - \mathbf A} = \frac{\mathbf I}{s}+ \frac{\mathbf A}{s^2} + \frac{\mathbf A^2}{s^3} \cdots."/></p>
+</div><p>The inverse Laplace transform can be done simply term by term,</p>
+<div class="math">
+<p><img src="../_images/math/0da9cb8bd9a15fa0854adbb061e0fd7d5768d9b7.png" alt="\mathcal L^{-1} \left(\frac{1}{s \mathbf I - \mathbf A} \right) = \mathbf I + x \mathbf A + \frac{1}{2!} (x \mathbf A)^2 + \cdots = e^{x \mathbf A}."/></p>
+</div><p>Finally we obtain the formal solution of the system, which is</p>
+<div class="math">
+<p><img src="../_images/math/d9b8064bcc56c3dbc42cae73b28da02e2dd7ad0e.png" alt="\mathbf f(x) = \exp\left( x \mathbf A \right)\mathbf f(0)."/></p>
+</div><div class="warning admonition">
+<p class="first admonition-title">Only Works for Constant Coefficients</p>
+<p class="last">This result only works for constant coefficients.</p>
+</div>
+</div>
 </div>
 
 

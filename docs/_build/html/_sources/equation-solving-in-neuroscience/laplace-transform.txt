@@ -1,9 +1,5 @@
-Fourier Transform and Laplace Tranform
+Laplace Tranform
 ****************************************************
-
-Fourier Transform
-===================
-
 
 
 Laplace Transform
@@ -46,7 +42,10 @@ It can also be applied to differentials.
       \mathcal L_s (f^{(n)}(x)) = s^n \mathcal L (f(x)) - \sum_{m=1}^n s^{n-m} f^{(m-1)}(0).
 
 
+Integrals with upper limit as argument also transform nicely.
 
+.. math::
+   \mathcal L_s \left( \int_0^x f(x') dx'  \right) = \frac{\mathcal L_s(f)}{s}.
 
 Laplace transform is useful in solving differential equations because it transforms many equations into fractions and polynomials. A simple example is the harmonic osicllators. The equation of motion is
 
@@ -64,7 +63,7 @@ The solution to it is
 .. math::
    X(s) = \frac{ s x(0) + \dot x(0)}{s^2 + \omega^2} = x(0)\frac{ s }{s^2 + \omega^2} + \frac{\dot x(0)}{\omega} \frac{\omega}{s^2 + \omega^2}.
 
-We can spot sin and cos from the solution,
+We can spot sin and cos from the solution, or more generally perform an inverse Laplace transform,
 
 .. math::
    x(t) = x(0) \cos(\omega t) + \frac{\dot x(0)}{\omega} \sin(\omega t).
@@ -84,14 +83,64 @@ This example is too simple sometimes naive. However, it shows the spirit.
          \int_0^x f(x') g(x-x') dx'.
 
    3. Small s corresponds to large x, due to the nature of the exponential suppression in Laplace transform. For example, for small argument x, the function :math:`e^{k t}` becomes almost 1, meanwhile, the Laplace transform of the function :math:`1/(s - k)` becomes :math:`1/s` under large s. We can see that the two limits are consistant since the Laplace transform of 1 is :math:`1/s`.
+   4. In so many circumstance the Laplace transform doesn't exist simple because the integral doesn't converge. Please beware of this and use the transform only when it exists.
+
+
+.. admonition:: Inverse Laplace Transform
+   :class: toggle
+
+   We do not usually use the general form of inverse Laplace transform since we can find it in the table. Nevertheless we write it down here.
+
+   .. math::
+      f(x) = \frac{1}{2\pi i} \int_{-i\infty}^{i \infty} F(s) e^{sx}ds.
+
+   By defining :math:`s=i s^\dagger`, we can rewrite the formula
+
+   .. math::
+      f(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(is^\dagger) e^{is^\dagger x} ds^\dagger .
 
 
 
-Z transform
-===================
-
-
-Laplace transform and Fourier transform are quite similar to each other. In fact, they are both Z transform. A Z transform is a generalization of Laplce transform and Fourier transform, which is defined as
+The more interesting application is to solve matrix differential equations. For any equations
 
 .. math::
-   F(x) = \int e^{a + i b} f(x) dx.
+	\partial_x \mathbf f(x) = \mathbf A \mathbf f(x),
+
+Laplace transform takes it to the form
+
+.. math::
+	s \mathbf F(x) - f(0) = \mathbf A \mathbf F(s).
+
+The solution is
+
+.. math:: 
+	\mathbf F(x) = \frac{1}{s \mathbf I - \mathbf A} \mathbf f(0) .
+
+So the final solution for :math:`f(x)` is
+
+.. math::
+	\mathbf f(x) = \mathcal L^{-1} \left(\frac{1}{s \mathbf I - \mathbf A} \right)\mathbf f(0).
+
+
+We could work out the Taylor expansion of solution,
+
+.. math::
+	\frac{1}{s \mathbf I - \mathbf A} = \frac{\mathbf I}{s}+ \frac{\mathbf A}{s^2} + \frac{\mathbf A^2}{s^3} \cdots.
+
+The inverse Laplace transform can be done simply term by term,
+
+.. math::
+	\mathcal L^{-1} \left(\frac{1}{s \mathbf I - \mathbf A} \right) = \mathbf I + x \mathbf A + \frac{1}{2!} (x \mathbf A)^2 + \cdots = e^{x \mathbf A}.
+
+
+Finally we obtain the formal solution of the system, which is
+
+
+.. math::
+	\mathbf f(x) = \exp\left( x \mathbf A \right)\mathbf f(0).
+
+
+.. admonition:: Only Works for Constant Coefficients
+	:class: warning
+
+	This result only works for constant coefficients.
