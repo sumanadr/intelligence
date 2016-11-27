@@ -143,4 +143,4 @@ Finally we obtain the formal solution of the system, which is
 .. admonition:: Only Works for Constant Coefficients
 	:class: warning
 
-	This result only works for constant coefficients.
+	This result only works for constant coefficients. In general, if the matrix :math:`A` depends on the argument :math:`x`, the solution can be systematically calculated using the so called `Magnus Expansion <https://en.wikipedia.org/wiki/Magnus_expansion>`_. However, it is as tedious as a numerical solution.
