@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Fourier Tranform &mdash; Intelligence</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.6/readable/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Intelligence" href="../index.html" />
+    <link rel="up" title="Equation Solving in Neuroscience" href="index.html" />
+    <link rel="next" title="Laplace Tranform" href="laplace-transform.html" />
+    <link rel="prev" title="Green’s Function Method" href="green-function.html" />
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
+
+
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+ 
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/intelligence.png"></span>
+          Intelligence</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Chapters <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience/index.html">Neuroscience</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/biology.html">Biology</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Equation Solving in Neuroscience</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="green-function.html">Green&#8217;s Function Method</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Fourier Tranform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="laplace-transform.html">Laplace Tranform</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../collective/index.html">Collective Intelligence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../collective/refs.html">Collective intelligence References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../random-thoughts.html">Some Random Thoughts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../random-thoughts.html#pan-intelligence">Pan-Intelligence</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Fourier Tranform</a><ul>
+<li><a class="reference internal" href="#fourier-serious-and-continuous-fourier-transform">Fourier Serious and Continuous Fourier Transform</a></li>
+<li><a class="reference internal" href="#application-in-equation-solving">Application in Equation Solving</a><ul>
+<li><a class="reference internal" href="#homogeneous-equations">Homogeneous Equations</a><ul>
+<li><a class="reference internal" href="#using-fourier-series">Using Fourier Series</a></li>
+<li><a class="reference internal" href="#using-fourier-transform">Using Fourier Transform</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#inhomogeneous-equations">Inhomogeneous Equations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="green-function.html" title="Previous Chapter: Green’s Function Method"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Green’s Funct...</span>
+    </a>
+  </li>
+  <li>
+    <a href="laplace-transform.html" title="Next Chapter: Laplace Tranform"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Laplace Tranform &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="fourier-tranform">
+<h1>Fourier Tranform<a class="headerlink" href="#fourier-tranform" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fourier-serious-and-continuous-fourier-transform">
+<h2>Fourier Serious and Continuous Fourier Transform<a class="headerlink" href="#fourier-serious-and-continuous-fourier-transform" title="Permalink to this headline">¶</a></h2>
+<p>A function <img class="math" src="../_images/math/f6cfa0abc53a6bea4a204741ebe387ed2cd3e6fa.png" alt="f(x)" style="vertical-align: -4px"/> defined on <img class="math" src="../_images/math/630468e113e7c0535bc849a4a7fa8a3348f94084.png" alt="x\in [-L, L]" style="vertical-align: -5px"/> can be decomposed into Fourier series</p>
+<div class="math">
+<p><img src="../_images/math/79db6f65d414b880c2846c46ba89caaf653440c9.png" alt="f(x) = \sum_{-\infty}^\infty A_n e^{i n k_0 x },"/></p>
+</div><p>where</p>
+<div class="math">
+<p><img src="../_images/math/b3ce991e1e61cb36278a7f9a9b25bdcdc1f7768a.png" alt="k_0 = 2 \pi/ 2 L = \pi/L."/></p>
+</div><p>A continuous Fourier transform is not very different from Fourier series for equation solving. A function <img class="math" src="../_images/math/f6cfa0abc53a6bea4a204741ebe387ed2cd3e6fa.png" alt="f(x)" style="vertical-align: -4px"/> can be written as a convolution of another function <img class="math" src="../_images/math/2d1fea4a11f8ec09799f5a2a0e7f8a85fd7034d5.png" alt="g(x)" style="vertical-align: -4px"/>,</p>
+<div class="math" id="equation-eqn-fourier-transform-original-1">
+<p><span class="eqno">(1)</span><img src="../_images/math/392b48dfd274b6c88badc3f15d56faa24eb3debd.png" alt="f(x) = \int_{-\infty}^\infty g(t) e^{2\pi i x t} dt,"/></p>
+</div><p>where <img class="math" src="../_images/math/f6cfa0abc53a6bea4a204741ebe387ed2cd3e6fa.png" alt="f(x)" style="vertical-align: -4px"/> is the Fourier transform of <img class="math" src="../_images/math/f6482ca1574d98f169d3a8ca2ab0cd08aab4760e.png" alt="g(t)" style="vertical-align: -4px"/>. It is called a <strong>transform</strong> because we have a change of variable from t to x. This form is not convinient for the purpose of equation solving. We usually write it as</p>
+<div class="math">
+<p><img src="../_images/math/1ed9d10a8ed6b8b2c722ad3fe93b27d471517024.png" alt="f(x) = \frac{1}{2\pi}\int_{-\infty}^\infty g(k) e^{i k x} dk,"/></p>
+</div><p>which is derived by plug <img class="math" src="../_images/math/f01b0bf573877aec020b0cda649224ebc3d4fd4a.png" alt="k=2\pi t" style="vertical-align: 0px"/> in to Eq. (<a href="#equation-eqn-fourier-transform-original-1">(1)</a>).</p>
+<div class="toggle admonition">
+<p class="first admonition-title">Some Tips about Differential Equations</p>
+<p>It&#8217;s useful to try out Fourier series and Fourier transform on some frequently used operators.</p>
+<p>For Fourier series</p>
+<div class="math">
+<p><img src="../_images/math/addb35f7b2eecbf1157e2d2d13e24e862db46922.png" alt="\frac{d}{dx}f(x) = \frac{d}{dx}\sum_{-\infty}^\infty A_n e^{i n k_0 x } = \sum_{-\infty}^\infty A_n \frac{d}{dx} e^{i n k_0 x } = \sum_{-\infty}^\infty (i n k_0) A_n  e^{i n k_0 x }."/></p>
+</div><p>As we apply Fourier transform,</p>
+<div class="math">
+<p><img src="../_images/math/7608e8a0f8f486774d2501c3e449242cfc77da0c.png" alt="\frac{d}{dx}f(x) = \frac{1}{2\pi}\int_{-\infty}^\infty g(t) \frac{d}{dx} e^{i x t} dt = \frac{1}{2\pi} \int_{-\infty}^\infty g(t) (i x t)e^{i x t} dt,"/></p>
+</div><p class="last">which is more or less similar to the result from Fourier series.</p>
+</div>
+</div>
+<div class="section" id="application-in-equation-solving">
+<h2>Application in Equation Solving<a class="headerlink" href="#application-in-equation-solving" title="Permalink to this headline">¶</a></h2>
+<p><strong>We provide two examples. The first one is a homogenous equation that is NOT solved using this method. The second equation is a inhomogenous one.</strong></p>
+<p>In the first example, we apply Fourier series and Fourier transform to the differential equation of harmonic oscillators,</p>
+<div class="math" id="equation-eqn-harmonic-oscillator-eom">
+<p><span class="eqno">(2)</span><img src="../_images/math/549805b5cd46d2179a6b30d885ab45d195f17cdc.png" alt="\ddot x(t) = - \omega^2 x(t),"/></p>
+</div><p>where <img class="math" src="../_images/math/197ab21be1b5e53e438eedbde6f499aba493e6a2.png" alt="\dot {} = \frac{d}{dt}" style="vertical-align: -6px"/>.</p>
+<p>The second example will be a damped oscillator, which is</p>
+<div class="math" id="equation-eqn-damped-harmonic-oscillator-eom">
+<p><span class="eqno">(3)</span><img src="../_images/math/eda6973a963440f008681bf49084636b22989333.png" alt="\ddot x(t) = - \omega^2 x(t) + f(t)."/></p>
+</div><div class="section" id="homogeneous-equations">
+<h3>Homogeneous Equations<a class="headerlink" href="#homogeneous-equations" title="Permalink to this headline">¶</a></h3>
+<p>We&#8217;ll find out that homogenous differential equations doesn&#8217;t have solutions of the Fourier series type. The reason is that the transform of the solution to a homogeneous equation diverges. However, we still love this example because it shows us that using this method doesn&#8217;t garantee that we will find a solution.</p>
+<div class="section" id="using-fourier-series">
+<h4>Using Fourier Series<a class="headerlink" href="#using-fourier-series" title="Permalink to this headline">¶</a></h4>
+<p>Insert Fourier series of <img class="math" src="../_images/math/27b5a33be1f806167440d23daf1a35b711962cce.png" alt="x(t) = \sum_{-\infty}^{\infty} A_n e^{i n k_0 t }" style="vertical-align: -5px"/> into equation of harmonic oscillator (<a href="#equation-eqn-harmonic-oscillator-eom">(2)</a>),</p>
+<div class="math">
+<p><img src="../_images/math/1e74870684b3f041bdb5db46eb61e27db5270f68.png" alt="\ddot \sum_{-\infty}^{\infty} A_n e^{i n k_0 t } = - \omega^2 \sum_{-\infty}^{\infty} A_n e^{i n k_0 t }."/></p>
+</div><p>The derivatives will only apply to term <img class="math" src="../_images/math/2470822f8b4f3b81685acb774c668cc67fa1d05f.png" alt="e^{i n k_0 t }" style="vertical-align: 0px"/>, so that the equations becomes,</p>
+<div class="math">
+<p><img src="../_images/math/1daae8727a613697942decbcde8714944702073e.png" alt="\sum_{-\infty}^{\infty} (i n k_0)^2 A_n e^{i n k_0 t } = - \omega^2 \sum_{-\infty}^{\infty} A_n e^{i n k_0 t }."/></p>
+</div><p>We move everything to the left side and combine the summations,</p>
+<div class="math">
+<p><img src="../_images/math/5dba5e67eda915d30f37b5d9c75b76e0f44bdce4.png" alt="\sum_{-\infty}^{\infty} \left( (i n k_0)^2   +  \omega^2   \right)A_n e^{i n k_0 t } = 0."/></p>
+</div><p>The only possible solution to this equation is that the coefficient is zero, i.e.,</p>
+<div class="math">
+<p><img src="../_images/math/a1a1288a117f089912d48afd87e3da18a4241275.png" alt="(i n k_0)^2   +  \omega^2  =0,"/></p>
+</div><p>which has a solution of interest</p>
+<div class="math">
+<p><img src="../_images/math/6742f213cb9a26134549ab2bb2b676c2b0b301c3.png" alt="k_0 =\pm \omega /n."/></p>
+</div><p>This result is the dispersion relation like solution to the system. However, we can not construct the original solution from this relation only. The reason is that the equation is homogeneous.</p>
+</div>
+<div class="section" id="using-fourier-transform">
+<h4>Using Fourier Transform<a class="headerlink" href="#using-fourier-transform" title="Permalink to this headline">¶</a></h4>
+<p>We assume that the function <img class="math" src="../_images/math/1b21ee73109c88c258b8a4d466fff8a8314c0664.png" alt="x(t)" style="vertical-align: -4px"/> that we are looking for is a Fourier transform of another function <img class="math" src="../_images/math/48e29c2b7c8544a20832a52a1f62fc23461d0e6c.png" alt="\hat x(\tau)" style="vertical-align: -4px"/></p>
+<div class="math">
+<p><img src="../_images/math/216b4b83aaec42d91fc51310a908fe3f178b493e.png" alt="x(t) = \frac{1}{2\pi} \int_{-\infty}^\infty \hat x(k) e^{i k t} dk."/></p>
+</div><p>Insert this transform into the equation of harmonic oscillator (<a href="#equation-eqn-harmonic-oscillator-eom">(2)</a>),</p>
+<div class="math">
+<p><img src="../_images/math/cb13fdd66c9eb89d7c95b3df4c9f6dbd6579e51c.png" alt="\frac{d^2}{dt^2} \frac{1}{2\pi} \int_{-\infty}^\infty \hat x(k) e^{i k t} dk = - \omega^2 \frac{1}{2\pi} \int_{-\infty}^\infty \hat x(k) e^{i k t} dk,"/></p>
+</div><p>which is simplified to</p>
+<div class="math">
+<p><img src="../_images/math/106bcf48a934613c899548653bee0b88dee84808.png" alt="\frac{1}{2\pi} \int_{-\infty}^\infty \left(  (i k  )^2  + \omega^2 \right) \hat x(\tau) e^{ik t} dk ."/></p>
+</div><p>We find ourselves in the same situation as the Fourier series solution. No solution is found.</p>
+</div>
+</div>
+<div class="section" id="inhomogeneous-equations">
+<h3>Inhomogeneous Equations<a class="headerlink" href="#inhomogeneous-equations" title="Permalink to this headline">¶</a></h3>
+<p>For an inhomogeneous equation (<a href="#equation-eqn-damped-harmonic-oscillator-eom">(3)</a>), we can apply the same trick. However, we use Fourier transform for generality. Please note that the Fourier transform requires the solution to be defined on a range of the argument.</p>
+<p>Before we actually work out the case, here are some tricks. We always use hat to denote the inverse Fourier transformed equation. Fourier transform of the equation actually will be a replacement of the following,</p>
+<div class="math">
+<p><img src="../_images/math/ef3b8e8aac9affc5c81992af2aa02085d80e1936.png" alt="f(t)\to \hat f(k) \\
+x(t)\to \hat x(k) \\
+\dot x(t) \to (ik )\hat x(k) \\
+\dot x(t) \to (ik )^2\hat x(k)."/></p>
+</div><p>Using these rules, we find out the Fourier transform equation of (<a href="#equation-eqn-damped-harmonic-oscillator-eom">(3)</a>),</p>
+<div class="math">
+<p><img src="../_images/math/13943e3fbeb78f006640781d6db5d3236a32eb16.png" alt="(ik )^2 \hat x(k) + \omega^2  \hat x(k) = \hat f(k),"/></p>
+</div><p>which has a solution</p>
+<div class="math">
+<p><img src="../_images/math/64abba338eade39690eb4759c1d426d6128c54df.png" alt="\hat x(k) = \frac{ \hat f(k) }{ -k^2 + \omega^2 },"/></p>
+</div><p>so that the final solution we are looking for becomes</p>
+<div class="math">
+<p><img src="../_images/math/ff9910adce47ad512af175f01fbc66e4cec87ec1.png" alt="x(t) =&amp; \frac{1}{2\pi}\int_{-\infty}^\infty \hat x(k) e^{i k t} dk \\
+=&amp; \frac{1}{2\pi}\int_{-\infty}^\infty  \frac{ \hat f(k) }{ -k^2 + \omega^2 } e^{i k t} dk"/></p>
+</div></div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<!-- <div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'statmech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div> -->
+
+<hr>
+
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+    <p class="pull-right">
+        <a href="#"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
+
+    </p>
+    <p>
+        <span>© 2016, Lei Ma</span>|
+        <a href=>Source on GitHub</a>|
+       <a href="../_sources/equation-solving-in-neuroscience/fourier-transform.txt"
+           rel="nofollow">Page Source</a></li>|
+        <span>Created with
+            <a href="http://www.sphinx-doc.org">Sphinx</a></span>
+    </p>
+
+    <hr>
+
+
+    <script>
+        window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+
+</div>
+
+
+  </body>
+</html>

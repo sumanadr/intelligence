@@ -2,6 +2,7 @@ Equation Solving in Neuroscience
 ============================================
 
 
+Step-by-step demonstration of equation solving in neuroscience, with examples of differential equations from real neuroscience problems.
 
 
 
@@ -10,4 +11,5 @@ Equation Solving in Neuroscience
    :maxdepth: 2
 
    green-function.rst
+   fourier-transform.rst
    laplace-transform.rst
