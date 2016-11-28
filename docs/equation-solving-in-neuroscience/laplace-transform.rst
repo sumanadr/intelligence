@@ -113,7 +113,7 @@ Laplace transform takes it to the form
 
 The solution is
 
-.. math:: 
+.. math::
 	\mathbf F(x) = \frac{1}{s \mathbf I - \mathbf A} \mathbf f(0) .
 
 So the final solution for :math:`f(x)` is
@@ -144,3 +144,8 @@ Finally we obtain the formal solution of the system, which is
 	:class: warning
 
 	This result only works for constant coefficients. In general, if the matrix :math:`A` depends on the argument :math:`x`, the solution can be systematically calculated using the so called `Magnus Expansion <https://en.wikipedia.org/wiki/Magnus_expansion>`_. However, it is as tedious as a numerical solution.
+
+
+
+Application to Neuroscience
+================================================

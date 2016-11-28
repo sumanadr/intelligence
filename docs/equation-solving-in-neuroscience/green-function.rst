@@ -1,4 +1,9 @@
 Green's Function Method
+*******************************
+
+
+
+Green's Function Method
 ==================================
 
 In this section, we demonstrate Green's function method of solving differential equations.
