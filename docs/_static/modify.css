@@ -123,7 +123,8 @@ text-align:center;
 /* Citation Table Styles BEGIN */
 
 .table.citation {
-   margin-top: 5em !important;
+   margin-top: 0.5em !important;
+   margin-bottom: 0.5em !important;
    border-left: none !important;
 }
 .table>tbody>tr>td {

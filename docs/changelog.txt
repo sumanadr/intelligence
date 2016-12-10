@@ -12,10 +12,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Brain connectivity
 - Link to changelog.txt in footer
 - 'base_url' in theme.conf
+- favicon.ico to the site
 
 ### Fixed
 
 - Link to GitHub in footer
+- citation table margin problem: shrink the margin
 
 ### Changed
 
