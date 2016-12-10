@@ -59,11 +59,13 @@
     </p>
     <p>
         <span>© {{ copyright }}</span>|
-        <a href={{ thme_project_link }}>Source on GitHub</a>|
+        <a href={{ theme_project_link }}>GitHub</a>|
         {%- if show_source and has_source and sourcename %}
        <a href="{{ pathto('_sources/' + sourcename, true)|e }}"
            rel="nofollow">{{ _('Page Source') }}</a></li>|
        {%- endif %}
+       <a href="{{ theme_base_url }}changelog.txt"
+           rel="nofollow">changelog</a></li>|
         <span>Created with
             <a href="http://www.sphinx-doc.org">Sphinx</a></span>
     </p>

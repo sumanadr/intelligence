@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.0.3] - 2016-12-10
+
+### Added
+
+- Brain connectivity
+- Link to changelog.txt in footer
+- 'base_url' in theme.conf
+
+### Fixed
+
+- Link to GitHub in footer
+
+### Changed
+
+- 'Source on GitHub' changed to 'GitHub'
+
 ## [0.0.2] - 2016-11-27
 
 ### Added
