@@ -11,3 +11,4 @@ Neuroscience
 
    biology.rst
    functional-connectivity.rst
+   solitary-waves.rst
