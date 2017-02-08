@@ -21,7 +21,7 @@ What we want to find out is the places that the random walker explored after :ma
 From the idea of random walk, we know that
 
 .. math::
-   \langle \vec x_i \range =& 0 \\
+   \langle \vec x_i \rangle =& 0 \\
    \langle \vec x_i \cdot \vec x_j \rangel =& 0.
 
 Thus
