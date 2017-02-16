@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Functional Connectivity &#8212; Intelligence</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.6/readable/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Solitary Waves" href="solitary-waves.html" />
+    <link rel="prev" title="Biology" href="biology.html" />
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
+
+
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+ 
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/intelligence.png"></span>
+          Intelligence</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.4</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Chapters <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Neuroscience</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="biology.html">Biology</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Functional Connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solitary-waves.html">Solitary Waves</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../equation-solving-in-neuroscience/index.html">Equation Solving in Neuroscience</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/green-function.html">Green&#8217;s Function Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/fourier-transform.html">Fourier Tranform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/laplace-transform.html">Laplace Tranform</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../random-walks/index.html">Random Walks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../random-walks/random-walks.html">Random Walks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../machine-intelligence/index.html">Machine Intelligence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/ann.html">Artificial Neural Network</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../collective/index.html">Collective Intelligence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../collective/refs.html">Collective intelligence References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../random-thoughts.html">Some Random Thoughts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../random-thoughts.html#pan-intelligence">Pan-Intelligence</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Functional Connectivity</a><ul>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="biology.html" title="Previous Chapter: Biology"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Biology</span>
+    </a>
+  </li>
+  <li>
+    <a href="solitary-waves.html" title="Next Chapter: Solitary Waves"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Solitary Waves &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="functional-connectivity">
+<h1>Functional Connectivity<a class="headerlink" href="#functional-connectivity" title="Permalink to this headline">¶</a></h1>
+<p>Biological neural networks are quite complicated in the sense maps. Given some input the network generates a output, which is a map of the complicated kind. However, we could also feel the simplicity of such complicated networks. The building blocks of such network are simple neurons which are filters of information.</p>
+<p>As a physicist, we have been working with harmonic oscillators. Single oscillators have its frequency of oscillations. Coupled oscillators have their eigenmode, which are hidden collective behaviors of the oscillators. It seems that each oscillator is oscillating chaotically. As we find the eigenmodes, we find the collective patterns. Each oscillator joins some if not all of the collective patterns.</p>
+<p>This idea inspires us. If we look at the spiking of each neuron, we might not be able to identify the patterns. However, for coupled neurons, we have to find their collective modes to really SEE the hidden patterns. This idea works for very small networks, the eigenvalues and eigenvectors of which can be found easily. For super large networks, it becomes mission impossible.</p>
+<p>In any case, we can persue the idea that the network is composed of basic functional units. There are many levels and aspects of brain connectivity <a class="reference internal" href="#brainconnectivity" id="id1">[BrainConnectivity]</a>.</p>
+<ol class="arabic simple">
+<li>Graph theory:
+- clustering techniques
+- community detection, <strong>which is quite interesting</strong>.</li>
+<li>Morphometric methods</li>
+<li>Functional brain connectivity:
+- computing cross-correlations in the time or frequency domain;
+- mutual information;
+- spectral coherence.</li>
+</ol>
+<div class="note admonition">
+<p class="first admonition-title">Community Detection</p>
+<p>The article <a class="reference internal" href="#brainconnectivity" id="id2">[BrainConnectivity]</a> mentioned that <strong>eigenspectrum</strong> is used in community detection.</p>
+<p>In social science and complex networks, community detection is a well researched field. A bunch of methods have been developped.</p>
+<ul class="simple">
+<li>Q modularity <a class="reference internal" href="#newman2016" id="id3">[Newman2016]</a>;</li>
+<li>Hyperbolic mapping <a class="reference internal" href="#boguna2010" id="id4">[Boguna2010]</a>;</li>
+<li>Statistical mechanics method such as Gibbs distribution <a class="reference internal" href="#zhang2014" id="id5">[Zhang2014]</a>;</li>
+<li>...</li>
+</ul>
+<table class="docutils citation" frame="void" id="newman2016" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[Newman2016]</a></td><td>Newman, M. E. J. (2016). <a class="reference external" href="http://arxiv.org/abs/1606.02319">Community detection in networks: Modularity optimization and maximum likelihood are equivalent</a>. ArXiv 1606.02319, 1–8.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="zhang2014" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[Zhang2014]</a></td><td>Zhang, P., &amp; Moore, C. (2014). <a class="reference external" href="http://doi.org/10.1073/pnas.1409770111">Scalable detection of statistically significant communities and hierarchies using message passing for modularity</a>, 111(51), 18144–18149.</td></tr>
+</tbody>
+</table>
+<table class="last docutils citation" frame="void" id="boguna2010" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[Boguna2010]</a></td><td>Boguna, M., Papadopoulos, F., &amp; Krioukov, D. (2010). <a class="reference external" href="http://doi.org/10.1038/ncomms1063">Sustaining the Internet with Hyperbolic Mapping. Nature Communications</a>, 1(6), 1–8.</td></tr>
+</tbody>
+</table>
+</div>
+<p>Here are some facts about brain network.</p>
+<ol class="arabic simple">
+<li>It&#8217;s similar to small world network <a class="reference internal" href="#brainconnectivity" id="id6">[BrainConnectivity]</a>.</li>
+<li>There are functional hubs <a class="reference internal" href="#brainconnectivity" id="id7">[BrainConnectivity]</a>.</li>
+<li>Segregation and integration might be key to a functional neural network <a class="reference internal" href="#brainconnectivity" id="id8">[BrainConnectivity]</a>.</li>
+</ol>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<table class="docutils citation" frame="void" id="brainconnectivity" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[BrainConnectivity]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>, <a class="fn-backref" href="#id6">3</a>, <a class="fn-backref" href="#id7">4</a>, <a class="fn-backref" href="#id8">5</a>)</em> <a class="reference external" href="http://www.scholarpedia.org/article/Brain_connectivity">Brain connectivity</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<!-- <div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'statmech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div> -->
+
+<hr>
+
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+    <p class="pull-right">
+        <a href="#"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
+
+    </p>
+    <p>
+        <span>© 2016, Lei Ma</span>|
+        <a href="https://github.com/emptymalei/intelligence">GitHub</a>|
+       <a href="../_sources/neuroscience/functional-connectivity.rst.txt"
+           rel="nofollow">Page Source</a></li>|
+       <a href="/changelog.html"
+           rel="nofollow">changelog</a></li>|
+        <span>Created with
+            <a href="http://www.sphinx-doc.org">Sphinx</a></span>
+    </p>
+
+    <hr>
+
+
+    <script>
+        window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+
+</div>
+
+
+  </body>
+</html>

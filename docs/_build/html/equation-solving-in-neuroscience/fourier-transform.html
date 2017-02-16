@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Fourier Tranform &mdash; Intelligence</title>
+    <title>Fourier Tranform &#8212; Intelligence</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +16,11 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.0.1',
+        VERSION:     '0.0.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
@@ -29,8 +30,9 @@
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="Intelligence" href="../index.html" />
-    <link rel="up" title="Equation Solving in Neuroscience" href="index.html" />
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Laplace Tranform" href="laplace-transform.html" />
     <link rel="prev" title="Green’s Function Method" href="green-function.html" />
 <script type="text/javascript">
@@ -82,7 +84,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/intelligence.png"></span>
           Intelligence</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.0.1</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.4</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -102,12 +104,22 @@
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../neuroscience/index.html">Neuroscience</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/biology.html">Biology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/functional-connectivity.html">Functional Connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/solitary-waves.html">Solitary Waves</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Equation Solving in Neuroscience</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="green-function.html">Green&#8217;s Function Method</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Fourier Tranform</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Fourier Tranform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="laplace-transform.html">Laplace Tranform</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../random-walks/index.html">Random Walks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../random-walks/random-walks.html">Random Walks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../machine-intelligence/index.html">Machine Intelligence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/ann.html">Artificial Neural Network</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../collective/index.html">Collective Intelligence</a><ul>
@@ -144,6 +156,7 @@
 <li><a class="reference internal" href="#inhomogeneous-equations">Inhomogeneous Equations</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#application-to-neuroscience">Application to Neuroscience</a></li>
 </ul>
 </li>
 </ul>
@@ -193,26 +206,26 @@
 <h2>Fourier Serious and Continuous Fourier Transform<a class="headerlink" href="#fourier-serious-and-continuous-fourier-transform" title="Permalink to this headline">¶</a></h2>
 <p>A function <img class="math" src="../_images/math/f6cfa0abc53a6bea4a204741ebe387ed2cd3e6fa.png" alt="f(x)" style="vertical-align: -4px"/> defined on <img class="math" src="../_images/math/630468e113e7c0535bc849a4a7fa8a3348f94084.png" alt="x\in [-L, L]" style="vertical-align: -5px"/> can be decomposed into Fourier series</p>
 <div class="math">
-<p><img src="../_images/math/79db6f65d414b880c2846c46ba89caaf653440c9.png" alt="f(x) = \sum_{-\infty}^\infty A_n e^{i n k_0 x },"/></p>
+<p><span class="math">f(x) = \sum_{-\infty}^\infty A_n e^{i n k_0 x },</span></p>
 </div><p>where</p>
 <div class="math">
-<p><img src="../_images/math/b3ce991e1e61cb36278a7f9a9b25bdcdc1f7768a.png" alt="k_0 = 2 \pi/ 2 L = \pi/L."/></p>
+<p><span class="math">k_0 = 2 \pi/ 2 L = \pi/L.</span></p>
 </div><p>A continuous Fourier transform is not very different from Fourier series for equation solving. A function <img class="math" src="../_images/math/f6cfa0abc53a6bea4a204741ebe387ed2cd3e6fa.png" alt="f(x)" style="vertical-align: -4px"/> can be written as a convolution of another function <img class="math" src="../_images/math/2d1fea4a11f8ec09799f5a2a0e7f8a85fd7034d5.png" alt="g(x)" style="vertical-align: -4px"/>,</p>
 <div class="math" id="equation-eqn-fourier-transform-original-1">
-<p><span class="eqno">(1)</span><img src="../_images/math/392b48dfd274b6c88badc3f15d56faa24eb3debd.png" alt="f(x) = \int_{-\infty}^\infty g(t) e^{2\pi i x t} dt,"/></p>
+<p><span class="eqno">(1)</span><span class="math">f(x) = \int_{-\infty}^\infty g(t) e^{2\pi i x t} dt,</span></p>
 </div><p>where <img class="math" src="../_images/math/f6cfa0abc53a6bea4a204741ebe387ed2cd3e6fa.png" alt="f(x)" style="vertical-align: -4px"/> is the Fourier transform of <img class="math" src="../_images/math/f6482ca1574d98f169d3a8ca2ab0cd08aab4760e.png" alt="g(t)" style="vertical-align: -4px"/>. It is called a <strong>transform</strong> because we have a change of variable from t to x. This form is not convinient for the purpose of equation solving. We usually write it as</p>
 <div class="math">
-<p><img src="../_images/math/1ed9d10a8ed6b8b2c722ad3fe93b27d471517024.png" alt="f(x) = \frac{1}{2\pi}\int_{-\infty}^\infty g(k) e^{i k x} dk,"/></p>
-</div><p>which is derived by plug <img class="math" src="../_images/math/f01b0bf573877aec020b0cda649224ebc3d4fd4a.png" alt="k=2\pi t" style="vertical-align: 0px"/> in to Eq. (<a href="#equation-eqn-fourier-transform-original-1">(1)</a>).</p>
+<p><span class="math">f(x) = \frac{1}{2\pi}\int_{-\infty}^\infty g(k) e^{i k x} dk,</span></p>
+</div><p>which is derived by plug <img class="math" src="../_images/math/f01b0bf573877aec020b0cda649224ebc3d4fd4a.png" alt="k=2\pi t" style="vertical-align: 0px"/> in to Eq. (<a class="reference internal" href="#equation-eqn-fourier-transform-original-1">(1)</a>).</p>
 <div class="toggle admonition">
 <p class="first admonition-title">Some Tips about Differential Equations</p>
 <p>It&#8217;s useful to try out Fourier series and Fourier transform on some frequently used operators.</p>
 <p>For Fourier series</p>
 <div class="math">
-<p><img src="../_images/math/addb35f7b2eecbf1157e2d2d13e24e862db46922.png" alt="\frac{d}{dx}f(x) = \frac{d}{dx}\sum_{-\infty}^\infty A_n e^{i n k_0 x } = \sum_{-\infty}^\infty A_n \frac{d}{dx} e^{i n k_0 x } = \sum_{-\infty}^\infty (i n k_0) A_n  e^{i n k_0 x }."/></p>
+<p><span class="math">\frac{d}{dx}f(x) = \frac{d}{dx}\sum_{-\infty}^\infty A_n e^{i n k_0 x } = \sum_{-\infty}^\infty A_n \frac{d}{dx} e^{i n k_0 x } = \sum_{-\infty}^\infty (i n k_0) A_n  e^{i n k_0 x }.</span></p>
 </div><p>As we apply Fourier transform,</p>
 <div class="math">
-<p><img src="../_images/math/7608e8a0f8f486774d2501c3e449242cfc77da0c.png" alt="\frac{d}{dx}f(x) = \frac{1}{2\pi}\int_{-\infty}^\infty g(t) \frac{d}{dx} e^{i x t} dt = \frac{1}{2\pi} \int_{-\infty}^\infty g(t) (i x t)e^{i x t} dt,"/></p>
+<p><span class="math">\frac{d}{dx}f(x) = \frac{1}{2\pi}\int_{-\infty}^\infty g(t) \frac{d}{dx} e^{i x t} dt = \frac{1}{2\pi} \int_{-\infty}^\infty g(t) (i x t)e^{i x t} dt,</span></p>
 </div><p class="last">which is more or less similar to the result from Fourier series.</p>
 </div>
 </div>
@@ -221,67 +234,71 @@
 <p><strong>We provide two examples. The first one is a homogenous equation that is NOT solved using this method. The second equation is a inhomogenous one.</strong></p>
 <p>In the first example, we apply Fourier series and Fourier transform to the differential equation of harmonic oscillators,</p>
 <div class="math" id="equation-eqn-harmonic-oscillator-eom">
-<p><span class="eqno">(2)</span><img src="../_images/math/549805b5cd46d2179a6b30d885ab45d195f17cdc.png" alt="\ddot x(t) = - \omega^2 x(t),"/></p>
+<p><span class="eqno">(2)</span><span class="math">\ddot x(t) = - \omega^2 x(t),</span></p>
 </div><p>where <img class="math" src="../_images/math/197ab21be1b5e53e438eedbde6f499aba493e6a2.png" alt="\dot {} = \frac{d}{dt}" style="vertical-align: -6px"/>.</p>
 <p>The second example will be a damped oscillator, which is</p>
 <div class="math" id="equation-eqn-damped-harmonic-oscillator-eom">
-<p><span class="eqno">(3)</span><img src="../_images/math/eda6973a963440f008681bf49084636b22989333.png" alt="\ddot x(t) = - \omega^2 x(t) + f(t)."/></p>
+<p><span class="eqno">(3)</span><span class="math">\ddot x(t) = - \omega^2 x(t) + f(t).</span></p>
 </div><div class="section" id="homogeneous-equations">
 <h3>Homogeneous Equations<a class="headerlink" href="#homogeneous-equations" title="Permalink to this headline">¶</a></h3>
 <p>We&#8217;ll find out that homogenous differential equations doesn&#8217;t have solutions of the Fourier series type. The reason is that the transform of the solution to a homogeneous equation diverges. However, we still love this example because it shows us that using this method doesn&#8217;t garantee that we will find a solution.</p>
 <div class="section" id="using-fourier-series">
 <h4>Using Fourier Series<a class="headerlink" href="#using-fourier-series" title="Permalink to this headline">¶</a></h4>
-<p>Insert Fourier series of <img class="math" src="../_images/math/27b5a33be1f806167440d23daf1a35b711962cce.png" alt="x(t) = \sum_{-\infty}^{\infty} A_n e^{i n k_0 t }" style="vertical-align: -5px"/> into equation of harmonic oscillator (<a href="#equation-eqn-harmonic-oscillator-eom">(2)</a>),</p>
+<p>Insert Fourier series of <img class="math" src="../_images/math/27b5a33be1f806167440d23daf1a35b711962cce.png" alt="x(t) = \sum_{-\infty}^{\infty} A_n e^{i n k_0 t }" style="vertical-align: -5px"/> into equation of harmonic oscillator (<a class="reference internal" href="#equation-eqn-harmonic-oscillator-eom">(2)</a>),</p>
 <div class="math">
-<p><img src="../_images/math/1e74870684b3f041bdb5db46eb61e27db5270f68.png" alt="\ddot \sum_{-\infty}^{\infty} A_n e^{i n k_0 t } = - \omega^2 \sum_{-\infty}^{\infty} A_n e^{i n k_0 t }."/></p>
+<p><span class="math">\ddot \sum_{-\infty}^{\infty} A_n e^{i n k_0 t } = - \omega^2 \sum_{-\infty}^{\infty} A_n e^{i n k_0 t }.</span></p>
 </div><p>The derivatives will only apply to term <img class="math" src="../_images/math/2470822f8b4f3b81685acb774c668cc67fa1d05f.png" alt="e^{i n k_0 t }" style="vertical-align: 0px"/>, so that the equations becomes,</p>
 <div class="math">
-<p><img src="../_images/math/1daae8727a613697942decbcde8714944702073e.png" alt="\sum_{-\infty}^{\infty} (i n k_0)^2 A_n e^{i n k_0 t } = - \omega^2 \sum_{-\infty}^{\infty} A_n e^{i n k_0 t }."/></p>
+<p><span class="math">\sum_{-\infty}^{\infty} (i n k_0)^2 A_n e^{i n k_0 t } = - \omega^2 \sum_{-\infty}^{\infty} A_n e^{i n k_0 t }.</span></p>
 </div><p>We move everything to the left side and combine the summations,</p>
 <div class="math">
-<p><img src="../_images/math/5dba5e67eda915d30f37b5d9c75b76e0f44bdce4.png" alt="\sum_{-\infty}^{\infty} \left( (i n k_0)^2   +  \omega^2   \right)A_n e^{i n k_0 t } = 0."/></p>
+<p><span class="math">\sum_{-\infty}^{\infty} \left( (i n k_0)^2   +  \omega^2   \right)A_n e^{i n k_0 t } = 0.</span></p>
 </div><p>The only possible solution to this equation is that the coefficient is zero, i.e.,</p>
 <div class="math">
-<p><img src="../_images/math/a1a1288a117f089912d48afd87e3da18a4241275.png" alt="(i n k_0)^2   +  \omega^2  =0,"/></p>
+<p><span class="math">(i n k_0)^2   +  \omega^2  =0,</span></p>
 </div><p>which has a solution of interest</p>
 <div class="math">
-<p><img src="../_images/math/6742f213cb9a26134549ab2bb2b676c2b0b301c3.png" alt="k_0 =\pm \omega /n."/></p>
+<p><span class="math">k_0 =\pm \omega /n.</span></p>
 </div><p>This result is the dispersion relation like solution to the system. However, we can not construct the original solution from this relation only. The reason is that the equation is homogeneous.</p>
 </div>
 <div class="section" id="using-fourier-transform">
 <h4>Using Fourier Transform<a class="headerlink" href="#using-fourier-transform" title="Permalink to this headline">¶</a></h4>
 <p>We assume that the function <img class="math" src="../_images/math/1b21ee73109c88c258b8a4d466fff8a8314c0664.png" alt="x(t)" style="vertical-align: -4px"/> that we are looking for is a Fourier transform of another function <img class="math" src="../_images/math/48e29c2b7c8544a20832a52a1f62fc23461d0e6c.png" alt="\hat x(\tau)" style="vertical-align: -4px"/></p>
 <div class="math">
-<p><img src="../_images/math/216b4b83aaec42d91fc51310a908fe3f178b493e.png" alt="x(t) = \frac{1}{2\pi} \int_{-\infty}^\infty \hat x(k) e^{i k t} dk."/></p>
-</div><p>Insert this transform into the equation of harmonic oscillator (<a href="#equation-eqn-harmonic-oscillator-eom">(2)</a>),</p>
+<p><span class="math">x(t) = \frac{1}{2\pi} \int_{-\infty}^\infty \hat x(k) e^{i k t} dk.</span></p>
+</div><p>Insert this transform into the equation of harmonic oscillator (<a class="reference internal" href="#equation-eqn-harmonic-oscillator-eom">(2)</a>),</p>
 <div class="math">
-<p><img src="../_images/math/cb13fdd66c9eb89d7c95b3df4c9f6dbd6579e51c.png" alt="\frac{d^2}{dt^2} \frac{1}{2\pi} \int_{-\infty}^\infty \hat x(k) e^{i k t} dk = - \omega^2 \frac{1}{2\pi} \int_{-\infty}^\infty \hat x(k) e^{i k t} dk,"/></p>
+<p><span class="math">\frac{d^2}{dt^2} \frac{1}{2\pi} \int_{-\infty}^\infty \hat x(k) e^{i k t} dk = - \omega^2 \frac{1}{2\pi} \int_{-\infty}^\infty \hat x(k) e^{i k t} dk,</span></p>
 </div><p>which is simplified to</p>
 <div class="math">
-<p><img src="../_images/math/106bcf48a934613c899548653bee0b88dee84808.png" alt="\frac{1}{2\pi} \int_{-\infty}^\infty \left(  (i k  )^2  + \omega^2 \right) \hat x(\tau) e^{ik t} dk ."/></p>
+<p><span class="math">\frac{1}{2\pi} \int_{-\infty}^\infty \left(  (i k  )^2  + \omega^2 \right) \hat x(\tau) e^{ik t} dk .</span></p>
 </div><p>We find ourselves in the same situation as the Fourier series solution. No solution is found.</p>
 </div>
 </div>
 <div class="section" id="inhomogeneous-equations">
 <h3>Inhomogeneous Equations<a class="headerlink" href="#inhomogeneous-equations" title="Permalink to this headline">¶</a></h3>
-<p>For an inhomogeneous equation (<a href="#equation-eqn-damped-harmonic-oscillator-eom">(3)</a>), we can apply the same trick. However, we use Fourier transform for generality. Please note that the Fourier transform requires the solution to be defined on a range of the argument.</p>
+<p>For an inhomogeneous equation (<a class="reference internal" href="#equation-eqn-damped-harmonic-oscillator-eom">(3)</a>), we can apply the same trick. However, we use Fourier transform for generality. Please note that the Fourier transform requires the solution to be defined on a range of the argument.</p>
 <p>Before we actually work out the case, here are some tricks. We always use hat to denote the inverse Fourier transformed equation. Fourier transform of the equation actually will be a replacement of the following,</p>
 <div class="math">
-<p><img src="../_images/math/ef3b8e8aac9affc5c81992af2aa02085d80e1936.png" alt="f(t)\to \hat f(k) \\
+<p><span class="math">f(t)\to \hat f(k) \\
 x(t)\to \hat x(k) \\
 \dot x(t) \to (ik )\hat x(k) \\
-\dot x(t) \to (ik )^2\hat x(k)."/></p>
-</div><p>Using these rules, we find out the Fourier transform equation of (<a href="#equation-eqn-damped-harmonic-oscillator-eom">(3)</a>),</p>
+\dot x(t) \to (ik )^2\hat x(k).</span></p>
+</div><p>Using these rules, we find out the Fourier transform equation of (<a class="reference internal" href="#equation-eqn-damped-harmonic-oscillator-eom">(3)</a>),</p>
 <div class="math">
-<p><img src="../_images/math/13943e3fbeb78f006640781d6db5d3236a32eb16.png" alt="(ik )^2 \hat x(k) + \omega^2  \hat x(k) = \hat f(k),"/></p>
+<p><span class="math">(ik )^2 \hat x(k) + \omega^2  \hat x(k) = \hat f(k),</span></p>
 </div><p>which has a solution</p>
 <div class="math">
-<p><img src="../_images/math/64abba338eade39690eb4759c1d426d6128c54df.png" alt="\hat x(k) = \frac{ \hat f(k) }{ -k^2 + \omega^2 },"/></p>
+<p><span class="math">\hat x(k) = \frac{ \hat f(k) }{ -k^2 + \omega^2 },</span></p>
 </div><p>so that the final solution we are looking for becomes</p>
 <div class="math">
-<p><img src="../_images/math/ff9910adce47ad512af175f01fbc66e4cec87ec1.png" alt="x(t) =&amp; \frac{1}{2\pi}\int_{-\infty}^\infty \hat x(k) e^{i k t} dk \\
-=&amp; \frac{1}{2\pi}\int_{-\infty}^\infty  \frac{ \hat f(k) }{ -k^2 + \omega^2 } e^{i k t} dk"/></p>
-</div></div>
+<p><span class="math">x(t) =&amp; \frac{1}{2\pi}\int_{-\infty}^\infty \hat x(k) e^{i k t} dk \\
+=&amp; \frac{1}{2\pi}\int_{-\infty}^\infty  \frac{ \hat f(k) }{ -k^2 + \omega^2 } e^{i k t} dk.</span></p>
+</div><p>We know <span class="math">f(t)</span> so <span class="math">\hat f(k)</span> can be calculated.</p>
+</div>
+</div>
+<div class="section" id="application-to-neuroscience">
+<h2>Application to Neuroscience<a class="headerlink" href="#application-to-neuroscience" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -319,9 +336,11 @@ x(t)\to \hat x(k) \\
     </p>
     <p>
         <span>© 2016, Lei Ma</span>|
-        <a href=>Source on GitHub</a>|
-       <a href="../_sources/equation-solving-in-neuroscience/fourier-transform.txt"
+        <a href="https://github.com/emptymalei/intelligence">GitHub</a>|
+       <a href="../_sources/equation-solving-in-neuroscience/fourier-transform.rst.txt"
            rel="nofollow">Page Source</a></li>|
+       <a href="/changelog.html"
+           rel="nofollow">changelog</a></li>|
         <span>Created with
             <a href="http://www.sphinx-doc.org">Sphinx</a></span>
     </p>
