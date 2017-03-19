@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_
 and this project adheres to `Semantic Versioning <http://semver.org/>`_.
 
+## [0.0.5] - 2017-03-18
+
+### Added
+
+- Mean-field approximation in neuron networks, together with a review of mean-field in paramagnetic materials.
+
+### Changed
+
+- Update footer displayed year
+
 ## [0.0.5] - 2017-02-16
 
 ### Added
