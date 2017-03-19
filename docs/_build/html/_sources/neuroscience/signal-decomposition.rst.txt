@@ -40,7 +40,7 @@ Stimulation
 
 Stimulations could also be done in a similar way. We apply different modes and check if each mode plays a different role in the brain.
 
-Theoretically, we might think the brain activity might be related to the modes, since each mode stands for a different levels of activity in different regions. For example, if we have only :math:`l=0` mode at different radius we might not be doing anything, since a isotropic brain is very likely to be a dead one. One of the regions have large activities means we have higher modes excited and since the brain has a fixed anatomy structure, a certain mode indicates activities in different regions.
+Theoretically, we might think the brain activity might be related to the modes, since each mode stands for different levels of activity in different regions. For example, if we have only :math:`l=0` mode at different radius we might not be doing anything, since an isotropic brain is very likely to be a dead one. One of the regions have large activities means we have higher modes excited and since the brain has a fixed anatomy structure, a certain mode indicates activities in different regions.
 
 It's the same for stimulations. Generating a certain mode of electric field or potential will cause a stimulation in different regions.
 

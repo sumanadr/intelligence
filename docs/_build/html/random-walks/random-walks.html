@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.0.4',
+        VERSION:     '0.0.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -84,7 +84,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/intelligence.png"></span>
           Intelligence</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.0.4</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.5</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -106,6 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/biology.html">Biology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/functional-connectivity.html">Functional Connectivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/solitary-waves.html">Solitary Waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../equation-solving-in-neuroscience/index.html">Equation Solving in Neuroscience</a><ul>
@@ -216,7 +217,7 @@
 </div></div>
 <div class="section" id="significance-of-dimension">
 <h2>Significance of Dimension<a class="headerlink" href="#significance-of-dimension" title="Permalink to this headline">¶</a></h2>
-<p>From the root-mean-squared distance Eq. <a class="reference internal" href="#equation-eqn-rms-distance">(1)</a> we can define the density of points. Suppose we have a continues version of this random walk. After time <img class="math" src="../_images/math/48829677c118df6d2e21b4c83b52c0384a57fea5.png" alt="t" style="vertical-align: 0px"/>, the random walker walked a distance <span class="math">vt</span>. Meanwhile the random walker explored a region of radius <span class="math">\sqrt{t}v</span>, which corresponds to a volume <span class="math">V \propto \sqrt{t}v</span>. The density of walked points is defined as</p>
+<p>From the root-mean-squared distance Eq. <a class="reference internal" href="#equation-eqn-rms-distance">(1)</a> we can define the density of points. Suppose we have a continues version of this random walk. After time <span class="math">t</span>, the random walker walked a distance <span class="math">vt</span>. Meanwhile the random walker explored a region of radius <span class="math">\sqrt{t}v</span>, which corresponds to a volume <span class="math">V \propto \sqrt{t}v</span>. The density of walked points is defined as</p>
 <div class="math">
 <p><span class="math">\rho \propto \frac{t}{\sqrt{t}^d} = t^{1-d/2},</span></p>
 </div><p>where <span class="math">d</span> is the dimension of the space.</p>

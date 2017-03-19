@@ -16,6 +16,7 @@ There is a deeply hidden secret, one that killed many, one that saved many. Inte
    random-walks/index.rst
    machine-intelligence/index.rst
    collective/index.rst
+   topics/index.rst
    random-thoughts.rst
    ref.rst
    acknowledgement.rst

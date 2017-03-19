@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.0.4',
+        VERSION:     '0.0.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -84,7 +84,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/intelligence.png"></span>
           Intelligence</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.0.4</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.5</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -106,6 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/biology.html">Biology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/functional-connectivity.html">Functional Connectivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/solitary-waves.html">Solitary Waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../equation-solving-in-neuroscience/index.html">Equation Solving in Neuroscience</a><ul>
@@ -196,7 +197,7 @@
 <div class="section" id="basics">
 <h2>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h2>
 <p>Artificial neural network can be used as a universal approximator. We all had the experience of guess the solution to some particular problems. Artificial neural network serves as a general one that can be used to approximate a lot of functions.</p>
-<p>The simplest example is that we can always describe a function <img class="math" src="../_images/math/f6cfa0abc53a6bea4a204741ebe387ed2cd3e6fa.png" alt="f(x)" style="vertical-align: -4px"/> as</p>
+<p>The simplest example is that we can always describe a function <span class="math">f(x)</span> as</p>
 <div class="math">
 <p><span class="math">y(x) = \sum_{k=1}^{N} v_k * \text{activation}( w_k * x + u_k ),</span></p>
 </div><p>where <strong>activation</strong> is a function that is related to the property of single neurons. Precisely speaking, this decomposition of the function is a network composed of N neurons.</p>
@@ -220,7 +221,7 @@
 <div class="math">
 <p><span class="math">\frac{d}{dt}y(t) + y(t)</span></p>
 </div><p>is conserved and is exactly 0. If we ever try to use ANN to approximate the function <span class="math">y(t)</span>, this conservation law should be satisfied and it&#8217;s the only law that the approximator should obey.</p>
-<p>Using the network, we know that for each argument <img class="math" src="../_images/math/b10cb523412603ed534e80dda641f2326b473649.png" alt="t_i" style="vertical-align: -3px"/>, we should have an output</p>
+<p>Using the network, we know that for each argument <span class="math">t_i</span>, we should have an output</p>
 <div class="math">
 <p><span class="math">y_i= 1+t_i v_k f(t_i w_k+u_k).</span></p>
 </div><p>By training, we are talking about minimization the deviation of the quantity from the conserved value. We devise a function that describes the deviation and name it the cost,</p>
