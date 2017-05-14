@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.0.5',
+        VERSION:     '0.0.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -84,7 +84,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/intelligence.png"></span>
           Intelligence</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.0.5</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.6</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -107,6 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/functional-connectivity.html">Functional Connectivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/solitary-waves.html">Solitary Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/dispersion-relation.html">Dispersion Relation</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Equation Solving in Neuroscience</a><ul class="current">
@@ -127,8 +128,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../collective/refs.html">Collective intelligence References</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Some Topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../topics/mean-field.html">Mean-field Method</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../random-thoughts.html">Some Random Thoughts</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../random-thoughts.html#pan-intelligence">Pan-Intelligence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../random-thoughts.html#why-can-we-understand-the-universe">Why Can We Understand the Universe?</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ref.html">References</a></li>
@@ -196,55 +202,55 @@
 <h1>Laplace Tranform<a class="headerlink" href="#laplace-tranform" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="laplace-transform">
 <h2>Laplace Transform<a class="headerlink" href="#laplace-transform" title="Permalink to this headline">¶</a></h2>
-<p>Laplace transform is useful in equation solving. By definition, Laplace transform transforms a function <span class="math">f(x)</span> defined on <span class="math">x\geq 0</span> into another function by calculating the convolution</p>
+<p>Laplace transform is useful in equation solving. By definition, Laplace transform transforms a function <img class="math" src="../_images/math/f6cfa0abc53a6bea4a204741ebe387ed2cd3e6fa.png" alt="f(x)" style="vertical-align: -4px"/> defined on <img class="math" src="../_images/math/4f7aea66c7e11a8f7b5ccf040d1f3bf38350d500.png" alt="x\geq 0" style="vertical-align: -3px"/> into another function by calculating the convolution</p>
 <div class="math">
-<p><span class="math">F(s) = \int_0^\infty e^{-s x} f(x) dx,</span></p>
+<p><img src="../_images/math/3752e60015cb1bbd4cd520f74c209417879acc0f.png" alt="F(s) = \int_0^\infty e^{-s x} f(x) dx,"/></p>
 </div><p>or symbolically,</p>
 <div class="math">
-<p><span class="math">F(s) = \mathcal L_s (f(x)).</span></p>
+<p><img src="../_images/math/95260eafe5f87473322f478ae4469588c88fb899.png" alt="F(s) = \mathcal L_s (f(x))."/></p>
 </div><p>A table of important Laplace transforms can be found on <a class="reference external" href="http://mathworld.wolfram.com/LaplaceTransform.html">mathworld.wolfram.com</a>. Here we steal some of the commonly used.</p>
 <div class="math">
-<p><span class="math">\mathcal L_s (1) =&amp; \frac{1}{s}\\
+<p><img src="../_images/math/0c4800fd5f0b54639a8927bc657404eb91a39bc3.png" alt="\mathcal L_s (1) =&amp; \frac{1}{s}\\
 \mathcal L_s (x^n) =&amp; \frac{n!}{s^{n+1}}\\
 \mathcal \sin(kx) =&amp; \frac{k}{k^2+s^2} \\
-\mathcal \cos(kx) =&amp; \frac{s}{k^2+s^2}.</span></p>
+\mathcal \cos(kx) =&amp; \frac{s}{k^2+s^2}."/></p>
 </div><p>It can also be applied to differentials.</p>
 <div class="math">
-<p><span class="math">\mathcal L_s \left(\frac{d f(x)}{dx}\right) =&amp; s \mathcal L_s (f(x)) - f(0) \\
-\mathcal L_s \left(\frac{d^2f(x)}{dx^2}\right) =&amp; s^2 \mathcal L_s (f(x)) - s f(0) - \left.\frac{df(x)}{dx}\right\vert_{x=0}.</span></p>
+<p><img src="../_images/math/8509bef932c4b3975e82afc821d29e05c97b1690.png" alt="\mathcal L_s \left(\frac{d f(x)}{dx}\right) =&amp; s \mathcal L_s (f(x)) - f(0) \\
+\mathcal L_s \left(\frac{d^2f(x)}{dx^2}\right) =&amp; s^2 \mathcal L_s (f(x)) - s f(0) - \left.\frac{df(x)}{dx}\right\vert_{x=0}."/></p>
 </div><div class="toggle admonition">
 <p class="first admonition-title">Laplace Transform of Differentials</p>
 <p>The general form is</p>
 <div class="last math">
-<p><span class="math">\mathcal L_s (f^{(n)}(x)) = s^n \mathcal L (f(x)) - \sum_{m=1}^n s^{n-m} f^{(m-1)}(0).</span></p>
+<p><img src="../_images/math/c109e6a80d4376dd585209919a02108974138e9f.png" alt="\mathcal L_s (f^{(n)}(x)) = s^n \mathcal L (f(x)) - \sum_{m=1}^n s^{n-m} f^{(m-1)}(0)."/></p>
 </div></div>
 <p>Integrals with upper limit as argument also transform nicely.</p>
 <div class="math">
-<p><span class="math">\mathcal L_s \left( \int_0^x f(x') dx'  \right) = \frac{\mathcal L_s(f)}{s}.</span></p>
+<p><img src="../_images/math/aee8102cd04544a84b23962d8587b185e4a7b877.png" alt="\mathcal L_s \left( \int_0^x f(x') dx'  \right) = \frac{\mathcal L_s(f)}{s}."/></p>
 </div><p>Laplace transform is useful in solving differential equations because it transforms many equations into fractions and polynomials. A simple example is the harmonic osicllators. The equation of motion is</p>
 <div class="math">
-<p><span class="math">\ddot x(t) = - \omega^2 x(t),</span></p>
+<p><img src="../_images/math/85de634448456ad1e94faa30335ba6a120331fcc.png" alt="\ddot x(t) = - \omega^2 x(t),"/></p>
 </div><p>which is transformed into</p>
 <div class="math">
-<p><span class="math">s^2 X(s) - s x(0) - \dot x(0) = - \omega^2 X(s).</span></p>
+<p><img src="../_images/math/e5b90657a977a12e449da4236a05f98cdb0ee9b6.png" alt="s^2 X(s) - s x(0) - \dot x(0) = - \omega^2 X(s)."/></p>
 </div><p>The solution to it is</p>
 <div class="math">
-<p><span class="math">X(s) = \frac{ s x(0) + \dot x(0)}{s^2 + \omega^2} = x(0)\frac{ s }{s^2 + \omega^2} + \frac{\dot x(0)}{\omega} \frac{\omega}{s^2 + \omega^2}.</span></p>
+<p><img src="../_images/math/9a16a7ce38122a4bf67e109fcde2e5fd0a6c7358.png" alt="X(s) = \frac{ s x(0) + \dot x(0)}{s^2 + \omega^2} = x(0)\frac{ s }{s^2 + \omega^2} + \frac{\dot x(0)}{\omega} \frac{\omega}{s^2 + \omega^2}."/></p>
 </div><p>We can spot sin and cos from the solution, or more generally perform an inverse Laplace transform,</p>
 <div class="math">
-<p><span class="math">x(t) = x(0) \cos(\omega t) + \frac{\dot x(0)}{\omega} \sin(\omega t).</span></p>
+<p><img src="../_images/math/c8075a4469cca1c22a7e2388b1bea7ffef17f506.png" alt="x(t) = x(0) \cos(\omega t) + \frac{\dot x(0)}{\omega} \sin(\omega t)."/></p>
 </div><p>This example is too simple sometimes naive. However, it shows the spirit.</p>
 <div class="warning admonition">
 <p class="first admonition-title">Caveats</p>
 <p>Laplace transform has a lot of counter intuitive expressions.</p>
 <ol class="last arabic">
-<li><p class="first">Laplace transform of product of two functions <span class="math">f(x)g(x)</span> is <strong>NOT</strong> the product of the Laplace transforms <span class="math">\mathcal L_s(f)\mathcal L_s(g)</span>. However, if one of the functions is a constant, say <span class="math">f(x)=5</span>, we can prove that the Laplace transform of <span class="math">5g(x)</span> is <span class="math">5\mathcal L_s(g)</span>.</p>
+<li><p class="first">Laplace transform of product of two functions <img class="math" src="../_images/math/47f571d2e5de089f7df5a58a724e2ffb8951cb0f.png" alt="f(x)g(x)" style="vertical-align: -4px"/> is <strong>NOT</strong> the product of the Laplace transforms <img class="math" src="../_images/math/41be4b688c3b2e2eadec6f025eaae4d7a7e91ec4.png" alt="\mathcal L_s(f)\mathcal L_s(g)" style="vertical-align: -4px"/>. However, if one of the functions is a constant, say <img class="math" src="../_images/math/5adcd83636a3175e7a05a5982acb06cf88297f47.png" alt="f(x)=5" style="vertical-align: -4px"/>, we can prove that the Laplace transform of <img class="math" src="../_images/math/309da21633af13e9d799dbea84027b68f5da02f3.png" alt="5g(x)" style="vertical-align: -4px"/> is <img class="math" src="../_images/math/54f90b1d4af3b13c1b2719d42eb93830c419df73.png" alt="5\mathcal L_s(g)" style="vertical-align: -4px"/>.</p>
 </li>
-<li><p class="first">The product of two Laplace transforms <span class="math">\mathcal L_s(f)\mathcal L_s(g)</span> is the Laplace transform of a convolution</p>
+<li><p class="first">The product of two Laplace transforms <img class="math" src="../_images/math/41be4b688c3b2e2eadec6f025eaae4d7a7e91ec4.png" alt="\mathcal L_s(f)\mathcal L_s(g)" style="vertical-align: -4px"/> is the Laplace transform of a convolution</p>
 <div class="math">
-<p><span class="math">\int_0^x f(x') g(x-x') dx'.</span></p>
+<p><img src="../_images/math/cba457998c52a3afc2e58700158cce467187af56.png" alt="\int_0^x f(x') g(x-x') dx'."/></p>
 </div></li>
-<li><p class="first">Small s corresponds to large x, due to the nature of the exponential suppression in Laplace transform. For example, for small argument x, the function <span class="math">e^{k t}</span> becomes almost 1, meanwhile, the Laplace transform of the function <span class="math">1/(s - k)</span> becomes <span class="math">1/s</span> under large s. We can see that the two limits are consistant since the Laplace transform of 1 is <span class="math">1/s</span>.</p>
+<li><p class="first">Small s corresponds to large x, due to the nature of the exponential suppression in Laplace transform. For example, for small argument x, the function <img class="math" src="../_images/math/a10fb864b21bde806a741a96bf924d26cef5546f.png" alt="e^{k t}" style="vertical-align: 0px"/> becomes almost 1, meanwhile, the Laplace transform of the function <img class="math" src="../_images/math/6aea736dc0c36369e1d8a7d1f2c0b0411c9a4f91.png" alt="1/(s - k)" style="vertical-align: -5px"/> becomes <img class="math" src="../_images/math/b1af748c8f5348798c212c113c52080286be0707.png" alt="1/s" style="vertical-align: -5px"/> under large s. We can see that the two limits are consistant since the Laplace transform of 1 is <img class="math" src="../_images/math/b1af748c8f5348798c212c113c52080286be0707.png" alt="1/s" style="vertical-align: -5px"/>.</p>
 </li>
 <li><p class="first">In so many circumstance the Laplace transform doesn&#8217;t exist simple because the integral doesn&#8217;t converge. Please beware of this and use the transform only when it exists.</p>
 </li>
@@ -254,35 +260,35 @@
 <p class="first admonition-title">Inverse Laplace Transform</p>
 <p>We do not usually use the general form of inverse Laplace transform since we can find it in the table. Nevertheless we write it down here.</p>
 <div class="math">
-<p><span class="math">f(x) = \frac{1}{2\pi i} \int_{-i\infty}^{i \infty} F(s) e^{sx}ds.</span></p>
-</div><p>By defining <span class="math">s=i s^\dagger</span>, we can rewrite the formula</p>
+<p><img src="../_images/math/5a07a7f179042cb27a7331867869c5b2dd95b543.png" alt="f(x) = \frac{1}{2\pi i} \int_{-i\infty}^{i \infty} F(s) e^{sx}ds."/></p>
+</div><p>By defining <img class="math" src="../_images/math/ccde59b05b15e2f50b5c268ddd73c2c31731b678.png" alt="s=i s^\dagger" style="vertical-align: 0px"/>, we can rewrite the formula</p>
 <div class="last math">
-<p><span class="math">f(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(is^\dagger) e^{is^\dagger x} ds^\dagger .</span></p>
+<p><img src="../_images/math/d19f6997d13c208ef0c60b223c0c435d1fce48ae.png" alt="f(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(is^\dagger) e^{is^\dagger x} ds^\dagger ."/></p>
 </div></div>
 <p>The more interesting application is to solve matrix differential equations. For any equations</p>
 <div class="math">
-<p><span class="math">\partial_x \mathbf f(x) = \mathbf A \mathbf f(x),</span></p>
+<p><img src="../_images/math/1f24be21a172145e9bc714e14c8a4c95c54c80bc.png" alt="\partial_x \mathbf f(x) = \mathbf A \mathbf f(x),"/></p>
 </div><p>Laplace transform takes it to the form</p>
 <div class="math">
-<p><span class="math">s \mathbf F(x) - f(0) = \mathbf A \mathbf F(s).</span></p>
+<p><img src="../_images/math/05c82fce36c9707634f659d6a164b400e71d04e0.png" alt="s \mathbf F(x) - f(0) = \mathbf A \mathbf F(s)."/></p>
 </div><p>The solution is</p>
 <div class="math">
-<p><span class="math">\mathbf F(x) = \frac{1}{s \mathbf I - \mathbf A} \mathbf f(0) .</span></p>
-</div><p>So the final solution for <span class="math">f(x)</span> is</p>
+<p><img src="../_images/math/99884ee69163a481d27e0d3d9c2e0c28da91a2f2.png" alt="\mathbf F(x) = \frac{1}{s \mathbf I - \mathbf A} \mathbf f(0) ."/></p>
+</div><p>So the final solution for <img class="math" src="../_images/math/f6cfa0abc53a6bea4a204741ebe387ed2cd3e6fa.png" alt="f(x)" style="vertical-align: -4px"/> is</p>
 <div class="math">
-<p><span class="math">\mathbf f(x) = \mathcal L^{-1} \left(\frac{1}{s \mathbf I - \mathbf A} \right)\mathbf f(0).</span></p>
+<p><img src="../_images/math/43f67c48ebbbd16cc9dbb8eaf03e7a5d293d99d3.png" alt="\mathbf f(x) = \mathcal L^{-1} \left(\frac{1}{s \mathbf I - \mathbf A} \right)\mathbf f(0)."/></p>
 </div><p>We could work out the Taylor expansion of solution,</p>
 <div class="math">
-<p><span class="math">\frac{1}{s \mathbf I - \mathbf A} = \frac{\mathbf I}{s}+ \frac{\mathbf A}{s^2} + \frac{\mathbf A^2}{s^3} \cdots.</span></p>
+<p><img src="../_images/math/073d9d4e75eeac79b83180eab44a5f009fbc216f.png" alt="\frac{1}{s \mathbf I - \mathbf A} = \frac{\mathbf I}{s}+ \frac{\mathbf A}{s^2} + \frac{\mathbf A^2}{s^3} \cdots."/></p>
 </div><p>The inverse Laplace transform can be done simply term by term,</p>
 <div class="math">
-<p><span class="math">\mathcal L^{-1} \left(\frac{1}{s \mathbf I - \mathbf A} \right) = \mathbf I + x \mathbf A + \frac{1}{2!} (x \mathbf A)^2 + \cdots = e^{x \mathbf A}.</span></p>
+<p><img src="../_images/math/26c23b5e97dfa5330d3363c973c6cf812ae52baf.png" alt="\mathcal L^{-1} \left(\frac{1}{s \mathbf I - \mathbf A} \right) = \mathbf I + x \mathbf A + \frac{1}{2!} (x \mathbf A)^2 + \cdots = e^{x \mathbf A}."/></p>
 </div><p>Finally we obtain the formal solution of the system, which is</p>
 <div class="math">
-<p><span class="math">\mathbf f(x) = \exp\left( x \mathbf A \right)\mathbf f(0).</span></p>
+<p><img src="../_images/math/5a9d92782944b1c8673bbc9f24a3a5c2dc16aa40.png" alt="\mathbf f(x) = \exp\left( x \mathbf A \right)\mathbf f(0)."/></p>
 </div><div class="warning admonition">
 <p class="first admonition-title">Only Works for Constant Coefficients</p>
-<p class="last">This result only works for constant coefficients. In general, if the matrix <span class="math">A</span> depends on the argument <span class="math">x</span>, the solution can be systematically calculated using the so called <a class="reference external" href="https://en.wikipedia.org/wiki/Magnus_expansion">Magnus Expansion</a>. However, it is as tedious as a numerical solution.</p>
+<p class="last">This result only works for constant coefficients. In general, if the matrix <img class="math" src="../_images/math/4eee2c9ecec921f35bdae4156678172e00d87bb2.png" alt="A" style="vertical-align: 0px"/> depends on the argument <img class="math" src="../_images/math/26f0172a6b5795311d831199184f64ce155c1d58.png" alt="x" style="vertical-align: 0px"/>, the solution can be systematically calculated using the so called <a class="reference external" href="https://en.wikipedia.org/wiki/Magnus_expansion">Magnus Expansion</a>. However, it is as tedious as a numerical solution.</p>
 </div>
 </div>
 <div class="section" id="application-to-neuroscience">
@@ -323,7 +329,7 @@
 
     </p>
     <p>
-        <span>© 2016, Lei Ma</span>|
+        <span>© 2017, Lei Ma</span>|
         <a href="https://github.com/emptymalei/intelligence">GitHub</a>|
        <a href="../_sources/equation-solving-in-neuroscience/laplace-transform.rst.txt"
            rel="nofollow">Page Source</a></li>|

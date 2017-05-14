@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Dispersion Relation &#8212; Intelligence</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.6/readable/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Equation Solving in Neuroscience" href="../equation-solving-in-neuroscience/index.html" />
+    <link rel="prev" title="Signal Decomposition" href="signal-decomposition.html" />
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
+
+
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+ 
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/intelligence.png"></span>
+          Intelligence</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.6</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Chapters <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Neuroscience</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="biology.html">Biology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functional-connectivity.html">Functional Connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solitary-waves.html">Solitary Waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal-decomposition.html">Signal Decomposition</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Dispersion Relation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../equation-solving-in-neuroscience/index.html">Equation Solving in Neuroscience</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/green-function.html">Green&#8217;s Function Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/fourier-transform.html">Fourier Tranform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/laplace-transform.html">Laplace Tranform</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../random-walks/index.html">Random Walks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../random-walks/random-walks.html">Random Walks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../machine-intelligence/index.html">Machine Intelligence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/ann.html">Artificial Neural Network</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../collective/index.html">Collective Intelligence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../collective/refs.html">Collective intelligence References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Some Topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../topics/mean-field.html">Mean-field Method</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../random-thoughts.html">Some Random Thoughts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../random-thoughts.html#pan-intelligence">Pan-Intelligence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../random-thoughts.html#why-can-we-understand-the-universe">Why Can We Understand the Universe?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Dispersion Relation</a><ul>
+<li><a class="reference internal" href="#refences-and-notes">Refences and Notes</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="signal-decomposition.html" title="Previous Chapter: Signal Decomposition"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Signal Decomposition</span>
+    </a>
+  </li>
+  <li>
+    <a href="../equation-solving-in-neuroscience/index.html" title="Next Chapter: Equation Solving in Neuroscience"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Equation Solv... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="dispersion-relation">
+<h1>Dispersion Relation<a class="headerlink" href="#dispersion-relation" title="Permalink to this headline">¶</a></h1>
+<p>A network of neurons forms a field with the field value being the potential and every other valuable measurable quantities. With this concept set up, we could define plane waves on this network and perform linear stability analysis.</p>
+<p>Suppose we have a wave of the form <img class="math" src="../_images/math/c20eae38d64fce6c7c8ede52aab365f433e4109b.png" alt="g(c t - x)" style="vertical-align: -4px"/> travelling, which can be Fourier transformed into many plane waves. If the velocity of the wave doesn&#8217;t depend on the frequency of each Fourier mode, the wave would remain whatever it started as, which is non-dispersive. However, many waves are dispersive and will disperse as they travels. The reason that the waves disperse is that the velocity of each Fourier modes <img class="math" src="../_images/math/bc14fcdd3335ec762d99cd96472bde5c352adbb3.png" alt="A(\omega)e^{-i (\omega t - k x )}" style="vertical-align: -4px"/> is different such that different Fourier modes will seperate out due to the difference in velocity.</p>
+<p>Thus we could find out the velocity as a function of frequency to tell how dispersive the waves are, i.e., <img class="math" src="../_images/math/a0abc39d7f11788194450cda0aa5d70bc2287ab2.png" alt="c(\omega)" style="vertical-align: -4px"/> or <img class="math" src="../_images/math/9c5bc0d486d38874e53ba740ba3817ee9aae4e94.png" alt="c(k)" style="vertical-align: -4px"/>, where <img class="math" src="../_images/math/dad01c4cf2b41d14a2db01080e0fd6f5385dd364.png" alt="\omega" style="vertical-align: 0px"/> and <img class="math" src="../_images/math/7865c4d9f5e62fde743b7aad07050f1abaf045b1.png" alt="k" style="vertical-align: 0px"/> are the frequency and wave number respectively.</p>
+<p>In fact the phase velocity is defined as <img class="math" src="../_images/math/e8568c32be5e7e7bcd3e732178c70e604884ee45.png" alt="c(\omega) = \frac{\omega}{k}" style="vertical-align: -6px"/> while group velocity is <img class="math" src="../_images/math/6b9114bbbcd10c1aa579c2a1cccd2adb0c86ce2b.png" alt="c_{g}(\omega) = \frac{d\omega}{dk}" style="vertical-align: -6px"/>. We now established the relations between <img class="math" src="../_images/math/dad01c4cf2b41d14a2db01080e0fd6f5385dd364.png" alt="\omega" style="vertical-align: 0px"/> and <img class="math" src="../_images/math/7865c4d9f5e62fde743b7aad07050f1abaf045b1.png" alt="k" style="vertical-align: 0px"/>, e.g., <img class="math" src="../_images/math/8796477d670dc16dce123b71142827f478611d79.png" alt="D(\omega,k)=0" style="vertical-align: -4px"/>. The relation <img class="math" src="../_images/math/8796477d670dc16dce123b71142827f478611d79.png" alt="D(\omega,k)=0" style="vertical-align: -4px"/> is dubbed as <strong>dispersion relation</strong>.</p>
+<div class="section" id="refences-and-notes">
+<h2>Refences and Notes<a class="headerlink" href="#refences-and-notes" title="Permalink to this headline">¶</a></h2>
+<table class="docutils citation" frame="void" id="germentrout" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[GErmentrout]</td><td><em>Mathematical Foundations of Neuroscience</em> Chapter 6.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<!-- <div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'statmech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div> -->
+
+<hr>
+
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+    <p class="pull-right">
+        <a href="#"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
+
+    </p>
+    <p>
+        <span>© 2017, Lei Ma</span>|
+        <a href="https://github.com/emptymalei/intelligence">GitHub</a>|
+       <a href="../_sources/neuroscience/dispersion-relation.rst.txt"
+           rel="nofollow">Page Source</a></li>|
+       <a href="/changelog.html"
+           rel="nofollow">changelog</a></li>|
+        <span>Created with
+            <a href="http://www.sphinx-doc.org">Sphinx</a></span>
+    </p>
+
+    <hr>
+
+
+    <script>
+        window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+
+</div>
+
+
+  </body>
+</html>

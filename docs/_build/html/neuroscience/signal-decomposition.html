@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.0.5',
+        VERSION:     '0.0.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -33,7 +33,7 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Equation Solving in Neuroscience" href="../equation-solving-in-neuroscience/index.html" />
+    <link rel="next" title="Dispersion Relation" href="dispersion-relation.html" />
     <link rel="prev" title="Solitary Waves" href="solitary-waves.html" />
 <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -84,7 +84,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/intelligence.png"></span>
           Intelligence</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.0.5</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.6</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -107,6 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="functional-connectivity.html">Functional Connectivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="solitary-waves.html">Solitary Waves</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Signal Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispersion-relation.html">Dispersion Relation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../equation-solving-in-neuroscience/index.html">Equation Solving in Neuroscience</a><ul>
@@ -127,8 +128,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../collective/refs.html">Collective intelligence References</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Some Topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../topics/mean-field.html">Mean-field Method</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../random-thoughts.html">Some Random Thoughts</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../random-thoughts.html#pan-intelligence">Pan-Intelligence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../random-thoughts.html#why-can-we-understand-the-universe">Why Can We Understand the Universe?</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ref.html">References</a></li>
@@ -165,7 +171,7 @@
     </a>
   </li>
   <li>
-    <a href="../equation-solving-in-neuroscience/index.html" title="Next Chapter: Equation Solving in Neuroscience"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Equation Solv... &raquo;</span>
+    <a href="dispersion-relation.html" title="Next Chapter: Dispersion Relation"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Dispersion Relation &raquo;</span>
     </a>
   </li>
               
@@ -212,7 +218,7 @@
 <p>For electric potential, we can set up a reference point and measure it, which means it&#8217;s a scalar and we have a number at each point. But for the other two with directions, they are vectors.</p>
 <p>The decompositions can be done in different ways, according to the information we want to extract.</p>
 <ol class="arabic simple">
-<li>Globally decomposite the signal with spherical harmonics <span class="math">Y_{}</span> at different radius, a multiple expansion for the whole brain; It requires <strong>spin weighted spherical harmonics</strong> etc for vector fields.</li>
+<li>Globally decomposite the signal with spherical harmonics <img class="math" src="../_images/math/86eece8f00cfba75ebc4dff7de0277ddd6d4d413.png" alt="Y_{}" style="vertical-align: 0px"/> at different radius, a multiple expansion for the whole brain; It requires <strong>spin weighted spherical harmonics</strong> etc for vector fields.</li>
 <li>Locally expand the signal at each point using spherical harmonics; Only need the spherical harmonics.</li>
 </ol>
 <table class="docutils citation" frame="void" id="sivakumar2016" rules="none">
@@ -225,7 +231,7 @@
 <div class="section" id="stimulation">
 <h2>Stimulation<a class="headerlink" href="#stimulation" title="Permalink to this headline">¶</a></h2>
 <p>Stimulations could also be done in a similar way. We apply different modes and check if each mode plays a different role in the brain.</p>
-<p>Theoretically, we might think the brain activity might be related to the modes, since each mode stands for different levels of activity in different regions. For example, if we have only <span class="math">l=0</span> mode at different radius we might not be doing anything, since an isotropic brain is very likely to be a dead one. One of the regions have large activities means we have higher modes excited and since the brain has a fixed anatomy structure, a certain mode indicates activities in different regions.</p>
+<p>Theoretically, we might think the brain activity might be related to the modes, since each mode stands for different levels of activity in different regions. For example, if we have only <img class="math" src="../_images/math/3977082c9e6866c528863cdcb09b1195a7b656a4.png" alt="l=0" style="vertical-align: 0px"/> mode at different radius we might not be doing anything, since an isotropic brain is very likely to be a dead one. One of the regions have large activities means we have higher modes excited and since the brain has a fixed anatomy structure, a certain mode indicates activities in different regions.</p>
 <p>It&#8217;s the same for stimulations. Generating a certain mode of electric field or potential will cause a stimulation in different regions.</p>
 </div>
 <div class="section" id="thearetical-investigation">
@@ -267,7 +273,7 @@
 
     </p>
     <p>
-        <span>© 2016, Lei Ma</span>|
+        <span>© 2017, Lei Ma</span>|
         <a href="https://github.com/emptymalei/intelligence">GitHub</a>|
        <a href="../_sources/neuroscience/signal-decomposition.rst.txt"
            rel="nofollow">Page Source</a></li>|

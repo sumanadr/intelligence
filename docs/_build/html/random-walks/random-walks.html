@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.0.5',
+        VERSION:     '0.0.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -84,7 +84,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/intelligence.png"></span>
           Intelligence</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.0.5</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.6</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -107,6 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/functional-connectivity.html">Functional Connectivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/solitary-waves.html">Solitary Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/dispersion-relation.html">Dispersion Relation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../equation-solving-in-neuroscience/index.html">Equation Solving in Neuroscience</a><ul>
@@ -127,8 +128,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../collective/refs.html">Collective intelligence References</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Some Topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../topics/mean-field.html">Mean-field Method</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../random-thoughts.html">Some Random Thoughts</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../random-thoughts.html#pan-intelligence">Pan-Intelligence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../random-thoughts.html#why-can-we-understand-the-universe">Why Can We Understand the Universe?</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ref.html">References</a></li>
@@ -198,34 +204,34 @@
 <p>There exists several simple models of random walks. It can be either fixed stepsize but random directions or varying stepsize.</p>
 <div class="section" id="fixed-stepsize">
 <h2>Fixed Stepsize<a class="headerlink" href="#fixed-stepsize" title="Permalink to this headline">¶</a></h2>
-<p>A simple model is that we assume each step is a step of size <span class="math">\epsilon</span>, but with random directions. The position of this random walker at step <span class="math">N</span> is the summation of all the steps (vectors),</p>
+<p>A simple model is that we assume each step is a step of size <img class="math" src="../_images/math/9f9e898104d1f4cdda77334f6efce55813c6f657.png" alt="\epsilon" style="vertical-align: 0px"/>, but with random directions. The position of this random walker at step <img class="math" src="../_images/math/608c42e2807d2a3364ec7ebcf1e3555db20f680f.png" alt="N" style="vertical-align: 0px"/> is the summation of all the steps (vectors),</p>
 <div class="math">
-<p><span class="math">\vec X = \sum_i^N x_i,</span></p>
-</div><p>where <span class="math">x_i</span> is the vector that represents step i.</p>
-<p>What we want to find out is the places that the random walker explored after <span class="math">N</span> steps. The corresponding quantity that represents it is <span class="math">\sqrt{\langle \vec X^2 \rangle}</span>.</p>
+<p><img src="../_images/math/592709f1b809b66be0361f516a4757d2c48bab92.png" alt="\vec X = \sum_i^N x_i,"/></p>
+</div><p>where <img class="math" src="../_images/math/252fbfa36023bcc33e18a16b80aa9070c857fb4d.png" alt="x_i" style="vertical-align: -3px"/> is the vector that represents step i.</p>
+<p>What we want to find out is the places that the random walker explored after <img class="math" src="../_images/math/608c42e2807d2a3364ec7ebcf1e3555db20f680f.png" alt="N" style="vertical-align: 0px"/> steps. The corresponding quantity that represents it is <img class="math" src="../_images/math/eb9a693ebbc97b8883edf4aaff9f3dd62118ecac.png" alt="\sqrt{\langle \vec X^2 \rangle}" style="vertical-align: -10px"/>.</p>
 <p>From the idea of random walk, we know that</p>
 <div class="math">
-<p><span class="math">\langle \vec x_i \rangle =&amp; 0 \\
-\langle \vec x_i \cdot \vec x_j \rangle =&amp; 0.</span></p>
+<p><img src="../_images/math/2af19dc9651cd5beb8957c008fc5ee3f59ba088c.png" alt="\langle \vec x_i \rangle =&amp; 0 \\
+\langle \vec x_i \cdot \vec x_j \rangle =&amp; 0."/></p>
 </div><p>Thus</p>
 <div class="math">
-<p><span class="math">\langle \vec X^2 \rangle = &amp; \sum_i \vec x_i\cdot \vec x_i \\
-=&amp; N \epsilon^2.</span></p>
+<p><img src="../_images/math/82a510f43dc3c81b085875a6a74a26d9ad68f0ae.png" alt="\langle \vec X^2 \rangle = &amp; \sum_i \vec x_i\cdot \vec x_i \\
+=&amp; N \epsilon^2."/></p>
 </div><p>Then we find out that</p>
 <div class="math" id="equation-eqn-rms-distance">
-<p><span class="eqno">(1)</span><span class="math">\bar X = \sqrt{\langle \vec X^2 \rangle} = \sqrt{N}\epsilon.</span></p>
+<p><span class="eqno">(1)</span><img src="../_images/math/1c8ddabff7c35040c49cbfa5da3cb73c71edbba4.png" alt="\bar X = \sqrt{\langle \vec X^2 \rangle} = \sqrt{N}\epsilon."/></p>
 </div></div>
 <div class="section" id="significance-of-dimension">
 <h2>Significance of Dimension<a class="headerlink" href="#significance-of-dimension" title="Permalink to this headline">¶</a></h2>
-<p>From the root-mean-squared distance Eq. <a class="reference internal" href="#equation-eqn-rms-distance">(1)</a> we can define the density of points. Suppose we have a continues version of this random walk. After time <span class="math">t</span>, the random walker walked a distance <span class="math">vt</span>. Meanwhile the random walker explored a region of radius <span class="math">\sqrt{t}v</span>, which corresponds to a volume <span class="math">V \propto \sqrt{t}v</span>. The density of walked points is defined as</p>
+<p>From the root-mean-squared distance Eq. <a class="reference internal" href="#equation-eqn-rms-distance">(1)</a> we can define the density of points. Suppose we have a continues version of this random walk. After time <img class="math" src="../_images/math/48829677c118df6d2e21b4c83b52c0384a57fea5.png" alt="t" style="vertical-align: 0px"/>, the random walker walked a distance <img class="math" src="../_images/math/fe7ed2ee8664d20f4f01fca9df1d8972c1a8a28e.png" alt="vt" style="vertical-align: 0px"/>. Meanwhile the random walker explored a region of radius <img class="math" src="../_images/math/a2c9b040320a359df0d79877e95f4b3200547fe8.png" alt="\sqrt{t}v" style="vertical-align: -3px"/>, which corresponds to a volume <img class="math" src="../_images/math/72228f846da8aa93a0009aa666d20e2a03d45ed7.png" alt="V \propto \sqrt{t}v" style="vertical-align: -3px"/>. The density of walked points is defined as</p>
 <div class="math">
-<p><span class="math">\rho \propto \frac{t}{\sqrt{t}^d} = t^{1-d/2},</span></p>
-</div><p>where <span class="math">d</span> is the dimension of the space.</p>
-<p>We spot this critical dimension <span class="math">d=2</span>.</p>
+<p><img src="../_images/math/c21cd80f651b5c5174b2b10962fa3d63488cc87f.png" alt="\rho \propto \frac{t}{\sqrt{t}^d} = t^{1-d/2},"/></p>
+</div><p>where <img class="math" src="../_images/math/7f800867f4b04d989918606b77d472ee1a9be10e.png" alt="d" style="vertical-align: 0px"/> is the dimension of the space.</p>
+<p>We spot this critical dimension <img class="math" src="../_images/math/b4105119b6a4230de7e8f136553083b139cb9c77.png" alt="d=2" style="vertical-align: 0px"/>.</p>
 <ol class="arabic simple">
-<li><span class="math">d&lt;2</span>: the density of points at <span class="math">t\to\infty</span> becomes <span class="math">\rho\to \infty</span>. This called recurrent behavior. We are sure that after infinite time, we are going back to a point that we visited before.</li>
-<li><span class="math">d=2</span>: the density of points at <span class="math">t\to\infty</span> becomes <span class="math">\rho\to \mathrm{Constant}</span>. <strong>This derivation is wrong about this critical case.</strong> It should be <span class="math">\rho\to \ln t</span></li>
-<li><span class="math">d&gt;2</span>: the density of points at <span class="math">t\to\infty</span> becomes <span class="math">\rho\to 0</span>. This is called transit behavior. We are not sure that we could go back to a point that we visited before.</li>
+<li><img class="math" src="../_images/math/57c927ab04e645ce3b6b92158e7b61c4cd1b0467.png" alt="d&lt;2" style="vertical-align: 0px"/>: the density of points at <img class="math" src="../_images/math/718a772b07d4bfbc7e1681c5add194da12e89afb.png" alt="t\to\infty" style="vertical-align: -1px"/> becomes <img class="math" src="../_images/math/03301d3cb1ebdb5856ad297bd2a362a160208aa4.png" alt="\rho\to \infty" style="vertical-align: -4px"/>. This called recurrent behavior. We are sure that after infinite time, we are going back to a point that we visited before.</li>
+<li><img class="math" src="../_images/math/b4105119b6a4230de7e8f136553083b139cb9c77.png" alt="d=2" style="vertical-align: 0px"/>: the density of points at <img class="math" src="../_images/math/718a772b07d4bfbc7e1681c5add194da12e89afb.png" alt="t\to\infty" style="vertical-align: -1px"/> becomes <img class="math" src="../_images/math/8f66fa16ec98790f411a621d63bcba0a9cf41925.png" alt="\rho\to \mathrm{Constant}" style="vertical-align: -4px"/>. <strong>This derivation is wrong about this critical case.</strong> It should be <img class="math" src="../_images/math/da1c4564f72d17eccf3ab647d97eef7d1b880eae.png" alt="\rho\to \ln t" style="vertical-align: -4px"/></li>
+<li><img class="math" src="../_images/math/56471fb0007ac7311310e55bd31c774c52687289.png" alt="d&gt;2" style="vertical-align: 0px"/>: the density of points at <img class="math" src="../_images/math/718a772b07d4bfbc7e1681c5add194da12e89afb.png" alt="t\to\infty" style="vertical-align: -1px"/> becomes <img class="math" src="../_images/math/b12773a646bb9b7ddb3974202dd9eb8258f4f435.png" alt="\rho\to 0" style="vertical-align: -4px"/>. This is called transit behavior. We are not sure that we could go back to a point that we visited before.</li>
 </ol>
 </div>
 <div class="section" id="refs-notes">
@@ -269,7 +275,7 @@
 
     </p>
     <p>
-        <span>© 2016, Lei Ma</span>|
+        <span>© 2017, Lei Ma</span>|
         <a href="https://github.com/emptymalei/intelligence">GitHub</a>|
        <a href="../_sources/random-walks/random-walks.rst.txt"
            rel="nofollow">Page Source</a></li>|

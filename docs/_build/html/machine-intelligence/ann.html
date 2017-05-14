@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.0.5',
+        VERSION:     '0.0.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -84,7 +84,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/intelligence.png"></span>
           Intelligence</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.0.5</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.6</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -107,6 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/functional-connectivity.html">Functional Connectivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/solitary-waves.html">Solitary Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/dispersion-relation.html">Dispersion Relation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../equation-solving-in-neuroscience/index.html">Equation Solving in Neuroscience</a><ul>
@@ -127,8 +128,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../collective/refs.html">Collective intelligence References</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Some Topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../topics/mean-field.html">Mean-field Method</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../random-thoughts.html">Some Random Thoughts</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../random-thoughts.html#pan-intelligence">Pan-Intelligence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../random-thoughts.html#why-can-we-understand-the-universe">Why Can We Understand the Universe?</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ref.html">References</a></li>
@@ -197,9 +203,9 @@
 <div class="section" id="basics">
 <h2>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h2>
 <p>Artificial neural network can be used as a universal approximator. We all had the experience of guess the solution to some particular problems. Artificial neural network serves as a general one that can be used to approximate a lot of functions.</p>
-<p>The simplest example is that we can always describe a function <span class="math">f(x)</span> as</p>
+<p>The simplest example is that we can always describe a function <img class="math" src="../_images/math/f6cfa0abc53a6bea4a204741ebe387ed2cd3e6fa.png" alt="f(x)" style="vertical-align: -4px"/> as</p>
 <div class="math">
-<p><span class="math">y(x) = \sum_{k=1}^{N} v_k * \text{activation}( w_k * x + u_k ),</span></p>
+<p><img src="../_images/math/d7b5c6be9fabc894615095443a53ce4969d6b873.png" alt="y(x) = \sum_{k=1}^{N} v_k * \text{activation}( w_k * x + u_k ),"/></p>
 </div><p>where <strong>activation</strong> is a function that is related to the property of single neurons. Precisely speaking, this decomposition of the function is a network composed of N neurons.</p>
 <div class="figure align-center" id="id1">
 <img alt="../_images/neural-network-simple.png" src="../_images/neural-network-simple.png" />
@@ -216,29 +222,29 @@
 <h2>Solving Differential Equations<a class="headerlink" href="#solving-differential-equations" title="Permalink to this headline">¶</a></h2>
 <p>For a differential equation, we have a natural conservation law. For example, equation</p>
 <div class="math">
-<p><span class="math">\frac{d}{dt}y(t)= - y(t)</span></p>
+<p><img src="../_images/math/e95f0de3f85efa797975b6093f9c17808f8dc4f2.png" alt="\frac{d}{dt}y(t)= - y(t)"/></p>
 </div><p>means that the quantity</p>
 <div class="math">
-<p><span class="math">\frac{d}{dt}y(t) + y(t)</span></p>
-</div><p>is conserved and is exactly 0. If we ever try to use ANN to approximate the function <span class="math">y(t)</span>, this conservation law should be satisfied and it&#8217;s the only law that the approximator should obey.</p>
-<p>Using the network, we know that for each argument <span class="math">t_i</span>, we should have an output</p>
+<p><img src="../_images/math/28d421d123be584f5d69fd0c1138d22f8675b73b.png" alt="\frac{d}{dt}y(t) + y(t)"/></p>
+</div><p>is conserved and is exactly 0. If we ever try to use ANN to approximate the function <img class="math" src="../_images/math/b08dd163df212ba4c79ee0fccf7ac94a3fc464c1.png" alt="y(t)" style="vertical-align: -4px"/>, this conservation law should be satisfied and it&#8217;s the only law that the approximator should obey.</p>
+<p>Using the network, we know that for each argument <img class="math" src="../_images/math/b10cb523412603ed534e80dda641f2326b473649.png" alt="t_i" style="vertical-align: -3px"/>, we should have an output</p>
 <div class="math">
-<p><span class="math">y_i= 1+t_i v_k f(t_i w_k+u_k).</span></p>
+<p><img src="../_images/math/96e0cc5de960a57535edfb617bf8673d8b155682.png" alt="y_i= 1+t_i v_k f(t_i w_k+u_k)."/></p>
 </div><p>By training, we are talking about minimization the deviation of the quantity from the conserved value. We devise a function that describes the deviation and name it the cost,</p>
 <div class="math">
-<p><span class="math">I=\sum_i\left( \frac{dy_i}{dt}+y_i \right)^2.</span></p>
-</div><p>We could actually calculate <span class="math">dy/dt</span> using the approximator,</p>
+<p><img src="../_images/math/5e4a107b91854f8da82b7362362174ba014db09f.png" alt="I=\sum_i\left( \frac{dy_i}{dt}+y_i \right)^2."/></p>
+</div><p>We could actually calculate <img class="math" src="../_images/math/43641eb24993902b834ea4885f72e515d83c0115.png" alt="dy/dt" style="vertical-align: -5px"/> using the approximator,</p>
 <div class="math">
-<p><span class="math">\frac{dy}{dt} = v_k f(t w_k+u_k) + t v_k f(tw_k+u_k) (1-f(tw_k+u_k))w_k,</span></p>
-</div><p>where we denote the <strong>activation</strong> function <span class="math">f</span>. Then we can parameterize the cost function using the parameters</p>
+<p><img src="../_images/math/a5fa86a309b9444ed165b0f57b2ae7151db1af0d.png" alt="\frac{dy}{dt} = v_k f(t w_k+u_k) + t v_k f(tw_k+u_k) (1-f(tw_k+u_k))w_k,"/></p>
+</div><p>where we denote the <strong>activation</strong> function <img class="math" src="../_images/math/b7161177f64190c151b8da46adb52a087ef229c6.png" alt="f" style="vertical-align: -4px"/>. Then we can parameterize the cost function using the parameters</p>
 <div class="math">
-<p><span class="math">I = \sum_i \left(  v_k f(t w_k+u_k) + t v_k f(tw_k+u_k) (1-f(tw_k+u_k)) w_k + y \right)^2.</span></p>
+<p><img src="../_images/math/96a517734d8cbbdf5ef7962e644fc03de0d5a566.png" alt="I = \sum_i \left(  v_k f(t w_k+u_k) + t v_k f(tw_k+u_k) (1-f(tw_k+u_k)) w_k + y \right)^2."/></p>
 </div><p>The final step is to find the parameters so that this cost is minimized.</p>
 <div class="note admonition">
 <p class="first admonition-title">Activation function or trigger function</p>
 <p>One of the useful activation function is</p>
 <div class="last math">
-<p><span class="math">f(x)=\frac{1}{1+\exp(-x)}.</span></p>
+<p><img src="../_images/math/0747fc9cf83c264c3d83f5bc2796be471eae3887.png" alt="f(x)=\frac{1}{1+\exp(-x)}."/></p>
 </div></div>
 </div>
 </div>
@@ -276,7 +282,7 @@
 
     </p>
     <p>
-        <span>© 2016, Lei Ma</span>|
+        <span>© 2017, Lei Ma</span>|
         <a href="https://github.com/emptymalei/intelligence">GitHub</a>|
        <a href="../_sources/machine-intelligence/ann.rst.txt"
            rel="nofollow">Page Source</a></li>|

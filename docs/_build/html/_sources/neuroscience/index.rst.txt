@@ -13,3 +13,4 @@ Neuroscience
    functional-connectivity.rst
    solitary-waves.rst
    signal-decomposition.rst
+   dispersion-relation.rst
