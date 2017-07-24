@@ -7,3 +7,4 @@ Some random but interesting topics.
    :maxdepth: 2
 
    mean-field.rst
+   spin-glass.rst
