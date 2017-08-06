@@ -8,6 +8,8 @@ Signal Decomposition
 
 Signals, electric potential or stimulations, are usually decomposed into different modes to study a system. The most prominant application is the measured signals, but stimulations should also be decomposed to study the response.
 
+Why would we expect the decomposition of signal in a brain to have any significance? **For a neural system of tiny elements to really work out a complicated problem, I expect that some of the neurons have to work collectively in order to solve the problem.** Such collective phenomona might generate observable signals in fMRI etc if the collective neurons are clustering in space. In this case a spherical harmonic decomposition would be able to detect some of the features. Well, this is a little doubtful because the activities might not be global.
+
 
 
 Measurement

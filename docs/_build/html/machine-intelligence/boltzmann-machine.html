@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Signal Decomposition &#8212; Intelligence</title>
+    <title>Boltzmann Machine &#8212; Intelligence</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -33,8 +33,6 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Dispersion Relation" href="dispersion-relation.html" />
-    <link rel="prev" title="Solitary Waves" href="solitary-waves.html" />
 <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-44466929-2']);
@@ -99,15 +97,15 @@
      href="../index.html">Chapters <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul class="current">
+      aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">Vocabulary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Neuroscience</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="biology.html">Biology</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functional-connectivity.html">Functional Connectivity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="solitary-waves.html">Solitary Waves</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Signal Decomposition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dispersion-relation.html">Dispersion Relation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience/index.html">Neuroscience</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/biology.html">Biology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/functional-connectivity.html">Functional Connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/solitary-waves.html">Solitary Waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/dispersion-relation.html">Dispersion Relation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../equation-solving-in-neuroscience/index.html">Equation Solving in Neuroscience</a><ul>
@@ -120,8 +118,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../random-walks/random-walks.html">Random Walks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../machine-intelligence/index.html">Machine Intelligence</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/ann.html">Artificial Neural Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Machine Intelligence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ann.html">Artificial Neural Network</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../collective/index.html">Collective Intelligence</a><ul>
@@ -154,12 +152,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Signal Decomposition</a><ul>
-<li><a class="reference internal" href="#measurement">Measurement</a></li>
-<li><a class="reference internal" href="#stimulation">Stimulation</a></li>
-<li><a class="reference internal" href="#thearetical-investigation">Thearetical Investigation</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Boltzmann Machine</a></li>
 </ul>
 </ul>
 </li>
@@ -168,14 +161,6 @@
             
               
                 
-  <li>
-    <a href="solitary-waves.html" title="Previous Chapter: Solitary Waves"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Solitary Waves</span>
-    </a>
-  </li>
-  <li>
-    <a href="dispersion-relation.html" title="Next Chapter: Dispersion Relation"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Dispersion Relation &raquo;</span>
-    </a>
-  </li>
               
             
             
@@ -201,46 +186,9 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="signal-decomposition">
-<h1>Signal Decomposition<a class="headerlink" href="#signal-decomposition" title="Permalink to this headline">¶</a></h1>
-<div class="warning admonition">
-<p class="first admonition-title">Acknowledgement</p>
-<p class="last">I had some of the ideas when Han Lu was explaining an experiment after one of my lunch. We share some of the ideas.</p>
-</div>
-<p>Signals, electric potential or stimulations, are usually decomposed into different modes to study a system. The most prominant application is the measured signals, but stimulations should also be decomposed to study the response.</p>
-<p>Why would we expect the decomposition of signal in a brain to have any significance? <strong>For a neural system of tiny elements to really work out a complicated problem, I expect that some of the neurons have to work collectively in order to solve the problem.</strong> Such collective phenomona might generate observable signals in fMRI etc if the collective neurons are clustering in space. In this case a spherical harmonic decomposition would be able to detect some of the features. Well, this is a little doubtful because the activities might not be global.</p>
-<div class="section" id="measurement">
-<h2>Measurement<a class="headerlink" href="#measurement" title="Permalink to this headline">¶</a></h2>
-<p>Application of spherical harmonics to EEG have resulted in interesting experiments <a class="reference internal" href="#sivakumar2016" id="id1">[Sivakumar2016]</a>.</p>
-<p>However, <a class="reference internal" href="#sivakumar2016" id="id2">[Sivakumar2016]</a> only used it to decompose the surface of the brain, which is not the complete information. A full map of signal should be a field of 3 dimensional sphere. At each point, we can have information about</p>
-<ol class="arabic simple">
-<li>electric potential,</li>
-<li>current with direction (flux of charge),</li>
-<li>electric field with direction.</li>
-</ol>
-<p>For electric potential, we can set up a reference point and measure it, which means it&#8217;s a scalar and we have a number at each point. But for the other two with directions, they are vectors.</p>
-<p>The decompositions can be done in different ways, according to the information we want to extract.</p>
-<ol class="arabic simple">
-<li>Globally decomposite the signal with spherical harmonics <img class="math" src="../_images/math/86eece8f00cfba75ebc4dff7de0277ddd6d4d413.png" alt="Y_{}" style="vertical-align: 0px"/> at different radius, a multiple expansion for the whole brain; It requires <strong>spin weighted spherical harmonics</strong> etc for vector fields.</li>
-<li>Locally expand the signal at each point using spherical harmonics; Only need the spherical harmonics.</li>
-</ol>
-<table class="docutils citation" frame="void" id="sivakumar2016" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[Sivakumar2016]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> Sivakumar SS, Namath AG and Galán RF (2016) <a class="reference external" href="http://journal.frontiersin.org/article/10.3389/fncom.2016.00059/full">Spherical Harmonics Reveal Standing EEG Waves and Long-Range Neural Synchronization during Non-REM Sleep</a> . Front. Comput. Neurosci. 10:59. doi: 10.3389/fncom.2016.00059</td></tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="stimulation">
-<h2>Stimulation<a class="headerlink" href="#stimulation" title="Permalink to this headline">¶</a></h2>
-<p>Stimulations could also be done in a similar way. We apply different modes and check if each mode plays a different role in the brain.</p>
-<p>Theoretically, we might think the brain activity might be related to the modes, since each mode stands for different levels of activity in different regions. For example, if we have only <img class="math" src="../_images/math/3977082c9e6866c528863cdcb09b1195a7b656a4.png" alt="l=0" style="vertical-align: 0px"/> mode at different radius we might not be doing anything, since an isotropic brain is very likely to be a dead one. One of the regions have large activities means we have higher modes excited and since the brain has a fixed anatomy structure, a certain mode indicates activities in different regions.</p>
-<p>It&#8217;s the same for stimulations. Generating a certain mode of electric field or potential will cause a stimulation in different regions.</p>
-</div>
-<div class="section" id="thearetical-investigation">
-<h2>Thearetical Investigation<a class="headerlink" href="#thearetical-investigation" title="Permalink to this headline">¶</a></h2>
-<p>We could find the conservation laws of a popularition in multiple expansion and identify the conserved quantities from population theory. This could be useful for simulations.</p>
-</div>
+  <div class="section" id="boltzmann-machine">
+<h1>Boltzmann Machine<a class="headerlink" href="#boltzmann-machine" title="Permalink to this headline">¶</a></h1>
+<p>Boltzmann machine is much like a spin glass model in physics.</p>
 </div>
 
 
@@ -278,7 +226,7 @@
     <p>
         <span>© 2017, Lei Ma</span>|
         <a href="https://github.com/emptymalei/intelligence">GitHub</a>|
-       <a href="../_sources/neuroscience/signal-decomposition.rst.txt"
+       <a href="../_sources/machine-intelligence/boltzmann-machine.rst.txt"
            rel="nofollow">Page Source</a></li>|
        <a href="/changelog.html"
            rel="nofollow">changelog</a></li>|

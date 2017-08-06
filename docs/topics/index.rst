@@ -8,3 +8,4 @@ Some random but interesting topics.
 
    mean-field.rst
    spin-glass.rst
+   binary-human-model.rst
