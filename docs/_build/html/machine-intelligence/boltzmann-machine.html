@@ -152,7 +152,11 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Boltzmann Machine</a></li>
+<li><a class="reference internal" href="#">Boltzmann Machine</a><ul>
+<li><a class="reference internal" href="#boltzmann-machine-and-physics">Boltzmann Machine and Physics</a></li>
+<li><a class="reference internal" href="#minimizing-energy-of-ising-model-is-hebbian-learning">Minimizing Energy of Ising Model is Hebbian Learning</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -188,7 +192,26 @@
       
   <div class="section" id="boltzmann-machine">
 <h1>Boltzmann Machine<a class="headerlink" href="#boltzmann-machine" title="Permalink to this headline">¶</a></h1>
-<p>Boltzmann machine is much like a spin glass model in physics.</p>
+<p>Boltzmann machine is much like a spin glass model in physics. In short words, Boltzmann machine is a machine that has nodes that can take values, and the nodes are connected through some weight. It is just like any other neual nets but with complications and theoretical implications.</p>
+<div class="section" id="boltzmann-machine-and-physics">
+<h2>Boltzmann Machine and Physics<a class="headerlink" href="#boltzmann-machine-and-physics" title="Permalink to this headline">¶</a></h2>
+<p>To obtain a good understanding of Boltzmann machine for a physicist, we begin with Ising model. We construct a system of neurons <img class="math" src="../_images/math/24dc3f5dfa20ce1285b7c3cb67838f789dd6d2a6.png" alt="\{ s_i\}" style="vertical-align: -5px"/> which can take values of 1 or -1, where each pair of them <img class="math" src="../_images/math/170a21a8c99cdda0ab83e04472541359013db26b.png" alt="s_i" style="vertical-align: -3px"/> and <img class="math" src="../_images/math/9426b54b51bfb2f2c2fac5798f8fe97748a1e531.png" alt="s_j" style="vertical-align: -6px"/> is connected by weight <img class="math" src="../_images/math/4106cce8fe5b5efa792d25dc2ac78e7187c8817c.png" alt="J_{ij}" style="vertical-align: -6px"/>.</p>
+<p>This is described as a Boltzmann machine, or spin glass in physics. Spin glass is a type of material that is a composite of many spins pointing in different directions. In principle spin glass is hard to calculate.</p>
+<p>Neverthless we can make simplifications to this model. We require each spin to be connected to its nearest neighbours only. Such a model is called Ising model.</p>
+<p>Intuitively, those spins can be viewed as tiny magnets that can point up or down only. Each spin interacts with its neighbours. These interactions are calculated in terms of energy,</p>
+<div class="math">
+<p><img src="../_images/math/e2b9a6d3c0bac09a0fdf68e2e4b1feb669397a4b.png" alt="E = -\sum_{i,j} J_{ij} s_i s_j."/></p>
+</div><p>Why do we care about energy? For a physics system, low energy means stable while high energy means unsatble since it might automatically change its configuration into low energy state. That being said, a system of spins is stable if the energy of all the interactions is low.</p>
+<p>To find out a low energy state, one of the numerical methods is Monte Carlo method.</p>
+</div>
+<div class="section" id="minimizing-energy-of-ising-model-is-hebbian-learning">
+<h2>Minimizing Energy of Ising Model is Hebbian Learning<a class="headerlink" href="#minimizing-energy-of-ising-model-is-hebbian-learning" title="Permalink to this headline">¶</a></h2>
+<div class="note admonition">
+<p class="first admonition-title">Hebbian Learning Rule</p>
+<p class="last">Simply put, neurons act similarly at the same time would be more likely to be connected.</p>
+</div>
+<p>A energy minimization procedure would be the same as Hebbian learning rule. Suppose we pick out two spins, <img class="math" src="../_images/math/ce1574a692794fcdc2b1c88365512a7722c49b98.png" alt="s_3 = 1" style="vertical-align: -3px"/> and <img class="math" src="../_images/math/6fa2471d466e7fc66c80db89e4f32c2a95389fe0.png" alt="s_8= 1" style="vertical-align: -3px"/>, the connected weight would be positive in order to have lower energy <img class="math" src="../_images/math/6c8d83dbd473e398906910e735a6c9ca26c693ce.png" alt="-J_{38}s_3 s_8 = - J_{38}" style="vertical-align: -3px"/>. For spins with different signs, negative weight would be the choice to make sure the energy is lower. This is similar to Hebbian learning rule.</p>
+</div>
 </div>
 
 
