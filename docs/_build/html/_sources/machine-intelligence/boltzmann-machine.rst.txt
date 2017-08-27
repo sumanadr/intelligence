@@ -52,6 +52,79 @@ To find out a low energy state, one of the numerical methods is Monte Carlo meth
       P = \frac{1}{Z} e^{-E}
 
 
+Application of Boltzmann in Learning
+---------------------------------------
+
+In many cases, we would like the machine to learn about the pattern of input. Probabilistically speaking, we are working out the probability distribution of the input data using a Boltzmann machine,
+
+.. math::
+   \Delta p =  p_{\mathrm{Model}} -p_{\mathrm{Data}}.
+
+Or for reasons of log-likelihood, we use the ration of them
+
+.. math::
+   \Delta \log p =   \log p_{\mathrm{Model}} - \log p_{\mathrm{Data}}.
+
+In terms of Boltzmann machine weights, which are to be determined, the log probability is proportional to the energy
+
+.. math::
+   \Delta \log p \sim \sum_{ij} w_{ij} s_i s_j \vert_{\mathrm{Model}}  -    \sum_{ij} w_{ij} s_i s_j \vert_{\mathrm{Data}}.
+
+Since we are looking for the weights, the updating rule should be equivalent to the gradient
+
+.. math::
+   \frac{ \partial \Delta \log p }{ \partial w_{ij} } \sim  \langle s_i s_j\rangle_{\mathrm{data}} - \langle s_i s_j \rangle_{\mathrm{\model}},
+
+We could update our weights using a rule compatible with the gradient of the probability.
+
+.. math::
+   \Delta w_{ij} \sim \langle s_i s_j\rangle_{\mathrm{data}} - \langle s_i s_j \rangle_{\mathrm{\model}}.
+   :label: eq-weight-update-rule-boltzmann-machine
+
+
+It's easily noticed that the first term is basically Hebbian learning rule, where similar activities enhences the weight. The second term is the some unlearning rule where we have to reduce some weights to relax to the actual working network. Simply put, we kill some connects that have negative effects on our learning network.
+
+
+
+
+Without Hidden Units
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In principle, a learning process can be as simple as a one on one map from the data to all the neurons in Boltzmann machine.
+
+Suppose we have a data set of an image which has 10 pixels and each pixel can take values of 0 and 1. We simply construct a network of 10 neurons. To remember the most prominent features of the image with this network, we update the weights and bias of the network to miminize the energy. Once done with minimization, the network we have could be used to generate similar images with similar features.
+
+
+
+
+With Hidden Units
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The complexity of the previous model seems to be low. To introduce more degree of freedom, we introduce the hidden units.
+
+
+Hinton and Sejnowski worked out a algrimth for Boltzmann machine in 1983. The energy based learning rule for Boltzmann machine has two phases, the clamped phase (Phase+) and free phase (Phase-).
+
+1. Clamped phase: we attach the data to the visible units and initialize the hidden units to be some random states.
+  a. Then we update the hidden units so that the energy is minimized with clamping.
+  b. We calculate the average :math:`s_i s_j` over all pairs of units, i.e., :math:`\langle s_i s_j\rangle_{\mathrm{data}}`.
+  c. Repeat for all data sets of training.
+2. Free phase: no clamping and all units are the same and mutatable.
+  a. Relax the state of the units to low energy state.
+  b. Find out :math:`\langle s_i s_j\rangle_{\mathrm{model}}`.
+  c. Repeat N times.
+
+
+
+With :math:`\langle s_i s_j\rangle_{\mathrm{data}}` and :math:`\langle s_i s_j\rangle_{\mathrm{model}}` found, we use the update rule :eq:`eq-weight-update-rule-boltzmann-machine`.
+
+
+For some reference, Hinton has a set of lectures on `Coursera <https://www.coursera.org/learn/neural-networks/lecture/iitiK/boltzmann-machine-learning-12-min>`_. He also has a lecture for more effective algrimths: `More efficient ways to get the statistics <https://www.coursera.org/learn/neural-networks/lecture/wlELo/optional-video-more-efficient-ways-to-get-the-statistics-15-mins>`_.
+
+
+
+
+
 Minimizing Energy of Ising Model is Hebbian Learning
 -------------------------------------------------------
 
@@ -62,6 +135,8 @@ Minimizing Energy of Ising Model is Hebbian Learning
 
 
 A energy minimization procedure would be the same as Hebbian learning rule. Suppose we pick out two spins, :math:`s_3 = 1` and :math:`s_8= 1`, the connected weight would be positive in order to have lower energy :math:`-J_{38}s_3 s_8 = - J_{38}`. For spins with different signs, negative weight would be the choice to make sure the energy is lower. This is similar to Hebbian learning rule.
+
+
 
 
 

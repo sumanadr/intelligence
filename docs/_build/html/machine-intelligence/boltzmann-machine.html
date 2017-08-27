@@ -154,6 +154,11 @@
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Boltzmann Machine</a><ul>
 <li><a class="reference internal" href="#boltzmann-machine-and-physics">Boltzmann Machine and Physics</a></li>
+<li><a class="reference internal" href="#application-of-boltzmann-in-learning">Application of Boltzmann in Learning</a><ul>
+<li><a class="reference internal" href="#without-hidden-units">Without Hidden Units</a></li>
+<li><a class="reference internal" href="#with-hidden-units">With Hidden Units</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#minimizing-energy-of-ising-model-is-hebbian-learning">Minimizing Energy of Ising Model is Hebbian Learning</a><ul>
 <li><a class="reference internal" href="#programming">Programming</a></li>
 </ul>
@@ -222,6 +227,347 @@
 <div class="last math">
 <p><img src="../_images/math/f96946d285bde4f456c87ce92aff3f373f779a9c.png" alt="P = \frac{1}{Z} e^{-E}"/></p>
 </div></div>
+</div>
+<div class="section" id="application-of-boltzmann-in-learning">
+<h2>Application of Boltzmann in Learning<a class="headerlink" href="#application-of-boltzmann-in-learning" title="Permalink to this headline">¶</a></h2>
+<p>In many cases, we would like the machine to learn about the pattern of input. Probabilistically speaking, we are working out the probability distribution of the input data using a Boltzmann machine,</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">\Delta p =  p_{\mathrm{Model}} -p_{\mathrm{Data}}.
+
+</tt>)</p>
+latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2017/01/01&gt; patch level 3
+Babel &lt;3.9r&gt; and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+
+! LaTeX Error: File `utf8x.def&#8217; not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: def)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.158 \endinput
+               ^^M
+No pages of output.
+Transcript written on math.log.
+</div>
+<p>Or for reasons of log-likelihood, we use the ration of them</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">\Delta \log p =   \log p_{\mathrm{Model}} - \log p_{\mathrm{Data}}.
+
+</tt>)</p>
+latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2017/01/01&gt; patch level 3
+Babel &lt;3.9r&gt; and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+
+! LaTeX Error: File `utf8x.def&#8217; not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: def)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.158 \endinput
+               ^^M
+No pages of output.
+Transcript written on math.log.
+</div>
+<p>In terms of Boltzmann machine weights, which are to be determined, the log probability is proportional to the energy</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">\Delta \log p \sim \sum_{ij} w_{ij} s_i s_j \vert_{\mathrm{Model}}  -    \sum_{ij} w_{ij} s_i s_j \vert_{\mathrm{Data}}.
+
+</tt>)</p>
+latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2017/01/01&gt; patch level 3
+Babel &lt;3.9r&gt; and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+
+! LaTeX Error: File `utf8x.def&#8217; not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: def)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.158 \endinput
+               ^^M
+No pages of output.
+Transcript written on math.log.
+</div>
+<p>Since we are looking for the weights, the updating rule should be equivalent to the gradient</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">\frac{ \partial \Delta \log p }{ \partial w_{ij} } \sim  \langle s_i s_j\rangle_{\mathrm{data}} - \langle s_i s_j \rangle_{\mathrm{\model}},
+
+</tt>)</p>
+latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2017/01/01&gt; patch level 3
+Babel &lt;3.9r&gt; and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+
+! LaTeX Error: File `utf8x.def&#8217; not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: def)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.158 \endinput
+               ^^M
+No pages of output.
+Transcript written on math.log.
+</div>
+<p>We could update our weights using a rule compatible with the gradient of the probability.</p>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">\Delta w_{ij} \sim \langle s_i s_j\rangle_{\mathrm{data}} - \langle s_i s_j \rangle_{\mathrm{\model}}.
+
+</tt>)</p>
+latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2017/01/01&gt; patch level 3
+Babel &lt;3.9r&gt; and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+
+! LaTeX Error: File `utf8x.def&#8217; not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: def)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.158 \endinput
+               ^^M
+No pages of output.
+Transcript written on math.log.
+</div>
+<p>It&#8217;s easily noticed that the first term is basically Hebbian learning rule, where similar activities enhences the weight. The second term is the some unlearning rule where we have to reduce some weights to relax to the actual working network. Simply put, we kill some connects that have negative effects on our learning network.</p>
+<div class="section" id="without-hidden-units">
+<h3>Without Hidden Units<a class="headerlink" href="#without-hidden-units" title="Permalink to this headline">¶</a></h3>
+<p>In principle, a learning process can be as simple as a one on one map from the data to all the neurons in Boltzmann machine.</p>
+<p>Suppose we have a data set of an image which has 10 pixels and each pixel can take values of 0 and 1. We simply construct a network of 10 neurons. To remember the most prominent features of the image with this network, we update the weights and bias of the network to miminize the energy. Once done with minimization, the network we have could be used to generate similar images with similar features.</p>
+</div>
+<div class="section" id="with-hidden-units">
+<h3>With Hidden Units<a class="headerlink" href="#with-hidden-units" title="Permalink to this headline">¶</a></h3>
+<p>The complexity of the previous model seems to be low. To introduce more degree of freedom, we introduce the hidden units.</p>
+<p>Hinton and Sejnowski worked out a algrimth for Boltzmann machine in 1983. The energy based learning rule for Boltzmann machine has two phases, the clamped phase (Phase+) and free phase (Phase-).</p>
+<ol class="arabic simple">
+<li>Clamped phase: we attach the data to the visible units and initialize the hidden units to be some random states.</li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Then we update the hidden units so that the energy is minimized with clamping.</li>
+<li>We calculate the average <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">s_i s_j</tt>)</p>
+latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2017/01/01&gt; patch level 3
+Babel &lt;3.9r&gt; and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+
+! LaTeX Error: File `utf8x.def&#8217; not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: def)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.158 \endinput
+               ^^M
+No pages of output.
+Transcript written on math.log.
+</div>
+ over all pairs of units, i.e., <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">\langle s_i s_j\rangle_{\mathrm{data}}</tt>)</p>
+latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2017/01/01&gt; patch level 3
+Babel &lt;3.9r&gt; and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+
+! LaTeX Error: File `utf8x.def&#8217; not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: def)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.158 \endinput
+               ^^M
+No pages of output.
+Transcript written on math.log.
+</div>
+.</li>
+<li>Repeat for all data sets of training.</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Free phase: no clamping and all units are the same and mutatable.</li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Relax the state of the units to low energy state.</li>
+<li>Find out <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">\langle s_i s_j\rangle_{\mathrm{model}}</tt>)</p>
+latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2017/01/01&gt; patch level 3
+Babel &lt;3.9r&gt; and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+
+! LaTeX Error: File `utf8x.def&#8217; not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: def)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.158 \endinput
+               ^^M
+No pages of output.
+Transcript written on math.log.
+</div>
+.</li>
+<li>Repeat N times.</li>
+</ol>
+</div></blockquote>
+<p>With <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">\langle s_i s_j\rangle_{\mathrm{data}}</tt>)</p>
+latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2017/01/01&gt; patch level 3
+Babel &lt;3.9r&gt; and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+
+! LaTeX Error: File `utf8x.def&#8217; not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: def)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.158 \endinput
+               ^^M
+No pages of output.
+Transcript written on math.log.
+</div>
+ and <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">\langle s_i s_j\rangle_{\mathrm{model}}</tt>)</p>
+latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2017/01/01&gt; patch level 3
+Babel &lt;3.9r&gt; and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+
+! LaTeX Error: File `utf8x.def&#8217; not found.
+
+Type X to quit or &lt;RETURN&gt; to proceed,
+or enter new name. (Default extension: def)
+
+Enter file name: 
+! Emergency stop.
+&lt;read *&gt; 
+         
+l.158 \endinput
+               ^^M
+No pages of output.
+Transcript written on math.log.
+</div>
+ found, we use the update rule <a class="reference internal" href="#equation-eq-weight-update-rule-boltzmann-machine">(1)</a>.</p>
+<p>For some reference, Hinton has a set of lectures on <a class="reference external" href="https://www.coursera.org/learn/neural-networks/lecture/iitiK/boltzmann-machine-learning-12-min">Coursera</a>. He also has a lecture for more effective algrimths: <a class="reference external" href="https://www.coursera.org/learn/neural-networks/lecture/wlELo/optional-video-more-efficient-ways-to-get-the-statistics-15-mins">More efficient ways to get the statistics</a>.</p>
+</div>
 </div>
 <div class="section" id="minimizing-energy-of-ising-model-is-hebbian-learning">
 <h2>Minimizing Energy of Ising Model is Hebbian Learning<a class="headerlink" href="#minimizing-energy-of-ising-model-is-hebbian-learning" title="Permalink to this headline">¶</a></h2>
