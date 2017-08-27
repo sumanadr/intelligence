@@ -23,6 +23,35 @@ Why do we care about energy? For a physics system, low energy means stable while
 To find out a low energy state, one of the numerical methods is Monte Carlo method.
 
 
+.. admonition:: States
+   :class: note
+
+   We have been talking about the word state without being specifying the definition of it. In fact we can think of two different pictures of states. For the purpose of this discussion, we consider a system of :math:`N` particles and each of the particle has :math:`m` degrees of freedom.
+
+   The first strategy is to set up a :math:`N\times m` dimension space and describe the state of the whole system with on point in such a space. The distribution of the points can be determined by the corresponding categories of distribution functions. This is dubbed as :math:`\Gamma` space.
+
+   The second strategy is to use a space of :math:`m` dimensions where each particle of the system is a point in such a space. Such a space is called :math:`\mu` space. In :math:`\mu` space, the distribution of each particle state is calculated using BBGKY chain.
+
+
+   Once the macroscopic propertities of the system is assigned, the all possible states that leads to this macroscopic state show up with equal probability, aka, principle of **equal a priori probabilities**.
+
+
+
+
+.. admonition:: Partition Function
+   :class: note
+
+   Partition function :math:`Z` is useful as we calculate the statistical properties of the network,
+
+   .. math::
+      Z = \sum e^{-E}.
+
+   With partition function defined, the distribution of states is
+
+   .. math::
+      P = \frac{1}{Z} e^{-E}
+
+
 Minimizing Energy of Ising Model is Hebbian Learning
 -------------------------------------------------------
 
