@@ -122,6 +122,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../machine-intelligence/index.html">Machine Intelligence</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/ann.html">Artificial Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/neural-network-and-fem.html">Neural Networks and Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/boltzmann-machine.html">Boltzmann Machine</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../collective/index.html">Collective Intelligence</a><ul>
@@ -132,6 +134,7 @@
 <li class="toctree-l2"><a class="reference internal" href="mean-field.html">Mean-field Method</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Spin Glass</a></li>
 <li class="toctree-l2"><a class="reference internal" href="binary-human-model.html">Binary Human Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="factor-graph.html">Factor Graph</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../random-thoughts.html">Some Random Thoughts</a><ul>
@@ -199,10 +202,10 @@
   <div class="section" id="spin-glass">
 <h1>Spin Glass<a class="headerlink" href="#spin-glass" title="Permalink to this headline">¶</a></h1>
 <p>In the realm of physics, Ising model has been and probably will be an useful model for our intuition. Naively speaking, our world is full of local interactions yet the consequences are very likely to be long range through long range correlations. The famous Ising model is a key model of such concepts.</p>
-<p>Ising model deals with a system of spins and their interactions. To build up the dynamics of a system, we need the configuration of it as well as the interactions. In Ising mode, a bunch of spins are described by <img class="math" src="../_images/math/e1b1f754dfbec220e4d96d604c62dc7ab350ec18.png" alt="\{ s_i \}" style="vertical-align: -5px"/>, where <img class="math" src="../_images/math/170a21a8c99cdda0ab83e04472541359013db26b.png" alt="s_i" style="vertical-align: -3px"/> could be scalars that take discrete values or vectors phenomenologically. For simplicity we take the path of discretized values, <img class="math" src="../_images/math/2b8e327ef014770d1df7f81fc622805d37976b1c.png" alt="s_i=1,-1" style="vertical-align: -4px"/>. The interactions are two body interactions is related to the descriptioin of energy</p>
+<p>Ising model deals with a system of spins and their interactions. To build up the dynamics of a system, we need the configuration of it as well as the interactions. In Ising mode, a bunch of spins are described by <img class="math" src="../_images/math/5e2ca0754c3101f143bc4c050652a07f4cf96375.png" alt="\{ s_i \}"/>, where <img class="math" src="../_images/math/3707286326c05ad688e6ebcc3ce93269b7f2e099.png" alt="s_i"/> could be scalars that take discrete values or vectors phenomenologically. For simplicity we take the path of discretized values, <img class="math" src="../_images/math/512fef4f6808e570ea96e97baae580b7dabcb4ef.png" alt="s_i=1,-1"/>. The interactions are two body interactions is related to the descriptioin of energy</p>
 <div class="math">
-<p><img src="../_images/math/83c8f51033f13656c946d576a3ebe54a3c8f4d83.png" alt="H = - \sum_{i,j} J_{i,j} s_i s_j,"/></p>
-</div><p>where <img class="math" src="../_images/math/c77d4e07fb0f14c90c4720d18195a1547330fd44.png" alt="J_{i,j}" style="vertical-align: -6px"/> indicates the strength of the interactions between the two spins.</p>
+<p><img src="../_images/math/b28555d41c586bde154115b9e11dbd04810e25bb.png" alt="H = - \sum_{i,j} J_{i,j} s_i s_j,"/></p>
+</div><p>where <img class="math" src="../_images/math/35eca7a3c316354454b9b3ccf32e89a9b9bc0bd8.png" alt="J_{i,j}"/> indicates the strength of the interactions between the two spins.</p>
 </div>
 
 

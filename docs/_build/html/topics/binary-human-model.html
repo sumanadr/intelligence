@@ -33,7 +33,7 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Some Random Thoughts" href="../random-thoughts.html" />
+    <link rel="next" title="Factor Graph" href="factor-graph.html" />
     <link rel="prev" title="Spin Glass" href="spin-glass.html" />
 <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -122,6 +122,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../machine-intelligence/index.html">Machine Intelligence</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/ann.html">Artificial Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/neural-network-and-fem.html">Neural Networks and Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/boltzmann-machine.html">Boltzmann Machine</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../collective/index.html">Collective Intelligence</a><ul>
@@ -132,6 +134,7 @@
 <li class="toctree-l2"><a class="reference internal" href="mean-field.html">Mean-field Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spin-glass.html">Spin Glass</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Binary Human Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="factor-graph.html">Factor Graph</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../random-thoughts.html">Some Random Thoughts</a><ul>
@@ -174,7 +177,7 @@
     </a>
   </li>
   <li>
-    <a href="../random-thoughts.html" title="Next Chapter: Some Random Thoughts"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Some Random Thoughts &raquo;</span>
+    <a href="factor-graph.html" title="Next Chapter: Factor Graph"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Factor Graph &raquo;</span>
     </a>
   </li>
               
@@ -211,23 +214,146 @@
 <p>Here we develop a model for wechat groups instead of general human dynamics. We assume everyone share all the information in the group.</p>
 <p>There are several aspects to be defined.</p>
 <ol class="arabic simple" start="0">
-<li>One way to simplify the model is to set up a external pool of information and opinions which we denote as <img class="math" src="../_images/math/f8c013e49f584e80745017eea5947b3c23721d12.png" alt="\mathscr P" style="vertical-align: 0px"/>.</li>
-<li>An opinion is plugged into the pool <img class="math" src="../_images/math/f8c013e49f584e80745017eea5947b3c23721d12.png" alt="\mathscr P" style="vertical-align: 0px"/> initially.</li>
-<li>Everyone will take information and output information to this poll <img class="math" src="../_images/math/f8c013e49f584e80745017eea5947b3c23721d12.png" alt="\mathscr P" style="vertical-align: 0px"/>.</li>
-<li>Each human would either output null (being silent) or 1 (agreement) or 0 (disagreement). Each of the outputs in the pool is denoted as <img class="math" src="../_images/math/b4a16345dffa239a4445381f5f5ce68dffe47282.png" alt="P_i" style="vertical-align: -3px"/>.</li>
+<li>One way to simplify the model is to set up a external pool of information and opinions which we denote as <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">\mathscr P</tt>)</p>
+latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2017-04-15&gt;
+Babel &lt;3.10&gt; and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/size12.clo))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/utf8x.def))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/ucs.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/data/uni-global.def))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?&#8217; option.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/anyfontsize/anyfontsize.sty)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/bm.sty) (./math.aux)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/ucsencs.def)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd)
+! Undefined control sequence.
+&lt;recently read&gt; \mathscr 
+                         
+l.13 \fontsize{12}{14}\selectfont $\mathscr
+                                            P$
+[1] (./math.aux) )
+(see the transcript file for additional information)
+Output written on math.dvi (1 page, 204 bytes).
+Transcript written on math.log.
+</div>
+.</li>
+<li>An opinion is plugged into the pool <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">\mathscr P</tt>)</p>
+latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2017-04-15&gt;
+Babel &lt;3.10&gt; and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/size12.clo))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/utf8x.def))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/ucs.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/data/uni-global.def))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?&#8217; option.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/anyfontsize/anyfontsize.sty)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/bm.sty) (./math.aux)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/ucsencs.def)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd)
+! Undefined control sequence.
+&lt;recently read&gt; \mathscr 
+                         
+l.13 \fontsize{12}{14}\selectfont $\mathscr
+                                            P$
+[1] (./math.aux) )
+(see the transcript file for additional information)
+Output written on math.dvi (1 page, 204 bytes).
+Transcript written on math.log.
+</div>
+ initially.</li>
+<li>Everyone will take information and output information to this poll <div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">\mathscr P</tt>)</p>
+latex exited with error
+[stdout]
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./math.tex
+LaTeX2e &lt;2017-04-15&gt;
+Babel &lt;3.10&gt; and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/size12.clo))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/utf8x.def))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/ucs.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/data/uni-global.def))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?&#8217; option.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/anyfontsize/anyfontsize.sty)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/bm.sty) (./math.aux)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/ucsencs.def)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd)
+! Undefined control sequence.
+&lt;recently read&gt; \mathscr 
+                         
+l.13 \fontsize{12}{14}\selectfont $\mathscr
+                                            P$
+[1] (./math.aux) )
+(see the transcript file for additional information)
+Output written on math.dvi (1 page, 204 bytes).
+Transcript written on math.log.
+</div>
+.</li>
+<li>Each human would either output null (being silent) or 1 (agreement) or 0 (disagreement). Each of the outputs in the pool is denoted as <img class="math" src="../_images/math/660b8cabbe47dd821f6bf6e556c5f1353ddc0468.png" alt="P_i"/>.</li>
 <li>The output of each human depends on the pool, the nature of the human, and the relation with other people. We approximate each human using a binary input/output function.</li>
 </ol>
 <p>Such a general model seems to be good enough. However, we have to define all different types of human first.</p>
 <ol class="arabic">
 <li><p class="first">Being average: takes in all the opinions of other participants and work out an average.</p>
 <div class="math">
-<p><img src="../_images/math/d177f29dd71bf765110c41e17b93d5b97ce33419.png" alt="\Theta(\frac{\sum_{1}^N P_i}{N}-0.5),"/></p>
-</div><p>where <img class="math" src="../_images/math/6a25bde33b395cda024dc6c12cd3be9a01dc3072.png" alt="\Theta" style="vertical-align: 0px"/> is the step function or Heaviside function.</p>
+<p><img src="../_images/math/b5b54d0e9a2ef447cdc67ff9ac3c6dd3edf16b61.png" alt="\Theta(\frac{\sum_{1}^N P_i}{N}-0.5),"/></p>
+</div><p>where <img class="math" src="../_images/math/bf5f70f6b431ca28235cd7c01cef26683ae7738f.png" alt="\Theta"/> is the step function or Heaviside function.</p>
 </li>
 <li><p class="first">Being extreme: exaggerates whatever is obtained from average。</p>
 <div class="math">
-<p><img src="../_images/math/f54ca7afc2c376fa1c2c55b09cbf077272535219.png" alt="\Theta(\alpha\frac{\sum_{1}^N P_i}{N}-0.5),"/></p>
-</div><p>where <img class="math" src="../_images/math/73bb2240057381ee3d250809a3da405db1295792.png" alt="\alpha" style="vertical-align: 0px"/> is the extreme factor. For linear summations (euclidean metric), this is effectively pessimism (<img class="math" src="../_images/math/c4536081614f35a75dd78a77f5e5615c7aa94100.png" alt="\alpha&lt;1" style="vertical-align: -1px"/>) or optimism (<img class="math" src="../_images/math/0e972ebdac26f775e177e84dfb295c45546fea99.png" alt="\alpha&gt;1" style="vertical-align: -1px"/>).</p>
+<p><img src="../_images/math/a602764d6ae5bb980ceeedc3e33c4ea99fc2bf0d.png" alt="\Theta(\alpha\frac{\sum_{1}^N P_i}{N}-0.5),"/></p>
+</div><p>where <img class="math" src="../_images/math/877d234f4cec6974ce218fc2e975a486a7972dfd.png" alt="\alpha"/> is the extreme factor. For linear summations (euclidean metric), this is effectively pessimism (<img class="math" src="../_images/math/b18a49c3654067f1395873b7c86165e729e9f469.png" alt="\alpha&lt;1"/>) or optimism (<img class="math" src="../_images/math/05ae3e211fb6f890fbb6f1179946c53b78449e34.png" alt="\alpha&gt;1"/>).</p>
 </li>
 <li><p class="first">Synchronized to other people. The simplest case is to synchronize to one of the members in the group.</p>
 </li>

@@ -122,6 +122,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../machine-intelligence/index.html">Machine Intelligence</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/ann.html">Artificial Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/neural-network-and-fem.html">Neural Networks and Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/boltzmann-machine.html">Boltzmann Machine</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../collective/index.html">Collective Intelligence</a><ul>
@@ -132,6 +134,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../topics/mean-field.html">Mean-field Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../topics/spin-glass.html">Spin Glass</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../topics/binary-human-model.html">Binary Human Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/factor-graph.html">Factor Graph</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../random-thoughts.html">Some Random Thoughts</a><ul>
@@ -221,7 +224,7 @@
 <p>For electric potential, we can set up a reference point and measure it, which means it&#8217;s a scalar and we have a number at each point. But for the other two with directions, they are vectors.</p>
 <p>The decompositions can be done in different ways, according to the information we want to extract.</p>
 <ol class="arabic simple">
-<li>Globally decomposite the signal with spherical harmonics <img class="math" src="../_images/math/86eece8f00cfba75ebc4dff7de0277ddd6d4d413.png" alt="Y_{}" style="vertical-align: 0px"/> at different radius, a multiple expansion for the whole brain; It requires <strong>spin weighted spherical harmonics</strong> etc for vector fields.</li>
+<li>Globally decomposite the signal with spherical harmonics <img class="math" src="../_images/math/ead1bedfa8ce5ade3d2a464c09af2143706b2e42.png" alt="Y_{}"/> at different radius, a multiple expansion for the whole brain; It requires <strong>spin weighted spherical harmonics</strong> etc for vector fields.</li>
 <li>Locally expand the signal at each point using spherical harmonics; Only need the spherical harmonics.</li>
 </ol>
 <table class="docutils citation" frame="void" id="sivakumar2016" rules="none">
@@ -234,7 +237,7 @@
 <div class="section" id="stimulation">
 <h2>Stimulation<a class="headerlink" href="#stimulation" title="Permalink to this headline">¶</a></h2>
 <p>Stimulations could also be done in a similar way. We apply different modes and check if each mode plays a different role in the brain.</p>
-<p>Theoretically, we might think the brain activity might be related to the modes, since each mode stands for different levels of activity in different regions. For example, if we have only <img class="math" src="../_images/math/3977082c9e6866c528863cdcb09b1195a7b656a4.png" alt="l=0" style="vertical-align: 0px"/> mode at different radius we might not be doing anything, since an isotropic brain is very likely to be a dead one. One of the regions have large activities means we have higher modes excited and since the brain has a fixed anatomy structure, a certain mode indicates activities in different regions.</p>
+<p>Theoretically, we might think the brain activity might be related to the modes, since each mode stands for different levels of activity in different regions. For example, if we have only <img class="math" src="../_images/math/264df287af959833f897078bd32da21d22b4670d.png" alt="l=0"/> mode at different radius we might not be doing anything, since an isotropic brain is very likely to be a dead one. One of the regions have large activities means we have higher modes excited and since the brain has a fixed anatomy structure, a certain mode indicates activities in different regions.</p>
 <p>It&#8217;s the same for stimulations. Generating a certain mode of electric field or potential will cause a stimulation in different regions.</p>
 </div>
 <div class="section" id="thearetical-investigation">

@@ -58,7 +58,7 @@ Application of Boltzmann in Learning
 In many cases, we would like the machine to learn about the pattern of input. Probabilistically speaking, we are working out the probability distribution of the input data using a Boltzmann machine,
 
 .. math::
-   \Delta p =  p_{\mathrm{Model}} -p_{\mathrm{Data}}.
+   \Delta p =  p_{\mathrm{Model}} - p_{\mathrm{Data}}.
 
 Or for reasons of log-likelihood, we use the ration of them
 

@@ -26,11 +26,11 @@ sys.path.append(os.path.abspath('exts'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.pngmath', "math_dollar"]
+extensions = ['sphinx.ext.imgmath', "math_dollar"]
 
 pngmath_use_preview = True
 
-latex_preamble = r"""
+tex_preamble = r"""
 \usepackage{dsfont}
 \usepackage{slashed}
 \usepackage{yfonts}
@@ -169,8 +169,8 @@ latex_preamble = r"""
 \def\atan{\hbox{atan}}
 """
 
-pngmath_latex_preamble = latex_preamble
-latex_elements = {"preamble": latex_preamble}
+pngmath_latex_preamble = tex_preamble
+latex_elements = {"preamble": tex_preamble}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
