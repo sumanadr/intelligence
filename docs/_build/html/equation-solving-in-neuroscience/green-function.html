@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Green’s Function Method &#8212; Intelligence</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.6/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -71,7 +67,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -104,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../neuroscience/index.html">Neuroscience</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/biology.html">Biology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/visual-cortex.html">Visual Cortex</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/functional-connectivity.html">Functional Connectivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/solitary-waves.html">Solitary Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
@@ -111,7 +108,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Equation Solving in Neuroscience</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Green&#8217;s Function Method</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Green’s Function Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fourier-transform.html">Fourier Tranform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="laplace-transform.html">Laplace Tranform</a></li>
 </ul>
@@ -157,8 +154,8 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Green&#8217;s Function Method</a><ul>
-<li><a class="reference internal" href="#id1">Green&#8217;s Function Method</a><ul>
+<li><a class="reference internal" href="#">Green’s Function Method</a><ul>
+<li><a class="reference internal" href="#id1">Green’s Function Method</a><ul>
 <li><a class="reference internal" href="#cable-equation">Cable Equation</a></li>
 <li><a class="reference internal" href="#solutions-to-cable-equation">Solutions to Cable Equation</a><ul>
 <li><a class="reference internal" href="#stationary-solution">Stationary Solution</a></li>
@@ -212,10 +209,10 @@
     <div class="col-md-12 content">
       
   <div class="section" id="green-s-function-method">
-<h1>Green&#8217;s Function Method<a class="headerlink" href="#green-s-function-method" title="Permalink to this headline">¶</a></h1>
+<h1>Green’s Function Method<a class="headerlink" href="#green-s-function-method" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>Green&#8217;s Function Method<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>In this section, we demonstrate Green&#8217;s function method of solving differential equations.</p>
+<h2>Green’s Function Method<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we demonstrate Green’s function method of solving differential equations.</p>
 <div class="section" id="cable-equation">
 <h3>Cable Equation<a class="headerlink" href="#cable-equation" title="Permalink to this headline">¶</a></h3>
 <p>The cable equation is written as <a class="reference internal" href="#gerstner2002" id="id2">[Gerstner2002]</a></p>
@@ -233,10 +230,10 @@
 <p>Equation <a class="reference internal" href="#equation-eqn-cable-equation-potential">(1)</a> can be solved for stationary case, which is</p>
 <div class="math" id="equation-eqn-cable-equation-stationary-equation-potential">
 <p><span class="eqno">(3)<a class="headerlink" href="#equation-eqn-cable-equation-stationary-equation-potential" title="Permalink to this equation">¶</a></span><img src="../_images/math/f96c51fd989b059194bcc8e4bc0c732c7b3869f5.png" alt="\frac{\partial^2}{\partial x^2} u(t,x) - u(t,x) =- i_{e}(t,x) ."/></p>
-</div><p>While many methods can be used to solve second order nonhonogenerous differential equations, Green&#8217;s function is the most general and useful one.</p>
+</div><p>While many methods can be used to solve second order nonhonogenerous differential equations, Green’s function is the most general and useful one.</p>
 <div class="note admonition">
-<p class="first admonition-title">Definition of Green&#8217;s Function</p>
-<p>The idea of Green&#8217;s function is very simple. TO solve a general solution of equation</p>
+<p class="first admonition-title">Definition of Green’s Function</p>
+<p>The idea of Green’s function is very simple. TO solve a general solution of equation</p>
 <div class="math" id="equation-eqn-green-function-example">
 <p><span class="eqno">(4)<a class="headerlink" href="#equation-eqn-green-function-example" title="Permalink to this equation">¶</a></span><img src="../_images/math/01a99551978703f1434bf51d7864c84b484328ec.png" alt="\frac{d^2}{d x^2} y(x) + y(x) = f(x),"/></p>
 </div><p>where <img class="math" src="../_images/math/eda52292f6952f7e27fef52e7ce8393981770d2c.png" alt="f(x)"/> is the source and some given boundary conditions. To save ink we define</p>
@@ -245,7 +242,7 @@
 </div><p>which takes a function <img class="math" src="../_images/math/2b53c709e6b69ebc6724b89d07a75d0357a5738b.png" alt="y(x)"/> to <img class="math" src="../_images/math/eda52292f6952f7e27fef52e7ce8393981770d2c.png" alt="f(x)"/>, i.e.,</p>
 <div class="math" id="equation-eqn-green-function-example-1">
 <p><span class="eqno">(5)<a class="headerlink" href="#equation-eqn-green-function-example-1" title="Permalink to this equation">¶</a></span><img src="../_images/math/9e06abd68da4b513ef3d359d8124e82739edc591.png" alt="\hat L_x y(x) = f(x)."/></p>
-</div><p>Now we define the Green&#8217;s function to be the solution of equation <a class="reference internal" href="#equation-eqn-green-function-example-1">(5)</a> but replacing the source with delta function <img class="math" src="../_images/math/343a37bee54269b6495888425707b22e64e6890f.png" alt="\delta(x-z)"/></p>
+</div><p>Now we define the Green’s function to be the solution of equation <a class="reference internal" href="#equation-eqn-green-function-example-1">(5)</a> but replacing the source with delta function <img class="math" src="../_images/math/343a37bee54269b6495888425707b22e64e6890f.png" alt="\delta(x-z)"/></p>
 <div class="math">
 <p><img src="../_images/math/eb7bb205bc591fd18677411235709d4a9985e3a9.png" alt="\hat L_x G(x,z) = \delta(z-x)."/></p>
 </div><p>Why do we define this function? The solution to equation <a class="reference internal" href="#equation-eqn-green-function-example">(4)</a> is given by</p>
@@ -266,7 +263,7 @@
 <p><img src="../_images/math/ff63a9c6f9f3b798e47d6d8a24c0b7c64755348a.png" alt="\left( \frac{d^2}{dx^2} + p(x) \frac{d}{dx} + q(x) \right)y(x) = f(x)"/></p>
 </div><p>is do the following.</p>
 <ol class="arabic simple">
-<li>Find the general form of Green&#8217;s function (GF) for operator for operator <img class="math" src="../_images/math/2489f5b035e7a3dfc9c0b360feaf1dc475c16dab.png" alt="\hat L_x"/>.</li>
+<li>Find the general form of Green’s function (GF) for operator for operator <img class="math" src="../_images/math/2489f5b035e7a3dfc9c0b360feaf1dc475c16dab.png" alt="\hat L_x"/>.</li>
 <li>Apply boundary condition (BC) to GF. This might be the most tricky part of this method. Any ways, for a BC of the form <img class="math" src="../_images/math/04509c176584a0b1372f01f4c536af29c38c9dde.png" alt="y(a)=0=y(b)"/>, we can just choose it to vanish at <img class="math" src="../_images/math/bd9d9c7512c898e0a254a0882184197bc1bd9c9f.png" alt="a"/> and <img class="math" src="../_images/math/57c9d14bb082716df9000146882ce365335d08f1.png" alt="b"/>. Otherwise we can move this step to the end when no intuition is coming to our mind.</li>
 <li>Continuity at <img class="math" src="../_images/math/2c49f455d51670cf73b7361227f39b2954003f91.png" alt="n-2"/> order of derivatives at point <img class="math" src="../_images/math/2a7fcc43e01e5b1d1bbf21c573ed729d3e8625f8.png" alt="x=z"/>, that is</li>
 </ol>
@@ -283,13 +280,13 @@
 <li><p class="first">The solution to an inhomogeneous ODE  <img class="math" src="../_images/math/758831ca6f4a2a36c79087c775eab91750c61ec8.png" alt="y(x)=f(x)"/> is given immediately by</p>
 <div class="math">
 <p><img src="../_images/math/ab49625bd4b2b16c772cd98799d25dbe02efcadc.png" alt="y(x) = \int G(x,z) f(z) dz."/></p>
-</div><p>If we haven&#8217;t done step 2 we know would have some unkown coefficients which can be determined by the BC.</p>
+</div><p>If we haven’t done step 2 we know would have some unkown coefficients which can be determined by the BC.</p>
 </li>
 </ol>
 </div>
 <div class="note admonition">
-<p class="first admonition-title">How to Find Green&#8217;s Function</p>
-<p>So we are bound to find Green&#8217;s function. Solving a nonhonogeneous equation with delta as source is as easy as solving homogeneous equations.</p>
+<p class="first admonition-title">How to Find Green’s Function</p>
+<p>So we are bound to find Green’s function. Solving a nonhonogeneous equation with delta as source is as easy as solving homogeneous equations.</p>
 <p>We do this by demonstrating an example differential equation. The problem we are going to solve is</p>
 <div class="math">
 <p><img src="../_images/math/45afe50fdaf534e389c64e11416e0c9fdbc3164e.png" alt="\left(\frac{d^2}{dx^2} + \frac{1}{4}\right) y(x) = f(x),"/></p>
@@ -340,7 +337,7 @@ A_1 &amp;= A_2 + B_2(\tan(z/2)-1) + \frac{2}{\sin(z/2) + \cot(z/2)\cos(z/2)}."/>
 <div class="math">
 <p><img src="../_images/math/6adb20662b3d2058cd96f01fb60abd1a50d343d4.png" alt="\hat L_x u(x) = - i_e(t,x),"/></p>
 </div><p>where <img class="math" src="../_images/math/f5d6fc42e367fc9daec496a519cf55186c358d60.png" alt="\hat L_x = \frac{d^2}{dx^2} -1"/>. The boundary condition is the vanishing wave at infinity <img class="math" src="../_images/math/2046478480583841d96ac485b0eed33d14bb9215.png" alt="u(\pm\infty)=0"/>. As we are talking about stationary equation, the source should be time-independent, thus we take only a one dimension Dirac distribution <img class="math" src="../_images/math/ade1b172098a5a39ade9134a913d55088e438928.png" alt="\delta(x)"/> to solve for GF.</p>
-<p>The general Green&#8217;s function is <a class="footnote-reference" href="#id6" id="id4">[1]</a></p>
+<p>The general Green’s function is <a class="footnote-reference" href="#id6" id="id4">[1]</a></p>
 <div class="math">
 <p><img src="../_images/math/eeaa7a3e29cbdc017c621fb82df1c61071d898f9.png" alt="G(x,x') = \begin{cases}
 C_1 e^{-x} + D_1 e^{x}, &amp; \qquad x\leq z,\\
@@ -364,7 +361,7 @@ C_2 e^{-x} + D_2 e^{x}, &amp; \qquad x\geq z.
 <div class="last math">
 <p><img src="../_images/math/f7cb497370223fea20a3001f64694757021eb1ec.png" alt="u(x) = C e^{x} + D e^{-x}."/></p>
 </div></div>
-<p>In this simple case, BC can be applied to Green&#8217;s function first <a class="footnote-reference" href="#id7" id="id5">[2]</a>, which means</p>
+<p>In this simple case, BC can be applied to Green’s function first <a class="footnote-reference" href="#id7" id="id5">[2]</a>, which means</p>
 <div class="math">
 <p><img src="../_images/math/7018756a5067c9fedb564c2373e7a44b6d32f74b.png" alt="G(-\infty,x') &amp;= 0, \\
 G(\infty,x') &amp;= 0."/></p>
@@ -438,7 +435,7 @@ C_2 &amp;= \frac{1}{2}e^{x'}."/></p>
 <div class="section" id="non-stationary-solution">
 <h4>Non-stationary Solution<a class="headerlink" href="#non-stationary-solution" title="Permalink to this headline">¶</a></h4>
 <p>To solve the most general non-homogeneous cable equation even for non-stationary case, we have to introduce a two-dimensional Dirac distribution <img class="math" src="../_images/math/3e540fcb8d9c67487c295200b4d4d9639b4310df.png" alt="\delta^2(t,x) = \delta(t)\delta(x)"/>.</p>
-<p>Green&#8217;s function for the most general case should satisfy <a class="reference internal" href="#gerstner2002" id="id12">[Gerstner2002]</a></p>
+<p>Green’s function for the most general case should satisfy <a class="reference internal" href="#gerstner2002" id="id12">[Gerstner2002]</a></p>
 <div class="math">
 <p><img src="../_images/math/49baa207521fbb34231602793e49ddde060a5ef8.png" alt="\frac{\partial}{\partial t} G(t,t';x,x') - \frac{\partial^2}{\partial x^2}  G(t,t';x,x') +  G(t,t';x,x') = \delta(t'-t)\delta(x'-x)."/></p>
 </div><p>Again to save ink we define</p>

@@ -10,7 +10,10 @@ Neuroscience
    :maxdepth: 2
 
    biology.rst
+   visual-cortex.rst
+   alzheimers-disease.rst
    functional-connectivity.rst
    solitary-waves.rst
    signal-decomposition.rst
    dispersion-relation.rst
+   misc.rst

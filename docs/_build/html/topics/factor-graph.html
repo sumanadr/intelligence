@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Factor Graph &#8212; Intelligence</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.6/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -71,7 +67,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -104,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../neuroscience/index.html">Neuroscience</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/biology.html">Biology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/visual-cortex.html">Visual Cortex</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/functional-connectivity.html">Functional Connectivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/solitary-waves.html">Solitary Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
@@ -111,7 +108,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../equation-solving-in-neuroscience/index.html">Equation Solving in Neuroscience</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/green-function.html">Green&#8217;s Function Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/green-function.html">Green’s Function Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/fourier-transform.html">Fourier Tranform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/laplace-transform.html">Laplace Tranform</a></li>
 </ul>
@@ -223,42 +220,34 @@
 </div><p>As an example, we consider <img class="math" src="../_images/math/9a63346d0b18c3361d2ba446d7c9e7cf831d8c4d.png" alt="X_i"/> is 0 or 1. The combinations are (partially) listed below.</p>
 <table border="1" class="colwidths-auto docutils" id="id3">
 <caption><span class="caption-text">List of Possible Configurations of Variables</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col width="43%" />
-<col width="10%" />
-<col width="10%" />
-<col width="10%" />
-<col width="10%" />
-<col width="17%" />
-</colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><img class="math" src="../_images/math/3362680381e165e1e5ba7d02e55e09d198290431.png" alt="X_1"/></td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
-<td>...</td>
+<td>…</td>
 </tr>
 <tr class="row-even"><td><img class="math" src="../_images/math/6a2b7e3a7c036f38cbe76c1b4617c7687f4eafcc.png" alt="X_2"/></td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
-<td>...</td>
+<td>…</td>
 </tr>
 <tr class="row-odd"><td><img class="math" src="../_images/math/d2f7e91d2812e21e755633c53252f816f6598415.png" alt="X_3"/></td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
-<td>...</td>
+<td>…</td>
 </tr>
 <tr class="row-even"><td><img class="math" src="../_images/math/dc3e087d7dcd15bfff4d8da8969c47f8cabc02b3.png" alt="X_4"/></td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
-<td>...</td>
+<td>…</td>
 </tr>
 </tbody>
 </table>

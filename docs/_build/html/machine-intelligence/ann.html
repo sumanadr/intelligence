@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Artificial Neural Network &#8212; Intelligence</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.6/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -71,7 +67,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -104,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../neuroscience/index.html">Neuroscience</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/biology.html">Biology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/visual-cortex.html">Visual Cortex</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/functional-connectivity.html">Functional Connectivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/solitary-waves.html">Solitary Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
@@ -111,7 +108,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../equation-solving-in-neuroscience/index.html">Equation Solving in Neuroscience</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/green-function.html">Green&#8217;s Function Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/green-function.html">Green’s Function Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/fourier-transform.html">Fourier Tranform</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/laplace-transform.html">Laplace Tranform</a></li>
 </ul>
@@ -231,7 +228,7 @@
 </div><p>means that the quantity</p>
 <div class="math">
 <p><img src="../_images/math/fc78e615398a8fc5a24adfe315f196366f97457e.png" alt="\frac{d}{dt}y(t) + y(t)"/></p>
-</div><p>is conserved and is exactly 0. If we ever try to use ANN to approximate the function <img class="math" src="../_images/math/7aad026aa8fa3c35cc51797c88bd35ae4980701b.png" alt="y(t)"/>, this conservation law should be satisfied and it&#8217;s the only law that the approximator should obey.</p>
+</div><p>is conserved and is exactly 0. If we ever try to use ANN to approximate the function <img class="math" src="../_images/math/7aad026aa8fa3c35cc51797c88bd35ae4980701b.png" alt="y(t)"/>, this conservation law should be satisfied and it’s the only law that the approximator should obey.</p>
 <p>Using the network, we know that for each argument <img class="math" src="../_images/math/ced6ef3ff0147e7265475b0b0f8bdfdacc4037b5.png" alt="t_i"/>, we should have an output</p>
 <div class="math">
 <p><img src="../_images/math/b4b10ace230a3437dc8c432b112096631acfcfb8.png" alt="y_i= 1+t_i v_k f(t_i w_k+u_k)."/></p>
