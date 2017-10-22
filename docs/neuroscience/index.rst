@@ -11,6 +11,7 @@ Neuroscience
 
    biology.rst
    visual-cortex.rst
+   memory/index.rst
    alzheimers-disease.rst
    functional-connectivity.rst
    solitary-waves.rst
