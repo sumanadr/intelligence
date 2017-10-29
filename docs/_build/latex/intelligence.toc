@@ -1,0 +1,91 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Vocabulary}{3}{chapter.1}
+\contentsline {chapter}{\numberline {2}Questions? Yes}{5}{chapter.2}
+\contentsline {chapter}{\numberline {3}Neuroscience}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Biology}{7}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Terms \& Concepts}{7}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Techniques}{8}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Receptors and ligands}{8}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Neurodevelopment}{8}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Refs \& Notes}{9}{subsection.3.1.5}
+\contentsline {section}{\numberline {3.2}Visual Cortex}{9}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}FS in Visual Cortex}{9}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Memory}{9}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Time Scale in Memory}{9}{subsection.3.3.1}
+\contentsline {subsubsection}{Learning and Memory}{9}{subsubsection*.3}
+\contentsline {subsubsection}{Memory Consolidation and Synapse Scaling}{10}{subsubsection*.5}
+\contentsline {section}{\numberline {3.4}Alzheimer\IeC {\textquoteright }s Disease}{10}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Pathology}{10}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Network Dysfunction}{10}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Functional Connectivity}{11}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}References}{11}{subsection.3.5.1}
+\contentsline {section}{\numberline {3.6}Solitary Waves}{11}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Solitary Waves}{12}{subsection.3.6.1}
+\contentsline {section}{\numberline {3.7}Signal Decomposition}{12}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Measurement}{12}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}Stimulation}{12}{subsection.3.7.2}
+\contentsline {subsection}{\numberline {3.7.3}Thearetical Investigation}{13}{subsection.3.7.3}
+\contentsline {section}{\numberline {3.8}Dispersion Relation}{13}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}Refences and Notes}{13}{subsection.3.8.1}
+\contentsline {section}{\numberline {3.9}MISC}{13}{section.3.9}
+\contentsline {subsection}{\numberline {3.9.1}Competition betwen Subnetworks}{13}{subsection.3.9.1}
+\contentsline {subsection}{\numberline {3.9.2}RSN (Resting State Networks)}{13}{subsection.3.9.2}
+\contentsline {subsection}{\numberline {3.9.3}Whole-Brain Computational Connectomics}{13}{subsection.3.9.3}
+\contentsline {chapter}{\numberline {4}Equation Solving in Neuroscience}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}Green\IeC {\textquoteright }s Function Method}{15}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Green\IeC {\textquoteright }s Function Method}{15}{subsection.4.1.1}
+\contentsline {subsubsection}{Cable Equation}{15}{subsubsection*.22}
+\contentsline {subsubsection}{Solutions to Cable Equation}{15}{subsubsection*.27}
+\contentsline {paragraph}{Stationary Solution}{15}{paragraph*.28}
+\contentsline {paragraph}{Physical Meaning}{19}{paragraph*.35}
+\contentsline {paragraph}{Non-stationary Solution}{20}{paragraph*.36}
+\contentsline {section}{\numberline {4.2}Fourier Tranform}{21}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Fourier Serious and Continuous Fourier Transform}{21}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Application in Equation Solving}{21}{subsection.4.2.2}
+\contentsline {subsubsection}{Homogeneous Equations}{22}{subsubsection*.43}
+\contentsline {paragraph}{Using Fourier Series}{22}{paragraph*.44}
+\contentsline {paragraph}{Using Fourier Transform}{22}{paragraph*.45}
+\contentsline {subsubsection}{Inhomogeneous Equations}{23}{subsubsection*.46}
+\contentsline {subsection}{\numberline {4.2.3}Application to Neuroscience}{23}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Laplace Tranform}{23}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Laplace Transform}{23}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Application to Neuroscience}{25}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Random Walks}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}Random Walks}{27}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Fixed Stepsize}{27}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Significance of Dimension}{28}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Refs \& Notes}{28}{subsection.5.1.3}
+\contentsline {chapter}{\numberline {6}Machine Intelligence}{29}{chapter.6}
+\contentsline {section}{\numberline {6.1}Artificial Neural Network}{29}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Basics}{29}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Solving Differential Equations}{30}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Neural Networks and Finite Element Method}{31}{section.6.2}
+\contentsline {section}{\numberline {6.3}Boltzmann Machine}{31}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Boltzmann Machine and Physics}{31}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Application of Boltzmann in Learning}{32}{subsection.6.3.2}
+\contentsline {subsubsection}{Without Hidden Units}{32}{subsubsection*.49}
+\contentsline {subsubsection}{With Hidden Units}{33}{subsubsection*.50}
+\contentsline {subsection}{\numberline {6.3.3}Minimizing Energy of Ising Model is Hebbian Learning}{33}{subsection.6.3.3}
+\contentsline {subsubsection}{Programming}{33}{subsubsection*.51}
+\contentsline {chapter}{\numberline {7}Collective Intelligence}{35}{chapter.7}
+\contentsline {section}{\numberline {7.1}Collective intelligence References}{35}{section.7.1}
+\contentsline {chapter}{\numberline {8}Some Topics}{37}{chapter.8}
+\contentsline {section}{\numberline {8.1}Mean-field Method}{37}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Paramagnetic Material}{37}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Neuroscience}{38}{subsection.8.1.2}
+\contentsline {subsubsection}{Two Phase Spaces}{38}{subsubsection*.53}
+\contentsline {subsubsection}{Equation of Motion}{39}{subsubsection*.55}
+\contentsline {subsubsection}{Mean-field Approximation}{40}{subsubsection*.59}
+\contentsline {subsection}{\numberline {8.1.3}References and Notes}{41}{subsection.8.1.3}
+\contentsline {section}{\numberline {8.2}Spin Glass}{41}{section.8.2}
+\contentsline {section}{\numberline {8.3}Binary Human Model}{41}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}A Simplified Model}{41}{subsection.8.3.1}
+\contentsline {subsubsection}{Numerical Model}{42}{subsubsection*.61}
+\contentsline {section}{\numberline {8.4}Factor Graph}{44}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}References and Notes}{45}{subsection.8.4.1}
+\contentsline {chapter}{\numberline {9}Some Random Thoughts}{47}{chapter.9}
+\contentsline {section}{\numberline {9.1}Pan-Intelligence}{47}{section.9.1}
+\contentsline {section}{\numberline {9.2}Why Can We Understand the Universe?}{47}{section.9.2}
+\contentsline {chapter}{\numberline {10}References}{49}{chapter.10}
+\contentsline {chapter}{\numberline {11}Acknowledgement}{51}{chapter.11}
+\contentsline {chapter}{Bibliography}{53}{chapter*.62}

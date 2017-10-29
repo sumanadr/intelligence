@@ -18,3 +18,4 @@ Neuroscience
    signal-decomposition.rst
    dispersion-relation.rst
    misc.rst
+   glossary.rst
