@@ -10,3 +10,4 @@ Some random but interesting topics.
    spin-glass.rst
    binary-human-model.rst
    factor-graph.rst
+   cosmic-rays-and-neuroscience.rst
