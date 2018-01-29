@@ -52,8 +52,8 @@ Short-term Memory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Short-term memory time scale: minutes to days
-3. Where: hippocampus, but amygdala has influence on memory through emotions. Some theories developed context based brain area storage.
-4. Possibly related to synaptic plasticity
+2. Where: hippocampus, but amygdala has influence on memory through emotions. Some theories developed context based brain area storage.
+3. Possibly related to synaptic plasticity
 
 
 
