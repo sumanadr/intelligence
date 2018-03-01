@@ -22,6 +22,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
@@ -98,6 +99,11 @@
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">Vocabulary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">Statistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/esl/index.html">The Element of Statistical Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/lda.html">LDA Algorithm</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../neuroscience/index.html">Neuroscience</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/biology.html">Biology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/visual-cortex.html">Visual Cortex</a></li>
@@ -210,48 +216,48 @@
       
   <div class="section" id="factor-graph">
 <h1>Factor Graph<a class="headerlink" href="#factor-graph" title="Permalink to this headline">¶</a></h1>
-<p>In the propagation of information, we are usually dealing with such relations that some system (factor) <img class="math" src="../_images/math/875eb40014526135383caa89fd500ae40a835f56.png" alt="f"/> is related to some inputs (variable) <img class="math" src="../_images/math/a59f68a4202623bb859a7093f0316bf466e6f75d.png" alt="x"/>.</p>
+<p>In the propagation of information, we are usually dealing with such relations that some system (factor) <span class="math">f</span> is related to some inputs (variable) <span class="math">x</span>.</p>
 <p>Factor graph builds such networks of relations. In such a graph, we use boxes to represent factors, and circles to represent variables.</p>
 <div class="figure align-center" id="id2">
 <img alt="../_images/factor-graph-wikipedia.jpg" src="../_images/factor-graph-wikipedia.jpg" />
 <p class="caption"><span class="caption-text">From <a class="reference external" href="https://en.wikipedia.org/wiki/Factor_graph#/media/File:Factorgraph.jpg">Factor Graph &#64; Wikipedia</a>.</span></p>
 </div>
-<p>Suppose we need to find out the probability of factor <img class="math" src="../_images/math/23bf222547e6d1a6048bd87ad59a146173f5c21f.png" alt="f_4"/>, we have to take in the two variables <img class="math" src="../_images/math/6a2b7e3a7c036f38cbe76c1b4617c7687f4eafcc.png" alt="X_2"/> and <img class="math" src="../_images/math/d2f7e91d2812e21e755633c53252f816f6598415.png" alt="X_3"/>.</p>
+<p>Suppose we need to find out the probability of factor <span class="math">f_4</span>, we have to take in the two variables <span class="math">X_2</span> and <span class="math">X_3</span>.</p>
 <p>One important question is that we can actually calculate the probability of a specific configuration of the variables, which is</p>
 <div class="math">
-<p><img src="../_images/math/4b15212fb64da7805fe947d5c0e805490117f97a.png" alt="P \propto f_1(X_1) + f_2(X_1,X_2) + f_3(X_1,X_2) + f_4(X_2,X_3)."/></p>
-</div><p>In general, we can assign weights <img class="math" src="../_images/math/1caac5f874f508b298a9b1dcf65af7fe3823f9cc.png" alt="w_i"/> to each factors <img class="math" src="../_images/math/32c776976a60205210b12dc2566b5f2b2a81f7bf.png" alt="f_i"/>, so that the probability of each set of variables is</p>
+\[P \propto f_1(X_1) + f_2(X_1,X_2) + f_3(X_1,X_2) + f_4(X_2,X_3).\]</div>
+<p>In general, we can assign weights <span class="math">w_i</span> to each factors <span class="math">f_i</span>, so that the probability of each set of variables is</p>
 <div class="math">
-<p><img src="../_images/math/0253b58b1d590c8df43c553daa6d956308a0ed3d.png" alt="P(X_1,X_2,X_3,X_4) \propto w_1 f_1(X_1) + w_2 f_2(X_1,X_2) + w_3 f_3(X_1,X_2) + w_4 f_4(X_2,X_3)."/></p>
-</div><p>The normalization is the partition function, i.e., the summation of all the possible combinations of variables,</p>
+\[P(X_1,X_2,X_3,X_4) \propto w_1 f_1(X_1) + w_2 f_2(X_1,X_2) + w_3 f_3(X_1,X_2) + w_4 f_4(X_2,X_3).\]</div>
+<p>The normalization is the partition function, i.e., the summation of all the possible combinations of variables,</p>
 <div class="math">
-<p><img src="../_images/math/1c2cb6f42e1cd87bfb471d1fe9eb1a68f811c504.png" alt="Z = \sum_{\{X_1,X_2,X_3,X_4\}} P(X_1,X_2,X_3,X_4)."/></p>
-</div><p>As an example, we consider <img class="math" src="../_images/math/9a63346d0b18c3361d2ba446d7c9e7cf831d8c4d.png" alt="X_i"/> is 0 or 1. The combinations are (partially) listed below.</p>
+\[Z = \sum_{\{X_1,X_2,X_3,X_4\}} P(X_1,X_2,X_3,X_4).\]</div>
+<p>As an example, we consider <span class="math">X_i</span> is 0 or 1. The combinations are (partially) listed below.</p>
 <table border="1" class="colwidths-auto docutils" id="id3">
 <caption><span class="caption-text">List of Possible Configurations of Variables</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <tbody valign="top">
-<tr class="row-odd"><td><img class="math" src="../_images/math/3362680381e165e1e5ba7d02e55e09d198290431.png" alt="X_1"/></td>
+<tr class="row-odd"><td><span class="math">X_1</span></td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
 <td>…</td>
 </tr>
-<tr class="row-even"><td><img class="math" src="../_images/math/6a2b7e3a7c036f38cbe76c1b4617c7687f4eafcc.png" alt="X_2"/></td>
+<tr class="row-even"><td><span class="math">X_2</span></td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
 <td>…</td>
 </tr>
-<tr class="row-odd"><td><img class="math" src="../_images/math/d2f7e91d2812e21e755633c53252f816f6598415.png" alt="X_3"/></td>
+<tr class="row-odd"><td><span class="math">X_3</span></td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
 <td>…</td>
 </tr>
-<tr class="row-even"><td><img class="math" src="../_images/math/dc3e087d7dcd15bfff4d8da8969c47f8cabc02b3.png" alt="X_4"/></td>
+<tr class="row-even"><td><span class="math">X_4</span></td>
 <td>0</td>
 <td>0</td>
 <td>0</td>

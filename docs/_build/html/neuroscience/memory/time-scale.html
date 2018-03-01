@@ -22,6 +22,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
@@ -98,6 +99,11 @@
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../vocabulary.html">Vocabulary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../questions.html">Questions? Yes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../statistics/index.html">Statistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../statistics/esl/index.html">The Element of Statistical Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../statistics/lda.html">LDA Algorithm</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Neuroscience</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../biology.html">Biology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../visual-cortex.html">Visual Cortex</a></li>
@@ -319,16 +325,16 @@
 <p class="first admonition-title">#TIL# Recall momory can destablize the corresponding memory itself</p>
 <p class="last">In the paper by Tetzlaff <a class="reference internal" href="#tetzlaff2013" id="id6">[Tetzlaff2013]</a>, they mentioned it.</p>
 </div>
-<p>Tetzlaff et al found a solution to this time scale problem <a class="reference internal" href="#tetzlaff2013" id="id7">[Tetzlaff2013]</a>. In principle, <img class="math" src="../../_images/math/9204c7704c9cd338536737f06462378fdef99d9f.png" alt="\frac{d w^{+}_{ij}}{dt}"/> can be Taylor expanded to have all orders of <img class="math" src="../../_images/math/e4207902fbc28a59d32e898762eff33efd96aaf1.png" alt="w^{+}_{ij}"/>. In this work by Tetzlaff, they included a simple plasticity (zeroth order in Taylor expansion)</p>
+<p>Tetzlaff et al found a solution to this time scale problem <a class="reference internal" href="#tetzlaff2013" id="id7">[Tetzlaff2013]</a>. In principle, <span class="math">\frac{d w^{+}_{ij}}{dt}</span> can be Taylor expanded to have all orders of <span class="math">w^{+}_{ij}</span>. In this work by Tetzlaff, they included a simple plasticity (zeroth order in Taylor expansion)</p>
 <div class="math">
-<p><img src="../../_images/math/81ed08ae2cf89ed1736cc008b39caac543a52cfd.png" alt="\mu F_{i} F_{j},"/></p>
-</div><p>as well as a synapse scaling (second order in Taylor expansion)</p>
+\[\mu F_{i} F_{j},\]</div>
+<p>as well as a synapse scaling (second order in Taylor expansion)</p>
 <div class="math">
-<p><img src="../../_images/math/388b2d816716b8a4217c318ad5f1af8928964d58.png" alt="\frac{\mu}{\kappa} (F^T - F_i) \left( w^{+}_{ij} \right)^2."/></p>
-</div><p>We put those two together,</p>
+\[\frac{\mu}{\kappa} (F^T - F_i) \left( w^{+}_{ij} \right)^2.\]</div>
+<p>We put those two together,</p>
 <div class="math">
-<p><img src="../../_images/math/1a87dd0a7e5dff0777e10b8c0716b9aa09bb3003.png" alt="\frac{d w^{+}_{ij}}{dt} = \mu \left( F_{i} F_{j} +  \kappa (F^T - F_i) \left( w^{+}_{ij} \right)^2 \right)."/></p>
-</div><p>Such a updating rule for weights contains dynamics of bifurcation. For a region of input frequencies, activity and weights exhibit bistability, thus leading to neurons evolve to different states. Neurons recieved strong inputs have larger weights due to plasticity. Those neurons with large weights evolve into equilibrium points of LTS for the corresponding frequency.</p>
+\[\frac{d w^{+}_{ij}}{dt} = \mu \left( F_{i} F_{j} +  \kappa (F^T - F_i) \left( w^{+}_{ij} \right)^2 \right).\]</div>
+<p>Such a updating rule for weights contains dynamics of bifurcation. For a region of input frequencies, activity and weights exhibit bistability, thus leading to neurons evolve to different states. Neurons recieved strong inputs have larger weights due to plasticity. Those neurons with large weights evolve into equilibrium points of LTS for the corresponding frequency.</p>
 <table class="docutils citation" frame="void" id="tetzlaff2012" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">

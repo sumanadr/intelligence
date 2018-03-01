@@ -17,5 +17,6 @@ Neuroscience
    solitary-waves.rst
    signal-decomposition.rst
    dispersion-relation.rst
+   lesion-of-network.rst
    misc.rst
    glossary.rst

@@ -22,6 +22,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
@@ -98,6 +99,11 @@
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">Vocabulary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">Statistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/esl/index.html">The Element of Statistical Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/lda.html">LDA Algorithm</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../neuroscience/index.html">Neuroscience</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/biology.html">Biology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/visual-cortex.html">Visual Cortex</a></li>
@@ -222,141 +228,48 @@
 <p>Boltzmann machine is much like a spin glass model in physics. In short words, Boltzmann machine is a machine that has nodes that can take values, and the nodes are connected through some weight. It is just like any other neual nets but with complications and theoretical implications.</p>
 <div class="section" id="boltzmann-machine-and-physics">
 <h2>Boltzmann Machine and Physics<a class="headerlink" href="#boltzmann-machine-and-physics" title="Permalink to this headline">¶</a></h2>
-<p>To obtain a good understanding of Boltzmann machine for a physicist, we begin with Ising model. We construct a system of neurons <img class="math" src="../_images/math/2ae569f277d232211bad1a32483c775d4bd398ab.png" alt="\{ s_i\}"/> which can take values of 1 or -1, where each pair of them <img class="math" src="../_images/math/3707286326c05ad688e6ebcc3ce93269b7f2e099.png" alt="s_i"/> and <img class="math" src="../_images/math/4806e745a70c5676647510ad3d9dc38ee55752a4.png" alt="s_j"/> is connected by weight <img class="math" src="../_images/math/46d61fa147aae6a004d85c8b1b907e9b56135061.png" alt="J_{ij}"/>.</p>
+<p>To obtain a good understanding of Boltzmann machine for a physicist, we begin with Ising model. We construct a system of neurons <span class="math">\(\{ s_i\}\)</span> which can take values of 1 or -1, where each pair of them <span class="math">\(s_i\)</span> and <span class="math">\(s_j\)</span> is connected by weight <span class="math">\(J_{ij}\)</span>.</p>
 <p>This is described as a Boltzmann machine, or spin glass in physics. Spin glass is a type of material that is a composite of many spins pointing in different directions. In principle spin glass is hard to calculate.</p>
 <p>Neverthless we can make simplifications to this model. We require each spin to be connected to its nearest neighbours only. Such a model is called Ising model.</p>
 <p>Intuitively, those spins can be viewed as tiny magnets that can point up or down only. Each spin interacts with its neighbours. These interactions are calculated in terms of energy,</p>
 <div class="math">
-<p><img src="../_images/math/eb10cff7b5667de480193536d61bd59c7b190a53.png" alt="E = -\sum_{i,j} J_{ij} s_i s_j."/></p>
-</div><p>Why do we care about energy? For a physics system, low energy means stable while high energy means unsatble since it might automatically change its configuration into low energy state. That being said, a system of spins is stable if the energy of all the interactions is low.</p>
+\[E = -\sum_{i,j} J_{ij} s_i s_j.\]</div>
+<p>Why do we care about energy? For a physics system, low energy means stable while high energy means unsatble since it might automatically change its configuration into low energy state. That being said, a system of spins is stable if the energy of all the interactions is low.</p>
 <p>To find out a low energy state, one of the numerical methods is Monte Carlo method.</p>
 <div class="note admonition">
 <p class="first admonition-title">States</p>
-<p>We have been talking about the word state without being specifying the definition of it. In fact we can think of two different pictures of states. For the purpose of this discussion, we consider a system of <img class="math" src="../_images/math/f4170ed8938b79490d8923857962695514a8e4cb.png" alt="N"/> particles and each of the particle has <img class="math" src="../_images/math/edba97b4c0d864d26e92ea7ea73767fa38eef3f7.png" alt="m"/> degrees of freedom.</p>
-<p>The first strategy is to set up a <img class="math" src="../_images/math/30c5c0c0c9d0a0c926b355af8be8780c702897b0.png" alt="N\times m"/> dimension space and describe the state of the whole system with on point in such a space. The distribution of the points can be determined by the corresponding categories of distribution functions. This is dubbed as <img class="math" src="../_images/math/d872993ed0c7c420e73e77a1d285ac100c516806.png" alt="\Gamma"/> space.</p>
-<p>The second strategy is to use a space of <img class="math" src="../_images/math/edba97b4c0d864d26e92ea7ea73767fa38eef3f7.png" alt="m"/> dimensions where each particle of the system is a point in such a space. Such a space is called <img class="math" src="../_images/math/d79e8a2c7ce54906c2b25549da38bdbe02cf40d6.png" alt="\mu"/> space. In <img class="math" src="../_images/math/d79e8a2c7ce54906c2b25549da38bdbe02cf40d6.png" alt="\mu"/> space, the distribution of each particle state is calculated using BBGKY chain.</p>
+<p>We have been talking about the word state without being specifying the definition of it. In fact we can think of two different pictures of states. For the purpose of this discussion, we consider a system of <span class="math">\(N\)</span> particles and each of the particle has <span class="math">\(m\)</span> degrees of freedom.</p>
+<p>The first strategy is to set up a <span class="math">\(N\times m\)</span> dimension space and describe the state of the whole system with on point in such a space. The distribution of the points can be determined by the corresponding categories of distribution functions. This is dubbed as <span class="math">\(\Gamma\)</span> space.</p>
+<p>The second strategy is to use a space of <span class="math">\(m\)</span> dimensions where each particle of the system is a point in such a space. Such a space is called <span class="math">\(\mu\)</span> space. In <span class="math">\(\mu\)</span> space, the distribution of each particle state is calculated using BBGKY chain.</p>
 <p class="last">Once the macroscopic propertities of the system is assigned, the all possible states that leads to this macroscopic state show up with equal probability, aka, principle of <strong>equal a priori probabilities</strong>.</p>
 </div>
 <div class="note admonition">
 <p class="first admonition-title">Partition Function</p>
-<p>Partition function <img class="math" src="../_images/math/bcb2457ac9d8995a4f34d57cadac7ecbbe58f3bd.png" alt="Z"/> is useful as we calculate the statistical properties of the network,</p>
+<p>Partition function <span class="math">\(Z\)</span> is useful as we calculate the statistical properties of the network,</p>
 <div class="math">
-<p><img src="../_images/math/ae1fbfb4e4305fb008b96c7d8cde86e49c3243aa.png" alt="Z = \sum e^{-E}."/></p>
-</div><p>With partition function defined, the distribution of states is</p>
+\[Z = \sum e^{-E}.\]</div>
+<p>With partition function defined, the distribution of states is</p>
 <div class="last math">
-<p><img src="../_images/math/087ea8a4b0c31faaa1f64e8628367f0814ecd8bd.png" alt="P = \frac{1}{Z} e^{-E}"/></p>
-</div></div>
+\[P = \frac{1}{Z} e^{-E}\]</div>
+</div>
 </div>
 <div class="section" id="application-of-boltzmann-in-learning">
 <h2>Application of Boltzmann in Learning<a class="headerlink" href="#application-of-boltzmann-in-learning" title="Permalink to this headline">¶</a></h2>
 <p>In many cases, we would like the machine to learn about the pattern of input. Probabilistically speaking, we are working out the probability distribution of the input data using a Boltzmann machine,</p>
 <div class="math">
-<p><img src="../_images/math/87f868e3c4a6fbf016758aebc976ca1785727039.png" alt="\Delta p =  p_{\mathrm{Model}} - p_{\mathrm{Data}}."/></p>
-</div><p>Or for reasons of log-likelihood, we use the ration of them</p>
+\[\Delta p =  p_{\mathrm{Model}} - p_{\mathrm{Data}}.\]</div>
+<p>Or for reasons of log-likelihood, we use the ration of them</p>
 <div class="math">
-<p><img src="../_images/math/3d884f30b0d2122f60507569421a69dc1f36f523.png" alt="\Delta \log p =   \log p_{\mathrm{Model}} - \log p_{\mathrm{Data}}."/></p>
-</div><p>In terms of Boltzmann machine weights, which are to be determined, the log probability is proportional to the energy</p>
+\[\Delta \log p =   \log p_{\mathrm{Model}} - \log p_{\mathrm{Data}}.\]</div>
+<p>In terms of Boltzmann machine weights, which are to be determined, the log probability is proportional to the energy</p>
 <div class="math">
-<p><img src="../_images/math/4f54d0790ca78923902f51ce0e44776f04c2b7bb.png" alt="\Delta \log p \sim \sum_{ij} w_{ij} s_i s_j \vert_{\mathrm{Model}}  -    \sum_{ij} w_{ij} s_i s_j \vert_{\mathrm{Data}}."/></p>
-</div><p>Since we are looking for the weights, the updating rule should be equivalent to the gradient</p>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">\frac{ \partial \Delta \log p }{ \partial w_{ij} } \sim  \langle s_i s_j\rangle_{\mathrm{data}} - \langle s_i s_j \rangle_{\mathrm{\model}},
-
-</tt>)</p>
-latex exited with error
-[stdout]
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=latex)
- restricted \write18 enabled.
-entering extended mode
-(./math.tex
-LaTeX2e &lt;2017-04-15&gt;
-Babel &lt;3.15&gt; and hyphenation patterns for 84 language(s) loaded.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/size12.clo))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/inputenc.sty
-(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/utf8x.def))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/ucs.sty
-(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/data/uni-global.def))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
-For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amscls/amsthm.sty)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/anyfontsize/anyfontsize.sty)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/bm.sty)
-No file math.aux.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/ucsencs.def)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd)
-! Undefined control sequence.
-&lt;argument&gt; \model 
-                  
-l.14 ... s_j \rangle_{\mathrm{\model}},\end{split}
-                                                  
-! Undefined control sequence.
-&lt;argument&gt; \model 
-                  
-l.14 ... s_j \rangle_{\mathrm{\model}},\end{split}
-                                                  
-[1] (./math.aux) )
-(see the transcript file for additional information)
-Output written on math.dvi (1 page, 576 bytes).
-Transcript written on math.log.
-</div>
+\[\Delta \log p \sim \sum_{ij} w_{ij} s_i s_j \vert_{\mathrm{Model}}  -    \sum_{ij} w_{ij} s_i s_j \vert_{\mathrm{Data}}.\]</div>
+<p>Since we are looking for the weights, the updating rule should be equivalent to the gradient</p>
+<div class="math">
+\[\frac{ \partial \Delta \log p }{ \partial w_{ij} } \sim  \langle s_i s_j\rangle_{\mathrm{data}} - \langle s_i s_j \rangle_{\mathrm{\model}},\]</div>
 <p>We could update our weights using a rule compatible with the gradient of the probability.</p>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">\Delta w_{ij} \sim \langle s_i s_j\rangle_{\mathrm{data}} - \langle s_i s_j \rangle_{\mathrm{\model}}.
-
-</tt>)</p>
-latex exited with error
-[stdout]
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=latex)
- restricted \write18 enabled.
-entering extended mode
-(./math.tex
-LaTeX2e &lt;2017-04-15&gt;
-Babel &lt;3.15&gt; and hyphenation patterns for 84 language(s) loaded.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/size12.clo))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/inputenc.sty
-(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/utf8x.def))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/ucs.sty
-(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/data/uni-global.def))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
-For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amscls/amsthm.sty)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/anyfontsize/anyfontsize.sty)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/bm.sty) (./math.aux)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/ucs/ucsencs.def)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd)
-! Undefined control sequence.
-&lt;argument&gt; \model 
-                  
-l.14 ... s_j \rangle_{\mathrm{\model}}.\end{split}
-                                                  
-! Undefined control sequence.
-&lt;argument&gt; \model 
-                  
-l.14 ... s_j \rangle_{\mathrm{\model}}.\end{split}
-                                                  
-[1] (./math.aux) )
-(see the transcript file for additional information)
-Output written on math.dvi (1 page, 508 bytes).
-Transcript written on math.log.
-</div>
+<div class="math" id="equation-eq-weight-update-rule-boltzmann-machine">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-weight-update-rule-boltzmann-machine" title="Permalink to this equation">¶</a></span>\[\Delta w_{ij} \sim \langle s_i s_j\rangle_{\mathrm{data}} - \langle s_i s_j \rangle_{\mathrm{\model}}.\]</div>
 <p>It’s easily noticed that the first term is basically Hebbian learning rule, where similar activities enhences the weight. The second term is the some unlearning rule where we have to reduce some weights to relax to the actual working network. Simply put, we kill some connects that have negative effects on our learning network.</p>
 <div class="section" id="without-hidden-units">
 <h3>Without Hidden Units<a class="headerlink" href="#without-hidden-units" title="Permalink to this headline">¶</a></h3>
@@ -373,7 +286,7 @@ Transcript written on math.log.
 <blockquote>
 <div><ol class="loweralpha simple">
 <li>Then we update the hidden units so that the energy is minimized with clamping.</li>
-<li>We calculate the average <img class="math" src="../_images/math/c23c489daa69994cf50adeccd0f865f1bdf698b1.png" alt="s_i s_j"/> over all pairs of units, i.e., <img class="math" src="../_images/math/87c838e430af560e153768bf84258812363fdc80.png" alt="\langle s_i s_j\rangle_{\mathrm{data}}"/>.</li>
+<li>We calculate the average <span class="math">\(s_i s_j\)</span> over all pairs of units, i.e., <span class="math">\(\langle s_i s_j\rangle_{\mathrm{data}}\)</span>.</li>
 <li>Repeat for all data sets of training.</li>
 </ol>
 </div></blockquote>
@@ -383,11 +296,11 @@ Transcript written on math.log.
 <blockquote>
 <div><ol class="loweralpha simple">
 <li>Relax the state of the units to low energy state.</li>
-<li>Find out <img class="math" src="../_images/math/56fc89aaf4bc0d4150a3da096f369a177627daca.png" alt="\langle s_i s_j\rangle_{\mathrm{model}}"/>.</li>
+<li>Find out <span class="math">\(\langle s_i s_j\rangle_{\mathrm{model}}\)</span>.</li>
 <li>Repeat N times.</li>
 </ol>
 </div></blockquote>
-<p>With <img class="math" src="../_images/math/87c838e430af560e153768bf84258812363fdc80.png" alt="\langle s_i s_j\rangle_{\mathrm{data}}"/> and <img class="math" src="../_images/math/56fc89aaf4bc0d4150a3da096f369a177627daca.png" alt="\langle s_i s_j\rangle_{\mathrm{model}}"/> found, we use the update rule <a class="reference internal" href="#equation-eq-weight-update-rule-boltzmann-machine">(1)</a>.</p>
+<p>With <span class="math">\(\langle s_i s_j\rangle_{\mathrm{data}}\)</span> and <span class="math">\(\langle s_i s_j\rangle_{\mathrm{model}}\)</span> found, we use the update rule <a class="reference internal" href="#equation-eq-weight-update-rule-boltzmann-machine">(1)</a>.</p>
 <p>For some reference, Hinton has a set of lectures on <a class="reference external" href="https://www.coursera.org/learn/neural-networks/lecture/iitiK/boltzmann-machine-learning-12-min">Coursera</a>. He also has a lecture for more effective algrimths: <a class="reference external" href="https://www.coursera.org/learn/neural-networks/lecture/wlELo/optional-video-more-efficient-ways-to-get-the-statistics-15-mins">More efficient ways to get the statistics</a>.</p>
 </div>
 </div>
@@ -397,7 +310,7 @@ Transcript written on math.log.
 <p class="first admonition-title">Hebbian Learning Rule</p>
 <p class="last">Simply put, neurons act similarly at the same time would be more likely to be connected.</p>
 </div>
-<p>A energy minimization procedure would be the same as Hebbian learning rule. Suppose we pick out two spins, <img class="math" src="../_images/math/fb51b5d1b78b205086a38849a999831344987cc3.png" alt="s_3 = 1"/> and <img class="math" src="../_images/math/df0e85ff3fb68beec053b71e4853844a40e9e748.png" alt="s_8= 1"/>, the connected weight would be positive in order to have lower energy <img class="math" src="../_images/math/35f779f43ae006007958ca43b6c1e65b41dd4038.png" alt="-J_{38}s_3 s_8 = - J_{38}"/>. For spins with different signs, negative weight would be the choice to make sure the energy is lower. This is similar to Hebbian learning rule.</p>
+<p>A energy minimization procedure would be the same as Hebbian learning rule. Suppose we pick out two spins, <span class="math">\(s_3 = 1\)</span> and <span class="math">\(s_8= 1\)</span>, the connected weight would be positive in order to have lower energy <span class="math">\(-J_{38}s_3 s_8 = - J_{38}\)</span>. For spins with different signs, negative weight would be the choice to make sure the energy is lower. This is similar to Hebbian learning rule.</p>
 <div class="section" id="programming">
 <h3>Programming<a class="headerlink" href="#programming" title="Permalink to this headline">¶</a></h3>
 <p>To code a Boltzmann machine, we need a protocal.</p>

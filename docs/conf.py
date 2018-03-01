@@ -26,7 +26,8 @@ sys.path.append(os.path.abspath('exts'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.imgmath', "math_dollar"]
+# extensions = ['sphinx.ext.imgmath', "math_dollar"]
+extensions = ['sphinx.ext.mathjax', "math_dollar"]
 
 pngmath_use_preview = True
 

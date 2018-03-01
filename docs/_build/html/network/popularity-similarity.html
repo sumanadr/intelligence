@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Popularity vs Similarity in Growing Networks &#8212; Intelligence</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.6/readable/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
+
+
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+ 
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/intelligence.png"></span>
+          Intelligence</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.7</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Chapters <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">Statistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/esl/index.html">The Element of Statistical Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/lda.html">LDA Algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience/index.html">Neuroscience</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/biology.html">Biology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/visual-cortex.html">Visual Cortex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/memory/index.html">Memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/alzheimers-disease.html">Alzheimer’s Disease</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/functional-connectivity.html">Functional Connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/solitary-waves.html">Solitary Waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/dispersion-relation.html">Dispersion Relation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/misc.html">MISC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/glossary.html">Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../neuroscience-models/index.html">Neuroscience Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience-models/synapses.html">Synapses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../equation-solving-in-neuroscience/index.html">Equation Solving in Neuroscience</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/green-function.html">Green’s Function Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/fourier-transform.html">Fourier Tranform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equation-solving-in-neuroscience/laplace-transform.html">Laplace Tranform</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../random-walks/index.html">Random Walks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../random-walks/random-walks.html">Random Walks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../machine-intelligence/index.html">Machine Intelligence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/ann.html">Artificial Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/neural-network-and-fem.html">Neural Networks and Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/boltzmann-machine.html">Boltzmann Machine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../collective/index.html">Collective Intelligence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../collective/refs.html">Collective intelligence References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Some Topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../topics/mean-field.html">Mean-field Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/spin-glass.html">Spin Glass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/binary-human-model.html">Binary Human Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/factor-graph.html">Factor Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topics/cosmic-rays-and-neuroscience.html">Cosmic Rays and Neuroscience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../random-thoughts.html">Some Random Thoughts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../random-thoughts.html#pan-intelligence">Pan-Intelligence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../random-thoughts.html#why-can-we-understand-the-universe">Why Can We Understand the Universe?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ref.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgement.html">Acknowledgement</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Popularity vs Similarity in Growing Networks</a></li>
+<li><a class="reference internal" href="#background">Background</a><ul>
+<li><a class="reference internal" href="#concepts">Concepts</a></li>
+<li><a class="reference internal" href="#scaling-in-networks">Scaling in Networks</a></li>
+<li><a class="reference internal" href="#popularity">Popularity</a></li>
+<li><a class="reference internal" href="#similarity">Similarity</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#popularity-and-similarity-together">Popularity and Similarity Together</a></li>
+<li><a class="reference internal" href="#variations-and-emergent-models">Variations and Emergent Models</a></li>
+<li><a class="reference internal" href="#what-else">What else?</a></li>
+<li><a class="reference internal" href="#references-and-notes">References and Notes</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="popularity-vs-similarity-in-growing-networks">
+<h1>Popularity vs Similarity in Growing Networks<a class="headerlink" href="#popularity-vs-similarity-in-growing-networks" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="background">
+<h1>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h1>
+<p>Why are we interested in networks? Because a enormous categories of
+phenomena can be modeled using networks. Internet, society, physics,
+biology, ecology, economy, even the evolution of the universe are
+essentially networks.</p>
+<div class="section" id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Degrees</li>
+</ul>
+<figure><p><img alt="image0" src="network/%7B%7B%20site.baseurl%20%7D%7D/assets/posts/popularity-similarity-in-networks/directed-degrees.svg.png" /></p>
+<figcaption><p>Degrees. Source
+<a class="reference external" href="https://en.wikipedia.org/wiki/File:DirectedDegrees.svg">wikipedia</a>.</p>
+</figcaption></figure></div>
+<div class="section" id="scaling-in-networks">
+<h2>Scaling in Networks<a class="headerlink" href="#scaling-in-networks" title="Permalink to this headline">¶</a></h2>
+<p>People have found a lot of scaling phenomena in networks.</p>
+<ul class="simple">
+<li>Internet links (directed links):</li>
+</ul>
+<p><a class="reference external" href="https://arxiv.org/abs/cond-mat/0008465">arXiv:cond-mat/0008465</a> for
+the scaling in internet links. What they find is that the distribution
+of degrees is power-law, i.e., <span class="math">P\propto k^{-\gamma}</span> with
+<span class="math">\gamma\sim 2</span>.
+<a class="reference external" href="https://arxiv.org/abs/cond-mat/0009090v1">arXiv:cond-mat/0009090</a>
+provides a better explanation. The explanation is simply popular is more
+attractive.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Barabasi et al found that in random networks, scaling appears also</dt>
+<dd><a class="footnote-reference" href="#id7" id="id1">[1]</a>.</dd>
+</dl>
+</li>
+</ul>
+<figure><p><img alt="image1" src="network/%7B%7B%20site.baseurl%20%7D%7D/assets/posts/popularity-similarity-in-networks/barabasi-scaling-random-networks.png" /></p>
+<figcaption><p>Scaling of connectivities. Barabasi (1999).</p>
+</figcaption></figure><ul class="simple">
+<li>And some theories like  <a class="footnote-reference" href="#id8" id="id2">[2]</a>, etc.</li>
+</ul>
+</div>
+<div class="section" id="popularity">
+<h2>Popularity<a class="headerlink" href="#popularity" title="Permalink to this headline">¶</a></h2>
+<p>In the example of internet links, popular is attractive can be modeled
+by a dynamic generation of network following some rules.</p>
+<ol class="arabic simple">
+<li>At each step we have <span class="math">m</span> links distributed.</li>
+<li>The probability of attaching to some node with degree <span class="math">k_i</span> is</li>
+</ol>
+<div class="math">
+\[P_i \sim  k_i + A\]</div>
+<p>where <span class="math">A</span> serves as a initial attractiveness since it tells us the
+probability of attachment when the degree <span class="math">k_i=0</span>.</p>
+<p>Dorogovtsev et al proved that this model gives us the final distribution
+of degrees</p>
+<div class="math">
+\[P \propto k^{-\gamma},\]</div>
+<p>where <span class="math">\gamma=2 + A/m</span>  <a class="footnote-reference" href="#id9" id="id3">[3]</a>.</p>
+</div>
+<div class="section" id="similarity">
+<h2>Similarity<a class="headerlink" href="#similarity" title="Permalink to this headline">¶</a></h2>
+<p>The problem about popularity is that we are all aware that popularity is
+not the only factor.</p>
+<p>Consider the following examples.</p>
+<ol class="arabic simple">
+<li>You write a blog about neuroscience. In the past people usually put
+links on the blog, which is called blogroll or something. In the
+links, what you would include is something like facebook, google,
+maybe nature/science, and most likely some blogs or resources about
+neuroscience eventhough these websites may not be very popular.
+However, these links have similar contents as yours.</li>
+<li>We could also check the link you used in your articles and they are
+very likely to point to some websites that is also neuroscience.</li>
+</ol>
+<p>In some cases similar is also important.</p>
+</div>
+</div>
+<div class="section" id="popularity-and-similarity-together">
+<h1>Popularity and Similarity Together<a class="headerlink" href="#popularity-and-similarity-together" title="Permalink to this headline">¶</a></h1>
+<p>What we would expect is that larger popularity and small similarity
+(more similar) are the preferable connections. Thus competitions between
+the two determines the overall connection probability.</p>
+<p>To combine the two factors, we use the metric
+<span class="math">\mathrm{Popularity}\times \mathrm{Similarity}</span>. Even though there
+is a competition between popularity and similarity, small values of
+<span class="math">\mathrm{Popularity}\times \mathrm{Similarity}</span> are more
+preferable connections, which takes similarity more seriously.</p>
+<p>A simple model to demonstrate this is to build a space of disc. The
+radius is time <span class="math">t</span>, while angles are the measure of similarity. A
+smaller angler distance indicates a smaller similarity. Using this
+mapping, we are able to show the dynamics of networks, since we can tell
+the history of the nodes.</p>
+<p>Mathematically speaking, the similarity is measured as</p>
+<div class="math">
+\[\begin{equation}
+\theta_{ij} = \lvert \theta_i - \theta_j \rvert.
+\end{equation}\]</div>
+<p>while time is the radius with <span class="math">t=0</span> at the center of the disc.</p>
+<figure><p><img alt="image2" src="network/%7B%7B%20site.baseurl%20%7D%7D/assets/posts/popularity-similarity-in-networks/disc-of-similarity.png" /></p>
+<figcaption><p>Disc of similarity. This figures shows the measure of similarity. 2 &amp; 3
+are more similar, given the fact that their angular distance
+<span class="math">\lvert\theta_2-\theta_3\rvert</span> is smaller that either
+<span class="math">\theta_2-\theta_1</span> or <span class="math">\lvert\theta_3-\theta_1\rvert</span>.
+Papadopoulos et al (2012).</p>
+</figcaption></figure><p>Now we are going to dynamically generate a network. The updating rules
+are listed bellow.</p>
+<ol class="arabic simple">
+<li>We create a node at each time step and label them with numbers. For
+example, node 3 means it was created at time step 3. We denote the
+time of the <span class="math">i</span>th node as <span class="math">t_i</span> and its angle on the
+disc as <span class="math">\theta_i</span>.</li>
+<li>As the node <span class="math">i</span> is created at time <span class="math">t_i</span>, it is connected
+to <span class="math">m</span> previous nodes.</li>
+<li>The node <span class="math">i</span> is connected to node <span class="math">j</span>’s if
+<span class="math">t_j\theta_{ij}</span> are the smallest. In this measure <span class="math">t_j</span>
+is the popularity of node <span class="math">j</span> and <span class="math">\theta_{ij}</span> is the
+similarity of the two nodes.</li>
+</ol>
+<figure><p><img alt="image3" src="network/%7B%7B%20site.baseurl%20%7D%7D/assets/posts/popularity-similarity-in-networks/disc-popularity-similarity.png" /></p>
+<figcaption><p>Illustration of the disc model. The radial coordinate measure the
+creation time of the node, while the angular distance measures the
+similarity.</p>
+</figcaption></figure><p><strong>The key transformation of this problem</strong> is to define a new radial
+coordinate system <span class="math">r =\ln t</span>, so that the distance becomes log
+scale. Then we define the disc to be on a hyperbolic space so that the
+distance between any two points is calculated as  <a class="footnote-reference" href="#id10" id="id4">[4]</a></p>
+<div class="math">
+\[x_{ij} = r_i + r_j + \ln (\theta_{ij}/2) = \ln(t_i t_j \theta_{ij}/2).\]</div>
+<p>Minimizing <span class="math">x_{ij}</span> becomes equivalent to minimizing
+<span class="math">t_j \theta_{ij}/2</span> when dealing with the connectivity from a new
+born node <span class="math">i</span>. <strong>The competition between popularity and similarity
+is simply the minimization of distance between two nodes on a hyperbolic
+plane.</strong></p>
+<figure><p><img alt="image4" src="network/%7B%7B%20site.baseurl%20%7D%7D/assets/posts/popularity-similarity-in-networks/disc-similarity-popularity-hyperbolic.png" /></p>
+<figcaption><p>Illustration of the disc model. The radial coordinate measure the
+creation time of the node, while the angular distance measures the
+similarity. The shaded region is the a region enclosed by a equal
+distance line. Papadopoulos et al (2012).</p>
+</figcaption></figure><p>Why is this definition of distance far superior than the previous
+measure of <span class="math">\mathrm{Popularity}\times \mathrm{Similarity}</span>? Or why
+do I care? Because the universe/nature itself measures distance on
+hyperbolic space, i.e., Minkowski space. It also shows us the hint that
+by choosing a proper metric we might be able to define distance between
+any nodes in any systems. The only question becomes which geometry.</p>
+<p>This result is astonishing also because a discrete system is most likely
+generated dynamically according to some laws. The method of mapping
+nodes to a hyperbolic space provides a convenient metric or distance for
+us to find out the closest nodes. In other words, a node always connect
+to it’s nearest neighbors if the metric/distance is well defined.</p>
+</div>
+<div class="section" id="variations-and-emergent-models">
+<h1>Variations and Emergent Models<a class="headerlink" href="#variations-and-emergent-models" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Popularity Fading</li>
+</ul>
+<p>In many real networks, early nodes are more popular. However, popularity
+decreasing with time can also be modeled. The idea is simple. We allow
+the nodes to drift away from the center along its own radial direction
+according to the restraint</p>
+<div class="math">
+\[\begin{equation}
+r_{j}(t) = \beta r_j + (1-\beta) r_{i},
+\end{equation}\]</div>
+<p>where <span class="math">r_j</span> is an old node and it drifts, <span class="math">r_i</span> is the node
+at current time. Why would we do this? As <span class="math">\beta</span> approaches 1, we
+fall back to the situation that the nodes are stationary and no drifting
+is allowed. On the other hand, <span class="math">\beta</span> approaches 0 means we have
+all the nodes drifting to the circle of current time.</p>
+<figure><p><img alt="image5" src="network/%7B%7B%20site.baseurl%20%7D%7D/assets/posts/popularity-similarity-in-networks/disc-node-drift-beta-1.png" /></p>
+<figcaption><p>Drift of nodes for <span class="math">\beta=1</span>. All nodes are moving to a circle of
+current time.</p>
+</figcaption></figure><p>The drifting effectively decrease the connectivity of the old nodes
+since they are drifting away from the center. Another view of this
+fading is that the connection probability power law index <span class="math">\gamma</span>
+is larger, i.e.,</p>
+<div class="math">
+\[\begin{equation}
+\gamma = 1 + 1/\beta.
+\end{equation}\]</div>
+<ul class="simple">
+<li>Growth of Internet Autonomous System</li>
+</ul>
+<figure><p><img alt="image6" src="network/%7B%7B%20site.baseurl%20%7D%7D/assets/posts/popularity-similarity-in-networks/internet-routers.png" /></p>
+<figcaption><p>Internet AS on a hyperbolic disc. The radial coordinate is log of time,
+<span class="math">r=\ln t</span>. Boguna et al (2010).</p>
+</figcaption></figure><p>Boguna et al modeled the growth of internet AS using the popularity
+similarity method and it shows exactly the same statistical result as
+the actual internet AS data  <a class="footnote-reference" href="#id11" id="id5">[5]</a>.</p>
+<ul class="simple">
+<li>Application to Cosmology</li>
+</ul>
+<p>Krioukov et al came up with the idea that the whole universe can be
+mapped onto hyperbolic space and events are connected only to nearest
+neighbors. This in fact is already true in cosmology. Theories predicted
+that the matter density after inflation is power law, which can be
+explained by a dynamics generating of particle on a hyperbolic space.
+The authors created a map from the physical de Sitter space to
+hyperbolic space. Then the dynamic generation of the particles in the
+universe simple follows power law since the nodes generated this way has
+a power law distribution of degrees, i.e., a place that is dense
+initially is more likely to be dense after the inflation  <a class="footnote-reference" href="#id12" id="id6">[6]</a>.</p>
+<figure><p><img alt="image7" src="network/%7B%7B%20site.baseurl%20%7D%7D/assets/posts/popularity-similarity-in-networks/network-cosmology.png" /></p>
+<figcaption><p>Map de Sitter space to hyperbolic space. Krioukov et al (2012).</p>
+</figcaption></figure></div>
+<div class="section" id="what-else">
+<h1>What else?<a class="headerlink" href="#what-else" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li>Such a network is very probabily optimized for information storage in
+the real world, because it stores information both in the global
+network and the local connections. An analysis of the snapshot of a
+network at a certain time shows a hierarchical structure which
+contains information about the past. The key feature of dynamics is
+explicitly stored in the network structure and easily extracted so
+that information storage is robust. Small world network is efficient
+for information storage and processing. It doesn’t explore all
+possible connection of the network while allowing information to be
+propagated through the whole network efficiently. The power law
+feature is a logarithmic compression of information about the the
+real world, which keeps the large scale information (low degree
+nodes) of an object but neglects details (large degree nodes).</li>
+<li>Does the brain follow the same law of dynamic generation of network?
+We know that the biological neural network is close to a small world
+network. Meanwhile, the popularityXsimilarity method models small
+world very well. As long as we find the proper metric/distance, we
+can confidently say that neural network always connect to the nearest
+neighbors.</li>
+<li>Artificial neural networks? We have to think about Boltzmann machine
+rather than the layerized artificial neural network. The question is,
+will a Boltzmann machine with network modeled by the method be very
+common if it actually solves a realistic problem?</li>
+</ol>
+</div>
+<div class="section" id="references-and-notes">
+<h1>References and Notes<a class="headerlink" href="#references-and-notes" title="Permalink to this headline">¶</a></h1>
+<table class="docutils footnote" frame="void" id="id7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Barabási, A.-L., &amp; Albert, R. (1999). <a class="reference external" href="http://doi.org/10.1126/science.286.5439.509">Emergence of Scaling in Random
+Networks. Science, 286(5439),
+509–512.</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Krapivsky, P. L., Redner, S., &amp; Leyvraz, F. (2000). <a class="reference external" href="http://doi.org/10.1103/PhysRevLett.85.4629">Connectivity of
+growing random networks. Physical Review Letters, 85(21),
+4629–4632.</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="https://arxiv.org/abs/cond-mat/0009090v1">arXiv:cond-mat/0009090</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td>This express is specific for curvature <span class="math">K=-4</span>. However, the
+final result of scaling doesn’t dependent on the curvature itself.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td>Boguñá, M., Papadopoulos, F., &amp; Krioukov, D. (2010). <a class="reference external" href="http://doi.org/10.1038/ncomms1063">Sustaining the
+Internet with hyperbolic mapping. Nature Communications, 1(6),
+1–8.</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id12" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td>Krioukov, D., Kitsak, M., Sinkovits, R. S., Rideout, D., Meyer, D., &amp;
+Boguñá, M. (2012). <a class="reference external" href="http://doi.org/10.1038/srep00793">Network Cosmology. Scientific Reports, 2,
+793.</a></td></tr>
+</tbody>
+</table>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<!-- <div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'statmech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div> -->
+
+<hr>
+
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+    <p class="pull-right">
+        <a href="#"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
+
+    </p>
+    <p>
+        <span>© 2018, Lei Ma</span>|
+        <a href="https://github.com/emptymalei/intelligence">GitHub</a>|
+        <span><span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+              <a href="http://statisticalphysics.openmetric.org">Statistical Mechanics Notebook</a>
+        </span> |
+        <span><span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+        <a href="/genindex.html">Index</a>
+     </span> |
+       <a href="../_sources/network/popularity-similarity.rst.txt"
+           rel="nofollow">Page Source</a></li>|
+       <a href="/changelog.html"
+           rel="nofollow">changelog</a></li>|
+        <span>Created with
+            <a href="http://www.sphinx-doc.org">Sphinx</a></span>
+    </p>
+
+    <hr>
+
+
+    <script>
+        window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+
+</div>
+
+
+  </body>
+</html>

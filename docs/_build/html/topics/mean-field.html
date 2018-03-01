@@ -22,6 +22,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
@@ -98,6 +99,11 @@
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">Vocabulary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">Statistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/esl/index.html">The Element of Statistical Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/lda.html">LDA Algorithm</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../neuroscience/index.html">Neuroscience</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/biology.html">Biology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/visual-cortex.html">Visual Cortex</a></li>
@@ -220,39 +226,39 @@
 <p>Mean-field is a concept in statistical mechanics to approximately treat the many body problem. It is an effective theory.</p>
 <div class="section" id="paramagnetic-material">
 <h2>Paramagnetic Material<a class="headerlink" href="#paramagnetic-material" title="Permalink to this headline">¶</a></h2>
-<p>In paramagnetic materials, the “polarized” spins <img class="math" src="../_images/math/3568068a57fbe4d16bbab939c8baea335d6429e4.png" alt="\{s_i\}"/> determine the overall “magnetization” of the material. When the spins are all aligned, we get the maximium “magnetization”. If the directions of the spins are completely random, the material is not “magnetized”. In other words, we can use a quantity <img class="math" src="../_images/math/7065fdd67dd620627ffdc4934f13d1ad76b7c658.png" alt="m=\langle s \rangle"/>, which is called magnetization, to represent how well the overall “magnetization” of the material is.</p>
+<p>In paramagnetic materials, the “polarized” spins <span class="math">\{s_i\}</span> determine the overall “magnetization” of the material. When the spins are all aligned, we get the maximium “magnetization”. If the directions of the spins are completely random, the material is not “magnetized”. In other words, we can use a quantity <span class="math">m=\langle s \rangle</span>, which is called magnetization, to represent how well the overall “magnetization” of the material is.</p>
 <p>For simplicity, we assume that the spins can only be up (s=1) or down (s=-1).</p>
-<p><strong>The idea of mean-field is to treat each spin as a mean-field</strong> <img class="math" src="../_images/math/edba97b4c0d864d26e92ea7ea73767fa38eef3f7.png" alt="m"/> <strong>and the fluctuations around this mean-field</strong>. Mathematically speaking</p>
+<p><strong>The idea of mean-field is to treat each spin as a mean-field</strong> <span class="math">m</span> <strong>and the fluctuations around this mean-field</strong>. Mathematically speaking</p>
 <div class="math">
-<p><img src="../_images/math/44b084af617fae275c3ed3891e5b0f34d1eca03d.png" alt="s_i = m + \delta s_i,"/></p>
-</div><p>where <img class="math" src="../_images/math/4a197953c86e693506f4c188c83b52513ec3916a.png" alt="\delta s_i = s_i -m"/> is the so called fluctuations. This treatment of the material requires the material to be homogeneous. Under the condition of homogeneous material, we can think of all the spins are the same. Thus we can look at one spin <img class="math" src="../_images/math/8b033252487a9007da7a4dc16e36f9f9dc2e2ed9.png" alt="s_\alpha"/> and all other spins become a background environment of this particular spin. This background environment is called mean-field which provides a potential field to interact with.</p>
-<p>On the other hand, the average of spins <img class="math" src="../_images/math/62fec14baa23398f7c26fd1849d04965e7ed87e2.png" alt="\langle s \rangle"/> is equivalent to the ensemble average of this particular spin <img class="math" src="../_images/math/9ee372bdd253986de7ff576071c66209475e3c1e.png" alt="\langle s_\alpha \rangle"/></p>
+\[s_i = m + \delta s_i,\]</div>
+<p>where <span class="math">\delta s_i = s_i -m</span> is the so called fluctuations. This treatment of the material requires the material to be homogeneous. Under the condition of homogeneous material, we can think of all the spins are the same. Thus we can look at one spin <span class="math">s_\alpha</span> and all other spins become a background environment of this particular spin. This background environment is called mean-field which provides a potential field to interact with.</p>
+<p>On the other hand, the average of spins <span class="math">\langle s \rangle</span> is equivalent to the ensemble average of this particular spin <span class="math">\langle s_\alpha \rangle</span></p>
 <div class="math">
-<p><img src="../_images/math/59fa759b97da49746778d0a19b7fb86b59204560.png" alt="\langle  s \rangle = \langle s_\alpha \rangle_{ensemble} = \sum P(E_\alpha) s_\alpha,"/></p>
-</div><p>where <img class="math" src="../_images/math/c013111cd2140ad4a0f1e3cad2e75ff5989939c8.png" alt="P(E_\alpha)"/> is calculated by the Boltzmann distribution,</p>
+\[\langle  s \rangle = \langle s_\alpha \rangle_{ensemble} = \sum P(E_\alpha) s_\alpha,\]</div>
+<p>where <span class="math">P(E_\alpha)</span> is calculated by the Boltzmann distribution,</p>
 <div class="math">
-<p><img src="../_images/math/5e88c24e86a00973ea0d584e7c7730d3b9edf016.png" alt="P(E_\alpha) = \frac{e^{\beta E_\alpha} }{  \sum e^{\beta E_\alpha} }."/></p>
-</div><p>So we need to calculate the energy of the spin first. Using the Hamiltonian for spins</p>
+\[P(E_\alpha) = \frac{e^{\beta E_\alpha} }{  \sum e^{\beta E_\alpha} }.\]</div>
+<p>So we need to calculate the energy of the spin first. Using the Hamiltonian for spins</p>
 <div class="math">
-<p><img src="../_images/math/316286ea90006762ca788e3daf76c0586ca5446b.png" alt="E_\alpha = - s_\alpha H_{total},"/></p>
-</div><p>where <img class="math" src="../_images/math/c5e5b9f8449108561ad05172a78ad7a6978c39a9.png" alt="H_{total}"/> is the total magnetic field including the mean-field. This energy finally becomes</p>
+\[E_\alpha = - s_\alpha H_{total},\]</div>
+<p>where <span class="math">H_{total}</span> is the total magnetic field including the mean-field. This energy finally becomes</p>
 <div class="math">
-<p><img src="../_images/math/b4f96b083df5e1b51af10a5f93f94744036f470d.png" alt="E_\alpha &amp;= - s_\alpha \left( H_{ext} + J \sum_{i, near \alpha} s_i \right) \\
+\[\begin{split}E_\alpha &amp;= - s_\alpha \left( H_{ext} + J \sum_{i, near \alpha} s_i \right) \\
 &amp;= -s_\alpha \left( H_{ext} + J \sum_{i, near \alpha} ( m + (s_i - m) ) \right) \\
-&amp; = -s_\alpha \left( H_{ext} + J z m + J \sum_{i, near \alpha} ( s_i - m ) \right),"/></p>
-</div><p>where <img class="math" src="../_images/math/683f2dd9129a91d21aaf1c04afa6f78b39d4cb0a.png" alt="z"/> is the number of spins interacting with <img class="math" src="../_images/math/8b033252487a9007da7a4dc16e36f9f9dc2e2ed9.png" alt="s_\alpha"/>.</p>
-<p><strong>Mean-field theory assume a homogeneous background, the summation of fluctuations</strong>, <img class="math" src="../_images/math/31f4129ab91a77ac102b3057b3abee49532adf52.png" alt="\sum_{i, near \alpha} ( s_i - m)"/> <strong>should be 0</strong>.</p>
+&amp; = -s_\alpha \left( H_{ext} + J z m + J \sum_{i, near \alpha} ( s_i - m ) \right),\end{split}\]</div>
+<p>where <span class="math">z</span> is the number of spins interacting with <span class="math">s_\alpha</span>.</p>
+<p><strong>Mean-field theory assume a homogeneous background, the summation of fluctuations</strong>, <span class="math">\sum_{i, near \alpha} ( s_i - m)</span> <strong>should be 0</strong>.</p>
 <p>Then energy is calcuated as</p>
 <div class="math">
-<p><img src="../_images/math/782d8c8bc221e3c7fe34e3065af24d2bbe235662.png" alt="E_\alpha = - s_\alpha (z J m + H)."/></p>
-</div><p>Using this we get the ensemble average of spin <img class="math" src="../_images/math/877d234f4cec6974ce218fc2e975a486a7972dfd.png" alt="\alpha"/>,</p>
+\[E_\alpha = - s_\alpha (z J m + H).\]</div>
+<p>Using this we get the ensemble average of spin <span class="math">\alpha</span>,</p>
 <div class="math">
-<p><img src="../_images/math/c719316d86f5e382604c3df34256c0c58e8d7d9a.png" alt="\langle s_\alpha \rangle &amp;= \sum_{s_\alpha}  s_\alpha \frac{e^{\beta E_\alpha} }{  \sum e^{\beta E_\alpha} } \\
-&amp;= \tanh \left( \beta (z J m + H) \right)."/></p>
-</div><p>By definition, we know that</p>
+\[\begin{split}\langle s_\alpha \rangle &amp;= \sum_{s_\alpha}  s_\alpha \frac{e^{\beta E_\alpha} }{  \sum e^{\beta E_\alpha} } \\
+&amp;= \tanh \left( \beta (z J m + H) \right).\end{split}\]</div>
+<p>By definition, we know that</p>
 <div class="math">
-<p><img src="../_images/math/2b870023ff7f574f302aa6f59bc8b527e383aa26.png" alt="m = \langle s \rangle = \langle s_\alpha \rangle_{ensemble} = \tanh \left( \beta (z J m + H) \right)."/></p>
-</div><p>Such a transcendental equation tells us the magnetization of the material.</p>
+\[m = \langle s \rangle = \langle s_\alpha \rangle_{ensemble} = \tanh \left( \beta (z J m + H) \right).\]</div>
+<p>Such a transcendental equation tells us the magnetization of the material.</p>
 </div>
 <div class="section" id="neuroscience">
 <h2>Neuroscience<a class="headerlink" href="#neuroscience" title="Permalink to this headline">¶</a></h2>
@@ -260,84 +266,84 @@
 <p>This method is explained in <a class="reference internal" href="#deco2008" id="id1">[Deco2008]</a>. This section is an interpretation of it if not a rewritten.</p>
 <div class="section" id="two-phase-spaces">
 <h3>Two Phase Spaces<a class="headerlink" href="#two-phase-spaces" title="Permalink to this headline">¶</a></h3>
-<p>Similar to the <img class="math" src="../_images/math/d79e8a2c7ce54906c2b25549da38bdbe02cf40d6.png" alt="\mu"/> space (6 D) and <img class="math" src="../_images/math/d872993ed0c7c420e73e77a1d285ac100c516806.png" alt="\Gamma"/> space (6N D) in statistical mechanics, it takes a lot of dimensions if we would like to describe a neuron network using a point in a phase space (<img class="math" src="../_images/math/d872993ed0c7c420e73e77a1d285ac100c516806.png" alt="\Gamma"/> space of network).</p>
-<p>To see this, consider a network of <img class="math" src="../_images/math/f4170ed8938b79490d8923857962695514a8e4cb.png" alt="N"/> neurons, each neuron requires <img class="math" src="../_images/math/1bed834b3e718b4086e9b3c32284be47445d0c27.png" alt="\zeta"/> variables <img class="math" src="../_images/math/1c94659739a1ac779fb47b98c0bac16a4cb0b1be.png" alt="\{ \xi_1, \xi_2,\cdots, \xi_\zeta\}"/> for a complete description (say, PSP <img class="math" src="../_images/math/fae0e7a73748991e5540d874416000583f64f58e.png" alt="V"/>, current <img class="math" src="../_images/math/d2ed2630e579be280a30b6646f4d706103c337ce.png" alt="I"/>, <img class="math" src="../_images/math/a17e3e0945367b8cc8b4323c153bebb5c2a40ec5.png" alt="\mathcal T"/>, as mentioned in <a class="reference internal" href="#deco2008" id="id2">[Deco2008]</a>). If we would like to describe the network using these <img class="math" src="../_images/math/1bed834b3e718b4086e9b3c32284be47445d0c27.png" alt="\zeta"/> variables, it is represented as a bunch of points in such a phase space, which we name <img class="math" src="../_images/math/d79e8a2c7ce54906c2b25549da38bdbe02cf40d6.png" alt="\mu"/> space. On the other hand, we can construct a <img class="math" src="../_images/math/d10446d9f601fd830e8ef88f76be0f1d110752a5.png" alt="N\zeta"/> dimensional phase space, where each dimension is a variable of a certain neuron. Suppose the neurons are given ids <img class="math" src="../_images/math/50763458d7fcb221125a76350bba30b784f14964.png" alt="{}_i"/>. The dimensions are <img class="math" src="../_images/math/f52b4af5b7aa603ec2f8c9a2d44ef6116a64365a.png" alt="\xi_{j,i}"/> which stands for the <img class="math" src="../_images/math/f8ac8785ad44a7d6279cc1f3945593ed287cf938.png" alt="\xi_j"/> variable of neuron i.</p>
-<p>We could imagine how convoluted the new phase space (<img class="math" src="../_images/math/d872993ed0c7c420e73e77a1d285ac100c516806.png" alt="\Gamma"/> space) has become.</p>
-<p>In any case, the evolution of the network is mapped to the motion of a point in <img class="math" src="../_images/math/d872993ed0c7c420e73e77a1d285ac100c516806.png" alt="\Gamma"/> space or motion of <img class="math" src="../_images/math/f4170ed8938b79490d8923857962695514a8e4cb.png" alt="N"/> points in <img class="math" src="../_images/math/d79e8a2c7ce54906c2b25549da38bdbe02cf40d6.png" alt="\mu"/> space.</p>
+<p>Similar to the <span class="math">\mu</span> space (6 D) and <span class="math">\Gamma</span> space (6N D) in statistical mechanics, it takes a lot of dimensions if we would like to describe a neuron network using a point in a phase space (<span class="math">\Gamma</span> space of network).</p>
+<p>To see this, consider a network of <span class="math">N</span> neurons, each neuron requires <span class="math">\zeta</span> variables <span class="math">\{ \xi_1, \xi_2,\cdots, \xi_\zeta\}</span> for a complete description (say, PSP <span class="math">V</span>, current <span class="math">I</span>, <span class="math">\mathcal T</span>, as mentioned in <a class="reference internal" href="#deco2008" id="id2">[Deco2008]</a>). If we would like to describe the network using these <span class="math">\zeta</span> variables, it is represented as a bunch of points in such a phase space, which we name <span class="math">\mu</span> space. On the other hand, we can construct a <span class="math">N\zeta</span> dimensional phase space, where each dimension is a variable of a certain neuron. Suppose the neurons are given ids <span class="math">{}_i</span>. The dimensions are <span class="math">\xi_{j,i}</span> which stands for the <span class="math">\xi_j</span> variable of neuron i.</p>
+<p>We could imagine how convoluted the new phase space (<span class="math">\Gamma</span> space) has become.</p>
+<p>In any case, the evolution of the network is mapped to the motion of a point in <span class="math">\Gamma</span> space or motion of <span class="math">N</span> points in <span class="math">\mu</span> space.</p>
 </div>
 <div class="section" id="equation-of-motion">
 <h3>Equation of Motion<a class="headerlink" href="#equation-of-motion" title="Permalink to this headline">¶</a></h3>
 <p>The dynamics of the system is described using Fokker-Planck equation,</p>
 <div class="math">
-<p><img src="../_images/math/4d03bf48d6db4eef6b7943ceaeea57089d724b8b.png" alt="\partial_t p = - \nabla\cdot (f-D \nabla) p,"/></p>
-</div><p>where <img class="math" src="../_images/math/27d463da4622be5b3ef1d4176ced7d7a323c6425.png" alt="p"/> is the density of points in phase space. This is a statistical formalism.</p>
+\[\partial_t p = - \nabla\cdot (f-D \nabla) p,\]</div>
+<p>where <span class="math">p</span> is the density of points in phase space. This is a statistical formalism.</p>
 <div class="note admonition">
 <p class="first admonition-title">Drift and Diffusion</p>
 <p class="last">The two terms on the RHS are dubbed as drift term and diffusion term for the physics they are describing.</p>
 </div>
-<p><a class="reference internal" href="#deco2008" id="id3">[Deco2008]</a> uses leaky integrate-and-fire model, which is used to find out the evolution of the membrane potential <img class="math" src="../_images/math/630177bb65034b45f58ce4d25f664d7b35189906.png" alt="V_i"/> of neuron <img class="math" src="../_images/math/df0deb143e5ac127f00bd248ee8001ecae572adc.png" alt="i"/>, which has a solution</p>
+<p><a class="reference internal" href="#deco2008" id="id3">[Deco2008]</a> uses leaky integrate-and-fire model, which is used to find out the evolution of the membrane potential <span class="math">V_i</span> of neuron <span class="math">i</span>, which has a solution</p>
 <div class="math">
-<p><img src="../_images/math/707a3800031e1d6255c80b8e759358338f65ad12.png" alt="V_i = V_L + \sum_{j=1}^N J_{ij} e^{-(t-t_j^{(k)})/\tau} \sum_k \Theta(t-t_j^{(k)}),"/></p>
-</div><p>where <img class="math" src="../_images/math/bf5f70f6b431ca28235cd7c01cef26683ae7738f.png" alt="\Theta"/> is the Heaviside function. The complication of this model comes from the fact that all neurons are potentially coupled.</p>
+\[V_i = V_L + \sum_{j=1}^N J_{ij} e^{-(t-t_j^{(k)})/\tau} \sum_k \Theta(t-t_j^{(k)}),\]</div>
+<p>where <span class="math">\Theta</span> is the Heaviside function. The complication of this model comes from the fact that all neurons are potentially coupled.</p>
 <div class="toggle admonition">
 <p class="first admonition-title">Leaky Integrate-and-fire Model</p>
 <p>LIF is a model utilizing capacitors and resistors to describe the evolution of membrane potential. The point of a capacitor is to reset the potential when it reaches the threshold.</p>
 <p>The EoM is</p>
 <div class="math">
-<p><img src="../_images/math/74cc06e35183cff0fed73b8d9252e95528f444d6.png" alt="\tau \frac{d}{dt} V = - (V - V_L) + IR,"/></p>
-</div><p>where <img class="math" src="../_images/math/d2ed2630e579be280a30b6646f4d706103c337ce.png" alt="I"/> is the total synaptic current input of the neuron, <img class="math" src="../_images/math/60537a2cf76bb98b0eade54f8c66ad3faef2c192.png" alt="V_L"/> is the leak.</p>
-<p>For a neuron <img class="math" src="../_images/math/df0deb143e5ac127f00bd248ee8001ecae572adc.png" alt="i"/> in a network, <img class="math" src="../_images/math/d2ed2630e579be280a30b6646f4d706103c337ce.png" alt="I"/> comes from all the synaptic delta pulse inputs of other neurons <img class="math" src="../_images/math/6b21e0b0899a0d2879d3b8019087fa630bab4ea2.png" alt="j"/>,</p>
+\[\tau \frac{d}{dt} V = - (V - V_L) + IR,\]</div>
+<p>where <span class="math">I</span> is the total synaptic current input of the neuron, <span class="math">V_L</span> is the leak.</p>
+<p>For a neuron <span class="math">i</span> in a network, <span class="math">I</span> comes from all the synaptic delta pulse inputs of other neurons <span class="math">j</span>,</p>
 <div class="math">
-<p><img src="../_images/math/e86951395596b0967f94954e2b87603703ae0955.png" alt="I_i R = \tau \sum_{j=1}^N J_{ij} \sum_k \delta(t-t_j^{(k)}),"/></p>
-</div><p>where <img class="math" src="../_images/math/81a275774fe1cc42078f66ef2b0d4d70f9a628b3.png" alt="t_j^{(k)}"/> denotes the time for kth spike of neuron <img class="math" src="../_images/math/6b21e0b0899a0d2879d3b8019087fa630bab4ea2.png" alt="j"/>.</p>
+\[I_i R = \tau \sum_{j=1}^N J_{ij} \sum_k \delta(t-t_j^{(k)}),\]</div>
+<p>where <span class="math">t_j^{(k)}</span> denotes the time for kth spike of neuron <span class="math">j</span>.</p>
 <p class="last">The equation can be solved using Green’s function method.</p>
 </div>
-<p>Following the idea of phase space, the authors of <a class="reference internal" href="#deco2008" id="id4">[Deco2008]</a> derived Fokker-Planck equation for spiking neuron models. We could imagine that the <img class="math" src="../_images/math/d872993ed0c7c420e73e77a1d285ac100c516806.png" alt="\Gamma"/> space for LIF models would be a <img class="math" src="../_images/math/f4170ed8938b79490d8923857962695514a8e4cb.png" alt="N"/> dimensional one <img class="math" src="../_images/math/18d0adfde308f457e85e59ed01823ca7fb736ce9.png" alt="\{V_i\}"/>, where <img class="math" src="../_images/math/f4170ed8938b79490d8923857962695514a8e4cb.png" alt="N"/> is the number of neurons. On the other hand, <img class="math" src="../_images/math/d79e8a2c7ce54906c2b25549da38bdbe02cf40d6.png" alt="\mu"/> space description requires only 1 D, which is potential. In <img class="math" src="../_images/math/d79e8a2c7ce54906c2b25549da38bdbe02cf40d6.png" alt="\mu"/> space, we define a probability density <img class="math" src="../_images/math/3dda7405c442daa08608db4f10f5301e286ee37b.png" alt="p(v,t)"/>, which gives us the probability of neuron falls in a potential range <img class="math" src="../_images/math/28336e781e668d787d125173df6b6c9d98542ec0.png" alt="[v,v+dv]"/> when multiplied by the size of the phase space <img class="math" src="../_images/math/541bcee04e2513c764ca36063e21c6dadb326e29.png" alt="dv"/>.</p>
+<p>Following the idea of phase space, the authors of <a class="reference internal" href="#deco2008" id="id4">[Deco2008]</a> derived Fokker-Planck equation for spiking neuron models. We could imagine that the <span class="math">\Gamma</span> space for LIF models would be a <span class="math">N</span> dimensional one <span class="math">\{V_i\}</span>, where <span class="math">N</span> is the number of neurons. On the other hand, <span class="math">\mu</span> space description requires only 1 D, which is potential. In <span class="math">\mu</span> space, we define a probability density <span class="math">p(v,t)</span>, which gives us the probability of neuron falls in a potential range <span class="math">[v,v+dv]</span> when multiplied by the size of the phase space <span class="math">dv</span>.</p>
 <p>The Chapman-Kolmogorov equation describes the evolution of such a density function</p>
 <div class="math">
-<p><img src="../_images/math/f5e3d4eaaf93831ab95017dcd054d6b18d55eeb2.png" alt="p(v,t+dt) = \int_{-\infty}^\infty p(v-\epsilon,t)\rho(\epsilon\vert v-\epsilon) d\epsilon,"/></p>
-</div><p>where <img class="math" src="../_images/math/79c61730221f4367d79d7250c7d48546b149b774.png" alt="\rho(\epsilon\vert v-\epsilon)"/> is the probability of neuron to be with potential <img class="math" src="../_images/math/8d230554a01423c4c6560104b2918b65607c9406.png" alt="v"/> at <img class="math" src="../_images/math/1bd4c07de2ebec5acd906f2647ad39e29fd98342.png" alt="t+dt"/> given neuron potential at <img class="math" src="../_images/math/5ec053cf70dc1c98cc297322250569eda193e7a4.png" alt="t"/> to be <img class="math" src="../_images/math/9d30d685f32cb8eab829dcd23dc3016e51af4a8e.png" alt="v-\epsilon"/>. But this integral form is not always useful. Kramers-Moyal expansion of it gives us the differential form</p>
+\[p(v,t+dt) = \int_{-\infty}^\infty p(v-\epsilon,t)\rho(\epsilon\vert v-\epsilon) d\epsilon,\]</div>
+<p>where <span class="math">\rho(\epsilon\vert v-\epsilon)</span> is the probability of neuron to be with potential <span class="math">v</span> at <span class="math">t+dt</span> given neuron potential at <span class="math">t</span> to be <span class="math">v-\epsilon</span>. But this integral form is not always useful. Kramers-Moyal expansion of it gives us the differential form</p>
 <div class="math" id="equation-eqn-prob-density-equation-with-kramers-moyal-expansion">
-<p><span class="eqno">(1)<a class="headerlink" href="#equation-eqn-prob-density-equation-with-kramers-moyal-expansion" title="Permalink to this equation">¶</a></span><img src="../_images/math/98b9354511e78b6fe57a4cafeebf05501e4a98cb.png" alt="\partial_t p(v,t) = \sum_{k=1}^\infty \frac{ (-1)^k }{k!} \frac{\partial^k}{\partial v^k} \left( p(v,t) \lim_{dt\to 0} \frac{ \langle \epsilon^k\rangle_v }{dt} \right),"/></p>
-</div><p>where</p>
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-prob-density-equation-with-kramers-moyal-expansion" title="Permalink to this equation">¶</a></span>\[\partial_t p(v,t) = \sum_{k=1}^\infty \frac{ (-1)^k }{k!} \frac{\partial^k}{\partial v^k} \left( p(v,t) \lim_{dt\to 0} \frac{ \langle \epsilon^k\rangle_v }{dt} \right),\]</div>
+<p>where</p>
 <div class="math">
-<p><img src="../_images/math/7608cb28db1371b328caba0af294aecc3334ca06.png" alt="\langle \epsilon^k\rangle_v = \int_{-\infty}^\infty \epsilon^k\rho(\epsilon\vert v) d\epsilon,"/></p>
-</div><p>which is an average.</p>
-<p>The plan is to find method to calcualte <img class="math" src="../_images/math/bc9742d9b6676c354b7cc850f16e214fbb089808.png" alt="\langle \epsilon^k \rangle_v"/> which is an average with respect to <img class="math" src="../_images/math/8d230554a01423c4c6560104b2918b65607c9406.png" alt="v"/>.</p>
+\[\langle \epsilon^k\rangle_v = \int_{-\infty}^\infty \epsilon^k\rho(\epsilon\vert v) d\epsilon,\]</div>
+<p>which is an average.</p>
+<p>The plan is to find method to calcualte <span class="math">\langle \epsilon^k \rangle_v</span> which is an average with respect to <span class="math">v</span>.</p>
 </div>
 <div class="section" id="mean-field-approximation">
 <h3>Mean-field Approximation<a class="headerlink" href="#mean-field-approximation" title="Permalink to this headline">¶</a></h3>
 <p>By assuming each neurons are identical in this network, we face the same situation as in the paramagnetic material. By saying so we are going to assume that the time average (system average, in paramagnetic materials) is the same as the ensemble average, which treats all other neurons as a background and consider only one neuron.</p>
-<p>The key of this practice is that <img class="math" src="../_images/math/7098ed8c5772b91c70cf04e02e68de1d3cd339b2.png" alt="\langle \epsilon^k \rangle_v = \langle \epsilon^k \rangle_{ensemble}"/>. On the other hand, we know that <img class="math" src="../_images/math/04c7d53ad6f71e87143e18828b879279296ff495.png" alt="\langle \epsilon^k \rangle_{ensemble} = dV"/>, if we find this <img class="math" src="../_images/math/ae82bca27a1c281999da9892b1318d42e16a2187.png" alt="dV"/> that calculates the change of potential.</p>
-<p>We need to find a quantity that is useful to describe the network, which should be similar to our magnetization <img class="math" src="../_images/math/edba97b4c0d864d26e92ea7ea73767fa38eef3f7.png" alt="m"/>. The choice can either be average potential of each neuron <img class="math" src="../_images/math/1595921d2f638b641dd969dce12341f2e26449cc.png" alt="V_{avg}"/> or the total membrane potential <img class="math" src="../_images/math/c0aedd0303af6bedd080e27ea71c6b668b6b2edc.png" alt="V=NV_{avg}"/>. The authors in <a class="reference internal" href="#deco2008" id="id5">[Deco2008]</a> choose the average membrane potential.</p>
-<p>We denote mean firing rate as <img class="math" src="../_images/math/0043fe6507e9b1d112e07a2801e24927e267dd50.png" alt="A"/>. The equation of <img class="math" src="../_images/math/fae0e7a73748991e5540d874416000583f64f58e.png" alt="V"/> is</p>
+<p>The key of this practice is that <span class="math">\langle \epsilon^k \rangle_v = \langle \epsilon^k \rangle_{ensemble}</span>. On the other hand, we know that <span class="math">\langle \epsilon^k \rangle_{ensemble} = dV</span>, if we find this <span class="math">dV</span> that calculates the change of potential.</p>
+<p>We need to find a quantity that is useful to describe the network, which should be similar to our magnetization <span class="math">m</span>. The choice can either be average potential of each neuron <span class="math">V_{avg}</span> or the total membrane potential <span class="math">V=NV_{avg}</span>. The authors in <a class="reference internal" href="#deco2008" id="id5">[Deco2008]</a> choose the average membrane potential.</p>
+<p>We denote mean firing rate as <span class="math">A</span>. The equation of <span class="math">V</span> is</p>
 <div class="math">
-<p><img src="../_images/math/5fc2bd48a01ba6d958eeed69c4594384c36454cc.png" alt="dV = \langle J\rangle N A dt - \frac{V-V_L}{\tau} dt,"/></p>
-</div><p>where <img class="math" src="../_images/math/1c0dcf7e78abaa26df4e9603038d3e8973dabb76.png" alt="\langle J\rangle"/> is the avarage synaptic weight and mean firing rate or population activity is</p>
+\[dV = \langle J\rangle N A dt - \frac{V-V_L}{\tau} dt,\]</div>
+<p>where <span class="math">\langle J\rangle</span> is the avarage synaptic weight and mean firing rate or population activity is</p>
 <div class="math">
-<p><img src="../_images/math/22b82e4fc7a100f79392f83fbcb8e1a2d32b97bf.png" alt="A = \lim_{dt\to 0} \frac{ \text{number of spikes within time } [t,t+dt] }{dt} \frac{1}{N}."/></p>
-</div><p>Since <img class="math" src="../_images/math/953f74b69be56e4bab209709316e4f7f28620463.png" alt="\epsilon=dV"/>, we plug it in to Eq. <a class="reference internal" href="#equation-eqn-prob-density-equation-with-kramers-moyal-expansion">(1)</a>. To save keystrokes, we calcualte the moments first.</p>
+\[A = \lim_{dt\to 0} \frac{ \text{number of spikes within time } [t,t+dt] }{dt} \frac{1}{N}.\]</div>
+<p>Since <span class="math">\epsilon=dV</span>, we plug it in to Eq. <a class="reference internal" href="#equation-eqn-prob-density-equation-with-kramers-moyal-expansion">(1)</a>. To save keystrokes, we calcualte the moments first.</p>
 <div class="math">
-<p><img src="../_images/math/0d046ad95d095f5ee1256bb9e7a86e40a78c44a4.png" alt="M^{(k)} &amp;= \lim_{dt\to 0} \frac{1}{dt}\langle \epsilon\rangle_v \\
+\[\begin{split}M^{(k)} &amp;= \lim_{dt\to 0} \frac{1}{dt}\langle \epsilon\rangle_v \\
 &amp; = \lim_{dt\to 0} \frac{1}{dt}\langle \epsilon\rangle_{ensemble} \\
 &amp; = \lim_{dt\to 0} \frac{1}{dt} dV \\
 &amp; = \cdots \\
-&amp; = \langle J^k \rangle N A."/></p>
-</div><p>In the derivation we dropped all terms that contains order of infinitesimal varibales <img class="math" src="../_images/math/8d6bbfab4ca418a3646d47580311682646805766.png" alt="\mathcal O (dt^2)"/>.</p>
-<p>The diffusion approximation will help us drop the <img class="math" src="../_images/math/00432cd8f2d142e93ab94a94c747783d96025827.png" alt="k&gt;2"/> moments. This is a Taylor expansion anyway.</p>
+&amp; = \langle J^k \rangle N A.\end{split}\]</div>
+<p>In the derivation we dropped all terms that contains order of infinitesimal varibales <span class="math">\mathcal O (dt^2)</span>.</p>
+<p>The diffusion approximation will help us drop the <span class="math">k>2</span> moments. This is a Taylor expansion anyway.</p>
 <div class="warning admonition">
 <p class="first admonition-title">A Simple Argument for Diffusion Approximation?</p>
 <p>There should be one.</p>
 <p>Regardless of real understanding or not,</p>
 <div class="math">
-<p><img src="../_images/math/1e97d5fff21b640521f773a5480d5ac180c97e22.png" alt="M^{(1)} &amp;= \frac{\mu(t)}{\tau} - \frac{ v-V_L }{\tau} \\
-M^{(2)} &amp;= \frac{\sigma^2(t)}{\tau},"/></p>
-</div><p class="last">are related to the drift coefficient <img class="math" src="../_images/math/55031c3f64733bf6477b043147c01eba9ccd1416.png" alt="\mu(t)"/> and the diffusion coefficient <img class="math" src="../_images/math/cf06cd0acb6528a6fa13931c5d396cd86df8864a.png" alt="\sigma(t)"/>.</p>
+\[\begin{split}M^{(1)} &amp;= \frac{\mu(t)}{\tau} - \frac{ v-V_L }{\tau} \\
+M^{(2)} &amp;= \frac{\sigma^2(t)}{\tau},\end{split}\]</div>
+<p class="last">are related to the drift coefficient <span class="math">\mu(t)</span> and the diffusion coefficient <span class="math">\sigma(t)</span>.</p>
 </div>
 <p>Then we obtain the Fokker-Planck equation</p>
 <div class="math">
-<p><img src="../_images/math/5c109dbceafc63e520102826c0dc162dbd015d04.png" alt="\partial_t  p(v,t) = \frac{1}{2\tau} \sigma^2(t) \partial^2_v p(v,t) + \partial_v \left[ \frac{ v - V_L - \mu(t) }{\tau} p(v,t) \right],"/></p>
-</div><p>where <img class="math" src="../_images/math/cf06cd0acb6528a6fa13931c5d396cd86df8864a.png" alt="\sigma(t)"/> is diffusion coefficient and <img class="math" src="../_images/math/55031c3f64733bf6477b043147c01eba9ccd1416.png" alt="\mu(t)"/> is drift coefficient.</p>
+\[\partial_t  p(v,t) = \frac{1}{2\tau} \sigma^2(t) \partial^2_v p(v,t) + \partial_v \left[ \frac{ v - V_L - \mu(t) }{\tau} p(v,t) \right],\]</div>
+<p>where <span class="math">\sigma(t)</span> is diffusion coefficient and <span class="math">\mu(t)</span> is drift coefficient.</p>
 </div>
 </div>
 <div class="section" id="references-and-notes">

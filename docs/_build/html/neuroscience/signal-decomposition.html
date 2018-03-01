@@ -22,6 +22,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
@@ -98,6 +99,11 @@
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">Vocabulary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">Statistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/esl/index.html">The Element of Statistical Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/lda.html">LDA Algorithm</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Neuroscience</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="biology.html">Biology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="visual-cortex.html">Visual Cortex</a></li>
@@ -230,7 +236,7 @@
 <p>For electric potential, we can set up a reference point and measure it, which means it’s a scalar and we have a number at each point. But for the other two with directions, they are vectors.</p>
 <p>The decompositions can be done in different ways, according to the information we want to extract.</p>
 <ol class="arabic simple">
-<li>Globally decomposite the signal with spherical harmonics <img class="math" src="../_images/math/ead1bedfa8ce5ade3d2a464c09af2143706b2e42.png" alt="Y_{}"/> at different radius, a multiple expansion for the whole brain; It requires <strong>spin weighted spherical harmonics</strong> etc for vector fields.</li>
+<li>Globally decomposite the signal with spherical harmonics <span class="math">Y_{}</span> at different radius, a multiple expansion for the whole brain; It requires <strong>spin weighted spherical harmonics</strong> etc for vector fields.</li>
 <li>Locally expand the signal at each point using spherical harmonics; Only need the spherical harmonics.</li>
 </ol>
 <table class="docutils citation" frame="void" id="sivakumar2016" rules="none">
@@ -243,7 +249,7 @@
 <div class="section" id="stimulation">
 <h2>Stimulation<a class="headerlink" href="#stimulation" title="Permalink to this headline">¶</a></h2>
 <p>Stimulations could also be done in a similar way. We apply different modes and check if each mode plays a different role in the brain.</p>
-<p>Theoretically, we might think the brain activity might be related to the modes, since each mode stands for different levels of activity in different regions. For example, if we have only <img class="math" src="../_images/math/264df287af959833f897078bd32da21d22b4670d.png" alt="l=0"/> mode at different radius we might not be doing anything, since an isotropic brain is very likely to be a dead one. One of the regions have large activities means we have higher modes excited and since the brain has a fixed anatomy structure, a certain mode indicates activities in different regions.</p>
+<p>Theoretically, we might think the brain activity might be related to the modes, since each mode stands for different levels of activity in different regions. For example, if we have only <span class="math">l=0</span> mode at different radius we might not be doing anything, since an isotropic brain is very likely to be a dead one. One of the regions have large activities means we have higher modes excited and since the brain has a fixed anatomy structure, a certain mode indicates activities in different regions.</p>
 <p>It’s the same for stimulations. Generating a certain mode of electric field or potential will cause a stimulation in different regions.</p>
 </div>
 <div class="section" id="thearetical-investigation">

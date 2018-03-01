@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Introductions (Review) and Several Preliminary Statistical Methods &#8212; Intelligence</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.3.6/readable/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Linear Methods for Regression" href="linear-methods-for-regresssion.html" />
+    <link rel="prev" title="The Element of Statistical Learning" href="index.html" />
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
+
+
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+ 
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/intelligence.png"></span>
+          Intelligence</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.7</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Chapters <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../vocabulary.html">Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../questions.html">Questions? Yes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Statistics</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The Element of Statistical Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lda.html">LDA Algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience/index.html">Neuroscience</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../neuroscience/biology.html">Biology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../neuroscience/visual-cortex.html">Visual Cortex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../neuroscience/memory/index.html">Memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../neuroscience/alzheimers-disease.html">Alzheimer’s Disease</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../neuroscience/functional-connectivity.html">Functional Connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../neuroscience/solitary-waves.html">Solitary Waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../neuroscience/dispersion-relation.html">Dispersion Relation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../neuroscience/misc.html">MISC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../neuroscience/glossary.html">Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../neuroscience-models/index.html">Neuroscience Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../neuroscience-models/synapses.html">Synapses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../equation-solving-in-neuroscience/index.html">Equation Solving in Neuroscience</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../equation-solving-in-neuroscience/green-function.html">Green’s Function Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equation-solving-in-neuroscience/fourier-transform.html">Fourier Tranform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equation-solving-in-neuroscience/laplace-transform.html">Laplace Tranform</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../random-walks/index.html">Random Walks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../random-walks/random-walks.html">Random Walks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../machine-intelligence/index.html">Machine Intelligence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/ann.html">Artificial Neural Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/neural-network-and-fem.html">Neural Networks and Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/boltzmann-machine.html">Boltzmann Machine</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../collective/index.html">Collective Intelligence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../collective/refs.html">Collective intelligence References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/index.html">Some Topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/mean-field.html">Mean-field Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/spin-glass.html">Spin Glass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/binary-human-model.html">Binary Human Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/factor-graph.html">Factor Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/cosmic-rays-and-neuroscience.html">Cosmic Rays and Neuroscience</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../random-thoughts.html">Some Random Thoughts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../random-thoughts.html#pan-intelligence">Pan-Intelligence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../random-thoughts.html#why-can-we-understand-the-universe">Why Can We Understand the Universe?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ref.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgement.html">Acknowledgement</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Introductions (Review) and Several Preliminary Statistical Methods</a><ul>
+<li><a class="reference internal" href="#review">Review</a></li>
+<li><a class="reference internal" href="#least-squares-and-nearest-neighbors">Least Squares and Nearest Neighbors</a><ul>
+<li><a class="reference internal" href="#least-squares">Least Squares</a></li>
+<li><a class="reference internal" href="#nearest-neighbor">Nearest-Neighbor</a></li>
+<li><a class="reference internal" href="#for-which-scenario">For Which Scenario</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#statistical-decision-theory">Statistical Decision Theory</a><ul>
+<li><a class="reference internal" href="#id1">Nearest-Neighbor</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#local-methods-in-high-dimensions">Local Methods in High Dimensions</a></li>
+<li><a class="reference internal" href="#statistical-models-supervised-learning-and-function-approximation">Statistical Models, Supervised Learning and Function Approximation</a><ul>
+<li><a class="reference internal" href="#joint-distribution">Joint Distribution</a></li>
+<li><a class="reference internal" href="#supervised-learning">Supervised Learning</a></li>
+<li><a class="reference internal" href="#function-approximation">Function Approximation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="index.html" title="Previous Chapter: The Element of Statistical Learning"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; The Element o...</span>
+    </a>
+  </li>
+  <li>
+    <a href="linear-methods-for-regresssion.html" title="Next Chapter: Linear Methods for Regression"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Linear Method... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="introductions-review-and-several-preliminary-statistical-methods">
+<h1>Introductions (Review) and Several Preliminary Statistical Methods<a class="headerlink" href="#introductions-review-and-several-preliminary-statistical-methods" title="Permalink to this headline">¶</a></h1>
+<div class="note admonition">
+<p class="first admonition-title">Summary</p>
+<p class="last">Some basics of statistical learning; least squares and k nearest neighbors; statistical decision theory; local methods in high dimensions</p>
+</div>
+<div class="section" id="review">
+<h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p><strong>Skeleton notes</strong></p>
+<div class="note admonition">
+<p class="first admonition-title">Abbreviations</p>
+<ol class="last arabic simple">
+<li>MSE: mean squared error</li>
+<li>EPE: expected prediction error</li>
+<li>RSS: sum of squares</li>
+</ol>
+</div>
+<div class="note admonition">
+<p class="first admonition-title">Notations</p>
+<p>Fonts:</p>
+<ol class="arabic simple">
+<li>Vectors or scalars are denoted by italic math font <span class="math">X</span>.</li>
+<li>Components of vectors are denoted by subscripts <span class="math">X_i</span>.</li>
+<li>Matrix is denoted by math bold font <span class="math">\mathbf X</span>.</li>
+</ol>
+<p>Symbols</p>
+<ol class="last arabic simple">
+<li><span class="math">X</span> for input variables;</li>
+<li><span class="math">Y</span> for quantitative output;</li>
+<li><span class="math">G</span> for qualitative output;</li>
+<li><span class="math">\hat {}</span> for prediction.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="least-squares-and-nearest-neighbors">
+<h2>Least Squares and Nearest Neighbors<a class="headerlink" href="#least-squares-and-nearest-neighbors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="least-squares">
+<h3>Least Squares<a class="headerlink" href="#least-squares" title="Permalink to this headline">¶</a></h3>
+<p>Least square model:</p>
+<div class="math">
+\[\hat Y = X^T \hat \beta.\]</div>
+<p>Residual sum of squares (RSS):</p>
+<div class="math">
+\[\mathrm{RSS}(\beta) = (\mathbf y - \mathbf X \beta)^{\mathrm T} (\mathbf y - \mathbf X \beta).\]</div>
+<p>The parameters we need is the set that minimizes RSS, which requires</p>
+<div class="math">
+\[\frac{d}{d\beta} \mathrm{RSS} = 0.\]</div>
+<p>So we can solve the parameters easily.</p>
+</div>
+<div class="section" id="nearest-neighbor">
+<h3>Nearest-Neighbor<a class="headerlink" href="#nearest-neighbor" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">For input data <span class="math">x</span>, calculate the Euclidean distance between <span class="math">x</span> and other input data <span class="math">x_j</span>.</p>
+</li>
+<li><p class="first">Choose the <span class="math">k</span> nearest neighbors based on the distance.</p>
+</li>
+<li><p class="first">Output prediction is determined by average of the corresponding outputs of the selected inputs.</p>
+<div class="math">
+\[\hat Y = \frac{1}{k} \sum_{N_k} y_i.\]</div>
+</li>
+</ol>
+<div class="note admonition">
+<p class="first admonition-title">Metric of Distance</p>
+<p class="last">For the calculation of distance, metric must be implemented. The book used examples of Euclidean metric. Another metric that can be inspiring is the hyperbolic space. I talked about this in <a href="#id3"><span class="problematic" id="id4">PopularitySimilarity_</span></a>.</p>
+</div>
+</div>
+<div class="section" id="for-which-scenario">
+<h3>For Which Scenario<a class="headerlink" href="#for-which-scenario" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Least squares: Gaussian-like data set;</li>
+<li>Nearest-Neighbor: mixture of Gaussians.</li>
+</ol>
+<div class="warning admonition">
+<p class="first admonition-title">Mixture of Gaussian</p>
+<p class="last">Mixture of Gaussians can be described by generative model. I am not really sure what that is. It seems to me that the final data is basically generated from Gaussians of different parameters which are generated randomly.</p>
+</div>
+</div>
+</div>
+<div class="section" id="statistical-decision-theory">
+<h2>Statistical Decision Theory<a class="headerlink" href="#statistical-decision-theory" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Given input <span class="math">X</span> and output <span class="math">Y</span>;</p>
+</li>
+<li><p class="first">Following a joint distribution <span class="math">\mathrm{Pr}(X,Y)</span>;</p>
+</li>
+<li><p class="first">Based on input and output, we look for a function that predicts the behavior, i.e., <span class="math">\hat Y = f(X)</span>;</p>
+</li>
+<li><p class="first">How well the prediction is defined by squared error loss <span class="math">L(Y,\hat Y) = (Y-\hat Y)^2</span>.</p>
+</li>
+<li><p class="first">With the distribution, we predict the expected prediction error (EPE) as</p>
+<div class="math">
+\[\mathrm{EPE}(f) = E[ ( Y- \hat Y )^2 ] = \int (y - f(x))^2 \mathrm{Pr}(dx, dy).\]</div>
+</li>
+<li><p class="first">The book derived that the best prediction is <span class="math">f(x) = E(Y\vert X=x)</span>.</p>
+</li>
+<li><p class="first">Different loss functions lead to different EPE’s.</p>
+</li>
+</ol>
+<div class="warning admonition">
+<p class="first admonition-title">About Probability Distribution</p>
+<p class="last">Question: Can we simply solve the probability distribution and find out the function of prediction? The conclusion says the best prediction of <span class="math">Y</span> is the conditional mean. Is it effectively solving <span class="math">Y</span> from the probability distribution?</p>
+</div>
+<div class="section" id="id1">
+<h3>Nearest-Neighbor<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>The best prediction based on EPE is conditional mean, Eq. 2.13;</li>
+<li>Both <span class="math">k</span> nearest neighbor and linear regression fits into this framework;</li>
+<li>Additive models: basically turn the linear <span class="math">x^T\beta</span> into a function of <span class="math">f_j(X_j)</span>. The summation still holds.</li>
+<li>The best prediction based on expectation only is conditional median.</li>
+<li>Categorical variable <span class="math">G</span> also follows the same paradigm but with different loss function.</li>
+<li>A choice of loss function for categorical case is a matrix. It has to be a matrix because we have to specify penalties a given prediction class compared to the output class. The dimension of this matrix should be the number of categories. It is rank 2.</li>
+</ol>
+<div class="note admonition">
+<p class="first admonition-title">Some comments on this section</p>
+<ol class="last arabic simple">
+<li>0 neighbor indicates an exact classification for the sample data but without the implementation of expectation values at each point since there is only one value at that point in one set of sample data;</li>
+<li><span class="math">k</span> nearest neighbor assumed that expectation around a small patch of a point is identical to expectation at the exact point with the corresponding distribution.</li>
+<li>In <strong>Monte Carlo method</strong>, calculation of volume in high dimension converges very slowly. The reason is that we need a very large number of sampling points since the dimension is high. The procedure is multiplicative. The same thing might happen here. <span class="math">k</span> nearest neighbor is basically some kind of averaging procedure of the volume density. It requires a large number of sample data points to perform an fairly accurate average.</li>
+<li>The linear regression is basically a first order Taylor expansion of the approximator <span class="math">f(x)</span>, <span class="math">f(x) = x^T\beta</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="local-methods-in-high-dimensions">
+<h2>Local Methods in High Dimensions<a class="headerlink" href="#local-methods-in-high-dimensions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Curse of high dimensions: edge length of a cube of volume <span class="math">r</span> is <span class="math">e_p(r) = r^{1/p}</span>. An extreme example: <span class="math">(10^{-10})^{1/10} =0.1</span>.</p>
+</li>
+<li><p class="first">Small volume leads to high variance.</p>
+</li>
+<li><p class="first">Homogeneous sampling doesn’t work in high dimensions. Since most points will fall near the edges.</p>
+<div class="figure align-center" id="id2">
+<img alt="../../_images/10dsphere-volume-vs-radius.png" src="../../_images/10dsphere-volume-vs-radius.png" />
+<p class="caption"><span class="caption-text">Volume of 10D sphere as a function of radius.</span></p>
+</div>
+</li>
+<li><p class="first">Requires huge number of sample points in high dimensions.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="statistical-models-supervised-learning-and-function-approximation">
+<h2>Statistical Models, Supervised Learning and Function Approximation<a class="headerlink" href="#statistical-models-supervised-learning-and-function-approximation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="joint-distribution">
+<h3>Joint Distribution<a class="headerlink" href="#joint-distribution" title="Permalink to this headline">¶</a></h3>
+<div class="note admonition">
+<p class="first admonition-title">Weird SubSection</p>
+<p class="last">I didn’t not get the point of this subsection. It seems that the authors are talking about whether it is proper to assume the relation between input and output is deterministic.</p>
+</div>
+</div>
+<div class="section" id="supervised-learning">
+<h3>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>learn by example.</li>
+</ol>
+</div>
+<div class="section" id="function-approximation">
+<h3>Function Approximation<a class="headerlink" href="#function-approximation" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Linear model;</li>
+<li>Function as basis (Eq. 2.30): <span class="math">f_\theta(x) = \sum h_k(x)\theta_k</span>.</li>
+<li>Examples of function bases are Fourier expansions, sigmoid, etc.</li>
+<li>Learning through minimizing sum of squares (RSS), or maximum likelihood estimation, etc.</li>
+<li>Maximum likelihood estimation:
+1. Likelihood: <span class="math">L(\theta) = \sum_{i=1}^N \log \mathrm{Pr}_\theta (y_i)</span>;
+2. Maximized it (“probability of the observed sample is largest”)
+3. Minimizing RSS is equivalent to maximum likelihood estimation. Eq. 2.35.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<!-- <div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'statmech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div> -->
+
+<hr>
+
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+    <p class="pull-right">
+        <a href="#"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
+
+    </p>
+    <p>
+        <span>© 2018, Lei Ma</span>|
+        <a href="https://github.com/emptymalei/intelligence">GitHub</a>|
+        <span><span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+              <a href="http://statisticalphysics.openmetric.org">Statistical Mechanics Notebook</a>
+        </span> |
+        <span><span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+        <a href="/genindex.html">Index</a>
+     </span> |
+       <a href="../../_sources/statistics/esl/statistical-learning-theory.rst.txt"
+           rel="nofollow">Page Source</a></li>|
+       <a href="/changelog.html"
+           rel="nofollow">changelog</a></li>|
+        <span>Created with
+            <a href="http://www.sphinx-doc.org">Sphinx</a></span>
+    </p>
+
+    <hr>
+
+
+    <script>
+        window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+
+</div>
+
+
+  </body>
+</html>

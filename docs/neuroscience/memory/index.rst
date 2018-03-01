@@ -7,3 +7,4 @@ Memory
 
    time-scale.rst
    computational-principles.rst
+   hebbian.rst
