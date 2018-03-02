@@ -8,4 +8,3 @@ No matter how computers and algorithms evolve, carrying some statistics with you
    :maxdepth: 2
 
    esl/index.rst
-   lda.rst

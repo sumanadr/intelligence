@@ -1,11 +1,13 @@
-03.Guass-Markov Theorem and Multiple Regression
+Guass-Markov Theorem and Multiple Regression
 ==================================================
 
 .. admonition:: Meta
    :class: note
 
    date: 2016-09-01
+
    author: OctoMiao
+
    summary: Gauss-Markov Theorem
 
 
@@ -13,23 +15,25 @@
 Gauss-Markov
 ---------------------
 
-1. "**Least squares** estimates the parameters :math:`\beta` have the smallest variance among all linear unbiased estimates."
-2. **Unbiased estimation** is not always good.
-3. ridge regression
+#. "**Least squares** estimates the parameters :math:`\beta` have the smallest variance among all linear unbiased estimates."
+#. **Unbiased estimation** is not always good.
+#. ridge regression
+
 
 
 Proof of 1
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
-1. Model: :math:`\theta = a^T \beta`
-2. Least square estimate of :math:`\theta`:
+
+#. Model is :math:`\theta = a^T \beta`
+#. Least square estimate of :math:`\theta`:
    :math:`\hat\theta = a^T \hat \beta = a^T ( \mathbf X^T \mathbf X )^{-1} \mathbf X^T \mathbf y = \mathbf c_0^T \mathbf y`
-3. This is unbiased: :math:`E(a^T\hat\beta) = a^T\beta`
-4. Gauss-Markov theorem: If we have any other linear estimator
+#. This is unbiased: :math:`E(a^T\hat\beta) = a^T\beta`
+#. Gauss-Markov theorem: If we have any other linear estimator
    :math:`\tilde \theta = \mathbf c^T \mathbf y` and
    :math:`E(\mathbf c^T \mathbf y)=a^T \beta`, then
    :math:`Var(a^T\hat \beta)\leq Var(\mathbf c^T \mathbf y)`.
-5. To prove it we first write down the general form of a linear
+#. To prove it we first write down the general form of a linear
    estimator. **Question:** is the general form of a linear estimator
    :math:`\alpha (X^T X)^{-1} X^T + D`?
 

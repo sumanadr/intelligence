@@ -12,7 +12,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.0.7',
+        VERSION:     '0.0.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -22,7 +22,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
@@ -30,22 +29,79 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="LDA Algorithm" href="../lda.html" />
+    <link rel="next" title="Network Dynamics" href="../../network/index.html" />
     <link rel="prev" title="Shrinkage Methods" href="shrinkage-methods.html" />
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-44466929-2']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
+<!-- <script type="text/x-mathjax-config">
+MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+   cancel: ["Extension","cancel"]
+   });
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+   tex2jax: {
+     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+   }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+     var all = MathJax.Hub.getAllJax(), i;
+     for(i=0; i < all.length; i += 1) {
+         all[i].SourceElement().parentNode.className += ' has-jax';
+     }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+   processEscapes: true
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+"fast-preview": {
+Chunks: {EqnChunk: 10000, EqnChunkFactor: 1, EqnChunkDelay: 0},
+color: "inherit!important",
+updateTime: 30, updateDelay: 6,
+messageStyle: "none",
+disabled: false
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+TeX: {
+   Macros: {
+     overlr: ['\\overset\\leftrightarrow{\#1}',1],
+     overl: ['\\overset\leftarrow{\#1}',1],
+     overr: ['\\overset\rightarrow{\#1}',1],
+     bra: ['\\left\\langle \#1\\right|',1],
+     ket: ['\\left| \#1\\right\\rangle',1],
+     braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+     avg: ['\\left< \#1 \\right>',1],
+     slashed: ['\\cancel{\#1}',1],
+     bold: ['\\boldsymbol{\#1}',1],
+     sech: ['\\operatorname{sech}{\#1}',1],
+     csch: ['\\operatorname{csch}{\#1}',1],
+     Tr: ['\\operatorname{Tr}{\#1}',1]
+   }
+}
+});
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> -->
+
+
+
+
+
 
 <!-- Toggle Environment Begin -->
   <script type="text/javascript">
@@ -81,7 +137,7 @@
         </button>
         <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/intelligence.png"></span>
           Intelligence</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.0.7</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.8</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -101,7 +157,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../questions.html">Questions? Yes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Statistics</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">The Element of Statistical Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lda.html">LDA Algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network Dynamics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../network/popularity-similarity.html">Popularity vs Similarity in Growing Networks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../neuroscience/index.html">Neuroscience</a><ul>
@@ -113,6 +172,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/solitary-waves.html">Solitary Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/dispersion-relation.html">Dispersion Relation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../neuroscience/lesion-of-network.html">Lesion of Network: Brain Injury, Tumor, etc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/misc.html">MISC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/glossary.html">Glossary</a></li>
 </ul>
@@ -135,6 +195,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/ann.html">Artificial Neural Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/neural-network-and-fem.html">Neural Networks and Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/boltzmann-machine.html">Boltzmann Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/lda.html">LDA Algorithm</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../collective/index.html">Collective Intelligence</a><ul>
@@ -186,7 +247,7 @@
     </a>
   </li>
   <li>
-    <a href="../lda.html" title="Next Chapter: LDA Algorithm"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">LDA Algorithm &raquo;</span>
+    <a href="../../network/index.html" title="Next Chapter: Network Dynamics"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Network Dynamics &raquo;</span>
     </a>
   </li>
               
@@ -226,14 +287,14 @@ summary: Least angle regression, aka, LAR</p>
 <h2>Least Angle Regression<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Algorithm 3.2</li>
-<li>We want to change <span class="math">\beta</span> so that the prediction is closer to
-data <span class="math">y</span>, i.e., we require the change of <span class="math">\beta</span>
-decreases <span class="math">X\beta = y - r</span>. So the change should be
-<span class="math">:raw-latex:</span>propto <a href="#id2"><span class="problematic" id="id3">`</span></a>X^T r <a href="#id4"><span class="problematic" id="id5">`</span></a>.</li>
+<li>We want to change <img class="math" src="../../_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> so that the prediction is closer to
+data <img class="math" src="../../_images/math/276f7e256cbddeb81eee42e1efc348f3cb4ab5f8.png" alt="y"/>, i.e., we require the change of <img class="math" src="../../_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/>
+decreases <img class="math" src="../../_images/math/533883b4ad70c3a15a8fc825a08a9ee1ddb52362.png" alt="X\beta = y - r"/>. So the change should be
+<img class="math" src="../../_images/math/011effec9bfde904954a8f3694a03a83fef997d3.png" alt=":raw-latex:"/>propto <a href="#id2"><span class="problematic" id="id3">`</span></a>X^T r <a href="#id4"><span class="problematic" id="id5">`</span></a>.</li>
 <li>Why this works? It reduces the MSE.</li>
 <li>LAR is similar to lasso.</li>
 <li>Modified LAR Algorithm 3.2a leads to lasso result.</li>
-<li>LAR(lasso) is efficient. It takes <span class="math">\mathrm{min}(p,N-1)</span> steps
+<li>LAR(lasso) is efficient. It takes <img class="math" src="../../_images/math/f4d5524ccad964c22eb782c41c1c4f12e5553001.png" alt="\mathrm{min}(p,N-1)"/> steps
 where lasso itself might take more than p steps.</li>
 <li>LAR and lasso are almost identical if we use the geometric meaning of
 the algorithms. But when some coefficient crosses 0, the differences
@@ -299,6 +360,22 @@ pop up.</li>
     </script>
 
 </div>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
 
 
   </body>

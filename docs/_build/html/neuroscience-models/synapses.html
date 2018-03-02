@@ -12,7 +12,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.0.7',
+        VERSION:     '0.0.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -22,7 +22,6 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
@@ -32,20 +31,77 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Equation Solving in Neuroscience" href="../equation-solving-in-neuroscience/index.html" />
     <link rel="prev" title="Neuroscience Models" href="index.html" />
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-44466929-2']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
+<!-- <script type="text/x-mathjax-config">
+MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+   cancel: ["Extension","cancel"]
+   });
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+   tex2jax: {
+     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+   }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+     var all = MathJax.Hub.getAllJax(), i;
+     for(i=0; i < all.length; i += 1) {
+         all[i].SourceElement().parentNode.className += ' has-jax';
+     }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+   processEscapes: true
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+"fast-preview": {
+Chunks: {EqnChunk: 10000, EqnChunkFactor: 1, EqnChunkDelay: 0},
+color: "inherit!important",
+updateTime: 30, updateDelay: 6,
+messageStyle: "none",
+disabled: false
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+TeX: {
+   Macros: {
+     overlr: ['\\overset\\leftrightarrow{\#1}',1],
+     overl: ['\\overset\leftarrow{\#1}',1],
+     overr: ['\\overset\rightarrow{\#1}',1],
+     bra: ['\\left\\langle \#1\\right|',1],
+     ket: ['\\left| \#1\\right\\rangle',1],
+     braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+     avg: ['\\left< \#1 \\right>',1],
+     slashed: ['\\cancel{\#1}',1],
+     bold: ['\\boldsymbol{\#1}',1],
+     sech: ['\\operatorname{sech}{\#1}',1],
+     csch: ['\\operatorname{csch}{\#1}',1],
+     Tr: ['\\operatorname{Tr}{\#1}',1]
+   }
+}
+});
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> -->
+
+
+
+
+
 
 <!-- Toggle Environment Begin -->
   <script type="text/javascript">
@@ -81,7 +137,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/intelligence.png"></span>
           Intelligence</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.0.7</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.8</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -101,7 +157,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">Statistics</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../statistics/esl/index.html">The Element of Statistical Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../statistics/lda.html">LDA Algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network Dynamics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/popularity-similarity.html">Popularity vs Similarity in Growing Networks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../neuroscience/index.html">Neuroscience</a><ul>
@@ -113,6 +172,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/solitary-waves.html">Solitary Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/dispersion-relation.html">Dispersion Relation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/lesion-of-network.html">Lesion of Network: Brain Injury, Tumor, etc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/misc.html">MISC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/glossary.html">Glossary</a></li>
 </ul>
@@ -135,6 +195,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/ann.html">Artificial Neural Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/neural-network-and-fem.html">Neural Networks and Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/boltzmann-machine.html">Boltzmann Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/lda.html">LDA Algorithm</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../collective/index.html">Collective Intelligence</a><ul>
@@ -285,6 +346,22 @@
     </script>
 
 </div>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
 
 
   </body>

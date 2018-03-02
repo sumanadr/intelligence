@@ -81,7 +81,7 @@ Nearest-Neighbor
 .. admonition:: Metric of Distance
    :class: note
 
-   For the calculation of distance, metric must be implemented. The book used examples of Euclidean metric. Another metric that can be inspiring is the hyperbolic space. I talked about this in PopularitySimilarity_.
+   For the calculation of distance, metric must be implemented. The book used examples of Euclidean metric. Another metric that can be inspiring is the hyperbolic space. I talked about this in :ref:`PopularitySimilarity`.
 
 
 

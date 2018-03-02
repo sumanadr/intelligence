@@ -12,7 +12,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.0.7',
+        VERSION:     '0.0.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -22,7 +22,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
@@ -31,21 +30,78 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Least Angle Regression" href="least-angle-regression.html" />
-    <link rel="prev" title="03.Guass-Markov Theorem and Multiple Regression" href="gauss-markov-theorem.html" />
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-44466929-2']);
-    _gaq.push(['_trackPageview']);
+    <link rel="prev" title="Guass-Markov Theorem and Multiple Regression" href="gauss-markov-theorem.html" />
 
-    (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
+<!-- <script type="text/x-mathjax-config">
+MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+   cancel: ["Extension","cancel"]
+   });
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+   tex2jax: {
+     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+   }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+     var all = MathJax.Hub.getAllJax(), i;
+     for(i=0; i < all.length; i += 1) {
+         all[i].SourceElement().parentNode.className += ' has-jax';
+     }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+   processEscapes: true
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+"fast-preview": {
+Chunks: {EqnChunk: 10000, EqnChunkFactor: 1, EqnChunkDelay: 0},
+color: "inherit!important",
+updateTime: 30, updateDelay: 6,
+messageStyle: "none",
+disabled: false
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+TeX: {
+   Macros: {
+     overlr: ['\\overset\\leftrightarrow{\#1}',1],
+     overl: ['\\overset\leftarrow{\#1}',1],
+     overr: ['\\overset\rightarrow{\#1}',1],
+     bra: ['\\left\\langle \#1\\right|',1],
+     ket: ['\\left| \#1\\right\\rangle',1],
+     braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+     avg: ['\\left< \#1 \\right>',1],
+     slashed: ['\\cancel{\#1}',1],
+     bold: ['\\boldsymbol{\#1}',1],
+     sech: ['\\operatorname{sech}{\#1}',1],
+     csch: ['\\operatorname{csch}{\#1}',1],
+     Tr: ['\\operatorname{Tr}{\#1}',1]
+   }
+}
+});
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> -->
+
+
+
+
+
 
 <!-- Toggle Environment Begin -->
   <script type="text/javascript">
@@ -81,7 +137,7 @@
         </button>
         <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/intelligence.png"></span>
           Intelligence</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.0.7</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.8</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -101,7 +157,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../questions.html">Questions? Yes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Statistics</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">The Element of Statistical Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lda.html">LDA Algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network Dynamics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../network/popularity-similarity.html">Popularity vs Similarity in Growing Networks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../neuroscience/index.html">Neuroscience</a><ul>
@@ -113,6 +172,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/solitary-waves.html">Solitary Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/dispersion-relation.html">Dispersion Relation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../neuroscience/lesion-of-network.html">Lesion of Network: Brain Injury, Tumor, etc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/misc.html">MISC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/glossary.html">Glossary</a></li>
 </ul>
@@ -135,6 +195,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/ann.html">Artificial Neural Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/neural-network-and-fem.html">Neural Networks and Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/boltzmann-machine.html">Boltzmann Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/lda.html">LDA Algorithm</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../collective/index.html">Collective Intelligence</a><ul>
@@ -186,7 +247,7 @@
               
                 
   <li>
-    <a href="gauss-markov-theorem.html" title="Previous Chapter: 03.Guass-Markov Theorem and Multiple Regression"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 03.Guass-Mark...</span>
+    <a href="gauss-markov-theorem.html" title="Previous Chapter: Guass-Markov Theorem and Multiple Regression"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Guass-Markov ...</span>
     </a>
   </li>
   <li>
@@ -238,7 +299,7 @@ summary: Shrinkage methods</p>
 <div class="section" id="lasso">
 <h2>Lasso<a class="headerlink" href="#lasso" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Small constraint <span class="math">t</span> cause some of the coefficients reduce exactly to 0: this is <strong>variable selection</strong>, while producing <strong>sparse model</strong>.</li>
+<li>Small constraint <img class="math" src="../../_images/math/5ec053cf70dc1c98cc297322250569eda193e7a4.png" alt="t"/> cause some of the coefficients reduce exactly to 0: this is <strong>variable selection</strong>, while producing <strong>sparse model</strong>.</li>
 <li>Convex optimization.</li>
 </ol>
 <p><strong>Why would lasso leads to exact 0 coefficients?</strong></p>
@@ -252,13 +313,13 @@ summary: Shrinkage methods</p>
 <div class="section" id="generalization">
 <h2>Generalization<a class="headerlink" href="#generalization" title="Permalink to this headline">¶</a></h2>
 <p>Ridge and lasso can be generalized. Replace the distance calculation
-with other definitions, i.e., <span class="math">\sum \lvert \beta_j \rvert^q</span>.</p>
+with other definitions, i.e., <img class="math" src="../../_images/math/66bb61a9a141b484f7696765cc365b7972902a6a.png" alt="\sum \lvert \beta_j \rvert^q"/>.</p>
 <ol class="arabic simple">
-<li><span class="math">q=0</span>: subset selection</li>
-<li><span class="math">q=1</span>: lasso</li>
-<li><span class="math">q=2</span>: ridge</li>
+<li><img class="math" src="../../_images/math/1644b89f7873a009877eb49446f0cb832fd05be7.png" alt="q=0"/>: subset selection</li>
+<li><img class="math" src="../../_images/math/3546ba57f444bd56e272af4af839ce1ba79779f2.png" alt="q=1"/>: lasso</li>
+<li><img class="math" src="../../_images/math/6f8c91c1b96d533f5ca17eb726ff2f56077ba787.png" alt="q=2"/>: ridge</li>
 </ol>
-<p>Smaller <span class="math">q</span> leads to tighter selection.</p>
+<p>Smaller <img class="math" src="../../_images/math/620a3ce6403ec82f1347af9985bc03f7a9382f4a.png" alt="q"/> leads to tighter selection.</p>
 <div class="highlight-text"><div class="highlight"><pre><span></span>Plot[Evaluate@Table[(1 - x\ :sup:`(q))`\ (1/q), {q,
 0.5, 4, 0.5}], {x, 0, 1}, AspectRatio -&gt; 1, Frame -&gt; True, PlotLegends
 -&gt; Placed[Table[“q=” &lt;&gt; ToString@q, {q, 0.5, 4, 0.5}], {Left, Bottom}],
@@ -330,6 +391,22 @@ PlotLabel -&gt; “Shrinkage as function of L-q norm disance”, FrameLabel -&gt
     </script>
 
 </div>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
 
 
   </body>

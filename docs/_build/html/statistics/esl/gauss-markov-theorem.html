@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>03.Guass-Markov Theorem and Multiple Regression &#8212; Intelligence</title>
+    <title>Guass-Markov Theorem and Multiple Regression &#8212; Intelligence</title>
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/modify.css" type="text/css" />
@@ -12,7 +12,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.0.7',
+        VERSION:     '0.0.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -22,7 +22,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
@@ -32,20 +31,77 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Shrinkage Methods" href="shrinkage-methods.html" />
     <link rel="prev" title="Linear Methods for Regression" href="linear-methods-for-regresssion.html" />
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-44466929-2']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
+<!-- <script type="text/x-mathjax-config">
+MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+   cancel: ["Extension","cancel"]
+   });
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+   tex2jax: {
+     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+   }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+     var all = MathJax.Hub.getAllJax(), i;
+     for(i=0; i < all.length; i += 1) {
+         all[i].SourceElement().parentNode.className += ' has-jax';
+     }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+   processEscapes: true
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+"fast-preview": {
+Chunks: {EqnChunk: 10000, EqnChunkFactor: 1, EqnChunkDelay: 0},
+color: "inherit!important",
+updateTime: 30, updateDelay: 6,
+messageStyle: "none",
+disabled: false
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+TeX: {
+   Macros: {
+     overlr: ['\\overset\\leftrightarrow{\#1}',1],
+     overl: ['\\overset\leftarrow{\#1}',1],
+     overr: ['\\overset\rightarrow{\#1}',1],
+     bra: ['\\left\\langle \#1\\right|',1],
+     ket: ['\\left| \#1\\right\\rangle',1],
+     braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+     avg: ['\\left< \#1 \\right>',1],
+     slashed: ['\\cancel{\#1}',1],
+     bold: ['\\boldsymbol{\#1}',1],
+     sech: ['\\operatorname{sech}{\#1}',1],
+     csch: ['\\operatorname{csch}{\#1}',1],
+     Tr: ['\\operatorname{Tr}{\#1}',1]
+   }
+}
+});
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> -->
+
+
+
+
+
 
 <!-- Toggle Environment Begin -->
   <script type="text/javascript">
@@ -81,7 +137,7 @@
         </button>
         <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/intelligence.png"></span>
           Intelligence</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.0.7</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.8</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -101,7 +157,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../questions.html">Questions? Yes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Statistics</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">The Element of Statistical Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lda.html">LDA Algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network Dynamics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../network/popularity-similarity.html">Popularity vs Similarity in Growing Networks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../neuroscience/index.html">Neuroscience</a><ul>
@@ -113,6 +172,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/solitary-waves.html">Solitary Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/dispersion-relation.html">Dispersion Relation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../neuroscience/lesion-of-network.html">Lesion of Network: Brain Injury, Tumor, etc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/misc.html">MISC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/glossary.html">Glossary</a></li>
 </ul>
@@ -135,6 +195,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/ann.html">Artificial Neural Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/neural-network-and-fem.html">Neural Networks and Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/boltzmann-machine.html">Boltzmann Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/lda.html">LDA Algorithm</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../collective/index.html">Collective Intelligence</a><ul>
@@ -169,7 +230,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">03.Guass-Markov Theorem and Multiple Regression</a><ul>
+<li><a class="reference internal" href="#">Guass-Markov Theorem and Multiple Regression</a><ul>
 <li><a class="reference internal" href="#gauss-markov">Gauss-Markov</a><ul>
 <li><a class="reference internal" href="#proof-of-1">Proof of 1</a></li>
 </ul>
@@ -219,45 +280,45 @@
     <div class="col-md-12 content">
       
   <div class="section" id="guass-markov-theorem-and-multiple-regression">
-<h1>03.Guass-Markov Theorem and Multiple Regression<a class="headerlink" href="#guass-markov-theorem-and-multiple-regression" title="Permalink to this headline">¶</a></h1>
+<h1>Guass-Markov Theorem and Multiple Regression<a class="headerlink" href="#guass-markov-theorem-and-multiple-regression" title="Permalink to this headline">¶</a></h1>
 <div class="note admonition">
 <p class="first admonition-title">Meta</p>
-<p class="last">date: 2016-09-01
-author: OctoMiao
-summary: Gauss-Markov Theorem</p>
+<p>date: 2016-09-01</p>
+<p>author: OctoMiao</p>
+<p class="last">summary: Gauss-Markov Theorem</p>
 </div>
 <div class="section" id="gauss-markov">
 <h2>Gauss-Markov<a class="headerlink" href="#gauss-markov" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>“<strong>Least squares</strong> estimates the parameters <span class="math">\beta</span> have the smallest variance among all linear unbiased estimates.”</li>
+<li>“<strong>Least squares</strong> estimates the parameters <img class="math" src="../../_images/math/410a9d0df9c135dd73b269cba7ef04dcfd932b1f.png" alt="\beta"/> have the smallest variance among all linear unbiased estimates.”</li>
 <li><strong>Unbiased estimation</strong> is not always good.</li>
 <li>ridge regression</li>
 </ol>
 <div class="section" id="proof-of-1">
 <h3>Proof of 1<a class="headerlink" href="#proof-of-1" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Model: <span class="math">\theta = a^T \beta</span></li>
-<li>Least square estimate of <span class="math">\theta</span>:
-<span class="math">\hat\theta = a^T \hat \beta = a^T ( \mathbf X^T \mathbf X )^{-1} \mathbf X^T \mathbf y = \mathbf c_0^T \mathbf y</span></li>
-<li>This is unbiased: <span class="math">E(a^T\hat\beta) = a^T\beta</span></li>
+<li>Model is <img class="math" src="../../_images/math/d08a8cc4d9a301634040612ecf48e90743121a4d.png" alt="\theta = a^T \beta"/></li>
+<li>Least square estimate of <img class="math" src="../../_images/math/3be04d4207434584251f6921820c24ac9fa8c6f1.png" alt="\theta"/>:
+<img class="math" src="../../_images/math/30610eb26c0de56f888b82d993aabf1b1c504312.png" alt="\hat\theta = a^T \hat \beta = a^T ( \mathbf X^T \mathbf X )^{-1} \mathbf X^T \mathbf y = \mathbf c_0^T \mathbf y"/></li>
+<li>This is unbiased: <img class="math" src="../../_images/math/2f72ee2af747b8644a7d04977a1e57fe973d5f80.png" alt="E(a^T\hat\beta) = a^T\beta"/></li>
 <li>Gauss-Markov theorem: If we have any other linear estimator
-<span class="math">\tilde \theta = \mathbf c^T \mathbf y</span> and
-<span class="math">E(\mathbf c^T \mathbf y)=a^T \beta</span>, then
-<span class="math">Var(a^T\hat \beta)\leq Var(\mathbf c^T \mathbf y)</span>.</li>
+<img class="math" src="../../_images/math/08fff6c215671b4690dd7c7bb06846219dbbc0e5.png" alt="\tilde \theta = \mathbf c^T \mathbf y"/> and
+<img class="math" src="../../_images/math/eee4bb04332438338a5ecea9f2290e323dec266a.png" alt="E(\mathbf c^T \mathbf y)=a^T \beta"/>, then
+<img class="math" src="../../_images/math/7ea8948b7767d94b3cb83989dab79757ae55acc3.png" alt="Var(a^T\hat \beta)\leq Var(\mathbf c^T \mathbf y)"/>.</li>
 <li>To prove it we first write down the general form of a linear
 estimator. <strong>Question:</strong> is the general form of a linear estimator
-<span class="math">\alpha (X^T X)^{-1} X^T + D</span>?</li>
+<img class="math" src="../../_images/math/1f6c274f3a75fb01af59ce6bac4788855f234599.png" alt="\alpha (X^T X)^{-1} X^T + D"/>?</li>
 </ol>
 <p>Useful functions for the proof:</p>
 <ol class="arabic simple">
-<li>Variance: <span class="math">Var(X) = E[ (X - \mu)^2 ]</span>.</li>
+<li>Variance: <img class="math" src="../../_images/math/aa0e5209225bd9af47bf3b66bc6da21f31c04082.png" alt="Var(X) = E[ (X - \mu)^2 ]"/>.</li>
 <li><a class="reference external" href="https://en.wikipedia.org/wiki/Gauss%E2%80%93Markov_theorem#Proof">On wikipedia</a></li>
 </ol>
 <ol class="arabic simple">
 <li>MSE:
-<span class="math">MSE(\tilde\theta) = E( (\tilde\theta -\theta)^2 ) = E( (\tilde \theta - E(\theta) + E(\theta) - \theta)^2 ) = E( (\tilde\theta - E(\theta))^2 ) + \cdots</span></li>
+<img class="math" src="../../_images/math/0a11154e9104b209ec1b4215e6f943f4fdb171a1.png" alt="MSE(\tilde\theta) = E( (\tilde\theta -\theta)^2 ) = E( (\tilde \theta - E(\theta) + E(\theta) - \theta)^2 ) = E( (\tilde\theta - E(\theta))^2 ) + \cdots"/></li>
 <li>MSE is
-<span class="math">MSE(\tilde \theta) = Var(\tilde theta) + (E(\theta) -\theta)^2</span>
+<img class="math" src="../../_images/math/d96a545e49c3549c51bd266630e3599ce3fcc188.png" alt="MSE(\tilde \theta) = Var(\tilde theta) + (E(\theta) -\theta)^2"/>
 the second term is bias.</li>
 <li>Least square is good but we can trade some bias to get a smaller
 variance sometimes.</li>
@@ -265,7 +326,7 @@ variance sometimes.</li>
 </ol>
 <ol class="arabic simple">
 <li>Suppose new data is biased from the original data by a value
-<span class="math">\epsilon_0</span>, the MSE using the original estimator is only the
+<img class="math" src="../../_images/math/f6da37ff3a3873900e235d0837af9e1d2a30c2ab.png" alt="\epsilon_0"/>, the MSE using the original estimator is only the
 original MSE differed by a constant. Eq. 3.22</li>
 <li>We always have a larger MSE????? I don’t get this.</li>
 </ol>
@@ -274,7 +335,7 @@ original MSE differed by a constant. Eq. 3.22</li>
 <div class="section" id="multiple-regression">
 <h2>Multiple Regression<a class="headerlink" href="#multiple-regression" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Model: <span class="math">f(X) = \beta_0 + \sum_{j=1}^p X_j \beta</span></li>
+<li>Model: <img class="math" src="../../_images/math/cb0b77e3dccd9c96be9132adad9fdc73354e53f1.png" alt="f(X) = \beta_0 + \sum_{j=1}^p X_j \beta"/></li>
 <li>For multiple dimensional inputs, the estimator has no correlations for different features.</li>
 </ol>
 </div>
@@ -337,6 +398,22 @@ original MSE differed by a constant. Eq. 3.22</li>
     </script>
 
 </div>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
 
 
   </body>

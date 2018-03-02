@@ -12,7 +12,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.0.7',
+        VERSION:     '0.0.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -22,7 +22,6 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
@@ -32,20 +31,77 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Linear Methods for Regression" href="linear-methods-for-regresssion.html" />
     <link rel="prev" title="The Element of Statistical Learning" href="index.html" />
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-44466929-2']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
+<!-- <script type="text/x-mathjax-config">
+MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+   cancel: ["Extension","cancel"]
+   });
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+   tex2jax: {
+     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+   }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+     var all = MathJax.Hub.getAllJax(), i;
+     for(i=0; i < all.length; i += 1) {
+         all[i].SourceElement().parentNode.className += ' has-jax';
+     }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+   processEscapes: true
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+"fast-preview": {
+Chunks: {EqnChunk: 10000, EqnChunkFactor: 1, EqnChunkDelay: 0},
+color: "inherit!important",
+updateTime: 30, updateDelay: 6,
+messageStyle: "none",
+disabled: false
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+TeX: {
+   Macros: {
+     overlr: ['\\overset\\leftrightarrow{\#1}',1],
+     overl: ['\\overset\leftarrow{\#1}',1],
+     overr: ['\\overset\rightarrow{\#1}',1],
+     bra: ['\\left\\langle \#1\\right|',1],
+     ket: ['\\left| \#1\\right\\rangle',1],
+     braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+     avg: ['\\left< \#1 \\right>',1],
+     slashed: ['\\cancel{\#1}',1],
+     bold: ['\\boldsymbol{\#1}',1],
+     sech: ['\\operatorname{sech}{\#1}',1],
+     csch: ['\\operatorname{csch}{\#1}',1],
+     Tr: ['\\operatorname{Tr}{\#1}',1]
+   }
+}
+});
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> -->
+
+
+
+
+
 
 <!-- Toggle Environment Begin -->
   <script type="text/javascript">
@@ -81,7 +137,7 @@
         </button>
         <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/intelligence.png"></span>
           Intelligence</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.0.7</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.8</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -101,7 +157,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../questions.html">Questions? Yes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Statistics</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">The Element of Statistical Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lda.html">LDA Algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network Dynamics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../network/popularity-similarity.html">Popularity vs Similarity in Growing Networks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../neuroscience/index.html">Neuroscience</a><ul>
@@ -113,6 +172,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/solitary-waves.html">Solitary Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/dispersion-relation.html">Dispersion Relation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../neuroscience/lesion-of-network.html">Lesion of Network: Brain Injury, Tumor, etc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/misc.html">MISC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../neuroscience/glossary.html">Glossary</a></li>
 </ul>
@@ -135,6 +195,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/ann.html">Artificial Neural Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/neural-network-and-fem.html">Neural Networks and Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/boltzmann-machine.html">Boltzmann Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../machine-intelligence/lda.html">LDA Algorithm</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../collective/index.html">Collective Intelligence</a><ul>
@@ -252,16 +313,16 @@
 <p class="first admonition-title">Notations</p>
 <p>Fonts:</p>
 <ol class="arabic simple">
-<li>Vectors or scalars are denoted by italic math font <span class="math">X</span>.</li>
-<li>Components of vectors are denoted by subscripts <span class="math">X_i</span>.</li>
-<li>Matrix is denoted by math bold font <span class="math">\mathbf X</span>.</li>
+<li>Vectors or scalars are denoted by italic math font <img class="math" src="../../_images/math/7a7bb470119808e2db2879fc2b2526f467b7a40b.png" alt="X"/>.</li>
+<li>Components of vectors are denoted by subscripts <img class="math" src="../../_images/math/9a63346d0b18c3361d2ba446d7c9e7cf831d8c4d.png" alt="X_i"/>.</li>
+<li>Matrix is denoted by math bold font <img class="math" src="../../_images/math/ddd65d14f26b65e448158127e47b2409d491a4e5.png" alt="\mathbf X"/>.</li>
 </ol>
 <p>Symbols</p>
 <ol class="last arabic simple">
-<li><span class="math">X</span> for input variables;</li>
-<li><span class="math">Y</span> for quantitative output;</li>
-<li><span class="math">G</span> for qualitative output;</li>
-<li><span class="math">\hat {}</span> for prediction.</li>
+<li><img class="math" src="../../_images/math/7a7bb470119808e2db2879fc2b2526f467b7a40b.png" alt="X"/> for input variables;</li>
+<li><img class="math" src="../../_images/math/0062c26909b3e07ee8f5a6285b2563d69bc979ff.png" alt="Y"/> for quantitative output;</li>
+<li><img class="math" src="../../_images/math/dee63237674afc3154c2e33b7b68d67f85f2ee0a.png" alt="G"/> for qualitative output;</li>
+<li><img class="math" src="../../_images/math/ea3434cc91d7aabf9ed0f5b476f25a6fcc5690e4.png" alt="\hat {}"/> for prediction.</li>
 </ol>
 </div>
 </div>
@@ -271,30 +332,30 @@
 <h3>Least Squares<a class="headerlink" href="#least-squares" title="Permalink to this headline">¶</a></h3>
 <p>Least square model:</p>
 <div class="math">
-\[\hat Y = X^T \hat \beta.\]</div>
-<p>Residual sum of squares (RSS):</p>
+<p><img src="../../_images/math/362d989cabfd7fe406857f062f6865bb3678b27b.png" alt="\hat Y = X^T \hat \beta."/></p>
+</div><p>Residual sum of squares (RSS):</p>
 <div class="math">
-\[\mathrm{RSS}(\beta) = (\mathbf y - \mathbf X \beta)^{\mathrm T} (\mathbf y - \mathbf X \beta).\]</div>
-<p>The parameters we need is the set that minimizes RSS, which requires</p>
+<p><img src="../../_images/math/7d7231321ca351f9239342a9135ca6eb301151ac.png" alt="\mathrm{RSS}(\beta) = (\mathbf y - \mathbf X \beta)^{\mathrm T} (\mathbf y - \mathbf X \beta)."/></p>
+</div><p>The parameters we need is the set that minimizes RSS, which requires</p>
 <div class="math">
-\[\frac{d}{d\beta} \mathrm{RSS} = 0.\]</div>
-<p>So we can solve the parameters easily.</p>
+<p><img src="../../_images/math/311da1778adff526a209178656b00f7f6eb66ee3.png" alt="\frac{d}{d\beta} \mathrm{RSS} = 0."/></p>
+</div><p>So we can solve the parameters easily.</p>
 </div>
 <div class="section" id="nearest-neighbor">
 <h3>Nearest-Neighbor<a class="headerlink" href="#nearest-neighbor" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">For input data <span class="math">x</span>, calculate the Euclidean distance between <span class="math">x</span> and other input data <span class="math">x_j</span>.</p>
+<li><p class="first">For input data <img class="math" src="../../_images/math/a59f68a4202623bb859a7093f0316bf466e6f75d.png" alt="x"/>, calculate the Euclidean distance between <img class="math" src="../../_images/math/a59f68a4202623bb859a7093f0316bf466e6f75d.png" alt="x"/> and other input data <img class="math" src="../../_images/math/bdb2d04d69b82c2288f5ef46664d548355e130af.png" alt="x_j"/>.</p>
 </li>
-<li><p class="first">Choose the <span class="math">k</span> nearest neighbors based on the distance.</p>
+<li><p class="first">Choose the <img class="math" src="../../_images/math/0b7c1e16a3a8a849bb8ffdcdbf86f65fd1f30438.png" alt="k"/> nearest neighbors based on the distance.</p>
 </li>
 <li><p class="first">Output prediction is determined by average of the corresponding outputs of the selected inputs.</p>
 <div class="math">
-\[\hat Y = \frac{1}{k} \sum_{N_k} y_i.\]</div>
-</li>
+<p><img src="../../_images/math/eab188e21d8ea2794b6e15d93d17f3cbe02cf3f9.png" alt="\hat Y = \frac{1}{k} \sum_{N_k} y_i."/></p>
+</div></li>
 </ol>
 <div class="note admonition">
 <p class="first admonition-title">Metric of Distance</p>
-<p class="last">For the calculation of distance, metric must be implemented. The book used examples of Euclidean metric. Another metric that can be inspiring is the hyperbolic space. I talked about this in <a href="#id3"><span class="problematic" id="id4">PopularitySimilarity_</span></a>.</p>
+<p class="last">For the calculation of distance, metric must be implemented. The book used examples of Euclidean metric. Another metric that can be inspiring is the hyperbolic space. I talked about this in <a class="reference internal" href="../../network/popularity-similarity.html#popularitysimilarity"><span class="std std-ref">Popularity vs Similarity in Growing Networks</span></a>.</p>
 </div>
 </div>
 <div class="section" id="for-which-scenario">
@@ -312,44 +373,44 @@
 <div class="section" id="statistical-decision-theory">
 <h2>Statistical Decision Theory<a class="headerlink" href="#statistical-decision-theory" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Given input <span class="math">X</span> and output <span class="math">Y</span>;</p>
+<li><p class="first">Given input <img class="math" src="../../_images/math/7a7bb470119808e2db2879fc2b2526f467b7a40b.png" alt="X"/> and output <img class="math" src="../../_images/math/0062c26909b3e07ee8f5a6285b2563d69bc979ff.png" alt="Y"/>;</p>
 </li>
-<li><p class="first">Following a joint distribution <span class="math">\mathrm{Pr}(X,Y)</span>;</p>
+<li><p class="first">Following a joint distribution <img class="math" src="../../_images/math/c39abefda906a5553a550e771f07dd3e9fe16f8c.png" alt="\mathrm{Pr}(X,Y)"/>;</p>
 </li>
-<li><p class="first">Based on input and output, we look for a function that predicts the behavior, i.e., <span class="math">\hat Y = f(X)</span>;</p>
+<li><p class="first">Based on input and output, we look for a function that predicts the behavior, i.e., <img class="math" src="../../_images/math/0f80e9e23ce74b43d16640ea99db0ddb3356945c.png" alt="\hat Y = f(X)"/>;</p>
 </li>
-<li><p class="first">How well the prediction is defined by squared error loss <span class="math">L(Y,\hat Y) = (Y-\hat Y)^2</span>.</p>
+<li><p class="first">How well the prediction is defined by squared error loss <img class="math" src="../../_images/math/2f014da4ffeae990d6bed1187a5805bd3a89d32b.png" alt="L(Y,\hat Y) = (Y-\hat Y)^2"/>.</p>
 </li>
 <li><p class="first">With the distribution, we predict the expected prediction error (EPE) as</p>
 <div class="math">
-\[\mathrm{EPE}(f) = E[ ( Y- \hat Y )^2 ] = \int (y - f(x))^2 \mathrm{Pr}(dx, dy).\]</div>
-</li>
-<li><p class="first">The book derived that the best prediction is <span class="math">f(x) = E(Y\vert X=x)</span>.</p>
+<p><img src="../../_images/math/42a439d37ed125e32ba0ac595849276e30337db6.png" alt="\mathrm{EPE}(f) = E[ ( Y- \hat Y )^2 ] = \int (y - f(x))^2 \mathrm{Pr}(dx, dy)."/></p>
+</div></li>
+<li><p class="first">The book derived that the best prediction is <img class="math" src="../../_images/math/8beb3fc759ce4e263e85e7d39afb954b336880d2.png" alt="f(x) = E(Y\vert X=x)"/>.</p>
 </li>
 <li><p class="first">Different loss functions lead to different EPE’s.</p>
 </li>
 </ol>
 <div class="warning admonition">
 <p class="first admonition-title">About Probability Distribution</p>
-<p class="last">Question: Can we simply solve the probability distribution and find out the function of prediction? The conclusion says the best prediction of <span class="math">Y</span> is the conditional mean. Is it effectively solving <span class="math">Y</span> from the probability distribution?</p>
+<p class="last">Question: Can we simply solve the probability distribution and find out the function of prediction? The conclusion says the best prediction of <img class="math" src="../../_images/math/0062c26909b3e07ee8f5a6285b2563d69bc979ff.png" alt="Y"/> is the conditional mean. Is it effectively solving <img class="math" src="../../_images/math/0062c26909b3e07ee8f5a6285b2563d69bc979ff.png" alt="Y"/> from the probability distribution?</p>
 </div>
 <div class="section" id="id1">
 <h3>Nearest-Neighbor<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>The best prediction based on EPE is conditional mean, Eq. 2.13;</li>
-<li>Both <span class="math">k</span> nearest neighbor and linear regression fits into this framework;</li>
-<li>Additive models: basically turn the linear <span class="math">x^T\beta</span> into a function of <span class="math">f_j(X_j)</span>. The summation still holds.</li>
+<li>Both <img class="math" src="../../_images/math/0b7c1e16a3a8a849bb8ffdcdbf86f65fd1f30438.png" alt="k"/> nearest neighbor and linear regression fits into this framework;</li>
+<li>Additive models: basically turn the linear <img class="math" src="../../_images/math/26dbef056fdf587be186e462819f66c7af81f62e.png" alt="x^T\beta"/> into a function of <img class="math" src="../../_images/math/e9cb930e80b02047712974833701afe482e7e628.png" alt="f_j(X_j)"/>. The summation still holds.</li>
 <li>The best prediction based on expectation only is conditional median.</li>
-<li>Categorical variable <span class="math">G</span> also follows the same paradigm but with different loss function.</li>
+<li>Categorical variable <img class="math" src="../../_images/math/dee63237674afc3154c2e33b7b68d67f85f2ee0a.png" alt="G"/> also follows the same paradigm but with different loss function.</li>
 <li>A choice of loss function for categorical case is a matrix. It has to be a matrix because we have to specify penalties a given prediction class compared to the output class. The dimension of this matrix should be the number of categories. It is rank 2.</li>
 </ol>
 <div class="note admonition">
 <p class="first admonition-title">Some comments on this section</p>
 <ol class="last arabic simple">
 <li>0 neighbor indicates an exact classification for the sample data but without the implementation of expectation values at each point since there is only one value at that point in one set of sample data;</li>
-<li><span class="math">k</span> nearest neighbor assumed that expectation around a small patch of a point is identical to expectation at the exact point with the corresponding distribution.</li>
-<li>In <strong>Monte Carlo method</strong>, calculation of volume in high dimension converges very slowly. The reason is that we need a very large number of sampling points since the dimension is high. The procedure is multiplicative. The same thing might happen here. <span class="math">k</span> nearest neighbor is basically some kind of averaging procedure of the volume density. It requires a large number of sample data points to perform an fairly accurate average.</li>
-<li>The linear regression is basically a first order Taylor expansion of the approximator <span class="math">f(x)</span>, <span class="math">f(x) = x^T\beta</span>.</li>
+<li><img class="math" src="../../_images/math/0b7c1e16a3a8a849bb8ffdcdbf86f65fd1f30438.png" alt="k"/> nearest neighbor assumed that expectation around a small patch of a point is identical to expectation at the exact point with the corresponding distribution.</li>
+<li>In <strong>Monte Carlo method</strong>, calculation of volume in high dimension converges very slowly. The reason is that we need a very large number of sampling points since the dimension is high. The procedure is multiplicative. The same thing might happen here. <img class="math" src="../../_images/math/0b7c1e16a3a8a849bb8ffdcdbf86f65fd1f30438.png" alt="k"/> nearest neighbor is basically some kind of averaging procedure of the volume density. It requires a large number of sample data points to perform an fairly accurate average.</li>
+<li>The linear regression is basically a first order Taylor expansion of the approximator <img class="math" src="../../_images/math/eda52292f6952f7e27fef52e7ce8393981770d2c.png" alt="f(x)"/>, <img class="math" src="../../_images/math/2a32141136dad55067dbffea358b1e367a2ea028.png" alt="f(x) = x^T\beta"/>.</li>
 </ol>
 </div>
 </div>
@@ -357,7 +418,7 @@
 <div class="section" id="local-methods-in-high-dimensions">
 <h2>Local Methods in High Dimensions<a class="headerlink" href="#local-methods-in-high-dimensions" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Curse of high dimensions: edge length of a cube of volume <span class="math">r</span> is <span class="math">e_p(r) = r^{1/p}</span>. An extreme example: <span class="math">(10^{-10})^{1/10} =0.1</span>.</p>
+<li><p class="first">Curse of high dimensions: edge length of a cube of volume <img class="math" src="../../_images/math/eaa6ad49a7f78fe5a13b486690163bf2dc7e3e60.png" alt="r"/> is <img class="math" src="../../_images/math/e3c51e7df72e2878cb80a8f41717e41ab948af43.png" alt="e_p(r) = r^{1/p}"/>. An extreme example: <img class="math" src="../../_images/math/ce8322ffec9b12a50c61cb40b88f4c5382b956f8.png" alt="(10^{-10})^{1/10} =0.1"/>.</p>
 </li>
 <li><p class="first">Small volume leads to high variance.</p>
 </li>
@@ -390,11 +451,11 @@
 <h3>Function Approximation<a class="headerlink" href="#function-approximation" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Linear model;</li>
-<li>Function as basis (Eq. 2.30): <span class="math">f_\theta(x) = \sum h_k(x)\theta_k</span>.</li>
+<li>Function as basis (Eq. 2.30): <img class="math" src="../../_images/math/bf53149e9e63b8e2ff3b11df9c046786de148b6d.png" alt="f_\theta(x) = \sum h_k(x)\theta_k"/>.</li>
 <li>Examples of function bases are Fourier expansions, sigmoid, etc.</li>
 <li>Learning through minimizing sum of squares (RSS), or maximum likelihood estimation, etc.</li>
 <li>Maximum likelihood estimation:
-1. Likelihood: <span class="math">L(\theta) = \sum_{i=1}^N \log \mathrm{Pr}_\theta (y_i)</span>;
+1. Likelihood: <img class="math" src="../../_images/math/65ada0ff59e346c52ba1976e51ee99715451c2d5.png" alt="L(\theta) = \sum_{i=1}^N \log \mathrm{Pr}_\theta (y_i)"/>;
 2. Maximized it (“probability of the observed sample is largest”)
 3. Minimizing RSS is equivalent to maximum likelihood estimation. Eq. 2.35.</li>
 </ol>
@@ -459,6 +520,22 @@
     </script>
 
 </div>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
 
 
   </body>

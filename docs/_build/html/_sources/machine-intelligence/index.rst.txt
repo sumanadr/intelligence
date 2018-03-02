@@ -8,3 +8,4 @@ Machine Intelligence
    ann.rst
    neural-network-and-fem.rst
    boltzmann-machine.rst
+   lda.rst

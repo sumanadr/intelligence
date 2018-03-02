@@ -12,7 +12,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.0.7',
+        VERSION:     '0.0.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -22,7 +22,6 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
@@ -32,20 +31,77 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Machine Intelligence" href="../machine-intelligence/index.html" />
     <link rel="prev" title="Random Walks" href="index.html" />
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-44466929-2']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
+<!-- <script type="text/x-mathjax-config">
+MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+   cancel: ["Extension","cancel"]
+   });
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+   tex2jax: {
+     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+   }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+     var all = MathJax.Hub.getAllJax(), i;
+     for(i=0; i < all.length; i += 1) {
+         all[i].SourceElement().parentNode.className += ' has-jax';
+     }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+   processEscapes: true
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+"fast-preview": {
+Chunks: {EqnChunk: 10000, EqnChunkFactor: 1, EqnChunkDelay: 0},
+color: "inherit!important",
+updateTime: 30, updateDelay: 6,
+messageStyle: "none",
+disabled: false
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+TeX: {
+   Macros: {
+     overlr: ['\\overset\\leftrightarrow{\#1}',1],
+     overl: ['\\overset\leftarrow{\#1}',1],
+     overr: ['\\overset\rightarrow{\#1}',1],
+     bra: ['\\left\\langle \#1\\right|',1],
+     ket: ['\\left| \#1\\right\\rangle',1],
+     braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+     avg: ['\\left< \#1 \\right>',1],
+     slashed: ['\\cancel{\#1}',1],
+     bold: ['\\boldsymbol{\#1}',1],
+     sech: ['\\operatorname{sech}{\#1}',1],
+     csch: ['\\operatorname{csch}{\#1}',1],
+     Tr: ['\\operatorname{Tr}{\#1}',1]
+   }
+}
+});
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script> -->
+
+
+
+
+
 
 <!-- Toggle Environment Begin -->
   <script type="text/javascript">
@@ -81,7 +137,7 @@
         </button>
         <a class="navbar-brand" href="../index.html"><span><img src="../_static/intelligence.png"></span>
           Intelligence</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.0.7</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.8</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -101,7 +157,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../questions.html">Questions? Yes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../statistics/index.html">Statistics</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../statistics/esl/index.html">The Element of Statistical Learning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../statistics/lda.html">LDA Algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../network/index.html">Network Dynamics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../network/popularity-similarity.html">Popularity vs Similarity in Growing Networks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../neuroscience/index.html">Neuroscience</a><ul>
@@ -113,6 +172,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/solitary-waves.html">Solitary Waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/signal-decomposition.html">Signal Decomposition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/dispersion-relation.html">Dispersion Relation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../neuroscience/lesion-of-network.html">Lesion of Network: Brain Injury, Tumor, etc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/misc.html">MISC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../neuroscience/glossary.html">Glossary</a></li>
 </ul>
@@ -135,6 +195,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/ann.html">Artificial Neural Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/neural-network-and-fem.html">Neural Networks and Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/boltzmann-machine.html">Boltzmann Machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../machine-intelligence/lda.html">LDA Algorithm</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../collective/index.html">Collective Intelligence</a><ul>
@@ -221,34 +282,34 @@
 <p>There exists several simple models of random walks. It can be either fixed stepsize but random directions or varying stepsize.</p>
 <div class="section" id="fixed-stepsize">
 <h2>Fixed Stepsize<a class="headerlink" href="#fixed-stepsize" title="Permalink to this headline">¶</a></h2>
-<p>A simple model is that we assume each step is a step of size <span class="math">\epsilon</span>, but with random directions. The position of this random walker at step <span class="math">N</span> is the summation of all the steps (vectors),</p>
+<p>A simple model is that we assume each step is a step of size <img class="math" src="../_images/math/65d19c66c148d5016c6a89d26486bf6d1966ded1.png" alt="\epsilon"/>, but with random directions. The position of this random walker at step <img class="math" src="../_images/math/f4170ed8938b79490d8923857962695514a8e4cb.png" alt="N"/> is the summation of all the steps (vectors),</p>
 <div class="math">
-\[\vec X = \sum_i^N x_i,\]</div>
-<p>where <span class="math">x_i</span> is the vector that represents step i.</p>
-<p>What we want to find out is the places that the random walker explored after <span class="math">N</span> steps. The corresponding quantity that represents it is <span class="math">\sqrt{\langle \vec X^2 \rangle}</span>.</p>
+<p><img src="../_images/math/3c105580da31a07a43f0a88a6a26628b7f629fc8.png" alt="\vec X = \sum_i^N x_i,"/></p>
+</div><p>where <img class="math" src="../_images/math/7720e563212e11bf72de255ab82c2a3b97c1a7f5.png" alt="x_i"/> is the vector that represents step i.</p>
+<p>What we want to find out is the places that the random walker explored after <img class="math" src="../_images/math/f4170ed8938b79490d8923857962695514a8e4cb.png" alt="N"/> steps. The corresponding quantity that represents it is <img class="math" src="../_images/math/bcf20537c7f59c8213791b7cea68450e3ac0863c.png" alt="\sqrt{\langle \vec X^2 \rangle}"/>.</p>
 <p>From the idea of random walk, we know that</p>
 <div class="math">
-\[\begin{split}\langle \vec x_i \rangle =&amp; 0 \\
-\langle \vec x_i \cdot \vec x_j \rangle =&amp; 0.\end{split}\]</div>
-<p>Thus</p>
+<p><img src="../_images/math/b93c0bc8ca763e2633bd11c2e76227fb2eff38d2.png" alt="\langle \vec x_i \rangle =&amp; 0 \\
+\langle \vec x_i \cdot \vec x_j \rangle =&amp; 0."/></p>
+</div><p>Thus</p>
 <div class="math">
-\[\begin{split}\langle \vec X^2 \rangle = &amp; \sum_i \vec x_i\cdot \vec x_i \\
-=&amp; N \epsilon^2.\end{split}\]</div>
-<p>Then we find out that</p>
+<p><img src="../_images/math/b3c8362e6acd13af972de130f6e31c1e28735d2a.png" alt="\langle \vec X^2 \rangle = &amp; \sum_i \vec x_i\cdot \vec x_i \\
+=&amp; N \epsilon^2."/></p>
+</div><p>Then we find out that</p>
 <div class="math" id="equation-eqn-rms-distance">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-rms-distance" title="Permalink to this equation">¶</a></span>\[\bar X = \sqrt{\langle \vec X^2 \rangle} = \sqrt{N}\epsilon.\]</div>
-</div>
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-eqn-rms-distance" title="Permalink to this equation">¶</a></span><img src="../_images/math/3f45ddbf09865ce78614baad6c9e136c188c90d2.png" alt="\bar X = \sqrt{\langle \vec X^2 \rangle} = \sqrt{N}\epsilon."/></p>
+</div></div>
 <div class="section" id="significance-of-dimension">
 <h2>Significance of Dimension<a class="headerlink" href="#significance-of-dimension" title="Permalink to this headline">¶</a></h2>
-<p>From the root-mean-squared distance Eq. <a class="reference internal" href="#equation-eqn-rms-distance">(1)</a> we can define the density of points. Suppose we have a continues version of this random walk. After time <span class="math">t</span>, the random walker walked a distance <span class="math">vt</span>. Meanwhile the random walker explored a region of radius <span class="math">\sqrt{t}v</span>, which corresponds to a volume <span class="math">V \propto \sqrt{t}v</span>. The density of walked points is defined as</p>
+<p>From the root-mean-squared distance Eq. <a class="reference internal" href="#equation-eqn-rms-distance">(1)</a> we can define the density of points. Suppose we have a continues version of this random walk. After time <img class="math" src="../_images/math/5ec053cf70dc1c98cc297322250569eda193e7a4.png" alt="t"/>, the random walker walked a distance <img class="math" src="../_images/math/f10a9ae046f6a44b8cfe154ada23b3bed7e3a6ba.png" alt="vt"/>. Meanwhile the random walker explored a region of radius <img class="math" src="../_images/math/91d151d7762a10221cf893d131f5113e2bb941e4.png" alt="\sqrt{t}v"/>, which corresponds to a volume <img class="math" src="../_images/math/0e9f8e7c934cda6ddb7ea3eadfede04789644e3b.png" alt="V \propto \sqrt{t}v"/>. The density of walked points is defined as</p>
 <div class="math">
-\[\rho \propto \frac{t}{\sqrt{t}^d} = t^{1-d/2},\]</div>
-<p>where <span class="math">d</span> is the dimension of the space.</p>
-<p>We spot this critical dimension <span class="math">d=2</span>.</p>
+<p><img src="../_images/math/d739ded9035ba465e1a43f364318cc13fb07d93d.png" alt="\rho \propto \frac{t}{\sqrt{t}^d} = t^{1-d/2},"/></p>
+</div><p>where <img class="math" src="../_images/math/b9d10b54744d07746b97f53c55eb98046fd76c8c.png" alt="d"/> is the dimension of the space.</p>
+<p>We spot this critical dimension <img class="math" src="../_images/math/00a6103d4cd162a0b0c55ecb2a587ff614992749.png" alt="d=2"/>.</p>
 <ol class="arabic simple">
-<li><span class="math">d<2</span>: the density of points at <span class="math">t\to\infty</span> becomes <span class="math">\rho\to \infty</span>. This called recurrent behavior. We are sure that after infinite time, we are going back to a point that we visited before.</li>
-<li><span class="math">d=2</span>: the density of points at <span class="math">t\to\infty</span> becomes <span class="math">\rho\to \mathrm{Constant}</span>. <strong>This derivation is wrong about this critical case.</strong> It should be <span class="math">\rho\to \ln t</span></li>
-<li><span class="math">d>2</span>: the density of points at <span class="math">t\to\infty</span> becomes <span class="math">\rho\to 0</span>. This is called transit behavior. We are not sure that we could go back to a point that we visited before.</li>
+<li><img class="math" src="../_images/math/53551cd548a2e67df84436e7e30210cd43143f3f.png" alt="d&lt;2"/>: the density of points at <img class="math" src="../_images/math/1c64644a59ab19d7ecc73669df4b886c4c2dcd52.png" alt="t\to\infty"/> becomes <img class="math" src="../_images/math/7af13814d23ad84de762e7cf4cce32e41e27b9a8.png" alt="\rho\to \infty"/>. This called recurrent behavior. We are sure that after infinite time, we are going back to a point that we visited before.</li>
+<li><img class="math" src="../_images/math/00a6103d4cd162a0b0c55ecb2a587ff614992749.png" alt="d=2"/>: the density of points at <img class="math" src="../_images/math/1c64644a59ab19d7ecc73669df4b886c4c2dcd52.png" alt="t\to\infty"/> becomes <img class="math" src="../_images/math/399b8654764964de3d41a8eed43815aa9ef7aedd.png" alt="\rho\to \mathrm{Constant}"/>. <strong>This derivation is wrong about this critical case.</strong> It should be <img class="math" src="../_images/math/4faef1be5d0edc01c8a4f313bd6e2cfa129abf20.png" alt="\rho\to \ln t"/></li>
+<li><img class="math" src="../_images/math/164cca21aca692836dc4fdf48bed3a429dbb9195.png" alt="d&gt;2"/>: the density of points at <img class="math" src="../_images/math/1c64644a59ab19d7ecc73669df4b886c4c2dcd52.png" alt="t\to\infty"/> becomes <img class="math" src="../_images/math/88a72312f87b90a88f4580bb21e8aea559229473.png" alt="\rho\to 0"/>. This is called transit behavior. We are not sure that we could go back to a point that we visited before.</li>
 </ol>
 </div>
 <div class="section" id="refs-notes">
@@ -316,6 +377,22 @@
     </script>
 
 </div>
+
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
 
 
   </body>

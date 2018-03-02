@@ -13,6 +13,7 @@ A particular interest is to find resonances in these intelligence. A chinese pro
    vocabulary.rst
    questions.rst
    statistics/index.rst
+   network/index.rst
    neuroscience/index.rst
    neuroscience-models/index.rst
    equation-solving-in-neuroscience/index.rst
