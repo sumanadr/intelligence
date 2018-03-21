@@ -7,4 +7,5 @@ No matter how computers and algorithms evolve, carrying some statistics with you
 .. toctree::
    :maxdepth: 2
 
+   basics.rst
    esl/index.rst
