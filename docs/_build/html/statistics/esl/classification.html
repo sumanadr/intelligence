@@ -29,6 +29,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="nonlinear-models.html" />
+    <link rel="prev" title="Least Angle Regression" href="least-angle-regression.html" />
 
 <!-- <script type="text/x-mathjax-config">
 MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
@@ -150,12 +152,12 @@ TeX: {
      href="../../index.html">Chapters <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul>
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../vocabulary.html">Vocabulary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../questions.html">Questions? Yes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Statistics</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Statistics</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../basics.html">Basics of Statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html">The Element of Statistical Learning</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The Element of Statistical Learning</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network Dynamics</a><ul>
@@ -230,7 +232,20 @@ TeX: {
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Classification</a><ul>
-<li><a class="reference internal" href="#logistic-regression">Logistic Regression</a></li>
+<li><a class="reference internal" href="#logistic-regression">Logistic Regression</a><ul>
+<li><a class="reference internal" href="#maximum-likelihood">Maximum Likelihood</a></li>
+<li><a class="reference internal" href="#multivarible-logistic-regression">Multivarible Logistic Regression</a></li>
+<li><a class="reference internal" href="#case-control-sampling">Case-Control Sampling</a></li>
+<li><a class="reference internal" href="#more-than-two-classes">More than two classes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linear-discriminant-analysis">Linear Discriminant Analysis</a><ul>
+<li><a class="reference internal" href="#bayes-theorem">Bayes Theorem</a></li>
+<li><a class="reference internal" href="#gaussian-discriminant-analysis">Gaussian Discriminant Analysis</a></li>
+<li><a class="reference internal" href="#quadratic-discriminant-analysis">Quadratic Discriminant Analysis</a></li>
+<li><a class="reference internal" href="#naive-bayes">Naive Bayes</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#references-and-notes">References and Notes</a></li>
 </ul>
 </li>
@@ -242,6 +257,14 @@ TeX: {
             
               
                 
+  <li>
+    <a href="least-angle-regression.html" title="Previous Chapter: Least Angle Regression"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Least Angle R...</span>
+    </a>
+  </li>
+  <li>
+    <a href="nonlinear-models.html" title="Next Chapter: <no title>"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet"><no title> &raquo;</span>
+    </a>
+  </li>
               
             
             
@@ -286,13 +309,81 @@ TeX: {
 </div><p>or</p>
 <div class="math">
 <p><img src="../../_images/math/00eab8caaf8fb5fc1e70b8a66b4cacb9b4c805ca.png" alt="\frac{P(X)}{ 1- P(X) }  \leq 0."/></p>
-</div><p>We notice that the first expression is also bounded within 1. It’s more complicated than the second version. So we will try to use the second approach,</p>
+</div><p>We notice that the first expression is also bounded within 1. It’s more complicated than the second version since <strong>the second version is monotonic but the first one is not</strong>. So we will try to use the second approach,</p>
 <div class="math">
 <p><img src="../../_images/math/bd5c4b0f89df0019b5603d863adca0672844ee9a.png" alt="\log \left( \frac{P(X)}{ 1- P(X) }  \right) = \beta_0 + \beta_1 X"/></p>
 </div><p>Mathematically speaking, logistic regression is</p>
 <div class="math">
 <p><img src="../../_images/math/a40441f3159748573d85d20880f75a08b3d70f01.png" alt="P(X) =  \frac{ e^{\beta_0 + \beta_1 X} }{ 1 +  e^{\beta_0 + \beta_1 X} }."/></p>
+</div><div class="warning admonition">
+<p class="first admonition-title">Fermi-Dirac Distribution</p>
+<p class="last">This is the Fermi-Dirac distribution in statistical mechanics.</p>
+</div>
+<div class="section" id="maximum-likelihood">
+<h3>Maximum Likelihood<a class="headerlink" href="#maximum-likelihood" title="Permalink to this headline">¶</a></h3>
+<p>For a bunch of independent variables, we simply multiple all the probabilities and 1-probabilities together to get a joint likelihood.</p>
+</div>
+<div class="section" id="multivarible-logistic-regression">
+<h3>Multivarible Logistic Regression<a class="headerlink" href="#multivarible-logistic-regression" title="Permalink to this headline">¶</a></h3>
+<p>We simply add more basis to the variable space</p>
+<div class="math">
+<p><img src="../../_images/math/c2819b8b21a8632b9bcb9b952d2ca1758de2a11c.png" alt="P(X) =  \frac{ e^{\beta_0 + \sum_i\beta_i X_i} }{ 1 +  e^{\beta_0 + \sum_i \beta_i X_i} }."/></p>
+</div><p>Note that the correlations between variables can alter the signs and make the signs of coefficients very different from single variable case.</p>
+</div>
+<div class="section" id="case-control-sampling">
+<h3>Case-Control Sampling<a class="headerlink" href="#case-control-sampling" title="Permalink to this headline">¶</a></h3>
+<p>In reality, we might not be able to really monitor some experiment through out too many years. One of the techniques that allows us to learn something is to use the case-control sampling. We choose some cases and controls and work out the statistics.</p>
+<p>The regression parameters for logistic regress is calculated</p>
+<div class="math">
+<p><img src="../../_images/math/5b137045187f2d6d9129ac8253b718c8ea506ef7.png" alt="\hat\beta^*_0 = \hat \beta_0 + \log \frac{\pi}{1-\pi} - \log \frac{\tilde \pi }{ 1-\tilde \pi },"/></p>
+</div><p>where <img class="math" src="../../_images/math/15b1198fac5501cab26686ddb432e6f10363ac43.png" alt="\hat\beta^*"/> is the corrected interception in the model, <img class="math" src="../../_images/math/e93c8afb9519822ccf236a77189acb08eae039d5.png" alt="\hat \beta_0"/> is the intercept that is obtained by fitting the data, <img class="math" src="../../_images/math/27af76ac68da8bd6442e6beb550fbe535117a669.png" alt="\tilde \pi ` is the number of cases over the sum of cases and control. For example, if we have 10 cases and 90 controls, we calculate :math:"/>tilde pi=10/(10+90)=0.1`. The value of <img class="math" src="../../_images/math/b7793e4f08d00aca47e272dcdfeb70f933dac222.png" alt="\pi"/> might be obtained by some other study that shows the actual prevalence among the population.</p>
+<p>We usually need more controls to really fit the model, for example we probably need five times more controls than cases.</p>
+<div class="warning admonition">
+<p class="first admonition-title">For Rare Situation</p>
+<p class="last">Case-control works well for situation such as diseases, spam emails, etc. It doesn’t work for the situation where the prior probilities for two classes are almost the same.</p>
+</div>
+</div>
+<div class="section" id="more-than-two-classes">
+<h3>More than two classes<a class="headerlink" href="#more-than-two-classes" title="Permalink to this headline">¶</a></h3>
+<p>To fit models with more than two classes, softmax probability has been developed.</p>
+<div class="math">
+<p><img src="../../_images/math/9b9f93e177a0c066afe8d0e7d7cca2da36edfc12.png" alt="P_k = \frac{ e^{\beta_{0k} + \sum_i\beta_{ik} X_i} }{ \sum_k e^{\beta_{0k} + \sum_i \beta_{ik} X_i} },"/></p>
+</div><p>where <img class="math" src="../../_images/math/0b7c1e16a3a8a849bb8ffdcdbf86f65fd1f30438.png" alt="k"/> indicates which class we are calculating.</p>
+<p>This is basically a Boltzmann distribution, and the summation is the partition function.</p>
+</div>
+</div>
+<div class="section" id="linear-discriminant-analysis">
+<h2>Linear Discriminant Analysis<a class="headerlink" href="#linear-discriminant-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bayes-theorem">
+<h3>Bayes Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h3>
+<p>Everyboday knows it.</p>
+<p>But here we are going to rewrite it.</p>
+<div class="math">
+<p><img src="../../_images/math/9c2ad09685047b0537746ed2ea31921f7b536a81.png" alt="P_k = \frac{ \pi_i f_i(x)  }{ \sum \pi_l f_l(x) },"/></p>
+</div><p>where <img class="math" src="../../_images/math/5a2e78872064213aa17783820631306c815e8e02.png" alt="P_k = P(\text{Prediction for class k} | \text{Variables }x)"/>, <img class="math" src="../../_images/math/2a794130bcbf72921b68be331c004386408b7cd4.png" alt="\pi_k"/> is the probability for class k, <img class="math" src="../../_images/math/3c0b0ce8e71182c7b2607dfa04b31f7a62d1bf08.png" alt="f_k(x)"/> is the probability density for class k.</p>
+<ol class="arabic simple">
+<li>DA is good even when the classes are well seperated, or small number of samples, but logistic regression fails;</li>
+<li>Also works well for multiple classes.</li>
+</ol>
+</div>
+<div class="section" id="gaussian-discriminant-analysis">
+<h3>Gaussian Discriminant Analysis<a class="headerlink" href="#gaussian-discriminant-analysis" title="Permalink to this headline">¶</a></h3>
+<p>The density can be chosen to be the Gaussian distribution,</p>
+<div class="note admonition">
+<p class="first admonition-title">Gaussian Distribution</p>
+<div class="last math">
+<p><img src="../../_images/math/10e6940b1fd0e62a19da20151e2d5fa85f1113ec.png" alt="f_k(x) =  \frac{ 1 }{ \sqrt{2\pi} \sigma_k } e^{ -\frac{1}{2} \left( \frac{x-\mu_k}{\sigma_k} \right)^2 }."/></p>
 </div></div>
+<p>In principle we can plug in the distribution to calculate the probabilities. However, we are mostly interested in the largest probabilities, which is related to a quantity called <strong>discriminant function</strong>. Probabilities can be reconstructed using it.</p>
+<p>It can also be done for multivariable statistics.</p>
+</div>
+<div class="section" id="quadratic-discriminant-analysis">
+<h3>Quadratic Discriminant Analysis<a class="headerlink" href="#quadratic-discriminant-analysis" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="naive-bayes">
+<h3>Naive Bayes<a class="headerlink" href="#naive-bayes" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 <div class="section" id="references-and-notes">
 <h2>References and Notes<a class="headerlink" href="#references-and-notes" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">

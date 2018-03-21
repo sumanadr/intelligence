@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>The Element of Statistical Learning &#8212; Intelligence</title>
+    <title>Tests &#8212; Intelligence</title>
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/modify.css" type="text/css" />
@@ -29,8 +29,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Introductions (Review) and Several Preliminary Statistical Methods" href="statistical-learning-theory.html" />
-    <link rel="prev" title="Basics of Statistics" href="../basics.html" />
+    <link rel="next" title="Network Dynamics" href="../../network/index.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="nonlinear-models.html" />
 
 <!-- <script type="text/x-mathjax-config">
 MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
@@ -157,7 +157,7 @@ TeX: {
 <li class="toctree-l1"><a class="reference internal" href="../../questions.html">Questions? Yes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Statistics</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../basics.html">Basics of Statistics</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">The Element of Statistical Learning</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The Element of Statistical Learning</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network Dynamics</a><ul>
@@ -231,7 +231,11 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">The Element of Statistical Learning</a></li>
+<li><a class="reference internal" href="#">Tests</a><ul>
+<li><a class="reference internal" href="#z-score">Z-score</a></li>
+<li><a class="reference internal" href="#p-value">P Value</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -241,11 +245,11 @@ TeX: {
               
                 
   <li>
-    <a href="../basics.html" title="Previous Chapter: Basics of Statistics"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Basics of Statistics</span>
+    <a href="nonlinear-models.html" title="Previous Chapter: <no title>"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; <no title></span>
     </a>
   </li>
   <li>
-    <a href="statistical-learning-theory.html" title="Next Chapter: Introductions (Review) and Several Preliminary Statistical Methods"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Introductions... &raquo;</span>
+    <a href="../../network/index.html" title="Next Chapter: Network Dynamics"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Network Dynamics &raquo;</span>
     </a>
   </li>
               
@@ -273,57 +277,26 @@ TeX: {
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="the-element-of-statistical-learning">
-<h1>The Element of Statistical Learning<a class="headerlink" href="#the-element-of-statistical-learning" title="Permalink to this headline">¶</a></h1>
-<div class="note admonition">
-<p class="first admonition-title">Reference Books</p>
-<ol class="last arabic simple">
-<li><a class="reference external" href="https://statweb.stanford.edu/~tibs/ElemStatLearn/printings/ESLII_print10.pdf">The Elements of Statistical Learning</a> by Trevor Hastie, Robert Tibshirani, and Jerome Friedman.</li>
-</ol>
+  <div class="section" id="tests">
+<h1>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="z-score">
+<h2>Z-score<a class="headerlink" href="#z-score" title="Permalink to this headline">¶</a></h2>
+<p>Suppose we have some sample data and we developed a theory for that data. The theory assumes that the mean of the distribution is <img class="math" src="../../_images/math/6e2753fe2cd02e5006987e4b807892100e76599c.png" alt="\mu_{\bar x}"/>. However, we calculated the sample mean <img class="math" src="../../_images/math/a583b9f5b776f4525b118204d2894a203ec006ed.png" alt="\bar x"/>. The question to ask is to find a measure how well the statistics work.</p>
+<p>We calculate</p>
+<div class="math">
+<p><img src="../../_images/math/adf6b0b49f475e23161325b97eab93b08bdaff4a.png" alt="z = \frac{\bar x - \mu_{\bar x}}{\sigma_{\bar x}}."/></p>
+</div><p>This z-score tells us the deviations of our sample mean from the actual mean, in unit of standard deviations. For example, if <img class="math" src="../../_images/math/7bf7611d1b37387f463661e74ffb58e04feb499e.png" alt="z=1"/>, then the deviation of our sample mean from the population mean is of the size one standard deviation.</p>
+<p>We do not know the value of standard deviation of the assumed standard deviation <img class="math" src="../../_images/math/d02bebc42fd92342f3e057701ba364030e45900b.png" alt="\sigma_{\bar x}"/>. However, the central limit theorem shows that <img class="math" src="../../_images/math/4a491b2244327d8e767510deeb8be7f4269bf272.png" alt="\sigma_{\bar x} = \sigma/\sqrt{N}"/>, where <img class="math" src="../../_images/math/011e5790a6c33043ceadca81d9657dde6c61d769.png" alt="\sigma"/> is the standard deviation of the population, and <img class="math" src="../../_images/math/f4170ed8938b79490d8923857962695514a8e4cb.png" alt="N"/> is the sample size.</p>
+<p>In principle, we do not really know the population standard deviation <img class="math" src="../../_images/math/011e5790a6c33043ceadca81d9657dde6c61d769.png" alt="\sigma"/>. We might be able to approximate this value using the sample standard deviation <img class="math" src="../../_images/math/9ed9c0c6f6e43ce6add811078bd02f5dc451530b.png" alt="\sigma_s"/>, if the sample size is large enough (larger than 30).</p>
+<p>Finally the expression is</p>
+<div class="math">
+<p><img src="../../_images/math/abd1a644be7f311c025f4605abd0c87b9988a10e.png" alt="\frac{\bar x - \mu_{\bar x}}{ \sigma_s/\sqrt{N} }."/></p>
+</div><p>For large sample size (&gt;30), this expression is a z-distribution, which makes the the expression much more easy to understand and meaningful. If the sample size is small (&lt;30), we have a t-distribution. Then we need a t-statistics table to figure out what happens.</p>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="statistical-learning-theory.html">Introductions (Review) and Several Preliminary Statistical Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="statistical-learning-theory.html#review">Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistical-learning-theory.html#least-squares-and-nearest-neighbors">Least Squares and Nearest Neighbors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistical-learning-theory.html#statistical-decision-theory">Statistical Decision Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistical-learning-theory.html#local-methods-in-high-dimensions">Local Methods in High Dimensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistical-learning-theory.html#statistical-models-supervised-learning-and-function-approximation">Statistical Models, Supervised Learning and Function Approximation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="linear-methods-for-regresssion.html">Linear Methods for Regression</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="linear-methods-for-regresssion.html#some-interesting-points">Some Interesting Points</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="gauss-markov-theorem.html">Guass-Markov Theorem and Multiple Regression</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gauss-markov-theorem.html#gauss-markov">Gauss-Markov</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gauss-markov-theorem.html#multiple-regression">Multiple Regression</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="shrinkage-methods.html">Shrinkage Methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shrinkage-methods.html#id1">Shrinkage methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="shrinkage-methods.html#ridge-regression">Ridge Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shrinkage-methods.html#lasso">Lasso</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shrinkage-methods.html#compare-lasso-and-ridge">Compare Lasso and Ridge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shrinkage-methods.html#generalization">Generalization</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="least-angle-regression.html">Least Angle Regression</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="least-angle-regression.html#id1">Least Angle Regression</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classification.html">Classification</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classification.html#logistic-regression">Logistic Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classification.html#linear-discriminant-analysis">Linear Discriminant Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classification.html#references-and-notes">References and Notes</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#z-score">Z-score</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#p-value">P Value</a></li>
-</ul>
-</li>
-</ul>
+<div class="section" id="p-value">
+<h2>P Value<a class="headerlink" href="#p-value" title="Permalink to this headline">¶</a></h2>
+<p>Watch the video <a class="reference external" href="https://www.khanacademy.org/math/ap-statistics/tests-significance-ap/idea-significance-tests/v/p-values-and-significance-tests">P-values and significance tests on khanacademy</a></p>
+<p>The basic idea is that if p value is smaller than our preset standard such as 0.05, we say that we can reject our null hypothesis. Otherwise we can not reject the null hypothesis.</p>
 </div>
 </div>
 
@@ -368,7 +341,7 @@ TeX: {
         <span><span class="glyphicon glyphicon-list" aria-hidden="true"></span>
         <a href="/genindex.html">Index</a>
      </span> |
-       <a href="../../_sources/statistics/esl/index.rst.txt"
+       <a href="../../_sources/statistics/esl/tests.rst.txt"
            rel="nofollow">Page Source</a></li>|
        <a href="/changelog.html"
            rel="nofollow">changelog</a></li>|

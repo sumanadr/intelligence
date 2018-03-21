@@ -18,3 +18,6 @@ The Element of Statistical Learning
    gauss-markov-theorem.rst
    shrinkage-methods.rst
    least-angle-regression.rst
+   classification.rst
+   nonlinear-models.rst
+   tests.rst
