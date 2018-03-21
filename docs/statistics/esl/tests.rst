@@ -27,3 +27,11 @@ Finally the expression is
    \frac{\bar x - \mu_{\bar x}}{ \sigma_s/\sqrt{N} }.
 
 For large sample size (>30), this expression is a z-distribution, which makes the the expression much more easy to understand and meaningful. If the sample size is small (<30), we have a t-distribution. Then we need a t-statistics table to figure out what happens.
+
+
+P Value
+-------------------
+
+Watch the video `P-values and significance tests on khanacademy <https://www.khanacademy.org/math/ap-statistics/tests-significance-ap/idea-significance-tests/v/p-values-and-significance-tests>`_
+
+The basic idea is that if p value is smaller than our preset standard such as 0.05, we say that we can reject our null hypothesis. Otherwise we can not reject the null hypothesis.

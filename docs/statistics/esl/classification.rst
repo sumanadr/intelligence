@@ -44,6 +44,21 @@ For a bunch of independent variables, we simply multiple all the probabilities a
 
 
 
+Multivarible Logistic Regression
+----------------------------------------
+
+
+We simply add more basis to the variable space
+
+
+.. math::
+   P(X) =  \frac{ e^{\beta_0 + \sum_i\beta_i X_i} }{ 1 +  e^{\beta_0 + \sum_i \beta_i X_i} }.
+
+
+Note that the correlations between variables can alter the signs and make the signs of coefficients very different from single variable case.
+
+
+
 
 References and Notes
 -------------------------
