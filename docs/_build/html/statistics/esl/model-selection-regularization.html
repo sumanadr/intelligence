@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>The Element of Statistical Learning &#8212; Intelligence</title>
+    <title>Alternatives to Least Squares &#8212; Intelligence</title>
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/modify.css" type="text/css" />
@@ -29,8 +29,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Introductions (Review) and Several Preliminary Statistical Methods" href="statistical-learning-theory.html" />
-    <link rel="prev" title="Basics of Statistics" href="../basics.html" />
+    <link rel="next" title="Tree-Based Methods" href="tree-based.html" />
+    <link rel="prev" title="Nonlinear Models" href="nonlinear-models.html" />
 
 <!-- <script type="text/x-mathjax-config">
 MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
@@ -157,7 +157,7 @@ TeX: {
 <li class="toctree-l1"><a class="reference internal" href="../../questions.html">Questions? Yes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Statistics</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../basics.html">Basics of Statistics</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">The Element of Statistical Learning</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The Element of Statistical Learning</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network Dynamics</a><ul>
@@ -231,7 +231,22 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">The Element of Statistical Learning</a></li>
+<li><a class="reference internal" href="#">Alternatives to Least Squares</a><ul>
+<li><a class="reference internal" href="#subset-selection">Subset Selection</a><ul>
+<li><a class="reference internal" href="#best-subset-selection">Best Subset Selection</a></li>
+<li><a class="reference internal" href="#stepwise-selection">Stepwise Selection</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#shrinkage-methods">Shrinkage Methods</a></li>
+<li><a class="reference internal" href="#id1">Shrinkage methods</a><ul>
+<li><a class="reference internal" href="#ridge-regression">Ridge Regression</a></li>
+<li><a class="reference internal" href="#lasso">Lasso</a></li>
+<li><a class="reference internal" href="#compare-lasso-and-ridge">Compare Lasso and Ridge</a></li>
+<li><a class="reference internal" href="#generalization">Generalization</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -241,11 +256,11 @@ TeX: {
               
                 
   <li>
-    <a href="../basics.html" title="Previous Chapter: Basics of Statistics"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Basics of Statistics</span>
+    <a href="nonlinear-models.html" title="Previous Chapter: Nonlinear Models"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Nonlinear Models</span>
     </a>
   </li>
   <li>
-    <a href="statistical-learning-theory.html" title="Next Chapter: Introductions (Review) and Several Preliminary Statistical Methods"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Introductions... &raquo;</span>
+    <a href="tree-based.html" title="Next Chapter: Tree-Based Methods"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Tree-Based Methods &raquo;</span>
     </a>
   </li>
               
@@ -273,68 +288,93 @@ TeX: {
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="the-element-of-statistical-learning">
-<h1>The Element of Statistical Learning<a class="headerlink" href="#the-element-of-statistical-learning" title="Permalink to this headline">¶</a></h1>
-<div class="note admonition">
-<p class="first admonition-title">Reference Books</p>
-<ol class="last arabic simple">
-<li><a class="reference external" href="https://statweb.stanford.edu/~tibs/ElemStatLearn/printings/ESLII_print10.pdf">The Elements of Statistical Learning</a> by Trevor Hastie, Robert Tibshirani, and Jerome Friedman.</li>
+  <div class="section" id="alternatives-to-least-squares">
+<h1>Alternatives to Least Squares<a class="headerlink" href="#alternatives-to-least-squares" title="Permalink to this headline">¶</a></h1>
+<p>For data with a huge amount of feature, we need <strong>feature selection</strong>, aka, which set of features that is our best chance of fitting the data well.</p>
+<ol class="arabic simple">
+<li>Subset selection;</li>
+<li>Shrinkage Methods;</li>
+<li>Dimension reduction.</li>
 </ol>
+<div class="section" id="subset-selection">
+<h2>Subset Selection<a class="headerlink" href="#subset-selection" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="best-subset-selection">
+<h3>Best Subset Selection<a class="headerlink" href="#best-subset-selection" title="Permalink to this headline">¶</a></h3>
+<p>The first idea that we can think of, is to try out all the possible combinations of the features. Then out of all these models, we choose the model that works the best.</p>
+<p>How do we define the best models? We might be able to check the RSS, etc. But do remember that we should cross validate our data instead of selecting models based on the training data only.</p>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="statistical-learning-theory.html">Introductions (Review) and Several Preliminary Statistical Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="statistical-learning-theory.html#review">Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistical-learning-theory.html#least-squares-and-nearest-neighbors">Least Squares and Nearest Neighbors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistical-learning-theory.html#statistical-decision-theory">Statistical Decision Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistical-learning-theory.html#local-methods-in-high-dimensions">Local Methods in High Dimensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistical-learning-theory.html#statistical-models-supervised-learning-and-function-approximation">Statistical Models, Supervised Learning and Function Approximation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="linear-methods-for-regresssion.html">Linear Methods for Regression</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="linear-methods-for-regresssion.html#some-interesting-points">Some Interesting Points</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="gauss-markov-theorem.html">Guass-Markov Theorem and Multiple Regression</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gauss-markov-theorem.html#gauss-markov">Gauss-Markov</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gauss-markov-theorem.html#multiple-regression">Multiple Regression</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="least-angle-regression.html">Least Angle Regression</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="least-angle-regression.html#id1">Least Angle Regression</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classification.html">Classification</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classification.html#logistic-regression">Logistic Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classification.html#linear-discriminant-analysis">Linear Discriminant Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classification.html#references-and-notes">References and Notes</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="nonlinear-models.html">Nonlinear Models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="nonlinear-models.html#polynomial-regression">Polynomial Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nonlinear-models.html#step-functions">Step Functions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="model-selection-regularization.html">Alternatives to Least Squares</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="model-selection-regularization.html#subset-selection">Subset Selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="model-selection-regularization.html#shrinkage-methods">Shrinkage Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="model-selection-regularization.html#id1">Shrinkage methods</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tree-based.html">Tree-Based Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tree-based.html#regressioin">Regressioin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tree-based.html#categorical">Categorical</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tree-based.html#tree-vs-linear-regression">Tree vs Linear Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tree-based.html#bagging">Bagging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tree-based.html#references-and-notes">References and Notes</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#z-score">Z-score</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#p-value">P Value</a></li>
-</ul>
-</li>
-</ul>
+<div class="section" id="stepwise-selection">
+<h3>Stepwise Selection<a class="headerlink" href="#stepwise-selection" title="Permalink to this headline">¶</a></h3>
+<p>The problem of best subset, however, is that it requires a large amount of calculation. Meanwhile, selection from all the possible combinations would usually lead to overfitting.</p>
+<div class="note admonition">
+<p class="first admonition-title">Tip</p>
+<p class="last">Usually we do not use best subsect selection if the dimension of the feature excedes 10 to 20. Do remember that best subset is not always the best strategy even when we can do it.</p>
+</div>
+<p>Forward stepwise selection:</p>
+<ol class="arabic simple">
+<li>Add in one feature each time.</li>
+<li>Do not explore all the possible combinations but only test all the possible feature to add in each step.</li>
+<li>Work out untill we have all the features.</li>
+</ol>
+<div class="note admonition">
+<p class="first admonition-title">Computation Complexity</p>
+<p class="last">The number of models to be tested in best subset selection is a power to the number of features. However, stepwise selection is proptional to the number of features squared.</p>
+</div>
+</div>
+</div>
+<div class="section" id="shrinkage-methods">
+<h2>Shrinkage Methods<a class="headerlink" href="#shrinkage-methods" title="Permalink to this headline">¶</a></h2>
+<div class="note admonition">
+<p class="first admonition-title">Meta</p>
+<p class="last">date: 2016-09-23
+author: OctoMiao
+summary: Shrinkage methods</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Shrinkage methods<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Why? Some variables might be redundant. Shrink the model.</li>
+</ol>
+<div class="section" id="ridge-regression">
+<h3>Ridge Regression<a class="headerlink" href="#ridge-regression" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="lasso">
+<h3>Lasso<a class="headerlink" href="#lasso" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Small constraint <img class="math" src="../../_images/math/5ec053cf70dc1c98cc297322250569eda193e7a4.png" alt="t"/> cause some of the coefficients reduce exactly to 0: this is <strong>variable selection</strong>, while producing <strong>sparse model</strong>.</li>
+<li>Convex optimization.</li>
+</ol>
+<p><strong>Why would lasso leads to exact 0 coefficients?</strong></p>
+<p>Would spot the reason as long as you plot out the constraints and the RSS. Fig. 3.11.</p>
+</div>
+<div class="section" id="compare-lasso-and-ridge">
+<h3>Compare Lasso and Ridge<a class="headerlink" href="#compare-lasso-and-ridge" title="Permalink to this headline">¶</a></h3>
+<p>For sparse models, lasso is better. Otherwise, lasso can make the fitting worse than ridge.</p>
+<p>No rule of thumb.</p>
+</div>
+<div class="section" id="generalization">
+<h3>Generalization<a class="headerlink" href="#generalization" title="Permalink to this headline">¶</a></h3>
+<p>Ridge and lasso can be generalized. Replace the distance calculation
+with other definitions, i.e., <img class="math" src="../../_images/math/66bb61a9a141b484f7696765cc365b7972902a6a.png" alt="\sum \lvert \beta_j \rvert^q"/>.</p>
+<ol class="arabic simple">
+<li><img class="math" src="../../_images/math/1644b89f7873a009877eb49446f0cb832fd05be7.png" alt="q=0"/>: subset selection</li>
+<li><img class="math" src="../../_images/math/3546ba57f444bd56e272af4af839ce1ba79779f2.png" alt="q=1"/>: lasso</li>
+<li><img class="math" src="../../_images/math/6f8c91c1b96d533f5ca17eb726ff2f56077ba787.png" alt="q=2"/>: ridge</li>
+</ol>
+<p>Smaller <img class="math" src="../../_images/math/620a3ce6403ec82f1347af9985bc03f7a9382f4a.png" alt="q"/> leads to tighter selection.</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>Plot[Evaluate@Table[(1 - x\ :sup:`(q))`\ (1/q), {q,
+0.5, 4, 0.5}], {x, 0, 1}, AspectRatio -&gt; 1, Frame -&gt; True, PlotLegends
+-&gt; Placed[Table[“q=” &lt;&gt; ToString@q, {q, 0.5, 4, 0.5}], {Left, Bottom}],
+PlotLabel -&gt; “Shrinkage as function of L-q norm disance”, FrameLabel -&gt;
+{“!(*SubscriptBox[([Beta]), (i)])“,”!(*SubscriptBox[([Beta]), (j)])“}]
+</pre></div>
+</div>
+<div class="figure align-center" id="id2">
+<img alt="../../_images/shrinkage-lq-norm.png" src="../../_images/shrinkage-lq-norm.png" />
+<p class="caption"><span class="caption-text">Shrinkage as a function of L-q norm distance.</span></p>
+</div>
+</div>
 </div>
 </div>
 
@@ -379,7 +419,7 @@ TeX: {
         <span><span class="glyphicon glyphicon-list" aria-hidden="true"></span>
         <a href="/genindex.html">Index</a>
      </span> |
-       <a href="../../_sources/statistics/esl/index.rst.txt"
+       <a href="../../_sources/statistics/esl/model-selection-regularization.rst.txt"
            rel="nofollow">Page Source</a></li>|
        <a href="/changelog.html"
            rel="nofollow">changelog</a></li>|

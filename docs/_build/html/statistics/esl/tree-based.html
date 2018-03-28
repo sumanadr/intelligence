@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>The Element of Statistical Learning &#8212; Intelligence</title>
+    <title>Tree-Based Methods &#8212; Intelligence</title>
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/modify.css" type="text/css" />
@@ -29,8 +29,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Introductions (Review) and Several Preliminary Statistical Methods" href="statistical-learning-theory.html" />
-    <link rel="prev" title="Basics of Statistics" href="../basics.html" />
+    <link rel="next" title="Tests" href="tests.html" />
+    <link rel="prev" title="Alternatives to Least Squares" href="model-selection-regularization.html" />
 
 <!-- <script type="text/x-mathjax-config">
 MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
@@ -157,7 +157,7 @@ TeX: {
 <li class="toctree-l1"><a class="reference internal" href="../../questions.html">Questions? Yes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Statistics</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../basics.html">Basics of Statistics</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">The Element of Statistical Learning</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The Element of Statistical Learning</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network Dynamics</a><ul>
@@ -231,7 +231,14 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">The Element of Statistical Learning</a></li>
+<li><a class="reference internal" href="#">Tree-Based Methods</a><ul>
+<li><a class="reference internal" href="#regressioin">Regressioin</a></li>
+<li><a class="reference internal" href="#categorical">Categorical</a></li>
+<li><a class="reference internal" href="#tree-vs-linear-regression">Tree vs Linear Regression</a></li>
+<li><a class="reference internal" href="#bagging">Bagging</a></li>
+<li><a class="reference internal" href="#references-and-notes">References and Notes</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -241,11 +248,11 @@ TeX: {
               
                 
   <li>
-    <a href="../basics.html" title="Previous Chapter: Basics of Statistics"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Basics of Statistics</span>
+    <a href="model-selection-regularization.html" title="Previous Chapter: Alternatives to Least Squares"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Alternatives ...</span>
     </a>
   </li>
   <li>
-    <a href="statistical-learning-theory.html" title="Next Chapter: Introductions (Review) and Several Preliminary Statistical Methods"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Introductions... &raquo;</span>
+    <a href="tests.html" title="Next Chapter: Tests"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Tests &raquo;</span>
     </a>
   </li>
               
@@ -273,68 +280,40 @@ TeX: {
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="the-element-of-statistical-learning">
-<h1>The Element of Statistical Learning<a class="headerlink" href="#the-element-of-statistical-learning" title="Permalink to this headline">¶</a></h1>
-<div class="note admonition">
-<p class="first admonition-title">Reference Books</p>
-<ol class="last arabic simple">
-<li><a class="reference external" href="https://statweb.stanford.edu/~tibs/ElemStatLearn/printings/ESLII_print10.pdf">The Elements of Statistical Learning</a> by Trevor Hastie, Robert Tibshirani, and Jerome Friedman.</li>
+  <div class="section" id="tree-based-methods">
+<h1>Tree-Based Methods<a class="headerlink" href="#tree-based-methods" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="regressioin">
+<h2>Regressioin<a class="headerlink" href="#regressioin" title="Permalink to this headline">¶</a></h2>
+<p>It might be a overfit if we have a huge tree since we have fitted the model so well to the training data set. We need a termination condition, or we simple build a large tree then prune it to a smaller one.</p>
+<p>Cost complexity pruning: add a punishment to the cost function</p>
+<div class="math">
+<p><img src="../../_images/math/617a644ef43d52fad95ce1ccda75079f9c102187.png" alt="\sum_{t} \sum_i (y_i - \tilde y_i)^2 + \alpha t"/></p>
+</div><p>where <img class="math" src="../../_images/math/877d234f4cec6974ce218fc2e975a486a7972dfd.png" alt="\alpha"/> can be determined from cross validation.</p>
+</div>
+<div class="section" id="categorical">
+<h2>Categorical<a class="headerlink" href="#categorical" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Gini index: purity</li>
+<li>Cross entropy</li>
 </ol>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="statistical-learning-theory.html">Introductions (Review) and Several Preliminary Statistical Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="statistical-learning-theory.html#review">Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistical-learning-theory.html#least-squares-and-nearest-neighbors">Least Squares and Nearest Neighbors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistical-learning-theory.html#statistical-decision-theory">Statistical Decision Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistical-learning-theory.html#local-methods-in-high-dimensions">Local Methods in High Dimensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistical-learning-theory.html#statistical-models-supervised-learning-and-function-approximation">Statistical Models, Supervised Learning and Function Approximation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="linear-methods-for-regresssion.html">Linear Methods for Regression</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="linear-methods-for-regresssion.html#some-interesting-points">Some Interesting Points</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="gauss-markov-theorem.html">Guass-Markov Theorem and Multiple Regression</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gauss-markov-theorem.html#gauss-markov">Gauss-Markov</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gauss-markov-theorem.html#multiple-regression">Multiple Regression</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="least-angle-regression.html">Least Angle Regression</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="least-angle-regression.html#id1">Least Angle Regression</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="classification.html">Classification</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="classification.html#logistic-regression">Logistic Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classification.html#linear-discriminant-analysis">Linear Discriminant Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="classification.html#references-and-notes">References and Notes</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="nonlinear-models.html">Nonlinear Models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="nonlinear-models.html#polynomial-regression">Polynomial Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nonlinear-models.html#step-functions">Step Functions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="model-selection-regularization.html">Alternatives to Least Squares</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="model-selection-regularization.html#subset-selection">Subset Selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="model-selection-regularization.html#shrinkage-methods">Shrinkage Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="model-selection-regularization.html#id1">Shrinkage methods</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tree-based.html">Tree-Based Methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tree-based.html#regressioin">Regressioin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tree-based.html#categorical">Categorical</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tree-based.html#tree-vs-linear-regression">Tree vs Linear Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tree-based.html#bagging">Bagging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tree-based.html#references-and-notes">References and Notes</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tests.html">Tests</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#z-score">Z-score</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tests.html#p-value">P Value</a></li>
-</ul>
-</li>
-</ul>
+<div class="section" id="tree-vs-linear-regression">
+<h2>Tree vs Linear Regression<a class="headerlink" href="#tree-vs-linear-regression" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Trees are box based</li>
+</ol>
+</div>
+<div class="section" id="bagging">
+<h2>Bagging<a class="headerlink" href="#bagging" title="Permalink to this headline">¶</a></h2>
+<p>Bootstrap aggregation</p>
+<p>For categorical</p>
+<ol class="arabic simple">
+<li>Majority voting: most frequent categorical predictions</li>
+<li>Average</li>
+</ol>
+</div>
+<div class="section" id="references-and-notes">
+<h2>References and Notes<a class="headerlink" href="#references-and-notes" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -379,7 +358,7 @@ TeX: {
         <span><span class="glyphicon glyphicon-list" aria-hidden="true"></span>
         <a href="/genindex.html">Index</a>
      </span> |
-       <a href="../../_sources/statistics/esl/index.rst.txt"
+       <a href="../../_sources/statistics/esl/tree-based.rst.txt"
            rel="nofollow">Page Source</a></li>|
        <a href="/changelog.html"
            rel="nofollow">changelog</a></li>|

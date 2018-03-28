@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>&lt;no title&gt; &#8212; Intelligence</title>
+    <title>Nonlinear Models &#8212; Intelligence</title>
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/modify.css" type="text/css" />
@@ -29,7 +29,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Tests" href="tests.html" />
+    <link rel="next" title="Alternatives to Least Squares" href="model-selection-regularization.html" />
     <link rel="prev" title="Classification" href="classification.html" />
 
 <!-- <script type="text/x-mathjax-config">
@@ -152,12 +152,12 @@ TeX: {
      href="../../index.html">Chapters <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul>
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../vocabulary.html">Vocabulary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../questions.html">Questions? Yes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Statistics</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Statistics</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../basics.html">Basics of Statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html">The Element of Statistical Learning</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">The Element of Statistical Learning</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../network/index.html">Network Dynamics</a><ul>
@@ -230,7 +230,12 @@ TeX: {
      href="#">Sections <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"
       role="menu"
-      aria-labelledby="dLabelLocalToc"><ul class="simple">
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Nonlinear Models</a><ul>
+<li><a class="reference internal" href="#polynomial-regression">Polynomial Regression</a></li>
+<li><a class="reference internal" href="#step-functions">Step Functions</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -244,7 +249,7 @@ TeX: {
     </a>
   </li>
   <li>
-    <a href="tests.html" title="Next Chapter: Tests"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Tests &raquo;</span>
+    <a href="model-selection-regularization.html" title="Next Chapter: Alternatives to Least Squares"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Alternatives ... &raquo;</span>
     </a>
   </li>
               
@@ -272,7 +277,29 @@ TeX: {
   <div class="row">
     <div class="col-md-12 content">
       
-  
+  <div class="section" id="nonlinear-models">
+<h1>Nonlinear Models<a class="headerlink" href="#nonlinear-models" title="Permalink to this headline">¶</a></h1>
+<p>What we are really doing in statistical learning is to find a approximator for the data.</p>
+<p>Suppose we have a model for some data <img class="math" src="../../_images/math/7a7bb470119808e2db2879fc2b2526f467b7a40b.png" alt="X"/>, which describes the data as</p>
+<div class="math">
+<p><img src="../../_images/math/afa0cc6ee8dc1cbe4dc3ae86ce331227ca5aeee1.png" alt="Y = F(X),"/></p>
+</div><p>where <img class="math" src="../../_images/math/8873b01b06b477e44ea2b348f77324cc715fb6aa.png" alt="F(X)"/> is some function of data and <img class="math" src="../../_images/math/0062c26909b3e07ee8f5a6285b2563d69bc979ff.png" alt="Y"/> is the prediction. In principle, it can be any function since data can be very complicated. However, Taylor expansion tells us that</p>
+<div class="math">
+<p><img src="../../_images/math/809e0492f7383566f0d939e28df98156b4e654ca.png" alt="F(X) = \hat \beta_0  + \hat \beta_1 x_1 +\hat \beta_2 x_2 +\cdots."/></p>
+</div><p>Think about linear regression. It’s just an approximator that neglects the higher orders. In principle we could put in higher orders for the data. These models with higher orders are called polynomial regression.</p>
+<p>In general, we could think of other forms, such as fourier series, wavelets, step functions, etc.</p>
+<div class="section" id="polynomial-regression">
+<h2>Polynomial Regression<a class="headerlink" href="#polynomial-regression" title="Permalink to this headline">¶</a></h2>
+<div class="note admonition">
+<p class="first admonition-title">Tails in Polynomial Regression</p>
+<p class="last">Polynomials are wiggly at the tails. We usually discard them.</p>
+</div>
+</div>
+<div class="section" id="step-functions">
+<h2>Step Functions<a class="headerlink" href="#step-functions" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
 
     </div>
       

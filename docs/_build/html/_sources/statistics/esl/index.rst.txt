@@ -16,8 +16,9 @@ The Element of Statistical Learning
    statistical-learning-theory.rst
    linear-methods-for-regresssion.rst
    gauss-markov-theorem.rst
-   shrinkage-methods.rst
    least-angle-regression.rst
    classification.rst
    nonlinear-models.rst
+   model-selection-regularization.rst
+   tree-based.rst
    tests.rst
