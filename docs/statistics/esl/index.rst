@@ -21,4 +21,5 @@ The Element of Statistical Learning
    nonlinear-models.rst
    model-selection-regularization.rst
    tree-based.rst
+   svm.rst
    tests.rst
